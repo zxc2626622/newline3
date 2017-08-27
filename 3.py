@@ -5,39 +5,39 @@ from datetime import datetime
 import time,random,sys,json,codecs,threading,glob
 
 cl = LineAlpha.LINE()
-cl.login(qr=True)
+cl.login(token="EkfUvvwgkOSLH5iQFjB1.bmQ/6YiBE1CewKV9GvEDqq.R+BoN6qjXYXqytbkjlt/IczA8bmzXnVsCGgEVgKQUD0=")
 cl.loginResult()
 
-kk = LineAlpha.LINE()
-kk.login(qr=True)
-kk.loginResult()
-
 ki = LineAlpha.LINE()
-ki.login(qr=True)
+ki.login(token="EknClN0cY1DB5XYrvue9.Ne9kyLVaJ0ug8J16x9E+/q.YJlzl8Z8C76eZwWJMO/lxMQ43qSjGwdqHhuUSCitnRQ=")
 ki.loginResult()
 
+kk = LineAlpha.LINE()
+kk.login(token="EkIDgWdA2e3zxJ60FdO3.sSNAARHD3Nxz2i8wMTzQuW.JmQ39OkXZM7zQiNLXMBL9RkzoDKEBtx1QIKjVP8g72w=")
+kk.loginResult()
+
 kc = LineAlpha.LINE()
-kc.login(qr=True)
+kc.login(token="EkIDgWdA2e3zxJ60FdO3.sSNAARHD3Nxz2i8wMTzQuW.JmQ39OkXZM7zQiNLXMBL9RkzoDKEBtx1QIKjVP8g72w=")
 kc.loginResult()
 
 kd = LineAlpha.LINE()
-kd.login(qr=True)
+kd.login(token="EkSNK17BpmayhcH5q5p2.yNTgomxYFY48xquXWkx00G.Fl0rXBUoumvYjphoIp7nUupIhQa6cIkVXzmIeqL7oY0=")
 kd.loginResult()
 
 ke = LineAlpha.LINE()
-ke.login(qr=True)
+ke.login(token="EkU1oFxZhnQ3559Mnlnf.ISyEIsE/7iXIlz6fL2bJ3W.8qiVVWJCeUqPInhWE2judV3wNEn4FKgq7aaO07lkKwA=")
 ke.loginResult()
 
 kf = LineAlpha.LINE()
-kf.login(qr=True)
+kf.login(token="EkgLnSw5C92BVIBB3j01.h0EvkC9VG+tgskuR4jUISq.BBFX/iaFgYbGEkQ6EZO0o4rp2uTSUlr6tmhesO7p/v8=")
 kf.loginResult()
 
 kg = LineAlpha.LINE()
-kg.login(qr=True)
+kg.login(token="Ek4oDNpWVlBaYCzAHfhc.ttElAMbeC2JQ666rPs/+Ja.2NngWYqsvbanLCd8aw2WqcICmluHudM3qakhtdArUxE=")
 kg.loginResult()
 
 kh = LineAlpha.LINE()
-kh.login(qr=True)
+kh.login(token="EkfTHzOphtMzNoNrOtle.UzbJh+YjXCoFmx4tMD8eNG.8cSMqiFZiTSnkpJkiyxNaVLaShlMY6pMv7Z39ezniQA=")
 kh.loginResult()
 
 kl = LineAlpha.LINE()
@@ -101,7 +101,7 @@ helpMessage =""" I Can Help You
 [Bot cancel]
 [Title:]
 """
-KAC=[cl,ki,kk,kc,kd,ke,kl]
+KAC=[cl,ki,kk,kc,kd,ke,kf,kg,kh,kl]
 mid = cl.getProfile().mid
 Amid = ki.getProfile().mid
 Bmid = kk.getProfile().mid
@@ -344,6 +344,19 @@ def bot(op):
                     pass
                 else:
                     cl.cancelGroupInvitation(op.param1, matched_list)
+
+	if op.type == 11:
+	    if op.param3 not in Bots:
+		if op.param2 in Bots and admin:
+		    pass
+		elif wait["protectqr"] == True:
+		   kk.kickoutFromGroup(op.param1,[op.param2])
+		   X = cl.getGroup(op.param1)
+		   X.preventJoinByTicket = True
+		   cl.updateGroup(X)
+		   cl.updateGroup(X)
+		else:
+		   pass
 
         if op.type == 19:					
 		    if op.param3 in admin:
@@ -1129,7 +1142,7 @@ def bot(op):
                         cl.sendText(msg.to,"already on")
                     else:
                         cl.sendText(msg.to,"done")
-            elif msg.text in ["deff off","Deff off"]:
+            elif msg.text in ["k off","K off"]:
                 if wait["contact"] == False:
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"already off")
@@ -1161,6 +1174,32 @@ def bot(op):
                         cl.sendText(msg.to,"done")
                 else:
                     wait["autoJoin"] = False
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"already off")
+                    else:
+                        cl.sendText(msg.to,"done")
+	    elif msg.text in ["protecqr on","protectqr : on","protectqr:on"]:
+             if msg.from_ in admin:
+                if wait["protectqr"] == True:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Success")
+                    else:
+                        cl.sendText(msg.to,"done")
+                else:
+                    wait["protectqr"] = True
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Success")
+                    else:
+                        cl.sendText(msg.to,"done")
+	    elif msg.text in ["protecqr off","protectqr : off","protectqr:off"]:
+             if msg.from_ in admin:
+                if wait["protecqr"] == False:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"already off")
+                    else:
+                        cl.sendText(msg.to,"done")
+                else:
+                    wait["protecqr"] = False
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"already off")
                     else:
@@ -1240,6 +1279,8 @@ def bot(op):
                 else: md+=" Contact : off\n"
                 if wait["autoJoin"] == True: md+=" Auto join : on\n"
                 else: md +=" Auto join : off\n"
+		if wait["protectqr"] == True: md+=" protectqr : on\n"
+                else: md+=" protectqr : off\n"
                 if wait["autoCancel"]["on"] == True:md+=" Group cancel :" + str(wait["autoCancel"]["members"]) + "\n"
                 else: md+= " Group cancel : off\n"
                 if wait["leaveRoom"] == True: md+=" Auto leave : on\n"
