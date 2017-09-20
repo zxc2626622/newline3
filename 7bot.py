@@ -5,78 +5,39 @@ from datetime import datetime
 import time,random,sys,json,codecs,threading,glob
 
 cl = LINETCR.LINE()
-cl.login(token="EkgHh2O81TXX9WmKmo16.VCXhmd/spgVjHL258mehTG.zBE6VuMtLOojrXarIZvORIv4euhicPIyEHk7tx+RIKY=")
+cl.login(token="EkFuJf80fexSytXSwWh5.iur748Us1jyfpKv4oxGLDq.1lhsnc+kHotR0zpCNPgHSXX8WTMDqbEtYFpvlaXZSfc=")
 cl.loginResult()
 
-kk = LINETCR.LINE()
-kk.login(token="EkUhb1l1jrwFvGZPdUh4.q6BdIyO3JPlewwxC/Aizba.+D+pTOXA8gDwfcuPRGMPZPfGDBNZ9294kYIQ9NHzmeY=")
-kk.loginResult()
-
 ki = LINETCR.LINE()
-ki.login(token="EkUStywC11gBes98AZMc.8UgtH4I79UpTZyQs0yuHpa.EGgrYmn+OaFmwxLNNTr+RCsDo/wNejJp9lTHvbGNW8c=")
+ki.login(token="EkxRqcwmcdP52CUAO1Bf.DRgr2cTxeEiDATETLgm6FW.cnnv4Ve1/45c0JuxdBovhqvDioOjIgDTBGlRziQ8YRI=")
 ki.loginResult()
 
+kk = LINETCR.LINE()
+kk.login(token="Ek1SLZDegqDIpOQYXhmc.fDEuyTzDGQmGfp4ckPUkpa.fmVUrO0otV204P4MXotcVkaJpL4x4azXktYQoCTYLJo=")
+kk.loginResult()
+
 kc = LINETCR.LINE()
-kc.login(token="EkU05LkNvO1Sk4EYLDne.YTDwI5QhiUpG18DJ9xbkNG.beHrK8ue4qLt32WkarAIOKUcxNQF4Fev+9jYJWA7i64=")
+kc.login(token="EkYXWegyoBdE6TJPjQn0.0xXKLPaf8b6wAiXZDw/zKa.88XSr83up1qK1UathPrwYQyaUuj2q0NBCE5SjQQMYGY=")
 kc.loginResult()
 
 kd = LINETCR.LINE()
-kd.login(token="Ekyemn1dAI29yHFUX2Y6.OiBr/bvDBCy31bPdWTyC1G.LvJQYvmxZYyZlfUGOZYEGRGPEDK1V+VTCsJxB30+qNo=")
+kd.login(token="EkcljaObW9HJ2SDHqU52.c74e1FIgViqAn7KTUdEVWG.eDKZe1LBOShbLcg/VBzpkIt0BZuNhviT/8xriRha9fc=")
 kd.loginResult()
 
+
 ke = LINETCR.LINE()
-ke.login(token="EkEAopIH3X4pUMUYmI24.J2dYioweC8xveO9RShsyra.lfmGTdHXjrjlP02RiIZt0PBpLbrbdUQQ98s9LVDoOrs=")
+ke.login(token="EkIC0Mwbs9gUI3YkLEE9.jnrl5WXaTf6U4igiiB7LEq.0lVcmmkt/jTgcWl6k0leo+DaQLUUyn4vVJQsiax/pt4=")
 ke.loginResult()
 
 kf = LINETCR.LINE()
-kf.login(token="Ek0NUxxCxS0xnVa0Duq3.NM2KQSXh2797espjyzFKGW.4pUmLx8utdfNIqr2bYPuWdO7AZ6iAUNIP9r2mUcN5Lw=")
+kf.login(token="Ek6pQKrdCCViXvSxYrPb.PsrVTSNN+odpMcD2kyTWMW.Bl4AJ4eMSnXQBbJALlTksK1cBGEci2VA43MVvidLal8=")
 kf.loginResult()
 
 print "login success"
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-helpMessage =""" Keyword BOT
-
-|=*=Key Member=*=|
-|=>Help
-|=>Ginfo (Check Group Info)
-|=>Banlist (Check Account Banned)
-|=>Clear [Cancel Invited Group Slow])
-|=>Gift (Send Your Suprise)
-|=>Bot Say hi (Bot Said Hayy)
-|=>Gn [Free Change Name Group]
-|=>/List Group [Show List Group]
-|=>Creator [LOOK CREATOR BOT SAGIRI]
-|=>Staff [LOOK STAFF BOT SAGIRI]
-
-|=*=Key ADMIN & SPECIAL USER=*=|
-|=>All join (Invite all bot)
-|=>Bye all (Leave all bot)
-|=>@Bye [All BOT LEAVE IN GROUP]
-|=>Ban @ (with Tag)
-|=>Ban (With send Contact)
-|=>Unban @ (With tag)
-|=>Unban (With send Contact)
-|=>Nk @(with Tag ) [Kick]
-|=>Bye @ [KICK MEMBER]
-|=>Kick (Mid) [Kick Members]
-|=>Kill ban [Kick User Banned/Banlist]
-|=>Respon ( Bot Respon )
-|=>Test (Bot Respon)
-|=>absen(Bot The Count) [ Bot Absen]
-|=>Invite [Mid] (Bot Invite Members With mid]
-|=>Cancel [Cancel Invited Group Fast]
-|=>Ourl [Open Url Group]
-|=>Curl [Close Url Group]
-|=>Gurl [Gift You Url Group]
-|=>Cleanse [Kick all member a Group]
-*********************************
-****Created AlifP.Sikumbang****
-**Instagram: @alifp.sikumbang*
-**Protect / Damage Your Group*
-*********************************
-"""
+helpMessage ="""[Help 不給看勒]"""
 KAC=[cl,ki,kk,kc,kd,ke,kf]
 mid = cl.getProfile().mid
 Amid = ki.getProfile().mid
@@ -86,17 +47,19 @@ Dmid = kd.getProfile().mid
 Emid = ke.getProfile().mid
 Fmid = kf.getProfile().mid
 Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,"uaa75cafbc718153f1b0e69998c51f4e7"]
-admin=["uaa75cafbc718153f1b0e69998c51f4e7","u3661447738b7d0766102618c427115d8","ua5231264e098148b585af774928543be","uabaae1607b1eef506d69c2757b830b82"]
+admin = ["ua5246fb6c9e7fce0cf982776298b709b","u4c10b3d699545a706d87eb8002ac49c5","u67c43239c865dfce6addb41c6b3c0edd","uc216d8664c4e1f43772c98b1b0b8956e","u29971676114806a574c148f0df876c22","u24d44be70c40b45eaee0818821bee579"]
+staff = ["ua5246fb6c9e7fce0cf982776298b709b","u4c10b3d699545a706d87eb8002ac49c5","u67c43239c865dfce6addb41c6b3c0edd","uc216d8664c4e1f43772c98b1b0b8956e"]
+adminMID = "ua5246fb6c9e7fce0cf982776298b709b","u4c10b3d699545a706d87eb8002ac49c5","u67c43239c865dfce6addb41c6b3c0edd","uc216d8664c4e1f43772c98b1b0b8956e","u29971676114806a574c148f0df876c22","u24d44be70c40b45eaee0818821bee579"
 wait = {
-    'protect':True,
-    'protectinv':True,
-    'protectqr':True,
+    'protect':False,
+    'protectinv':False,
+    'protectqr':False,
     'contact':True,
     'autoJoin':True,
     'autoCancel':{"on":True,"members":1},
-    'leaveRoom':True,
+    'leaveRoom':False,
     'timeline':True,
-    'autoAdd':False,
+    'autoAdd':True,
     'message':"Thanks for add me",
     "lang":"JP",
     "comment":"Thanks for add me",
@@ -105,11 +68,11 @@ wait = {
     "wblack":False,
     "dblack":False,
     "clock":False,
-    "cName":"SAGIRI-Chan ",
+    "cName":"𝛓𝜄•A•ˢˡᵒʷᵉʳ ᵇᵒᵗ ",
     "blacklist":{},
     "wblacklist":False,
     "dblacklist":False,
-    "protectionOn":True
+    "protectionOn":False
     }
 
 wait2 = {
@@ -140,8 +103,8 @@ def NOTIFIED_READ_MESSAGE(op):
             if Name in wait2['readMember'][op.param1]:
                 pass
             else:
-                wait2['readMember'][op.param1] += "\n・" + Name
-                wait2['ROM'][op.param1][op.param2] = "・" + Name
+                wait2['readMember'][op.param1] += "\nツ1�71ￄ1�77" + Name
+                wait2['ROM'][op.param1][op.param2] = "ツ1�71ￄ1�77" + Name
         else:
             cl.sendText
     except:
@@ -158,6 +121,64 @@ def bot(op):
                     pass
                 else:
                     cl.sendText(op.param1,str(wait["message"]))
+
+        if op.type == 13:
+            if mid in op.param3:
+                if wait["autoJoin"] == True:
+                    cl.acceptGroupInvitation(op.param1)
+                    print "BOT 1 Joined"
+                else:
+                    print "autoJoin is Off"
+
+            if Amid in op.param3:
+                if wait["autoJoin"] == True:
+                    kk.acceptGroupInvitation(op.param1)
+                    print "BOT 2 Joined"
+                else:
+                    print "autoJoin is Off"
+
+            if Bmid in op.param3:
+                if wait["autoJoin"] == True:
+                    ki.acceptGroupInvitation(op.param1)
+                    print "BOT 3 Joined"
+                else:
+                    print "autoJoin is Off"
+
+            if Cmid in op.param3:
+                if wait["autoJoin"] == True:
+                    kc.acceptGroupInvitation(op.param1)
+                    print "BOT 4 Joined"
+                else:
+                    print "autoJoin is Off"
+            if Dmid in op.param3:
+                if wait["autoJoin"] == True:
+                    kd.acceptGroupInvitation(op.param1)
+            if Emid in op.param3:
+                if wait["autoJoin"] == True:
+                    ke.acceptGroupInvitation(op.param1)
+            if Fmid in op.param3:
+                if wait["autoJoin"] == True:
+                    kf.acceptGroupInvitation(op.param1)
+
+
+            else:
+                if cancelinvite["autoCancel"] == True:
+                    try:
+                        X = cl.getGroup(op.param1)
+                        gInviMids = [contact.mid for contact in X.invitee]
+                        cl.cancelGroupInvitation(op.param1, gInviMids)
+                        print gInviMids + "invite canceled"
+                    except:
+                        try:
+                            print "Retry canceling invitation"
+                            X = random.choice(KAC).getGroup(op.param1)
+                            gInviMids = [contact.mid for contact in X.invitee]
+                            random.choice(KAC).cancelGroupInvitation(op.param1, gInviMids)
+                            print gInviMids + "invite canceled"
+                        except:
+                            print "Bot can't cancel the invitation"
+                            pass
+
         if op.type == 13:
                 if op.param3 in mid:
                     if op.param2 in Amid:
@@ -248,7 +269,7 @@ def bot(op):
                             cl.rejectGroupInvitation(op.param1)
                         else:
                             cl.acceptGroupInvitation(op.param1)
-                    else:
+        else:
                         cl.acceptGroupInvitation(op.param1)
                 elif wait["autoCancel"]["on"] == True:
                     if len(G.members) <= wait["autoCancel"]["members"]:
@@ -341,13 +362,13 @@ def bot(op):
                         return
                     try:
                         kd.kickoutFromGroup(op.param1,[op.param2])
-                        kk.kickoutFromGroup(op.param1,[op.param2])
+                        ke.kickoutFromGroup(op.param1,[op.param2])
                     except:
                         try:
                             kd.kickoutFromGroup(op.param1,[op.param2])
-                            kk.kickoutFromGroup(op.param1,[op.param2])
+                            kf.kickoutFromGroup(op.param1,[op.param2])
                         except:
-                            print ("client Kick regulation or Because it does not exist in the group、\n["+op.param1+"]\nの\n["+op.param2+"]\nを蹴る事ができませんでした。\nブラックリストに追加します。")
+                            print ("client Kick regulation or Because it does not exist in the group、\n["+op.param1+"]\nの\n["+op.param2+"]\nを蹴る事ができませんでした�1�7�\nブラックリストに追加します�1�7�1�7")
                         if op.param2 in wait["blacklist"]:
                             pass
                         if op.param2 in wait["whitelist"]:
@@ -513,8 +534,8 @@ def bot(op):
                     if op.param2 in Bots:
                         return
                     try:
-                        kc.kickoutFromGroup(op.param1,[op.param2])
-                        ki.kickoutFromGroup(op.param1,[op.param2])
+                        kf.kickoutFromGroup(op.param1,[op.param2])
+                        kd.kickoutFromGroup(op.param1,[op.param2])
                     except:
                         try:
                             kc.kickoutFromGroup(op.param1,[op.param2])
@@ -704,6 +725,7 @@ def bot(op):
                     cl.sendText(msg.to,helpt)
             elif ("Gn " in msg.text):
                 if msg.toType == 2:
+                  if msg.from_ in admin:
                     X = cl.getGroup(msg.to)
                     X.name = msg.text.replace("Gn ","")
                     cl.updateGroup(X)
@@ -733,24 +755,6 @@ def bot(op):
                 cl.findAndAddContactsByMid(midd)
                 cl.inviteIntoGroup(msg.to,[midd])
                 print "SUKSES -- INVITED BY MID"
-            elif msg.text in ["Creator","creator"]:
-                msg.contentType = 13
-                cl.sendText(msg.to, "ADD MY CREATOR BOT SAGIRI\nPROTECT GROUP")
-                msg.contentMetadata = {'mid': 'uaa75cafbc718153f1b0e69998c51f4e7'}
-                cl.sendMessage(msg)
-                pass
-            elif msg.text in ["Staff","staff"]:
-                msg.contentType = 13
-                cl.sendText(msg.to, "ADD MY STAFF BOT SAGIRI\nPROTECT GROUP")
-                msg.contentMetadata = {'mid': 'u3661447738b7d0766102618c427115d8'}
-                cl.sendMessage(msg)
-                pass
-                msg.contentMetadata = {'mid': 'ua5231264e098148b585af774928543be'}
-                cl.sendMessage(msg)
-                pass
-                msg.contentMetadata = {'mid': 'uabaae1607b1eef506d69c2757b830b82'}
-                cl.sendMessage(msg)
-                print "SUKSES -- SEND CREATOR AND STAFF"
             elif msg.text in ["me","Me"]:
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': msg.from_}
@@ -1277,7 +1281,8 @@ def bot(op):
                     cl.sendText(msg.to,"Please turn on the name clock")
             
 #-----------------------------------------------
-            elif msg.text in ["All join","all join","sokin","Sokin","woi masuk"]:
+            elif msg.text in ["Slower join"]:
+                if msg.from_ in admin:
                     G = cl.getGroup(msg.to)
                     ginfo = cl.getGroup(msg.to)
                     G.preventJoinByTicket = False
@@ -1330,9 +1335,8 @@ def bot(op):
                         G.preventJoinByTicket = True
                         kc.updateGroup(G)
 #-----------------------------------------------
-            elif msg.text in ["Bye all","bye all","dadah","Dadah"]:
+            elif msg.text in ["Slower bye"]:
               if msg.from_ in admin:
-                if msg.from_ in staff:
                     ginfo = cl.getGroup(msg.to)
                     print "EXECUTED -- BOT OUT GROUP"
                     try:
@@ -1406,12 +1410,12 @@ def bot(op):
                                 kk.sendText(msg.to,"Group cleanse")
                                 kc.sendText(msg.to,"Group cleanse")
                                 print "SUKSES -- CLEANSE GROUP"
-            elif "Nk " in msg.text:
+            elif "Sk:" in msg.text:
                 if msg.from_ in admin:
                        print "EXECUTED -- NK TARGET"
-                       nk0 = msg.text.replace("Nk ","")
+                       nk0 = msg.text.replace("Sk:","")
                        nk1 = nk0.lstrip()
-                       nk2 = nk1.replace("@","")
+                       nk2 = nk1.replace("","")
                        nk3 = nk2.rstrip()
                        _name = nk3
                        gs = cl.getGroup(msg.to)
@@ -1523,13 +1527,13 @@ def bot(op):
 
             elif msg.text in ["Respon","respon","absen","Absen"]:
               if msg.from_ in admin:
-                cl.sendText(msg.to,"Hadir[V1]")
-                ki.sendText(msg.to,"Hadir[V2]")
-                kk.sendText(msg.to,"Hadir[V3]")
-                kc.sendText(msg.to,"Hadir[V4]")
-                kd.sendText(msg.to,"Hadir[V5]")
-                ke.sendText(msg.to,"Hadir[V6]")
-                kf.sendText(msg.to,"Hadir[V7]")
+                cl.sendText(msg.to,"ˢˡᵒʷᵉʳ ᵇᵒᵗ[V1]")
+                ki.sendText(msg.to,"ˢˡᵒʷᵉʳ ᵇᵒᵗ[V2]")
+                kk.sendText(msg.to,"ˢˡᵒʷᵉʳ ᵇᵒᵗ[V3]")
+                kc.sendText(msg.to,"ˢˡᵒʷᵉʳ ᵇᵒᵗ[V4]")
+                kd.sendText(msg.to,"ˢˡᵒʷᵉʳ ᵇᵒᵗ[V5]")
+                ke.sendText(msg.to,"ˢˡᵒʷᵉʳ ᵇᵒᵗ[V6]")
+                kf.sendText(msg.to,"ˢˡᵒʷᵉʳ ᵇᵒᵗ[V7]")
 #-----------------------------------------------
 
             elif msg.text in ["Sp","Speed","speed"]:
@@ -1600,13 +1604,41 @@ def bot(op):
                         kk.kickoutFromGroup(msg.to,[jj])
                         kc.kickoutFromGroup(msg.to,[jj])
                     cl.sendText(msg.to,"Good Bye Sampah")
-            elif msg.text in ["Clear"]:
+            elif "Sb Add @" in msg.text:
                 if msg.toType == 2:
-                    group = cl.getGroup(msg.to)
-                    gMembMids = [contact.mid for contact in group.invitee]
-                    for _mid in gMembMids:
-                        cl.cancelGroupInvitation(msg.to,[_mid])
-                    cl.sendText(msg.to,"I pretended to cancel and canceled.")
+                    if msg.from_ in admin:
+                        print "[Command]Add executing"
+                        _name = msg.text.replace("Sb Add @","")
+                        _nametarget = _name.rstrip('  ')
+                        gs = ki.getGroup(msg.to)
+                        gs = kk.getGroup(msg.to)
+                        gs = kc.getGroup(msg.to)
+                        gs = kd.getGroup(msg.to)
+                        gs = ke.getGroup(msg.to)
+                        gs = kf.getGroup(msg.to)
+                        targets = []
+                        for g in gs.members:
+                            if _nametarget == g.displayName:
+                                targets.append(g.mid)
+                        if targets == []:
+                            ki.sendText(msg.to,"Contact not found")
+                        else:
+                            for target in targets:
+                                try:
+                                    cl.findAndAddContactsByMid(target)
+                                    ki.findAndAddContactsByMid(target)
+                                    kk.findAndAddContactsByMid(target)
+                                    kc.findAndAddContactsByMid(target)
+                                    kd.findAndAddContactsByMid(target)
+                                    ke.findAndAddContactsByMid(target)
+                                    kf.findAndAddContactsByMid(target)
+
+                                except:
+                                    ki.sendText(msg.to,"Error")
+                    else:
+                        cl.sendText(msg.to,"Command denied.")
+                        cl.sendText(msg.to,"Admin permission required.")
+
         if op.type == 59:
             print op
 
@@ -1647,9 +1679,13 @@ def autolike():
     if hasil['result']['posts'][zx]['postInfo']['liked'] == False:
         try: 
             cl.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
-            cl.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"Auto Like by Alif\n\nhttp://line.me/ti/p/%40dsd5411x")
+            cl.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"Auto Like by ㄩㄗ大神")
+            ki.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
             kk.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
-            kk.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"Auto Like by Alif\n\nhttp://line.me/ti/p/%40dsd5411x")
+            kc.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
+            kd.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
+            ke.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
+            kf.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
             print "Like"
         except:
             pass
