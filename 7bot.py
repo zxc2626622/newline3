@@ -160,7 +160,6 @@ def bot(op):
                 if wait["autoJoin"] == True:
                     kf.acceptGroupInvitation(op.param1)
 
-
             else:
                 if cancelinvite["autoCancel"] == True:
                     try:
@@ -178,6 +177,7 @@ def bot(op):
                         except:
                             print "Bot can't cancel the invitation"
                             pass
+
 
         if op.type == 13:
                 if op.param3 in mid:
@@ -269,7 +269,7 @@ def bot(op):
                             cl.rejectGroupInvitation(op.param1)
                         else:
                             cl.acceptGroupInvitation(op.param1)
-        else:
+                    else:
                         cl.acceptGroupInvitation(op.param1)
                 elif wait["autoCancel"]["on"] == True:
                     if len(G.members) <= wait["autoCancel"]["members"]:
@@ -286,7 +286,7 @@ def bot(op):
                     cl.cancelGroupInvitation(op.param1, matched_list)
 
         if op.type == 24:
-	    if op.param2 in Bots:
+      	    if op.param2 in Bots:
                 return
             if op.param2 in admin:
                 return
@@ -599,6 +599,7 @@ def bot(op):
                         pass
                     else:
                         wait["blacklist"][op.param2] = True
+
         if op.type == 13:
             if mid in op.param3:
                 G = cl.getGroup(op.param1)
@@ -623,6 +624,8 @@ def bot(op):
                     pass
                 else:
                     cl.cancelGroupInvitation(op.param1, matched_list)
+
+
         if op.type == 22:
             if wait["leaveRoom"] == True:
                 cl.leaveRoom(op.param1)
