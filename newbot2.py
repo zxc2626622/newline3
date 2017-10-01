@@ -4,38 +4,6 @@ from LINETCR.lib.curve.ttypes import *
 from datetime import datetime
 import time,random,sys,json,codecs,threading,glob
 
-cl = LINETCR.LINE()
-cl.login(token="Elzk1m560TwcSIB3FV95.iur748Us1jyfpKv4oxGLDq.30PSdT7hdIrRkyd1Ikkrs5Ml9hENm2WtgLpj/eFo5po=")
-cl.loginResult()
-
-ki = LINETCR.LINE()
-ki.login(token="Elsv5DxRRZgZjPbDkB2a.PzuIGrSfbi6ZimWr5ex5QG.rO6HusEKcfGCoDHF0KuogQdYpRiYhta/Yl0k7tCKaKo=")
-ki.loginResult()
-
-kk = LINETCR.LINE()
-kk.login(token="EloPm0sIfTRihRdLX5Mf.DRgr2cTxeEiDATETLgm6FW.rqlOh97WYz1QflOnfwI1DpkRDM4eOohhY/89DEIWgZc=")
-kk.loginResult()
-
-kc = LINETCR.LINE()
-kc.login(token="ElIt9cdB7Ta64OT5veP0.0xXKLPaf8b6wAiXZDw/zKa.t77swFKIB+DOE0A4dosJq4rtL1qeGVAE6DSwMLc9jiA=")
-kc.loginResult()
-
-kd = LINETCR.LINE()
-kd.login(token="ElIq1ZAkL5VWMNrqjPH2.c74e1FIgViqAn7KTUdEVWG.1hSKlfNJMGD3NCg0OAlWvtegiESsIYrkdeEVJpHGDeE=")
-kd.loginResult()
-
-
-ke = LINETCR.LINE()
-ke.login(token="EllfH0dpOxK6G4GMmvoc.fDEuyTzDGQmGfp4ckPUkpa.nwFnYWM8ozTB9Y4STFT6OeuisYkyGugP8WU47J2e4DY=")
-ke.loginResult()
-
-kf = LINETCR.LINE()
-kf.login(token="ElAswuUrXQo6FK8Si9M9.jnrl5WXaTf6U4igiiB7LEq.kXAFdPmKtgCkxosDvr1oX6BxhB56OIEPG9FC2v0NLH4=")
-kf.loginResult()
-
-am = LINETCR.LINE()
-am.login(token="El2hDLcRFlyzYAL6PB0f.FyCqvzVAe2RNaWr3/dbP3W.CzuzSPrt3m54ISxzK/MADbCaqmXoUhhBKCW3Aq1mN+Y=")
-am.loginResult()
 
 
 print "login success"
