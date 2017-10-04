@@ -732,12 +732,29 @@ def bot(op):
             elif msg.text in ["Slower join"]:
                 if msg.from_ in admin:
                     G = cl.getGroup(msg.to)
-                    ginfo = cl.getGroup(msg.to)
+                    G = ki.getGroup(msg.to)
+                    G = kk.getGroup(msg.to)
+                    G = kc.getGroup(msg.to)
+                    G = kd.getGroup(msg.to)
+                    G = ke.getGroup(msg.to)
+                    G = kf.getGroup(msg.to)
                     G.preventJoinByTicket = False
                     cl.updateGroup(G)
+                    ki.updateGroup(G)
+                    kk.updateGroup(G)
+                    kc.updateGroup(G)
+                    kd.updateGroup(G)
+                    ke.updateGroup(G)
+                    kf.updateGroup(G)
                     print "EXECUTED -- SUMMON BOT"
                     invsend = 0
                     Ticket = cl.reissueGroupTicket(msg.to)
+                    Ticket = ki.reissueGroupTicket(msg.to)
+                    Ticket = kk.reissueGroupTicket(msg.to)
+                    Ticket = kc.reissueGroupTicket(msg.to)
+                    Ticket = kd.reissueGroupTicket(msg.to)
+                    Ticket = ke.reissueGroupTicket(msg.to)
+                    Ticket = kf.reissueGroupTicket(msg.to)
                     ki.acceptGroupInvitationByTicket(msg.to,Ticket)
                     time.sleep(0.0)
                     kk.acceptGroupInvitationByTicket(msg.to,Ticket)
@@ -750,6 +767,7 @@ def bot(op):
                     time.sleep(0.0)
                     kf.acceptGroupInvitationByTicket(msg.to,Ticket)
                     time.sleep(0.0)
+                    cl.sendText(msg.to, "整天Join Jo啥小??")
                     G = cl.getGroup(msg.to)
                     G.preventJoinByTicket = True
                     ki.updateGroup(G)
@@ -827,9 +845,9 @@ def bot(op):
                     print "EXECUTED -- CLEANSE GROUP"
                     _name = msg.text.replace("#kick","")
                     gs = ki.getGroup(msg.to)
-                    gs.name = "印尼收下此處"
+                    gs.name = "ѕℓσωєя 🚩🚩🚩🚩🚩"
                     cl.updateGroup(gs)
-                    ki.sendText(msg.to,"印尼收下此處")
+                    ki.sendText(msg.to,"ѕℓσωєя вσт")
                     targets = []
                     for g in gs.members:
                         if _name in g.displayName:
@@ -1257,7 +1275,6 @@ def bot(op):
             if mid in op.param3:
                 if wait["autoJoin"] == True:
                     cl.acceptGroupInvitation(op.param1)
-
                     print "BOT 1 Joined"
                 else:
                     print "autoJoin is Off"
@@ -1291,6 +1308,7 @@ def bot(op):
             if Fmid in op.param3:
                 if wait["autoJoin"] == True:
                     kf.acceptGroupInvitation(op.param1)
+                    kf.sendText(op.param1, "邀啥小啦?????")
             else:
                 if cancelinvite["autoCancel"] == True:
                     try:
