@@ -33,14 +33,16 @@ ke.loginResult()
 kf = LINETCR.LINE()
 kf.login(token="ElAswuUrXQo6FK8Si9M9.jnrl5WXaTf6U4igiiB7LEq.kXAFdPmKtgCkxosDvr1oX6BxhB56OIEPG9FC2v0NLH4=")
 kf.loginResult()
-
+
+
 
 print "login success"
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
 helpMessage ="""[Help 不給看勒]"""
-KAC=[cl,ki,kk,kc,kd,ke,kf]
+KAC=[cl,ki,kk,kc,kd,ke,kf]
+
 mid = cl.getProfile().mid
 Amid = ki.getProfile().mid
 Bmid = kk.getProfile().mid
@@ -1489,11 +1491,17 @@ def bot(op):
                         G = ki.getGroup(op.param1)
                         G.preventJoinByTicket = False
                         ki.updateGroup(G)
-                        Ticket = ki.reissueGroupTicket(op.param1)
-                        cl.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        Ti = ki.reissueGroupTicket(op.param1)
+                        cl.acceptGroupInvitationByTicket(op.param1,Ti)
+                        ki.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kk.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kc.acceptGroupInvitationByTicket(op.param1,Ti)
+                        ke.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kf.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kg.acceptGroupInvitationByTicket(op.param1,Ti)
                         G.preventJoinByTicket = True
                         ki.updateGroup(G)
-                        Ticket = ki.reissueGroupTicket(op.param1)
+                        Ti = ki.reissueGroupTicket(op.param1)
 
                 if op.param3 in Amid:
                     if op.param2 in Bmid:
@@ -1501,7 +1509,13 @@ def bot(op):
                         X.preventJoinByTicket = False
                         kk.updateGroup(X)
                         Ti = kk.reissueGroupTicket(op.param1)
+                        cl.acceptGroupInvitationByTicket(op.param1,Ti)
                         ki.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kk.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kc.acceptGroupInvitationByTicket(op.param1,Ti)
+                        ke.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kf.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kg.acceptGroupInvitationByTicket(op.param1,Ti)
                         X.preventJoinByTicket = True
                         kk.updateGroup(X)
                         Ti = kk.reissueGroupTicket(op.param1)
@@ -1512,7 +1526,13 @@ def bot(op):
                         X.preventJoinByTicket = False
                         kc.updateGroup(X)
                         Ti = kc.reissueGroupTicket(op.param1)
+                        cl.acceptGroupInvitationByTicket(op.param1,Ti)
+                        ki.acceptGroupInvitationByTicket(op.param1,Ti)
                         kk.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kc.acceptGroupInvitationByTicket(op.param1,Ti)
+                        ke.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kf.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kg.acceptGroupInvitationByTicket(op.param1,Ti)
                         X.preventJoinByTicket = True
                         kc.updateGroup(X)
                         Ti = kc.reissueGroupTicket(op.param1)
@@ -1522,7 +1542,13 @@ def bot(op):
                         X = kd.getGroup(op.param1)
                         X.preventJoinByTicket = False
                         kd.updateGroup(X)
-                        Ti = kd.reissueGroupTicket(op.param1)
+                        cl.acceptGroupInvitationByTicket(op.param1,Ti)
+                        ki.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kk.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kc.acceptGroupInvitationByTicket(op.param1,Ti)
+                        ke.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kf.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kg.acceptGroupInvitationByTicket(op.param1,Ti)
                         kc.acceptGroupInvitationByTicket(op.param1,Ti)
                         X.preventJoinByTicket = True
                         kd.updateGroup(X)
@@ -1534,7 +1560,13 @@ def bot(op):
                         X.preventJoinByTicket = False
                         ke.updateGroup(X)
                         Ti = ke.reissueGroupTicket(op.param1)
-                        kd.acceptGroupInvitationByTicket(op.param1,Ti)
+                        cl.acceptGroupInvitationByTicket(op.param1,Ti)
+                        ki.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kk.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kc.acceptGroupInvitationByTicket(op.param1,Ti)
+                        ke.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kf.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kg.acceptGroupInvitationByTicket(op.param1,Ti)
                         X.preventJoinByTicket = True
                         ke.updateGroup(X)
                         Ti = ke.reissueGroupTicket(op.param1)
@@ -1545,23 +1577,51 @@ def bot(op):
                         X.preventJoinByTicket = False
                         kf.updateGroup(X)
                         Ti = kf.reissueGroupTicket(op.param1)
+                        cl.acceptGroupInvitationByTicket(op.param1,Ti)
+                        ki.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kk.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kc.acceptGroupInvitationByTicket(op.param1,Ti)
                         ke.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kf.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kg.acceptGroupInvitationByTicket(op.param1,Ti)
                         X.preventJoinByTicket = True
                         kf.updateGroup(X)
                         Ti = kf.reissueGroupTicket(op.param1)
 
                 if op.param3 in Fmid:
+                    if op.param2 in Gmid:
+                        X = kg.getGroup(op.param1)
+                        X.preventJoinByTicket = False
+                        kg.updateGroup(X)
+                        Ti = kg.reissueGroupTicket(op.param1)
+                        cl.acceptGroupInvitationByTicket(op.param1,Ti)
+                        ki.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kk.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kc.acceptGroupInvitationByTicket(op.param1,Ti)
+                        ke.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kf.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kg.acceptGroupInvitationByTicket(op.param1,Ti)
+                        X.preventJoinByTicket = True
+                        kf.updateGroup(X)
+                        Ti = kf.reissueGroupTicket(op.param1)
+
+                if op.param3 in Gmid:
                     if op.param2 in mid:
                         X = cl.getGroup(op.param1)
                         X.preventJoinByTicket = False
                         cl.updateGroup(X)
-                        Ti = cl.reissueGroupTicket(op.param1)
+                        cl.acceptGroupInvitationByTicket(op.param1,Ti)
+                        ki.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kk.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kc.acceptGroupInvitationByTicket(op.param1,Ti)
+                        ke.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kf.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kg.acceptGroupInvitationByTicket(op.param1,Ti)
                         kf.acceptGroupInvitationByTicket(op.param1,Ti)
                         X.preventJoinByTicket = True
                         cl.updateGroup(X)
                         Ti = cl.reissueGroupTicket(op.param1)
-
-
+                        
         if op.type == 19:
                 if mid in op.param3:
                     if op.param2 in Bots:
@@ -1574,7 +1634,7 @@ def bot(op):
                             kd.kickoutFromGroup(op.param1,[op.param2])
                             kf.kickoutFromGroup(op.param1,[op.param2])
                         except:
-                            print ("client Kick regulation or Because it does not exist in the group、\n["+op.param1+"]\nの\n["+op.param2+"]\nを蹴る事ができませんでした�1�7�\nブラックリストに追加します�1�7�1�7")
+                            print ("s")
                         if op.param2 in wait["blacklist"]:
                             pass
                         if op.param2 in wait["whitelist"]:
@@ -1586,6 +1646,12 @@ def bot(op):
                     ki.updateGroup(G)
                     Ti = ki.reissueGroupTicket(op.param1)
                     cl.acceptGroupInvitationByTicket(op.param1,Ti)
+                    ki.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kk.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kc.acceptGroupInvitationByTicket(op.param1,Ti)
+                    ke.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kf.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kg.acceptGroupInvitationByTicket(op.param1,Ti)
                     X = ki.getGroup(op.param1)
                     X.preventJoinByTicket = True
                     ki.updateGroup(X)
@@ -1620,7 +1686,13 @@ def bot(op):
                     X.preventJoinByTicket = False
                     kk.updateGroup(X)
                     Ti = kk.reissueGroupTicket(op.param1)
+                    cl.acceptGroupInvitationByTicket(op.param1,Ti)
                     ki.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kk.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kc.acceptGroupInvitationByTicket(op.param1,Ti)
+                    ke.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kf.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kg.acceptGroupInvitationByTicket(op.param1,Ti)
                     G = kk.getGroup(op.param1)
                     G.preventJoinByTicket = True
                     kk.updateGroup(G)
@@ -1654,8 +1726,14 @@ def bot(op):
                     X.preventJoinByTicket = False
                     kc.updateGroup(X)
                     Ti = kc.reissueGroupTicket(op.param1)
+                    cl.acceptGroupInvitationByTicket(op.param1,Ti)
+                    ki.acceptGroupInvitationByTicket(op.param1,Ti)
                     kk.acceptGroupInvitationByTicket(op.param1,Ti)
-                    G = random.choice(KAC).getGroup(op.param1)
+                    kc.acceptGroupInvitationByTicket(op.param1,Ti)
+                    ke.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kf.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kg.acceptGroupInvitationByTicket(op.param1,Ti)
+                    G = kc.getGroup(op.param1)
                     G.preventJoinByTicket = True
                     kc.updateGroup(G)
                     Ticket = kc.reissueGroupTicket(op.param1)
@@ -1689,7 +1767,13 @@ def bot(op):
                     X.preventJoinByTicket = False
                     kd.updateGroup(X)
                     Ti = kd.reissueGroupTicket(op.param1)
+                    cl.acceptGroupInvitationByTicket(op.param1,Ti)
+                    ki.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kk.acceptGroupInvitationByTicket(op.param1,Ti)
                     kc.acceptGroupInvitationByTicket(op.param1,Ti)
+                    ke.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kf.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kg.acceptGroupInvitationByTicket(op.param1,Ti)
                     G = kd.getGroup(op.param1)
                     G.preventJoinByTicket = True
                     kd.updateGroup(G)
@@ -1724,7 +1808,13 @@ def bot(op):
                     X.preventJoinByTicket = False
                     ke.updateGroup(X)
                     Ti = ke.reissueGroupTicket(op.param1)
-                    kd.acceptGroupInvitationByTicket(op.param1,Ti)
+                    cl.acceptGroupInvitationByTicket(op.param1,Ti)
+                    ki.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kk.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kc.acceptGroupInvitationByTicket(op.param1,Ti)
+                    ke.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kf.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kg.acceptGroupInvitationByTicket(op.param1,Ti)
                     G = ke.getGroup(op.param1)
                     G.preventJoinByTicket = True
                     ke.updateGroup(G)
@@ -1759,7 +1849,13 @@ def bot(op):
                     X.preventJoinByTicket = False
                     kf.updateGroup(X)
                     Ti = kf.reissueGroupTicket(op.param1)
+                    cl.acceptGroupInvitationByTicket(op.param1,Ti)
+                    ki.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kk.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kc.acceptGroupInvitationByTicket(op.param1,Ti)
                     ke.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kf.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kg.acceptGroupInvitationByTicket(op.param1,Ti)
                     G = kf.getGroup(op.param1)
                     G.preventJoinByTicket = True
                     kf.updateGroup(G)
@@ -1792,9 +1888,56 @@ def bot(op):
 
                     X = cl.getGroup(op.param1)
                     X.preventJoinByTicket = False
+                    kg.updateGroup(X)
+                    Ti = kg.reissueGroupTicket(op.param1)
+                    cl.acceptGroupInvitationByTicket(op.param1,Ti)
+                    ki.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kk.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kc.acceptGroupInvitationByTicket(op.param1,Ti)
+                    ke.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kf.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kg.acceptGroupInvitationByTicket(op.param1,Ti)
+                    G = kg.getGroup(op.param1)
+                    G.preventJoinByTicket = True
+                    kg.updateGroup(G)
+                    Ticket = kg.reissueGroupTicket(op.param1)
+                    if op.param2 in wait["blacklist"]:
+                        pass
+                    if op.param2 in wait["whitelist"]:
+                        pass
+                    else:
+                        wait["blacklist"][op.param2] = True
+
+                if Gmid in op.param3:
+                    if op.param2 in Bots:
+                        return
+                    try:
+                        kc.kickoutFromGroup(op.param1,[op.param2])
+                        ke.kickoutFromGroup(op.param1,[op.param2])
+                    except:
+                        try:
+                            kk.kickoutFromGroup(op.param1,[op.param2])
+                            ke.kickoutFromGroup(op.param1,[op.param2])
+                        except:
+                            print ("clientが蹴り規制orグループに存在しない為、\n["+op.param1+"]\nの\n["+op.param2+"]\nを蹴る事ができませんでした。\nブラックリストに追加します。")
+                        if op.param2 in wait["blacklist"]:
+                            pass
+                        if op.param2 in wait["whitelist"]:
+                            pass
+                        else:
+                            wait["blacklist"][op.param2] = True
+
+                    X = cl.getGroup(op.param1)
+                    X.preventJoinByTicket = False
                     cl.updateGroup(X)
                     Ti = cl.reissueGroupTicket(op.param1)
+                    cl.acceptGroupInvitationByTicket(op.param1,Ti)
+                    ki.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kk.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kc.acceptGroupInvitationByTicket(op.param1,Ti)
+                    ke.acceptGroupInvitationByTicket(op.param1,Ti)
                     kf.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kg.acceptGroupInvitationByTicket(op.param1,Ti)
                     G = cl.getGroup(op.param1)
                     G.preventJoinByTicket = True
                     cl.updateGroup(G)
@@ -1805,7 +1948,6 @@ def bot(op):
                         pass
                     else:
                         wait["blacklist"][op.param2] = True
-
 
         if op.type == 11:
 	    if op.param2 in Bots:
