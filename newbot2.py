@@ -1467,7 +1467,7 @@ def bot(op):
             if Fmid in op.param3:
                 if wait["autoJoin"] == True:
                     kf.acceptGroupInvitation(op.param1)
-                    kf.sendText(op.param1, "邀啥小啦?????")
+                    kf.sendText(op.param1, "邀啦")
             else:
                 if cancelinvite["autoCancel"] == True:
                     try:
@@ -1485,6 +1485,8 @@ def bot(op):
                         except:
                             print "Bot can't cancel the invitation"
                             pass
+
+
         if op.type == 13:
                 if op.param3 in mid:
                     if op.param2 in Amid:
@@ -1621,20 +1623,32 @@ def bot(op):
                         X.preventJoinByTicket = True
                         cl.updateGroup(X)
                         Ti = cl.reissueGroupTicket(op.param1)
-                        
+
         if op.type == 19:
                 if mid in op.param3:
                     if op.param2 in Bots:
                         return
                     try:
+                        cl.kickoutFromGroup(op.param1,[op.param2])
+                        ki.kickoutFromGroup(op.param1,[op.param2])
+                        kk.kickoutFromGroup(op.param1,[op.param2])
+                        kc.kickoutFromGroup(op.param1,[op.param2])
                         kd.kickoutFromGroup(op.param1,[op.param2])
                         ke.kickoutFromGroup(op.param1,[op.param2])
+                        kf.kickoutFromGroup(op.param1,[op.param2])
+                        kg.kickoutFromGroup(op.param1,[op.param2])
                     except:
                         try:
-                            kd.kickoutFromGroup(op.param1,[op.param2])
-                            kf.kickoutFromGroup(op.param1,[op.param2])
+                           cl.kickoutFromGroup(op.param1,[op.param2])
+                           ki.kickoutFromGroup(op.param1,[op.param2])
+                           kk.kickoutFromGroup(op.param1,[op.param2])
+                           kc.kickoutFromGroup(op.param1,[op.param2])
+                           kd.kickoutFromGroup(op.param1,[op.param2])
+                           ke.kickoutFromGroup(op.param1,[op.param2])
+                           kf.kickoutFromGroup(op.param1,[op.param2])
+                           kg.kickoutFromGroup(op.param1,[op.param2])
                         except:
-                            print ("s")
+                            print ("client Kick regulation or Because it does not exist in the group、\n["+op.param1+"]\nの\n["+op.param2+"]\nを蹴る事ができませんでした�1�7�\nブラックリストに追加します�1�7�1�7")
                         if op.param2 in wait["blacklist"]:
                             pass
                         if op.param2 in wait["whitelist"]:
@@ -1667,12 +1681,24 @@ def bot(op):
                     if op.param2 in Bots:
                         return
                     try:
+                        cl.kickoutFromGroup(op.param1,[op.param2])
+                        ki.kickoutFromGroup(op.param1,[op.param2])
+                        kk.kickoutFromGroup(op.param1,[op.param2])
                         kc.kickoutFromGroup(op.param1,[op.param2])
                         kd.kickoutFromGroup(op.param1,[op.param2])
+                        ke.kickoutFromGroup(op.param1,[op.param2])
+                        kf.kickoutFromGroup(op.param1,[op.param2])
+                        kg.kickoutFromGroup(op.param1,[op.param2])
                     except:
                         try:
-                            kc.kickoutFromGroup(op.param1,[op.param2])
-                            kd.kickoutFromGroup(op.param1,[op.param2])
+                           cl.kickoutFromGroup(op.param1,[op.param2])
+                           ki.kickoutFromGroup(op.param1,[op.param2])
+                           kk.kickoutFromGroup(op.param1,[op.param2])
+                           kc.kickoutFromGroup(op.param1,[op.param2])
+                           kd.kickoutFromGroup(op.param1,[op.param2])
+                           ke.kickoutFromGroup(op.param1,[op.param2])
+                           kf.kickoutFromGroup(op.param1,[op.param2])
+                           kg.kickoutFromGroup(op.param1,[op.param2])
                         except:
                             print ("clientが蹴り規制orグループに存在しない為、\n["+op.param1+"]\nの\n["+op.param2+"]\nを蹴る事ができませんでした。\nブラックリストに追加します。")
                         if op.param2 in wait["blacklist"]:
@@ -1707,12 +1733,24 @@ def bot(op):
                     if op.param2 in Bots:
                         return
                     try:
-                        kf.kickoutFromGroup(op.param1,[op.param2])
+                        cl.kickoutFromGroup(op.param1,[op.param2])
+                        ki.kickoutFromGroup(op.param1,[op.param2])
+                        kk.kickoutFromGroup(op.param1,[op.param2])
+                        kc.kickoutFromGroup(op.param1,[op.param2])
+                        kd.kickoutFromGroup(op.param1,[op.param2])
                         ke.kickoutFromGroup(op.param1,[op.param2])
+                        kf.kickoutFromGroup(op.param1,[op.param2])
+                        kg.kickoutFromGroup(op.param1,[op.param2])
                     except:
                         try:
-                            kd.kickoutFromGroup(op.param1,[op.param2])
-                            ke.kickoutFromGroup(op.param1,[op.param2])
+                           cl.kickoutFromGroup(op.param1,[op.param2])
+                           ki.kickoutFromGroup(op.param1,[op.param2])
+                           kk.kickoutFromGroup(op.param1,[op.param2])
+                           kc.kickoutFromGroup(op.param1,[op.param2])
+                           kd.kickoutFromGroup(op.param1,[op.param2])
+                           ke.kickoutFromGroup(op.param1,[op.param2])
+                           kf.kickoutFromGroup(op.param1,[op.param2])
+                           kg.kickoutFromGroup(op.param1,[op.param2])
                         except:
                             print ("clientが蹴り規制orグループに存在しない為、\n["+op.param1+"]\nの\n["+op.param2+"]\nを蹴る事ができませんでした。\nブラックリストに追加します。")
                         if op.param2 in wait["blacklist"]:
@@ -1733,7 +1771,7 @@ def bot(op):
                     ke.acceptGroupInvitationByTicket(op.param1,Ti)
                     kf.acceptGroupInvitationByTicket(op.param1,Ti)
                     kg.acceptGroupInvitationByTicket(op.param1,Ti)
-                    G = kc.getGroup(op.param1)
+                    G = random.choice(KAC).getGroup(op.param1)
                     G.preventJoinByTicket = True
                     kc.updateGroup(G)
                     Ticket = kc.reissueGroupTicket(op.param1)
@@ -1748,12 +1786,24 @@ def bot(op):
                     if op.param2 in Bots:
                         return
                     try:
+                        cl.kickoutFromGroup(op.param1,[op.param2])
+                        ki.kickoutFromGroup(op.param1,[op.param2])
+                        kk.kickoutFromGroup(op.param1,[op.param2])
+                        kc.kickoutFromGroup(op.param1,[op.param2])
+                        kd.kickoutFromGroup(op.param1,[op.param2])
                         ke.kickoutFromGroup(op.param1,[op.param2])
                         kf.kickoutFromGroup(op.param1,[op.param2])
+                        kg.kickoutFromGroup(op.param1,[op.param2])
                     except:
                         try:
-                            ke.kickoutFromGroup(op.param1,[op.param2])
-                            kf.kickoutFromGroup(op.param1,[op.param2])
+                           cl.kickoutFromGroup(op.param1,[op.param2])
+                           ki.kickoutFromGroup(op.param1,[op.param2])
+                           kk.kickoutFromGroup(op.param1,[op.param2])
+                           kc.kickoutFromGroup(op.param1,[op.param2])
+                           kd.kickoutFromGroup(op.param1,[op.param2])
+                           ke.kickoutFromGroup(op.param1,[op.param2])
+                           kf.kickoutFromGroup(op.param1,[op.param2])
+                           kg.kickoutFromGroup(op.param1,[op.param2])
                         except:
                             print ("clientが蹴り規制orグループに存在しない為、\n["+op.param1+"]\nの\n["+op.param2+"]\nを蹴る事ができませんでした。\nブラックリストに追加します。")
                         if op.param2 in wait["blacklist"]:
@@ -1786,15 +1836,27 @@ def bot(op):
                         wait["blacklist"][op.param2] = True
                         
                 if Dmid in op.param3:
-                    if op.param2 in Bots:
+                    if op.param2 in Bots + admin:
                         return
                     try:
-                        ki.kickoutFromGroup(op.param1,[op.param2])
                         cl.kickoutFromGroup(op.param1,[op.param2])
+                        ki.kickoutFromGroup(op.param1,[op.param2])
+                        kk.kickoutFromGroup(op.param1,[op.param2])
+                        kc.kickoutFromGroup(op.param1,[op.param2])
+                        kd.kickoutFromGroup(op.param1,[op.param2])
+                        ke.kickoutFromGroup(op.param1,[op.param2])
+                        kf.kickoutFromGroup(op.param1,[op.param2])
+                        kg.kickoutFromGroup(op.param1,[op.param2])
                     except:
                         try:
-                            ki.kickoutFromGroup(op.param1,[op.param2])
-                            cl.kickoutFromGroup(op.param1,[op.param2])
+                           cl.kickoutFromGroup(op.param1,[op.param2])
+                           ki.kickoutFromGroup(op.param1,[op.param2])
+                           kk.kickoutFromGroup(op.param1,[op.param2])
+                           kc.kickoutFromGroup(op.param1,[op.param2])
+                           kd.kickoutFromGroup(op.param1,[op.param2])
+                           ke.kickoutFromGroup(op.param1,[op.param2])
+                           kf.kickoutFromGroup(op.param1,[op.param2])
+                           kg.kickoutFromGroup(op.param1,[op.param2])
                         except:
                             print ("clientが蹴り規制orグループに存在しない為、\n["+op.param1+"]\nの\n["+op.param2+"]\nを蹴る事ができませんでした。\nブラックリストに追加します。")
                         if op.param2 in wait["blacklist"]:
@@ -1830,12 +1892,24 @@ def bot(op):
                     if op.param2 in Bots:
                         return
                     try:
-                        kf.kickoutFromGroup(op.param1,[op.param2])
+                        cl.kickoutFromGroup(op.param1,[op.param2])
+                        ki.kickoutFromGroup(op.param1,[op.param2])
+                        kk.kickoutFromGroup(op.param1,[op.param2])
+                        kc.kickoutFromGroup(op.param1,[op.param2])
                         kd.kickoutFromGroup(op.param1,[op.param2])
+                        ke.kickoutFromGroup(op.param1,[op.param2])
+                        kf.kickoutFromGroup(op.param1,[op.param2])
+                        kg.kickoutFromGroup(op.param1,[op.param2])
                     except:
                         try:
-                            kc.kickoutFromGroup(op.param1,[op.param2])
-                            ki.kickoutFromGroup(op.param1,[op.param2])
+                           cl.kickoutFromGroup(op.param1,[op.param2])
+                           ki.kickoutFromGroup(op.param1,[op.param2])
+                           kk.kickoutFromGroup(op.param1,[op.param2])
+                           kc.kickoutFromGroup(op.param1,[op.param2])
+                           kd.kickoutFromGroup(op.param1,[op.param2])
+                           ke.kickoutFromGroup(op.param1,[op.param2])
+                           kf.kickoutFromGroup(op.param1,[op.param2])
+                           kg.kickoutFromGroup(op.param1,[op.param2])
                         except:
                             print ("clientが蹴り規制orグループに存在しない為、\n["+op.param1+"]\nの\n["+op.param2+"]\nを蹴る事ができませんでした。\nブラックリストに追加します。")
                         if op.param2 in wait["blacklist"]:
@@ -1871,12 +1945,24 @@ def bot(op):
                     if op.param2 in Bots:
                         return
                     try:
+                        cl.kickoutFromGroup(op.param1,[op.param2])
+                        ki.kickoutFromGroup(op.param1,[op.param2])
                         kk.kickoutFromGroup(op.param1,[op.param2])
+                        kc.kickoutFromGroup(op.param1,[op.param2])
+                        kd.kickoutFromGroup(op.param1,[op.param2])
                         ke.kickoutFromGroup(op.param1,[op.param2])
+                        kf.kickoutFromGroup(op.param1,[op.param2])
+                        kg.kickoutFromGroup(op.param1,[op.param2])
                     except:
                         try:
-                            kk.kickoutFromGroup(op.param1,[op.param2])
-                            ke.kickoutFromGroup(op.param1,[op.param2])
+                           cl.kickoutFromGroup(op.param1,[op.param2])
+                           ki.kickoutFromGroup(op.param1,[op.param2])
+                           kk.kickoutFromGroup(op.param1,[op.param2])
+                           kc.kickoutFromGroup(op.param1,[op.param2])
+                           kd.kickoutFromGroup(op.param1,[op.param2])
+                           ke.kickoutFromGroup(op.param1,[op.param2])
+                           kf.kickoutFromGroup(op.param1,[op.param2])
+                           kg.kickoutFromGroup(op.param1,[op.param2])
                         except:
                             print ("clientが蹴り規制orグループに存在しない為、\n["+op.param1+"]\nの\n["+op.param2+"]\nを蹴る事ができませんでした。\nブラックリストに追加します。")
                         if op.param2 in wait["blacklist"]:
@@ -1886,7 +1972,7 @@ def bot(op):
                         else:
                             wait["blacklist"][op.param2] = True
 
-                    X = cl.getGroup(op.param1)
+                    X = kg.getGroup(op.param1)
                     X.preventJoinByTicket = False
                     kg.updateGroup(X)
                     Ti = kg.reissueGroupTicket(op.param1)
@@ -1912,12 +1998,24 @@ def bot(op):
                     if op.param2 in Bots:
                         return
                     try:
+                        cl.kickoutFromGroup(op.param1,[op.param2])
+                        ki.kickoutFromGroup(op.param1,[op.param2])
+                        kk.kickoutFromGroup(op.param1,[op.param2])
                         kc.kickoutFromGroup(op.param1,[op.param2])
+                        kd.kickoutFromGroup(op.param1,[op.param2])
                         ke.kickoutFromGroup(op.param1,[op.param2])
+                        kf.kickoutFromGroup(op.param1,[op.param2])
+                        kg.kickoutFromGroup(op.param1,[op.param2])
                     except:
                         try:
-                            kk.kickoutFromGroup(op.param1,[op.param2])
-                            ke.kickoutFromGroup(op.param1,[op.param2])
+                           cl.kickoutFromGroup(op.param1,[op.param2])
+                           ki.kickoutFromGroup(op.param1,[op.param2])
+                           kk.kickoutFromGroup(op.param1,[op.param2])
+                           kc.kickoutFromGroup(op.param1,[op.param2])
+                           kd.kickoutFromGroup(op.param1,[op.param2])
+                           ke.kickoutFromGroup(op.param1,[op.param2])
+                           kf.kickoutFromGroup(op.param1,[op.param2])
+                           kg.kickoutFromGroup(op.param1,[op.param2])
                         except:
                             print ("clientが蹴り規制orグループに存在しない為、\n["+op.param1+"]\nの\n["+op.param2+"]\nを蹴る事ができませんでした。\nブラックリストに追加します。")
                         if op.param2 in wait["blacklist"]:
@@ -1948,7 +2046,6 @@ def bot(op):
                         pass
                     else:
                         wait["blacklist"][op.param2] = True
-
         if op.type == 11:
 	    if op.param2 in Bots:
                 return
