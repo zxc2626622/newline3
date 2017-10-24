@@ -1137,7 +1137,7 @@ def bot(op):
                    print "EXECUTED -- BOT OUT GROUP"
                    try:
                        kj.leaveGroup(msg.to)
-                    except:
+                   except:
                         pass
 #-----------------------------------------------
             elif msg.text in ["Kill"]:
