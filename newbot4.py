@@ -1081,48 +1081,48 @@ def bot(op):
                     print "EXECUTED -- BOT OUT GROUP"
                     try:
                         ki.leaveGroup(msg.to)
-             elif msg.text in ["Kk bye"]:
-               if msg.from_ in admin:
-                     ginfo = kk.getGroup(msg.to)
-                     print "EXECUTED -- BOT OUT GROUP"
-                     try:
-                         kk.leaveGroup(msg.to)
-             elif msg.text in ["Kc bye"]:
-               if msg.from_ in admin:
-                     ginfo = kc.getGroup(msg.to)
-                     print "EXECUTED -- BOT OUT GROUP"
-                     try:
-                         kc.leaveGroup(msg.to)
-             elif msg.text in ["Ke bye"]:
-               if msg.from_ in admin:
-                     ginfo = ke.getGroup(msg.to)
-                     print "EXECUTED -- BOT OUT GROUP"
-                     try:
-                         ke.leaveGroup(msg.to)
-             elif msg.text in ["Kf bye"]:
-               if msg.from_ in admin:
-                     ginfo = kf.getGroup(msg.to)
-                     print "EXECUTED -- BOT OUT GROUP"
-                     try:
-                         kf.leaveGroup(msg.to)
-             elif msg.text in ["Kg bye"]:
-               if msg.from_ in admin:
-                     ginfo = kg.getGroup(msg.to)
-                     print "EXECUTED -- BOT OUT GROUP"
-                     try:
-                         kg.leaveGroup(msg.to)
-             elif msg.text in ["Kh bye"]:
-               if msg.from_ in admin:
-                     ginfo = cl.getGroup(msg.to)
-                     print "EXECUTED -- BOT OUT GROUP"
-                     try:
-                         kh.leaveGroup(msg.to)
-             elif msg.text in ["Kj bye"]:
-               if msg.from_ in admin:
-                    ginfo = kj.getGroup(msg.to)
+            elif msg.text in ["Kk bye"]:
+              if msg.from_ in admin:
+                    ginfo = kk.getGroup(msg.to)
                     print "EXECUTED -- BOT OUT GROUP"
                     try:
-                        kj.leaveGroup(msg.to)
+                        kk.leaveGroup(msg.to)
+            elif msg.text in ["Kc bye"]:
+              if msg.from_ in admin:
+                    ginfo = kc.getGroup(msg.to)
+                    print "EXECUTED -- BOT OUT GROUP"
+                    try:
+                        kc.leaveGroup(msg.to)
+            elif msg.text in ["Ke bye"]:
+              if msg.from_ in admin:
+                    ginfo = ke.getGroup(msg.to)
+                    print "EXECUTED -- BOT OUT GROUP"
+                    try:
+                        ke.leaveGroup(msg.to)
+            elif msg.text in ["Kf bye"]:
+              if msg.from_ in admin:
+                    ginfo = kf.getGroup(msg.to)
+                    print "EXECUTED -- BOT OUT GROUP"
+                    try:
+                        kf.leaveGroup(msg.to)
+            elif msg.text in ["Kg bye"]:
+              if msg.from_ in admin:
+                    ginfo = kg.getGroup(msg.to)
+                    print "EXECUTED -- BOT OUT GROUP"
+                    try:
+                        kg.leaveGroup(msg.to)
+            elif msg.text in ["Kh bye"]:
+              if msg.from_ in admin:
+                    ginfo = cl.getGroup(msg.to)
+                    print "EXECUTED -- BOT OUT GROUP"
+                    try:
+                        kh.leaveGroup(msg.to)
+            elif msg.text in ["Kj bye"]:
+              if msg.from_ in admin:
+                   ginfo = kj.getGroup(msg.to)
+                   print "EXECUTED -- BOT OUT GROUP"
+                   try:
+                       kj.leaveGroup(msg.to)
 #-----------------------------------------------
             elif msg.text in ["Kill"]:
               if msg.from_ in admin:
