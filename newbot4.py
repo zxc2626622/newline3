@@ -5,19 +5,19 @@ from datetime import datetime
 import time,random,sys,json,codecs,threading,glob
 
 cl = LINETCR.LINE()
-cl.login(token="Elzk1m560TwcSIB3FV95.iur748Us1jyfpKv4oxGLDq.30PSdT7hdIrRkyd1Ikkrs5Ml9hENm2WtgLpj/eFo5po=")
+cl.login(token="EmdM7Zyl2rWXg8JnGaO5.iur748Us1jyfpKv4oxGLDq.B3iAbZi66q9x+FuS+J14ifsmqAVk+zhR+vWRdPvMiSg=")
 cl.loginResult()
 
 ki = LINETCR.LINE()
-ki.login(token="Elsv5DxRRZgZjPbDkB2a.PzuIGrSfbi6ZimWr5ex5QG.rO6HusEKcfGCoDHF0KuogQdYpRiYhta/Yl0k7tCKaKo=")
+ki.login(token="EmOhQ37ziaqWaMnlGROa.PzuIGrSfbi6ZimWr5ex5QG.aUwiGBS5epFg/ifI8B3kapY9ZbqtUnxXZMYxHBY5czE=")
 ki.loginResult()
 
 kk = LINETCR.LINE()
-kk.login(token="EloPm0sIfTRihRdLX5Mf.DRgr2cTxeEiDATETLgm6FW.rqlOh97WYz1QflOnfwI1DpkRDM4eOohhY/89DEIWgZc=")
+kk.login(token="EmpPmPWhgilChlScBUDf.DRgr2cTxeEiDATETLgm6FW.7g1erLoWh4PpzVJwP/umZ4xBMCJS+ZI2w7ZzmhEMpZQ=")
 kk.loginResult()
 
 kc = LINETCR.LINE()
-kc.login(token="ElIt9cdB7Ta64OT5veP0.0xXKLPaf8b6wAiXZDw/zKa.t77swFKIB+DOE0A4dosJq4rtL1qeGVAE6DSwMLc9jiA=")
+kc.login(token="EmeAj5h6SaH67XauqCu0.0xXKLPaf8b6wAiXZDw/zKa.7TVBTINvHLwc0p+XWbxmf6Oq35x2Xorr9g6+liv0bqA=")
 kc.loginResult()
 
 kd = LINETCR.LINE()
@@ -303,11 +303,103 @@ def bot(op):
                 midd = msg.text.replace("Kick ","")
                 cl.kickoutFromGroup(msg.to,[midd])
                 print "SUKSES -- KICK BY MID"
+            elif "KiKick " in msg.text:
+              if msg.from_ in admin:
+                midd = msg.text.replace("KiKick ","")
+                ki.kickoutFromGroup(msg.to,[midd])
+            elif "KkKick " in msg.text:
+              if msg.from_ in admin:
+                midd = msg.text.replace("KkKick ","")
+                kk.kickoutFromGroup(msg.to,[midd])
+                print "SUKSES -- KICK BY MID"
+            elif "KcKick " in msg.text:
+              if msg.from_ in admin:
+                midd = msg.text.replace("KcKick ","")
+                kc.kickoutFromGroup(msg.to,[midd])
+            elif "KeKick " in msg.text:
+              if msg.from_ in admin:
+                midd = msg.text.replace("KeKick ","")
+                ke.kickoutFromGroup(msg.to,[midd])
+                print "SUKSES -- KICK BY MID"
+            elif "KfKick " in msg.text:
+              if msg.from_ in admin:
+                midd = msg.text.replace("KfKick ","")
+                kf.kickoutFromGroup(msg.to,[midd])
+                print "SUKSES -- KICK BY MID"
+            elif "KgKick " in msg.text:
+              if msg.from_ in admin:
+                midd = msg.text.replace("KgKick ","")
+                kg.kickoutFromGroup(msg.to,[midd])
+                print "SUKSES -- KICK BY MID"
+            elif "KhKick " in msg.text:
+              if msg.from_ in admin:
+                midd = msg.text.replace("KhKick ","")
+                kh.kickoutFromGroup(msg.to,[midd])
+                print "SUKSES -- KICK BY MID"
+            elif "KjKick " in msg.text:
+              if msg.from_ in admin:
+                midd = msg.text.replace("KjKick ","")
+                kj.kickoutFromGroup(msg.to,[midd])
+                print "SUKSES -- KICK BY MID"
             elif "Invite " in msg.text:
               if msg.from_ in admin:
                 midd = msg.text.replace("Invite ","")
                 cl.findAndAddContactsByMid(midd)
                 cl.inviteIntoGroup(msg.to,[midd])
+                print "SUKSES -- INVITED BY MID"
+            elif "KiInvite " in msg.text:
+              if msg.from_ in admin:
+                midd = msg.text.replace("KiInvite ","")
+                ki.findAndAddContactsByMid(midd)
+                ki.inviteIntoGroup(msg.to,[midd])
+                print "SUKSES -- INVITED BY MID"
+            elif "KkInvite " in msg.text:
+              if msg.from_ in admin:
+                midd = msg.text.replace("KkInvite ","")
+                kk.findAndAddContactsByMid(midd)
+                kk.inviteIntoGroup(msg.to,[midd])
+                print "SUKSES -- INVITED BY MID"
+            elif "KcInvite " in msg.text:
+              if msg.from_ in admin:
+                midd = msg.text.replace("KcInvite ","")
+                kc.findAndAddContactsByMid(midd)
+                kc.inviteIntoGroup(msg.to,[midd])
+                print "SUKSES -- INVITED BY MID"
+            elif "KdInvite " in msg.text:
+              if msg.from_ in admin:
+                midd = msg.text.replace("KdInvite ","")
+                kd.findAndAddContactsByMid(midd)
+                kd.inviteIntoGroup(msg.to,[midd])
+                print "SUKSES -- INVITED BY MID"
+            elif "KeInvite " in msg.text:
+              if msg.from_ in admin:
+                midd = msg.text.replace("KeInvite ","")
+                ke.findAndAddContactsByMid(midd)
+                ke.inviteIntoGroup(msg.to,[midd])
+                print "SUKSES -- INVITED BY MID"
+            elif "KfInvite " in msg.text:
+              if msg.from_ in admin:
+                midd = msg.text.replace("KfInvite ","")
+                kf.findAndAddContactsByMid(midd)
+                kf.inviteIntoGroup(msg.to,[midd])
+                print "SUKSES -- INVITED BY MID"         
+            elif "KgInvite " in msg.text:
+              if msg.from_ in admin:
+                midd = msg.text.replace("KgInvite ","")
+                kg.findAndAddContactsByMid(midd)
+                kg.inviteIntoGroup(msg.to,[midd])
+                print "SUKSES -- INVITED BY MID"
+            elif "KhInvite " in msg.text:
+              if msg.from_ in admin:
+                midd = msg.text.replace("KhInvite ","")
+                kh.findAndAddContactsByMid(midd)
+                kh.inviteIntoGroup(msg.to,[midd])
+                print "SUKSES -- INVITED BY MID"
+            elif "KjInvite " in msg.text:
+              if msg.from_ in admin:
+                midd = msg.text.replace("KjInvite ","")
+                kj.findAndAddContactsByMid(midd)
+                kj.inviteIntoGroup(msg.to,[midd])
                 print "SUKSES -- INVITED BY MID"
             elif msg.text in ["me","Me"]:
                 msg.contentType = 13
@@ -934,17 +1026,17 @@ def bot(op):
                     G.preventJoinByTicket(G)
                     ki.updateGroup(G)
 
-            elif msg.text in ["sagiri join"]:
-                  X = kc.getGroup(msg.to)
+            elif msg.text in ["Cl join"]:
+                  X = ki.getGroup(msg.to)
                   X.preventJoinByTicket = False
-                  kc.updateGroup(X)
+                  ki.updateGroup(X)
                   invsend = 0
-                  Ti = kc.reissueGroupTicket(msg.to)
+                  Ti = ki.reissueGroupTicket(msg.to)
                   cl.acceptGroupInvitationByTicket(msg.to,Ti)
-                  G = kc.getGroup(msg.to)
+                  G = cl.getGroup(msg.to)
                   G.preventJoinByTicket = True
-                  kc.updateGroup(G)
-                  Ticket = kc.reissueGroupTicket(msg.to)
+                  cl.updateGroup(G)
+                  Ticket = cl.reissueGroupTicket(msg.to)
 
 #-----------------------------------------------
 #.acceptGroupInvitationByTicket(msg.to,Ticket)
@@ -983,6 +1075,54 @@ def bot(op):
                         cl.leaveGroup(msg.to)
                     except:
                         pass
+            elif msg.text in ["Ki bye"]:
+              if msg.from_ in admin:
+                    ginfo = ki.getGroup(msg.to)
+                    print "EXECUTED -- BOT OUT GROUP"
+                    try:
+                        ki.leaveGroup(msg.to)
+            elif msg.text in ["Kk bye"]:
+              if msg.from_ in admin:
+                    ginfo = kk.getGroup(msg.to)
+                    print "EXECUTED -- BOT OUT GROUP"
+                    try:
+                        kk.leaveGroup(msg.to)
+            elif msg.text in ["Kc bye"]:
+              if msg.from_ in admin:
+                    ginfo = kc.getGroup(msg.to)
+                    print "EXECUTED -- BOT OUT GROUP"
+                    try:
+                        kc.leaveGroup(msg.to)
+            elif msg.text in ["Ke bye"]:
+              if msg.from_ in admin:
+                    ginfo = ke.getGroup(msg.to)
+                    print "EXECUTED -- BOT OUT GROUP"
+                    try:
+                        ke.leaveGroup(msg.to)
+            elif msg.text in ["Kf bye"]:
+              if msg.from_ in admin:
+                    ginfo = kf.getGroup(msg.to)
+                    print "EXECUTED -- BOT OUT GROUP"
+                    try:
+                        kf.leaveGroup(msg.to)
+            elif msg.text in ["Kg bye"]:
+              if msg.from_ in admin:
+                    ginfo = kg.getGroup(msg.to)
+                    print "EXECUTED -- BOT OUT GROUP"
+                    try:
+                        kg.leaveGroup(msg.to)
+            elif msg.text in ["Kh bye"]:
+              if msg.from_ in admin:
+                    ginfo = cl.getGroup(msg.to)
+                    print "EXECUTED -- BOT OUT GROUP"
+                    try:
+                        kh.leaveGroup(msg.to)
+            elif msg.text in ["Kj bye"]:
+              if msg.from_ in admin:
+                    ginfo = kj.getGroup(msg.to)
+                    print "EXECUTED -- BOT OUT GROUP"
+                    try:
+                        kj.leaveGroup(msg.to)
 #-----------------------------------------------
             elif msg.text in ["Kill"]:
               if msg.from_ in admin:
