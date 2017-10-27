@@ -6,7 +6,7 @@ import time,random,sys,json,codecs,threading,glob
 
 
 ad = LINETCR.LINE()
-ad.login(token="EmdM7Zyl2rWXg8JnGaO5.iur748Us1jyfpKv4oxGLDq.B3iAbZi66q9x+FuS+J14ifsmqAVk+zhR+vWRdPvMiSg=")
+ad.login(token="EmVQo91UCwZQqZHwqz3f.FyCqvzVAe2RNaWr3/dbP3W.6KlnpU/Gx8m1aDjKHIADcpDCs245BRED/VxmLuuw1l0=")
 ad.loginResult()
 
 cl = LINETCR.LINE()
