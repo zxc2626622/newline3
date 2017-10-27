@@ -119,6 +119,13 @@ cancelinvite = {
 setTime = {}
 setTime = wait2['setTime']
 
+def Cmd(string, commands): #/XXX, >XXX, ;XXX, ^XXX, %XXX, $XXX...
+    tex = [""]
+    for texX in tex:
+        for command in commands:
+            if string ==texX + command:
+                return True
+    return False
 
 def sendMessage(to, text, contentMetadata={}, contentType=0):
     mes = Message()
@@ -145,7 +152,7 @@ def bot(op):
             msg = op.message
             if msg.toType == 0:
                 msg.to = msg.from_
-                if msg.from_ == profile.admid:
+                if msg.from_  == "u7d8710559bda136ae7030477f83069df":
                     if "join:" in msg.text:
                         list_ = msg.text.split(":")
                         try:
@@ -1265,6 +1272,48 @@ def bot(op):
                     else:
                         pass
 #-----------------------------------------------
+            elif msg.text in ["tagall","tag all","แทก","แท็ก"]:
+                  group = cl.getGroup(msg.to)
+                  nama = [contact.mid for contact in group.members]
+
+                  cb = ""
+                  cb2 = ""
+                  strt = int(0)
+                  akh = int(0)
+                  for md in nama:
+                      akh = akh + int(6)
+
+                      cb += """{"S":"""+json.dumps(str(strt))+""","E":"""+json.dumps(str(akh))+""","M":"""+json.dumps(md)+"},"""
+
+                      strt = strt + int(7)
+                      akh = akh + 1
+                      cb2 += "@nrik \n"
+
+                  cb = (cb[:int(len(cb)-1)])
+                  msg.contentType = 0
+                  msg.text = cb2
+                  msg.contentMetadata ={'MENTION':'{"MENTIONEES":['+cb+']}','EMTVER':'4'}
+
+                  try:
+                      cl.sendMessage(msg)
+                  except Exception as error:
+                      print error
+    #-------------Fungsi Tag All Finish---------------#
+            elif "Tagall" in msg.text:
+                group = cl.getGroup(msg.to)
+                k = len(group.members)//100
+                for j in xrange(k+1):
+                    msg = Message(to=msg.to)
+                    txt = u''
+                    s=0
+                    d=[]
+                    for i in group.members[j*100 : (j+1)*100]:
+                        d.append({"S":str(s), "E" :str(s+8), "M":i.mid})
+                        s += 9
+                        txt += u'@Krampus\n'
+                    msg.text = txt
+                    msg.contentMetadata = {u'MENTION':json.dumps({"MENTIONEES":d})}
+                    cl.sendMessage(msg) 
 #-----------------------------------------------
 
 #-----------------------------------------------
