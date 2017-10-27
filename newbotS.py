@@ -169,7 +169,6 @@ def bot(op):
                 url = msg.contentMetadata("line://home/post?userMid="+mid+"&postId="+"new_post")
                 ad.like(url[25:58], url[66:], likeType=1001)
         if op.type == 25:
-            msg = op.message
             if msg.contentType == 13:
                if wait["wblack"] == True:
                     if msg.contentMetadata["mid"] in wait["commentBlack"]:
