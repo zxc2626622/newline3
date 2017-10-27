@@ -137,15 +137,15 @@ def bot(op):
             return 
         if op.type == 22:
             if wait["leaveRoom"] == True:
-                cl.leaveRoom(op.param1)
+                ad.leaveRoom(op.param1)
         if op.type == 24:
             if wait["leaveRoom"] == True:
-                cl.leaveRoom(op.param1)
+                ad.leaveRoom(op.param1)
         if op.type == 25:
             msg = op.message
             if msg.toType == 0:
                 msg.to = msg.from_
-                if msg.from_ == profile.mid:
+                if msg.from_ == profile.admid:
                     if "join:" in msg.text:
                         list_ = msg.text.split(":")
                         try:
@@ -157,10 +157,10 @@ def bot(op):
                             cl.sendText(msg.to,"error")
             if msg.toType == 1:
                 if wait["leaveRoom"] == True:
-                    cl.leaveRoom(msg.to)
+                    ad.leaveRoom(msg.to)
             if msg.contentType == 16:
                 url = msg.contentMetadata("line://home/post?userMid="+mid+"&postId="+"new_post")
-                cl.like(url[25:58], url[66:], likeType=1001)
+                ad.like(url[25:58], url[66:], likeType=1001)
         if op.type == 25:
             msg = op.message
             if msg.contentType == 13:
@@ -206,19 +206,19 @@ def bot(op):
                     msg.contentType = 0
                     cl.sendText(msg.to,msg.contentMetadata["mid"])
                     if 'displayName' in msg.contentMetadata:
-                        contact = cl.getContact(msg.contentMetadata["mid"])
+                        contact = ad.getContact(msg.contentMetadata["mid"])
                         try:
-                            cu = cl.channel.getCover(msg.contentMetadata["mid"])
+                            cu = ad.channel.getCover(msg.contentMetadata["mid"])
                         except:
                             cu = ""
-                        cl.sendText(msg.to,"[displayName]:\n" + msg.contentMetadata["displayName"] + "\n[mid]:\n" + msg.contentMetadata["mid"] + "\n[statusMessage]:\n" + contact.statusMessage + "\n[pictureStatus]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n[coverURL]:\n" + str(cu))
+                        ad.sendText(msg.to,"[displayName]:\n" + msg.contentMetadata["displayName"] + "\n[mid]:\n" + msg.contentMetadata["mid"] + "\n[statusMessage]:\n" + contact.statusMessage + "\n[pictureStatus]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n[coverURL]:\n" + str(cu))
                     else:
-                        contact = cl.getContact(msg.contentMetadata["mid"])
+                        contact = ad.getContact(msg.contentMetadata["mid"])
                         try:
-                            cu = cl.channel.getCover(msg.contentMetadata["mid"])
+                            cu = ad.channel.getCover(msg.contentMetadata["mid"])
                         except:
                             cu = ""
-                        cl.sendText(msg.to,"[displayName]:\n" + contact.displayName + "\n[mid]:\n" + msg.contentMetadata["mid"] + "\n[statusMessage]:\n" + contact.statusMessage + "\n[pictureStatus]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n[coverURL]:\n" + str(cu))
+                        ad.sendText(msg.to,"[displayName]:\n" + contact.displayName + "\n[mid]:\n" + msg.contentMetadata["mid"] + "\n[statusMessage]:\n" + contact.statusMessage + "\n[pictureStatus]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n[coverURL]:\n" + str(cu))
             elif msg.contentType == 16:
                 if wait["timeline"] == True:
                     msg.contentType = 0
@@ -233,7 +233,7 @@ def bot(op):
             elif msg.text in ["Key","help","Help","key"]:
                 msg = op.message
                 if wait["lang"] == "JP":
-                    cl.sendText(msg.to,helpMessage)
+                    ad.sendText(msg.to,helpMessage)
                 else:
                     print "SUKSES -- KEYWORD"
                     cl.sendText(msg.to,helpt)
@@ -397,17 +397,17 @@ def bot(op):
             elif msg.text in ["me","Me"]:
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': msg.from_}
-                cl.sendMessage(msg)
+                ad.sendMessage(msg)
                 print "SUKSES -- SEND CONTACT"
             elif msg.text in ["Yid","yid"]:
-                cl.sendText(msg.to,msg.from_)
+                ad.sendText(msg.to,msg.from_)
             elif msg.text in ["gift","Gift"]:
                 msg.contentType = 9
                 msg.contentMetadata={'PRDID': 'a0768339-c2d3-4189-9653-2909e9bb6f58',
                                     'PRDTYPE': 'THEME',
                                     'MSGTPL': '5'}
                 msg.text = None
-                cl.sendMessage(msg)
+                ad.sendMessage(msg)
                 print "SUKSES -- SEND GIFT"
             elif "jointicket " in msg.text.lower():
 		rplace=msg.text.lower().replace("jointicket ")
@@ -431,10 +431,10 @@ def bot(op):
             elif msg.text in ["cancel","Cancel"]:
               if msg.from_ in admin:
                 if msg.toType == 2:
-                    X = cl.getGroup(msg.to)
+                    X = ad.getGroup(msg.to)
                     if X.invitee is not None:
                         gInviMids = [contact.mid for contact in X.invitee]
-                        cl.cancelGroupInvitation(msg.to, gInviMids)
+                        ad.cancelGroupInvitation(msg.to, gInviMids)
                         print "SUKSES -- CANCEL INVITE GROUP"
                     else:
                         if wait["lang"] == "JP":
@@ -453,38 +453,38 @@ def bot(op):
             elif msg.text in ["Ourl","Link on","ourl","our","Our"]:
               if msg.from_ in admin:
                 if msg.toType == 2:
-                    X = cl.getGroup(msg.to)
+                    X = ad.getGroup(msg.to)
                     X.preventJoinByTicket = False
-                    cl.updateGroup(X)
+                    ad.updateGroup(X)
                     print "SUKSES -- OPEN URL GROUP"
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Done")
+                        ad.sendText(msg.to,"Done")
                     else:
-                        cl.sendText(msg.to,"already open")
+                        ad.sendText(msg.to,"already open")
                 else:
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Can not be used outside the group")
+                        ad.sendText(msg.to,"Can not be used outside the group")
                     else:
-                        cl.sendText(msg.to,"Not for use less than group")
+                        ad.sendText(msg.to,"Not for use less than group")
             elif msg.text in ["Curl","Link off","curl"]:
               if msg.from_ in admin:
                 if msg.toType == 2:
-                    X = cl.getGroup(msg.to)
+                    X = ad.getGroup(msg.to)
                     X.preventJoinByTicket = True
-                    cl.updateGroup(X)
+                    ad.updateGroup(X)
                     print "SUKSES -- CLOSE URL GROUP"
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Done")
+                        ad.sendText(msg.to,"Done")
                     else:
-                        cl.sendText(msg.to,"already close")
+                        ad.sendText(msg.to,"already close")
                 else:
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Can not be used outside the group")
+                        ad.sendText(msg.to,"Can not be used outside the group")
                     else:
-                        cl.sendText(msg.to,"Not for use less than group")
+                        ad.sendText(msg.to,"Not for use less than group")
             elif msg.text == "Ginfo":
                 if msg.toType == 2:
-                    ginfo = cl.getGroup(msg.to)
+                    ginfo = ad.getGroup(msg.to)
                     print "SUKSES -- SEND GINFO"
                     try:
                         gCreator = ginfo.creator.displayName
@@ -499,14 +499,14 @@ def bot(op):
                             u = "close"
                         else:
                             u = "open"
-                        cl.sendText(msg.to,"[group name]\n" + str(ginfo.name) + "\n[gid]\n" + msg.to + "\n[group creator]\n" + gCreator + "\n[profile status]\nhttp://dl.profile.line.naver.jp/" + ginfo.pictureStatus + "\nmembers:" + str(len(ginfo.members)) + "members\npending:" + sinvitee + "people\nURL:" + u + "it is inside")
+                        ad.sendText(msg.to,"[group name]\n" + str(ginfo.name) + "\n[gid]\n" + msg.to + "\n[group creator]\n" + gCreator + "\n[profile status]\nhttp://dl.profile.line.naver.jp/" + ginfo.pictureStatus + "\nmembers:" + str(len(ginfo.members)) + "members\npending:" + sinvitee + "people\nURL:" + u + "it is inside")
                     else:
-                        cl.sendText(msg.to,"[group name]\n" + str(ginfo.name) + "\n[gid]\n" + msg.to + "\n[group creator]\n" + gCreator + "\n[profile status]\nhttp://dl.profile.line.naver.jp/" + ginfo.pictureStatus)
+                        ad.sendText(msg.to,"[group name]\n" + str(ginfo.name) + "\n[gid]\n" + msg.to + "\n[group creator]\n" + gCreator + "\n[profile status]\nhttp://dl.profile.line.naver.jp/" + ginfo.pictureStatus)
                 else:
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Can not be used outside the group")
+                        ad.sendText(msg.to,"Can not be used outside the group")
                     else:
-                        cl.sendText(msg.to,"Not for use less than group")
+                        ad.sendText(msg.to,"Not for use less than group")
             elif "Id" == msg.text:
                 cl.sendText(msg.to,msg.to) 
             elif msg.text in ["Mid","mid","MID"]:
@@ -939,12 +939,12 @@ def bot(op):
             elif msg.text in ["Gurl"]:
               if msg.from_ in admin:
                 if msg.toType == 2:
-                    x = cl.getGroup(msg.to)
+                    x = ad.getGroup(msg.to)
                     if x.preventJoinByTicket == True:
                         x.preventJoinByTicket = False
-                        cl.updateGroup(x)
-                    gurl = cl.reissueGroupTicket(msg.to)
-                    cl.sendText(msg.to,"line://ti/g/" + gurl)
+                        ad.updateGroup(x)
+                    gurl = ad.reissueGroupTicket(msg.to)
+                    ad.sendText(msg.to,"line://ti/g/" + gurl)
                     print "SUKSES -- OPEN AND SHARE LINK GROUP"
                 else:
                     if wait["lang"] == "JP":
