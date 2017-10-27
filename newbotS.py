@@ -1974,7 +1974,7 @@ def bot(op):
 
                         G.preventJoinByTicket = False
                         cl.updateGroup(G)
-                        Ticket = cl..reissueGroupTicket(op.param1)
+                        Ticket = cl.reissueGroupTicket(op.param1)
                         ad.acceptGroupInvitationByTicket(op.param1,Ticket)
                         ki.acceptGroupInvitationByTicket(op.param1,Ticket)
                         kk.acceptGroupInvitationByTicket(op.param1,Ticket)
