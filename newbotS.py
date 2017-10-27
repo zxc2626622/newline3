@@ -64,7 +64,7 @@ sys.setdefaultencoding('utf-8')
 
 helpMessage ="""[Help 不給看勒]"""
 KAC=[cl,ki,kk,kc,kd,ke,kf,kg,kh,kj,kl,kn]
-admid = ad.getaProfile().mid
+admid = ad.getProfile().mid
 mid = cl.getProfile().mid
 Amid = ki.getProfile().mid
 Bmid = kk.getProfile().mid
