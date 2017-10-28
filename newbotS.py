@@ -2102,9 +2102,9 @@ def nameUpdate():
         #while a2():
             #pass
             if wait["clock"] == True:
-                profile = cl.getProfile()
+                profile = ad.getProfile()
                 profile.displayName = "Cl.Bot"
-                cl.updateProfile(profile)
+                ad.updateProfile(profile)
                 profile = ki.getProfile()
                 profile.displayName = "Ki.Bot"
                 ki.updateProfile(profile)
