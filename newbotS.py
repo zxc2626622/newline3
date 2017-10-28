@@ -139,7 +139,8 @@ def sendMessage(to, text, contentMetadata={}, contentType=0):
 
 def bot(op):
     msg = op.message
-    try:
+    try
+        msg = op.message
         if op.type == 0:
             return 
         if op.type == 22:
