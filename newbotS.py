@@ -169,6 +169,7 @@ def bot(op):
                 url = msg.contentMetadata("line://home/post?userMid="+mid+"&postId="+"new_post")
                 ad.like(url[25:58], url[66:], likeType=1001)
         if op.type == 25:
+            msg = op.message
             if msg.contentType == 13:
                if wait["wblack"] == True:
                     if msg.contentMetadata["mid"] in wait["commentBlack"]:
@@ -2212,11 +2213,11 @@ thread2.start()
 
 while True:
     try:
-        Ops = cl.fetchOps(cl.Poll.rev, 5)
+        Ops = ad.fetchOps(cl.Poll.rev, 5)
     except EOFError:
-        raise Exception("It might be wrong revision\n" + str(cl.Poll.rev))
+        raise Exception("It might be wrong revision\n" + str(ad.Poll.rev))
 
     for Op in Ops:
         if (Op.type != OpType.END_OF_OPERATION):
-            cl.Poll.rev = max(cl.Poll.rev, Op.revision)
+            ad.Poll.rev = max(ad.Poll.rev, Op.revision)
             bot(Op)
