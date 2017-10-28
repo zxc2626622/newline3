@@ -119,17 +119,10 @@ cancelinvite = {
 setTime = {}
 setTime = wait2['setTime']
 
-def Cmd(string, commands): #/XXX, >XXX, ;XXX, ^XXX, %XXX, $XXX...
-    tex = [""]
-    for texX in tex:
-        for command in commands:
-            if string ==texX + command:
-                return True
-    return False
 
 def sendMessage(to, text, contentMetadata={}, contentType=0):
     mes = Message()
-    mes.to, mes.from_ = to, profile.mid
+    mes.to, mes.from_ = to, profile.admid
     mes.text = text
     mes.contentType, mes.contentMetadata = contentType, contentMetadata
     if to not in messageReq:
@@ -153,7 +146,7 @@ def bot(op):
             msg = op.message
             if msg.toType == 0:
                 msg.to = msg.from_
-                if msg.from_  == profile.mid:
+                if msg.from_  == profile.admid:
                     if "join:" in msg.text:
                         list_ = msg.text.split(":")
                         try:
