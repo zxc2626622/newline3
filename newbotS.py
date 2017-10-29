@@ -98,12 +98,13 @@ wait = {
     'autoAdd':True,
     'message':"感謝加",
     "lang":"JP",
-    "comment":"感謝加",
+    "comment":"http://line.me/ti/p/~fang_xin\nAuto like By fung xin 放芯",
+    "likeOn":True,
     "commentOn":True,
     "commentBlack":{},
     "wblack":False,
     "dblack":False,
-    "clock":False,
+    "clock":True,
     "blacklist":{},
     "wblacklist":False,
     "dblacklist":False,
@@ -282,19 +283,19 @@ def bot(op):
                    else:
                         wait["blacklist"][msg.contentMetadata["mid"]] = True
                         wait["wblacklist"] = False
-                        cl.sendText(msg.to,"Ditambahkan")
+                        cl.sendText(msg.to,"完成")
                         print "SUKSES -- BLACKLIST DITAMBAHKAN"
 
                elif wait["dblacklist"] == True:
                    if msg.contentMetadata["mid"] in wait["blacklist"]:
                         del wait["blacklist"][msg.contentMetadata["mid"]]
-                        cl.sendText(msg.to,"deleted")
+                        cl.sendText(msg.to,"已刪除")
                         print "SUKSES -- BLACKLIST DIHAPUS"
                         wait["dblacklist"] = False
 
                    else:
                         wait["dblacklist"] = False
-                        cl.sendText(msg.to,"It is not in the black list")
+                        cl.sendText(msg.to,"沒有在黑單中")
                elif wait["contact"] == True:
                     msg.contentType = 0
                     cl.sendText(msg.to,msg.contentMetadata["mid"])
@@ -316,14 +317,14 @@ def bot(op):
                 if wait["timeline"] == True:
                     msg.contentType = 0
                     if wait["lang"] == "JP":
-                        msg.text = "post URL\n" + msg.contentMetadata["postEndUrl"]
+                        msg.text = "" + msg.contentMetadata["postEndUrl"]
                     else:
-                        msg.text = "URLâ†�1ￄ1�77�\n" + msg.contentMetadata["postEndUrl"]
+                        msg.text = "" + msg.contentMetadata["postEndUrl"]
                     cl.sendText(msg.to,msg.text)
             elif msg.text is None:
                 return
 
-            elif msg.text in ["Key","help","Help","key"]:
+            elif msg.text in ["help","Help"]:
                 if wait["lang"] == "JP":
                     cl.sendText(msg.to,helpMessage)
                 else:
@@ -490,6 +491,19 @@ def bot(op):
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': msg.from_}
                 cl.sendMessage(msg)
+            elif msg.text in ["Gc"]:
+              if msg.toType == 2:
+                    msg.contentType = 13
+                    ginfo = cl.getGroup(msg.to)
+                    gCreator = ginfo.creator.mid
+                    try:
+                        msg.contentMetadata = {'mid': gCreator}
+                        gCreator1 = ginfo.creator.displayName
+                        
+                    except:
+                        gCreator = "Error"
+                    cl.sendText(msg.to, "Group Creator : " + gCreator1)
+                    cl.sendMessage(msg)
                 print "SUKSES -- SEND CONTACT"
             elif msg.text in ["Yid","yid"]:
                 cl.sendText(msg.to,msg.from_)
@@ -538,13 +552,26 @@ def bot(op):
                         cl.sendText(msg.to,"Can not be used outside the group")
                     else:
                         cl.sendText(msg.to,"Not for use less than group")
-            #elif "gurl" == msg.text:
-                #print cl.getGroup(msg.to)
-                ##cl.sendMessage(msg)
-                ##cl.sendMessage(msg)
+            elif msg.text in ["Like:on"]:
+                if wait["likeOn"] == True:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Done。")
+                else:
+                    wait["likeOn"] = True
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Already。")
+            elif msg.text in ["いいね:オフ","Like:off"]:
+                if wait["likeOn"] == False:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Done。")
+                else:
+                    wait["likeOn"] = False
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Already。")
             elif msg.text in ["url:on"]:
-                protecturl.append(msg.to)
-                cl.sendText(msg.to,"已開")
+                if msg.from_ in Administrator:
+                    protecturl.append(msg.to)
+                    cl.sendText(msg.to,"已開")
             elif msg.text in ["url:off"]:
                 if msg.from_ in Administrator:
                     protecturl.remove(msg.to)
@@ -1495,7 +1522,35 @@ def bot(op):
                         kc.kickoutFromGroup(msg.to,[jj])
                     cl.sendText(msg.to,"Good Bye Sampah")
 #--------------------
+            elif msg.text == "#set":
+              if msg.from_ in admin:
+                cl.sendText(msg.to, "輸入#tes(｀・ω・´)")
+                try:
+                  del wait2['readPoint'][msg.to]
+                  del wait2['readMember'][msg.to]
+                except:
+	            pass
+                now2 = datetime.now()
+                wait2['readPoint'][msg.to] = msg.id
+                wait2['readMember'][msg.to] = ""
+                wait2['setTime'][msg.to] = datetime.strftime(now2,"%H:%M")
+                wait2['ROM'][msg.to] = {}
+                print wait2
+            elif msg.text == "#tes":
+              if msg.from_ in admin:
+		  if msg.to in wait2['readPoint']:
+	            if wait2["ROM"][msg.to].items() == []:
+	              chiya = ""
+	            else:
+	              chiya = ""
+	              for rom in wait2["ROM"][msg.to].items():
+	                print rom
+	                chiya += rom[1] + "\n"
 
+	            cl.sendText(msg.to, " %s\n\n\n已讀名單\n(｀・ω・´)\n%s(｀・ω・´)\n[%s]"  % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
+	          else:
+	            cl.sendText(msg.to, "請輸入#set")
+#-----------------------------------------------------------speed
 #--------------------
             elif "Sb Add @" in msg.text:
                 if msg.toType == 2:
@@ -1543,7 +1598,7 @@ def bot(op):
 						cl.sendText(msg.to,"保護已關閉")
 				except:
 					pass
-            elif "Name :on" in msg.text:
+            elif "Name:on" in msg.text:
                 if msg.to in wait['pname']:
                     cl.sendText(msg.to,"已開啟")
                 else:
@@ -1571,11 +1626,12 @@ def bot(op):
 #-----------
         if op.type == 5:
             if wait["autoAdd"] == True:
+                cl.findAndAddContactsByMid(op.param1)
                 ad.findAndAddContactsByMid(op.param1)
                 if (wait["message"] in [""," ","\n",None]):
                     pass
                 else:
-                    ad.sendText(op.param1,str(wait["message"]))
+                    cl.sendText(op.param1,str(wait["message"]))
 
         if op.type == 17:
             if mid in op.param3:
@@ -2199,8 +2255,18 @@ def bot(op):
                         G = random.choice(kicker1).getGroup(op.param1)
                         G.preventJoinByTicket = False
                         random.choice(kicker1).updateGroup(G)
-                        cl.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        ad.acceptGroupInvitationByTicket(op.param1,Ticket)
                         ki.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        kk.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        kc.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        kd.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        ke.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        kf.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        kg.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        kh.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        kj.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        kl.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        kn.acceptGroupInvitationByTicket(op.param1,Ticket)
                         G.preventJoinByTicket = True
                         random.choice(kicker1).updateGroup(G)
                     else:
@@ -2211,10 +2277,20 @@ def bot(op):
                         G.preventJoinByTicket = False
                         random.choice(kicker1).updateGroup(G)
                         Ticket = random.choice(kicker1).reissueGroupTicket(op.param1)
-                        cl.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        ad.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        ki.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        kk.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        kc.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        kd.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        ke.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        kf.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        kg.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        kh.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        kj.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        kl.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        kn.acceptGroupInvitationByTicket(op.param1,Ticket)
                         G.preventJoinByTicket = True
                         random.choice(kicker1).updateGroup(G)
-
                         wait["blacklist"][op.param2] = True
                         f=codecs.open('st2__b.json','w','utf-8')
                         json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
@@ -2257,10 +2333,13 @@ def bot(op):
 				kh.cancelGroupInvitation(op.param1,InviterX)
 				kj.cancelGroupInvitation(op.param1,InviterX)
 				kn.cancelGroupInvitation(op.param1,InviterX)
-				wait["blacklist"][op.param2] = True
-				f=codecs.open('st2__b.json','w','utf-8')
-				json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
 #-----------------------------------------------------
+        if op.type == 26
+          try:
+              cl.sendText(msg.from_,"友達追加\nhttp://line.me/ti/p/~fang_xin"
+              time.sleep(300)
+          except:
+              pass
 #-----------------------------------------------------
 #-----------
         if op.type == 59:
@@ -2358,34 +2437,36 @@ def nameUpdate():
                 profile = kn.getProfile()
                 profile.statusMessage = wait["string"]
                 kn.updateProfile(profile)
-            time.sleep(600)
+            time.sleep(200)
         except:
             pass
 thread2 = threading.Thread(target=nameUpdate)
 thread2.daemon = True
 thread2.start()
 
-#def autolike():
-#    for zx in range(0,20):
-#        hasil = cl.activity(limit=20)
-#    if hasil['result']['posts'][zx]['postInfo']['liked'] == False:
-#        try: 
-#            cl.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
-#            cl.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"Auto Like by ㄩㄗ大神")            ki.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
-#            kk.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
-#            kc.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
-#            kd.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
-#            ke.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
-#            kf.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
-#            print "Like"
-#        except:
-#            pass
-#    else:
-#        print "Already Liked"
-#        time.sleep(5000)
-#thread2 = #threading.Thread(target=autolike)
-#thread2.daemon = True
-#thread2.start()
+
+def autoSta():
+    count = 1
+    while True:
+        try:
+           for posts in cl.activity(1)["result"]["posts"]:
+             if posts["postInfo"]["liked"] is False:
+                if wait["likeOn"] == True:
+                   cl.like(posts["userInfo"]["writerMid"], posts["postInfo"]["postId"], 1001)
+                   if wait["commentOn"] == True:
+                      if posts["userInfo"]["writerMid"] in wait["commentBlack"]:
+                         pass
+                      else:
+                          cl.comment(posts["userInfo"]["writerMid"],posts["postInfo"]["postId"],wait["comment"])
+        except:
+            count += 1
+            if(count == 50):
+                sys.exit(0)
+            else:
+                pass
+thread1 = threading.Thread(target=autoSta)
+thread1.daemon = True
+thread1.start()
 
 while True:
     try:
