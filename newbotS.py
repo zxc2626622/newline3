@@ -2435,7 +2435,7 @@ thread2 = threading.Thread(target=nameUpdate)
 thread2.daemon = True
 thread2.start()
 
-def nameUpdate():
+def message():
     while True:
         try:
             if wait["msge"] == True:
@@ -2444,7 +2444,7 @@ def nameUpdate():
             time.sleep(600)
         except:
             pass
-thread2 = threading.Thread(target=nameUpdate)
+thread2 = threading.Thread(target=message)
 thread2.daemon = True
 thread2.start()
 
