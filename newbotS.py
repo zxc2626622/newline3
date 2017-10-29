@@ -77,7 +77,7 @@ Hmid = kh.getProfile().mid
 Jmid = kj.getProfile().mid
 Lmid = kl.getProfile().mid
 Nmid = kn.getProfile().mid
-Bots=[admid,mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Jmid,Lmid,Nmid]
+Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Jmid,Lmid,Nmid,admid]
 admin = ["u7d8710559bda136ae7030477f83069df"]
 wait = {
     'protect':False,
@@ -131,8 +131,8 @@ def sendMessage(to, text, contentMetadata={}, contentType=0):
 
 
 def bot(op):
-    msg = op.message
     try:
+        msg = op.message
         if op.type == 0:
             return 
         if op.type == 22:
@@ -145,7 +145,7 @@ def bot(op):
             msg = op.message
             if msg.toType == 0:
                 msg.to = msg.from_
-                if msg.from_  == profile.mid:
+                if msg.from_ == profile.mid:
                     if "join:" in msg.text:
                         list_ = msg.text.split(":")
                         try:
@@ -231,7 +231,6 @@ def bot(op):
                 return
 
             elif msg.text in ["Key","help","Help","key"]:
-                msg = op.message
                 if wait["lang"] == "JP":
                     cl.sendText(msg.to,helpMessage)
                 else:
@@ -2206,11 +2205,11 @@ thread2.start()
 
 while True:
     try:
-        Ops = ad.fetchOps(cl.Poll.rev, 5)
+        Ops = cl.fetchOps(cl.Poll.rev, 5)
     except EOFError:
-        raise Exception("It might be wrong revision\n" + str(ad.Poll.rev))
+        raise Exception("It might be wrong revision\n" + str(cl.Poll.rev))
 
     for Op in Ops:
         if (Op.type != OpType.END_OF_OPERATION):
-            ad.Poll.rev = max(ad.Poll.rev, Op.revision)
+            cl.Poll.rev = max(ad.Poll.rev, Op.revision)
             bot(Op)
