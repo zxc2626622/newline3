@@ -498,13 +498,11 @@ def bot(op):
                     gCreator = ginfo.creator.mid
                     try:
                         msg.contentMetadata = {'mid': gCreator}
-                        gCreator1 = ginfo.creator.displayName
-                        
+                        gCreator1 = ginfo.creator.displayName                
                     except:
                         gCreator = "Error"
                     cl.sendText(msg.to, "Group Creator : " + gCreator1)
                     cl.sendMessage(msg)
-                print "SUKSES -- SEND CONTACT"
             elif msg.text in ["Yid","yid"]:
                 cl.sendText(msg.to,msg.from_)
             elif msg.text in ["gift","Gift"]:
