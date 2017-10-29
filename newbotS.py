@@ -2332,7 +2332,7 @@ def bot(op):
 				kj.cancelGroupInvitation(op.param1,InviterX)
 				kn.cancelGroupInvitation(op.param1,InviterX)
 #-----------------------------------------------------
-        if op.type == 26
+        if op.type == 26:
           try:
               cl.sendText(msg.from_,"友達追加\nhttp://line.me/ti/p/~fang_xin"
               time.sleep(300)
