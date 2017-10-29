@@ -2334,8 +2334,8 @@ def bot(op):
 #-----------------------------------------------------
         if op.type == 26:
           try:
-              cl.sendText(msg.from_,"友達追加\nhttp://line.me/ti/p/~fang_xin"
-           time.sleep(300)
+              cl.sendText(msg.from_,"友達追加\nhttp://line.me/ti/p/~fang_xin")
+          time.sleep(300)
           except:
               pass
 #-----------------------------------------------------
