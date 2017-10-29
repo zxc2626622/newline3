@@ -104,6 +104,7 @@ wait = {
     "commentBlack":{},
     "wblack":False,
     "dblack":False,
+    "msge":True,
     "clock":True,
     "blacklist":{},
     "wblacklist":False,
@@ -2334,8 +2335,9 @@ def bot(op):
 #-----------------------------------------------------
         if op.type == 26:
           try:
-              cl.sendText(msg.from_,"友達追加\nhttp://line.me/ti/p/~fang_xin")
-          time.sleep(300)
+              if wait["msge"] == True:
+                  cl.sendText(msg.from_,"友達追加\nhttp://line.me/ti/p/~fang_xin")
+              time.sleep(300)
           except:
               pass
 #-----------------------------------------------------
@@ -2359,8 +2361,6 @@ def a2():
 def nameUpdate():
     while True:
         try:
-        #while a2():
-            #pass
             if wait["clock"] == True:
                 profile = ad.getProfile()
                 profile.displayName = "Cl.Bot"
