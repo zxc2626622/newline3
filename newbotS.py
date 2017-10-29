@@ -2193,7 +2193,8 @@ def bot(op):
 
                 elif op.param3 in op.param3:
                     if op.param1 in protection:
-                    if op.param2 in admin:
+                        OWN = "u7d8710559bda136ae7030477f83069df"
+                    if op.param2 in OWN:
                         kicker1 = [cl,ki,kk,kc,kd,ke,kf,kg,kh,kj,kl,kn]
                         G = random.choice(kicker1).getGroup(op.param1)
                         G.preventJoinByTicket = False
