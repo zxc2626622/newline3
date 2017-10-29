@@ -2222,48 +2222,6 @@ def bot(op):
             except:
                 pass
 
-        if op.type == 11:
-	    if op.param2 in Bots:
-                return
-            if op.param2 in admin:
-                return
-	    elif wait ["protectqr"] == True:
-		X = random.choice(KAC).getGroup(op.param1)
-		X.preventJoinByTicket = True
-		random.choice(KAC).updateGroup(X)
-	    else:
-		pass
-                
-	if op.type == 19:
-            if op.param2 in Bots:
-                return
-            if op.param2 in admin:
-                return
-            elif wait ["protect"] == True:
-                random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
-                random.choice(KAC).inviteIntoGroup(op.param1,[op.param3])
-
-        if op.type == 13:
-            if op.param2 in Bots:
-                return
-            if op.param2 in admin:
-                return
-	    if wait ["protectinv"] == True:
-                try:
-                    X = cl.getGroup(op.param1)
-                    gInviMids = [contact.mid for contact in X.invitee]
-                    cl.cancelGroupInvitation(msg.to, gInviMids)
-                    print gInviMids + "INVITE CANCEL"
-                except:
-                    try:
-                        print "RETRY CANCEL INVITATION"
-                        X = cl.getGroup(op.param1)
-                        gInviMids = [contact.mid for contact in X.invitee]
-                        cl.cancelGroupInvitation(op.param1, gInviMids)
-                        print gInviMids + "INVITE CANCELED"
-                    except:
-                        print "BOT CAN'T CANCEL THE INVITATION"
-                        pass
         if op.param3 == "1":
             if op.param1 in protectname:
                 group = cl.getGroup(op.param1)
@@ -2277,7 +2235,7 @@ def bot(op):
                 except Exception as e:
                     print e
                     pass
-                                        pass
+                             
                     
         if op.param1 in autocancel:
 			OWN = "u7d8710559bda136ae7030477f83069df"
