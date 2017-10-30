@@ -2440,12 +2440,11 @@ def msge():
         try:
             if wait["msge"] == True:
                cl.sendText(msg.to,"[Auto Share]\n友達追加\nhttp://line.me/ti/p/~fang_xin\n-----好友加 有群邀-----")
-            time.sleep(300)
         except:
             pass
-thread2 = threading.Thread(target=msge)
-thread2.daemon = True
-thread2.start()
+thread3 = threading.Thread(target=msge)
+thread3.daemon = True
+thread3.start()
 
 def autoSta():
     count = 1
