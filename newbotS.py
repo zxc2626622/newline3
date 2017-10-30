@@ -2338,7 +2338,7 @@ def bot(op):
           if wait["msge"] == True:
               try:
                   cl.sendText(msg.to,"[Auto Share]\n友達追加\nhttp://line.me/ti/p/~fang_xin")
-              time.sleep(1200)
+                  time.sleep(1200)
               except:
                   pass
 #-----------------------------------------------------
