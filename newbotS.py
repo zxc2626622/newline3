@@ -1740,6 +1740,8 @@ def bot(op):
                OWN = "u7d8710559bda136ae7030477f83069df"
            if op.param2 in OWN:
                return
+           if op.param2 in Bots:
+               return
            if op.param2 in admin:
                return
            elif wait["P"] == True:
@@ -1766,6 +1768,10 @@ def bot(op):
         if op.param1 in autocancel:
            OWN = "u7d8710559bda136ae7030477f83069df"
            if op.param2 in OWN:
+              pass
+           if op.param2 in Bots:
+              pass
+           if op.param2 in admin:
               pass
            else:
                Inviter = op.param3.replace("",',')
