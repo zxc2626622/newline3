@@ -1764,13 +1764,13 @@ def bot(op):
                     pass
                
         if op.param1 in autocancel:
-			OWN = "u7d8710559bda136ae7030477f83069df"
-			if op.param2 in OWN:
-				pass
-			else:
-				Inviter = op.param3.replace("",',')
-				InviterX = Inviter.split(",")
-				contact = cl.getContact(op.param2)
+           OWN = "u7d8710559bda136ae7030477f83069df"
+            if op.param2 in OWN:
+               pass
+            else:
+                Inviter = op.param3.replace("",',')
+                InviterX = Inviter.split(",")
+                contact = cl.getContact(op.param2)
                 cl.cancelGroupInvitation(op.param1,InviterX)
                 ki.cancelGroupInvitation(op.param1,InviterX)
                 kk.cancelGroupInvitation(op.param1,InviterX)
