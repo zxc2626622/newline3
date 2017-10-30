@@ -1735,21 +1735,19 @@ def bot(op):
                         except:
                             print "Bot can't cancel the invitation"
                             pass
-        if op.type == 19:
-            try:          
-                 if op.param1 in protection:
-                    OWN = "u7d8710559bda136ae7030477f83069df"
-                    if op.param2 in OWN:
-                        return
-                      if op.param2 in admin:
-                          return
-                      elif wait["P"] == True:
-                          random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
-                          wait["blacklist"][op.param2] = True
-                          f=codecs.open('st2__b.json','w','utf-8')
-                          json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
-            except:
-                pass 
+        if op.type == 19:        
+           if op.param1 in protection:
+               OWN = "u7d8710559bda136ae7030477f83069df"
+           if op.param2 in OWN:
+               return
+           if op.param2 in admin:
+               return
+           elif wait["P"] == True:
+                  random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                  wait["blacklist"][op.param2] = True
+                  f=codecs.open('st2__b.json','w','utf-8')
+                  json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
+
    
         if op.type == 19:
             try:
