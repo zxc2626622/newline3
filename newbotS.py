@@ -1739,9 +1739,9 @@ def bot(op):
                  if op.param1 in protection:
                         OWN = "u7d8710559bda136ae7030477f83069df"
                     if op.param2 in OWN:
-                        pass
+                        return
                     if op.param2 in admin:
-                        pass
+                        return
                     else:
                         random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
                         wait["blacklist"][op.param2] = True
@@ -2325,9 +2325,9 @@ def bot(op):
         if op.param1 in autocancel:
 			OWN = "u7d8710559bda136ae7030477f83069df"
 			if op.param2 in OWN:
-				pass
+				return
 		    if op.param2 im admin:
-			    pass
+			    return
 			else:
 				Inviter = op.param3.replace("",',')
 				InviterX = Inviter.split(",")
