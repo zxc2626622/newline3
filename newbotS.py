@@ -2336,10 +2336,11 @@ def bot(op):
 
         if op.type == 26:
           if wait["msge"] == True:
-             cl.sendText(msg.to,"[Auto Share]\n友達追加\nhttp://line.me/ti/p/~fang_xin")
-          time.sleep(1200)
-          except:
-              pass
+              try:
+                  cl.sendText(msg.to,"[Auto Share]\n友達追加\nhttp://line.me/ti/p/~fang_xin")
+              time.sleep(1200)
+              except:
+                  pass
 #-----------------------------------------------------
 #-----------
         if op.type == 59:
