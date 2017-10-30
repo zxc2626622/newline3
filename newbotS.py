@@ -1779,9 +1779,9 @@ def bot(op):
                                                              kn.kickoutFromGroup(op.param1,[op.param2])
                                                          except:
                                                              pass
-                  wait["blacklist"][op.param2] = True
-                  f=codecs.open('st2__b.json','w','utf-8')
-                  json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
+                                                             wait["blacklist"][op.param2] = True
+                                                             f=codecs.open('st2__b.json','w','utf-8')
+                                                             json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
 
    
         if op.param3 == "1":
