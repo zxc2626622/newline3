@@ -1741,12 +1741,14 @@ def bot(op):
                     if op.param2 in OWN:
                         return
                       if op.param2 in admin:
-                          return
-                      else:
+                          pass
+                     try:
                           random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
                           wait["blacklist"][op.param2] = True
                           f=codecs.open('st2__b.json','w','utf-8')
                           json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
+                     except:
+                         pass
         if op.type == 19:
             try:
                 if op.param3 in mid:
