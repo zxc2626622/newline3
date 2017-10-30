@@ -1745,7 +1745,40 @@ def bot(op):
            if op.param2 in admin:
                return
            elif wait["P"] == True:
-                  random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                 try:
+                     ki.kickoutFromGroup(op.param1,[op.param2])
+                  except:
+                      try:
+                          kk.kickoutFromGroup(op.param1,[op.param2])
+                       except:
+                           try:
+                               kc.kickoutFromGroup(op.param1,[op.param2])
+                           except:
+                               try:
+                                   kd.kickoutFromGroup(op.param1,[op.param2])
+                               except:
+                                   try:
+                                       ke.kickoutFromGroup(op.param1,[op.param2])
+                                   except:
+                                       try:
+                                           kf.kickoutFromGroup(op.param1,[op.param2])
+                                       except:
+                                           try:
+                                               kg.kickoutFromGroup(op.param1,[op.param2])
+                                           except:
+                                               try:
+                                                   kh.kickoutFromGroup(op.param1,[op.param2])
+                                               except:
+                                                   try:
+                                                       kj.kickoutFromGroup(op.param1,[op.param2])
+                                                   except:
+                                                       try:
+                                                           kl.kickoutFromGroup(op.param1,[op.param2])
+                                                       except:
+                                                           try:
+                                                               kn.kickoutFromGroup(op.param1,[op.param2])
+                                                           except:
+                                                               pass
                   wait["blacklist"][op.param2] = True
                   f=codecs.open('st2__b.json','w','utf-8')
                   json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
@@ -1788,6 +1821,7 @@ def bot(op):
                kg.cancelGroupInvitation(op.param1,InviterX)
                kh.cancelGroupInvitation(op.param1,InviterX)
                kj.cancelGroupInvitation(op.param1,InviterX)
+               kl.cancelGroupInvitation(op.param1,InviterX)
                kn.cancelGroupInvitation(op.param1,InviterX)            
 
 
@@ -2413,9 +2447,9 @@ def nameUpdate():
                 profile.displayName = "Kn.Bot"
                 kn.updateProfile(profile)
                 
-                profile = cl.getProfile()
-                profile.statusMessage = wait["string"]
-                cl.updateProfile(profile)
+                #profile = cl.getProfile()
+                #profile.statusMessage = wait["string"]
+                #cl.updateProfile(profile)
                 profile = ki.getProfile()
                 profile.statusMessage = wait["string"]
                 ki.updateProfile(profile)
