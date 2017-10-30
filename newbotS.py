@@ -1694,7 +1694,7 @@ def bot(op):
                     cl.sendText(msg.to,"黑單勿近")
 
         if op.type == 13:
-            if admid in op.param3:
+            if mid in op.param3:
                 if wait["autoJoin"] == True:
                     cl.acceptGroupInvitation(op.param1)
                     print "BOT 1 Joined"
