@@ -2328,24 +2328,25 @@ def bot(op):
 		    OWN = "u7d8710559bda136ae7030477f83069df"
 			if op.param2 in OWN:
                 return
-		    if op.param2 im admin:
+            if op.param2 im admin:
 	            return
-			  else:
-				  Inviter = op.param3.replace("",',')
-				  InviterX = Inviter.split(",")
-				  contact = cl.getContact(op.param2)
-				  cl.cancelGroupInvitation(op.param1,InviterX)
-				  ki.cancelGroupInvitation(op.param1,InviterX)
-				  kk.cancelGroupInvitation(op.param1,InviterX)
-				  kk.cancelGroupInvitation(op.param1,InviterX)
-				  kc.cancelGroupInvitation(op.param1,InviterX)
-				  kd.cancelGroupInvitation(op.param1,InviterX)
-				  ke.cancelGroupInvitation(op.param1,InviterX)
-				  kf.cancelGroupInvitation(op.param1,InviterX)
-				  kg.cancelGroupInvitation(op.param1,InviterX)
-				  kh.cancelGroupInvitation(op.param1,InviterX)
-				  kj.cancelGroupInvitation(op.param1,InviterX)
-				  kn.cancelGroupInvitation(op.param1,InviterX)
+		    else:
+		        Inviter = op.param3.replace("",',')
+				InviterX = Inviter.split(",")
+		        contact = cl.getContact(op.param2)
+				cl.cancelGroupInvitation(op.param1,InviterX)
+				ki.cancelGroupInvitation(op.param1,InviterX)
+				kk.cancelGroupInvitation(op.param1,InviterX)
+				kk.cancelGroupInvitation(op.param1,InviterX)
+				kc.cancelGroupInvitation(op.param1,InviterX)
+				kd.cancelGroupInvitation(op.param1,InviterX)
+				ke.cancelGroupInvitation(op.param1,InviterX)
+				kf.cancelGroupInvitation(op.param1,InviterX)
+				kg.cancelGroupInvitation(op.param1,InviterX)
+			    kh.cancelGroupInvitation(op.param1,InviterX)
+				kj.cancelGroupInvitation(op.param1,InviterX)
+				kn.cancelGroupInvitation(op.param1,InviterX)
+#----------------------------------------------------------------------------------
 #-----------------------------------------------------
 #-----------------------------------------------------
 #-----------
