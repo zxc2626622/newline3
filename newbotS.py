@@ -1737,7 +1737,7 @@ def bot(op):
         if op.type == 19:
             try:          
                  if op.param1 in protection:
-                        OWN = "u7d8710559bda136ae7030477f83069df"
+                    OWN = "u7d8710559bda136ae7030477f83069df"
                     if op.param2 in OWN:
                         return
                       if op.param2 in admin:
@@ -2323,7 +2323,7 @@ def bot(op):
                              
                     
         if op.param1 in autocancel:
-			OWN = "u7d8710559bda136ae7030477f83069df"
+		    OWN = "u7d8710559bda136ae7030477f83069df"
 			if op.param2 in OWN:
 				return
 		      if op.param2 im admin:
