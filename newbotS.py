@@ -1742,7 +1742,7 @@ def bot(op):
                         return
                     if op.param2 in admin:
                         return
-                       try:  
+                       try:
                             random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
                             wait["blacklist"][op.param2] = True
                             f=codecs.open('st2__b.json','w','utf-8')
