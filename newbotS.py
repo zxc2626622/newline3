@@ -1550,6 +1550,52 @@ def bot(op):
 	          else:
 	            cl.sendText(msg.to, "請輸入#set")
 #-----------------------------------------------------------speed
+            elif "Admin add @" in msg.text:
+                if msg.from_ in admin:
+                    print "[Command]Staff add executing"
+                    _name = msg.text.replace("Admin add @","")
+                    _nametarget = _name.rstrip('  ')
+                    gs = cl.getGroup(msg.to)
+                    targets = []
+                    for g in gs.members:
+                        if _nametarget == g.displayName:
+                            targets.append(g.mid)
+                    if targets == []:
+                        ki.sendText(msg.to,"Contact not found")
+                    else:
+                        for target in targets:
+                            try:
+                                admin.append(target)
+                                cl.sendText(msg.to,"已給權")
+                            except:
+                                pass
+                    print "[Command]Staff add executed"
+                else:
+                    cl.sendText(msg.to,"Command denied.")
+                    cl.sendText(msg.to,"Admin permission required.")
+            elif "Admin remove @" in msg.text:
+                if msg.from_ in admin:
+                    print "[Command]Staff remove executing"
+                    _name = msg.text.replace("Admin remove @","")
+                    _nametarget = _name.rstrip('  ')
+                    gs = cl.getGroup(msg.to)
+                    targets = []
+                    for g in gs.members:
+                        if _nametarget == g.displayName:
+                            targets.append(g.mid)
+                    if targets == []:
+                        ki.sendText(msg.to,"Contact not found")
+                    else:
+                        for target in targets:
+                            try:
+                                admin.remove(target)
+                                cl.sendText(msg.to,"已移除")
+                            except:
+                                pass
+                    print "[Command]Staff remove executed"
+                else:
+                    cl.sendText(msg.to,"Command denied.")
+                    cl.sendText(msg.to,"Admin permission required.")
 #--------------------
             elif "Sb Add @" in msg.text:
                 if msg.toType == 2:
@@ -1688,7 +1734,19 @@ def bot(op):
                         except:
                             print "Bot can't cancel the invitation"
                             pass
-
+        if op.type == 19:
+            try:          
+                 if op.param1 in protection:
+                        OWN = "u7d8710559bda136ae7030477f83069df"
+                    if op.param2 in OWN:
+                        pass
+                    if op.param2 in admin:
+                        pass
+                    else:
+                        random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                        wait["blacklist"][op.param2] = True
+                        f=codecs.open('st2__b.json','w','utf-8')
+                        json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
         if op.type == 19:
             try:
                 if op.param3 in mid:
@@ -2245,55 +2303,7 @@ def bot(op):
                         kn.acceptGroupInvitationByTicket(op.param1,Ticket)
                         G.preventJoinByTicket = True
                         kk.updateGroup(G)
-
-                elif op.param3 in op.param3:
-                    if op.param1 in protection:
-                        OWN = "u7d8710559bda136ae7030477f83069df"
-                    if op.param2 in OWN:
-                        kicker1 = [cl,ki,kk,kc,kd,ke,kf,kg,kh,kj,kl,kn]
-                        G = random.choice(kicker1).getGroup(op.param1)
-                        G.preventJoinByTicket = False
-                        random.choice(kicker1).updateGroup(G)
-                        ad.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        ki.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        kk.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        kc.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        kd.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        ke.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        kf.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        kg.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        kh.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        kj.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        kl.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        kn.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        G.preventJoinByTicket = True
-                        random.choice(kicker1).updateGroup(G)
-                    else:
-                        G = random.choice(kicker1).getGroup(op.param1)
-
-                        random.choice(kicker1).kickoutFromGroup(op.param1,[op.param2])
-
-                        G.preventJoinByTicket = False
-                        random.choice(kicker1).updateGroup(G)
-                        Ticket = random.choice(kicker1).reissueGroupTicket(op.param1)
-                        ad.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        ki.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        kk.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        kc.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        kd.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        ke.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        kf.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        kg.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        kh.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        kj.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        kl.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        kn.acceptGroupInvitationByTicket(op.param1,Ticket)
-                        G.preventJoinByTicket = True
-                        random.choice(kicker1).updateGroup(G)
-                        wait["blacklist"][op.param2] = True
-                        f=codecs.open('st2__b.json','w','utf-8')
-                        json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
-                      
+                    
             except:
                 pass
 
@@ -2316,6 +2326,8 @@ def bot(op):
 			OWN = "u7d8710559bda136ae7030477f83069df"
 			if op.param2 in OWN:
 				pass
+		    if op.param2 im admin:
+			    pass
 			else:
 				Inviter = op.param3.replace("",',')
 				InviterX = Inviter.split(",")
