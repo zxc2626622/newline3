@@ -2330,7 +2330,7 @@ def bot(op):
             return
         if op.param2 im admin:
 	        return
-		else:
+		elif wait["P"] == True:
 		    Inviter = op.param3.replace("",',')
 	        InviterX = Inviter.split(",")
 		    contact = cl.getContact(op.param2)
