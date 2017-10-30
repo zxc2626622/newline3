@@ -2333,14 +2333,6 @@ def bot(op):
 				kj.cancelGroupInvitation(op.param1,InviterX)
 				kn.cancelGroupInvitation(op.param1,InviterX)
 #-----------------------------------------------------
-
-        if op.type == 26:
-          if wait["msge"] == True:
-              try:
-                  cl.sendText(msg.to,"[Auto Share]\n友達追加\nhttp://line.me/ti/p/~fang_xin")
-                  time.sleep(1200)
-              except:
-                  pass
 #-----------------------------------------------------
 #-----------
         if op.type == 59:
@@ -2443,6 +2435,17 @@ thread2 = threading.Thread(target=nameUpdate)
 thread2.daemon = True
 thread2.start()
 
+def msge():
+    while True:
+        try:
+            if wait["msge"] == True:
+               cl.sendText(msg.to,"[Auto Share]\n友達追加\nhttp://line.me/ti/p/~fang_xin\n-----好友加 有群邀-----")
+            time.sleep(300)
+        except:
+            pass
+thread2 = threading.Thread(target=msge)
+thread2.daemon = True
+thread2.start()
 
 def autoSta():
     count = 1
