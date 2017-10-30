@@ -2444,6 +2444,17 @@ def autoSta():
              if posts["postInfo"]["liked"] is False:
                 if wait["likeOn"] == True:
                    cl.like(posts["userInfo"]["writerMid"], posts["postInfo"]["postId"], 1001)
+                   ad.like(posts["userInfo"]["writerMid"], posts["postInfo"]["postId"], 1001)
+                   ki.like(posts["userInfo"]["writerMid"], posts["postInfo"]["postId"], 1001)
+                   kk.like(posts["userInfo"]["writerMid"], posts["postInfo"]["postId"], 1001)
+                   kc.like(posts["userInfo"]["writerMid"], posts["postInfo"]["postId"], 1001)
+                   kd.like(posts["userInfo"]["writerMid"], posts["postInfo"]["postId"], 1001)
+                   ke.like(posts["userInfo"]["writerMid"], posts["postInfo"]["postId"], 1001)
+                   kf.like(posts["userInfo"]["writerMid"], posts["postInfo"]["postId"], 1001)
+                   kg.like(posts["userInfo"]["writerMid"], posts["postInfo"]["postId"], 1001)
+                   kh.like(posts["userInfo"]["writerMid"], posts["postInfo"]["postId"], 1001)
+                   kj.like(posts["userInfo"]["writerMid"], posts["postInfo"]["postId"], 1001)
+                   kn.like(posts["userInfo"]["writerMid"], posts["postInfo"]["postId"], 1001)
                    if wait["commentOn"] == True:
                       if posts["userInfo"]["writerMid"] in wait["commentBlack"]:
                          pass
