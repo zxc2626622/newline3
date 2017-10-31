@@ -222,6 +222,8 @@ def bot(op):
                                         cl.sendMessage(c)
         if op.param3 == "4":
             if op.param1 in protecturl:
+            if op.param2 in admin:
+                pass
 				group = cl.getGroup(op.param1)
 				if group.preventJoinByTicket == False:
 					group.preventJoinByTicket = True
