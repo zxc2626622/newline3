@@ -226,7 +226,7 @@ def bot(op):
 				if group.preventJoinByTicket == False:
 					group.preventJoinByTicket = True
 					cl.updateGroup(group)
-					cl.sendText(op.param1,"不能亂開網址ㄡ")
+					cl.sendText(op.param1,"---[不能亂開網址ㄡ]---")
 				else:
 					pass                
         if op.type == 0:
@@ -272,7 +272,7 @@ def bot(op):
                elif wait["dblack"] == True:
                    if msg.contentMetadata["mid"] in wait["commentBlack"]:
                         del wait["commentBlack"][msg.contentMetadata["mid"]]
-                        cl.sendText(msg.to,"Dihapus")
+                        cl.sendText(msg.to,"完成")
                         wait["dblack"] = False
 
                    else:
@@ -351,6 +351,150 @@ def bot(op):
                 for target in targets:
                    try:
                       random.choice(KAC).kickoutFromGroup(msg.to,[target])
+                   except:
+                      pass
+            elif ("AdBye " in msg.text):
+              if msg.from_ in admin:
+                key = eval(msg.contentMetadata["MENTION"])
+                key["MENTIONEES"][0]["M"]
+                targets = []
+                for x in key["MENTIONEES"]:
+                    targets.append(x["M"])
+                for target in targets:
+                   try:
+                      ad.kickoutFromGroup(msg.to,[target])
+                   except:
+                      pass
+            elif ("KiBye " in msg.text):
+              if msg.from_ in admin:
+                key = eval(msg.contentMetadata["MENTION"])
+                key["MENTIONEES"][0]["M"]
+                targets = []
+                for x in key["MENTIONEES"]:
+                    targets.append(x["M"])
+                for target in targets:
+                   try:
+                      ki.kickoutFromGroup(msg.to,[target])
+                   except:
+                      pass
+            elif ("KkBye " in msg.text):
+              if msg.from_ in admin:
+                key = eval(msg.contentMetadata["MENTION"])
+                key["MENTIONEES"][0]["M"]
+                targets = []
+                for x in key["MENTIONEES"]:
+                    targets.append(x["M"])
+                for target in targets:
+                   try:
+                      kk.kickoutFromGroup(msg.to,[target])
+                   except:
+                      pass
+            elif ("KcBye " in msg.text):
+              if msg.from_ in admin:
+                key = eval(msg.contentMetadata["MENTION"])
+                key["MENTIONEES"][0]["M"]
+                targets = []
+                for x in key["MENTIONEES"]:
+                    targets.append(x["M"])
+                for target in targets:
+                   try:
+                      kc.kickoutFromGroup(msg.to,[target])
+                   except:
+                      pass
+            elif ("KdBye " in msg.text):
+              if msg.from_ in admin:
+                key = eval(msg.contentMetadata["MENTION"])
+                key["MENTIONEES"][0]["M"]
+                targets = []
+                for x in key["MENTIONEES"]:
+                    targets.append(x["M"])
+                for target in targets:
+                   try:
+                      kd.kickoutFromGroup(msg.to,[target])
+                   except:
+                      pass
+            elif ("KeBye " in msg.text):
+              if msg.from_ in admin:
+                key = eval(msg.contentMetadata["MENTION"])
+                key["MENTIONEES"][0]["M"]
+                targets = []
+                for x in key["MENTIONEES"]:
+                    targets.append(x["M"])
+                for target in targets:
+                   try:
+                      ke.kickoutFromGroup(msg.to,[target])
+                   except:
+                      pass
+            elif ("KfBye " in msg.text):
+              if msg.from_ in admin:
+                key = eval(msg.contentMetadata["MENTION"])
+                key["MENTIONEES"][0]["M"]
+                targets = []
+                for x in key["MENTIONEES"]:
+                    targets.append(x["M"])
+                for target in targets:
+                   try:
+                      kf.kickoutFromGroup(msg.to,[target])
+                   except:
+                      pass
+            elif ("KgBye " in msg.text):
+              if msg.from_ in admin:
+                key = eval(msg.contentMetadata["MENTION"])
+                key["MENTIONEES"][0]["M"]
+                targets = []
+                for x in key["MENTIONEES"]:
+                    targets.append(x["M"])
+                for target in targets:
+                   try:
+                      kg.kickoutFromGroup(msg.to,[target])
+                   except:
+                      pass
+            elif ("KhBye " in msg.text):
+              if msg.from_ in admin:
+                key = eval(msg.contentMetadata["MENTION"])
+                key["MENTIONEES"][0]["M"]
+                targets = []
+                for x in key["MENTIONEES"]:
+                    targets.append(x["M"])
+                for target in targets:
+                   try:
+                      kh.kickoutFromGroup(msg.to,[target])
+                   except:
+                      pass
+            elif ("KjBye " in msg.text):
+              if msg.from_ in admin:
+                key = eval(msg.contentMetadata["MENTION"])
+                key["MENTIONEES"][0]["M"]
+                targets = []
+                for x in key["MENTIONEES"]:
+                    targets.append(x["M"])
+                for target in targets:
+                   try:
+                      kj.kickoutFromGroup(msg.to,[target])
+                   except:
+                      pass
+            elif ("KlBye " in msg.text):
+              if msg.from_ in admin:
+                key = eval(msg.contentMetadata["MENTION"])
+                key["MENTIONEES"][0]["M"]
+                targets = []
+                for x in key["MENTIONEES"]:
+                    targets.append(x["M"])
+                for target in targets:
+                   try:
+                      kl.kickoutFromGroup(msg.to,[target])
+                   except:
+                      pass
+            elif ("KnBye " in msg.text):
+              if msg.from_ in admin:
+                key = eval(msg.contentMetadata["MENTION"])
+                key["MENTIONEES"][0]["M"]
+                targets = []
+                for x in key["MENTIONEES"]:
+                    targets.append(x["M"])
+                for target in targets:
+                   try:
+                      kn.kickoutFromGroup(msg.to,[target])
                    except:
                       pass
             elif "Kick " in msg.text:
