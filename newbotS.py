@@ -96,7 +96,7 @@ wait = {
     'leaveRoom':False,
     'timeline':True,
     'autoAdd':True,
-    'message':"詞語bot\nhttp://line.me/ti/p/~fang_xin",
+    'message':"感謝加",
     "lang":"JP",
     "comment":"http://line.me/ti/p/~fang_xin\nAuto like By fung xin 放芯",
     "likeOn":True,
@@ -222,15 +222,16 @@ def bot(op):
                                         cl.sendMessage(c)
         if op.param3 == "4":
             if op.param1 in protecturl:
-            if op.param2 in admin:
-                pass
-				group = cl.getGroup(op.param1)
-				if group.preventJoinByTicket == False:
-					group.preventJoinByTicket = True
-					cl.updateGroup(group)
-					cl.sendText(op.param1,"---[不能亂開網址ㄡ]---")
-				else:
-					pass                
+                if op.param2 in admin:
+                    pass
+                elif wait["P"] == True:
+				     group = cl.getGroup(op.param1)
+				     if group.preventJoinByTicket == False:
+					     group.preventJoinByTicket = True
+					     cl.updateGroup(group)
+					     cl.sendText(op.param1,"---[不能亂開網址ㄡ]---")
+				     else:
+					     pass                
         if op.type == 0:
             return 
         if op.type == 22:
@@ -1932,17 +1933,20 @@ def bot(op):
    
         if op.param3 == "1":
             if op.param1 in protectname:
-                group = cl.getGroup(op.param1)
-                try:
-					group.name = wait["pro_name"][op.param1]
-					cl.updateGroup(group)
-					cl.sendText(op.param1, "Groupname protect now")
-					wait["blacklist"][op.param2] = True
-					f=codecs.open('st2__b.json','w','utf-8')
-					json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
-                except Exception as e:
-                    print e
+                if op.param2 in admin:
                     pass
+                elif wait["P"] == True:
+                     group = cl.getGroup(op.param1)
+                     try:
+                         group.name = wait["pro_name"][op.param1]
+                         cl.updateGroup(group)
+                         cl.sendText(op.param1, "Groupname protect now")
+                         wait["blacklist"][op.param2] = True
+                         f=codecs.open('st2__b.json','w','utf-8')
+                         json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
+                     except Exception as e:
+                         print e
+                         pass
                
         if op.param1 in autocancel:
            OWN = "u7d8710559bda136ae7030477f83069df"
