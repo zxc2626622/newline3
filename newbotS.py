@@ -1755,7 +1755,7 @@ def bot(op):
                             pass
         if op.type == 19:        
            if op.param1 in protection:
-           OWN = admin + Bots
+              OWN = admin + Bots
            if op.param2 in OWN:
                pass
            elif wait["P"] == True:
@@ -1800,7 +1800,7 @@ def bot(op):
    
         if op.param3 == "1":
             if op.param1 in protectname:
-                OWN = admin + Bots
+                   OWN = admin + Bots
                 if op.param2 in OWN:
                     pass
                 elif wait["P"] == True:
@@ -1817,7 +1817,7 @@ def bot(op):
                          pass
                
         if op.param1 in autocancel:
-            OWN = admin + Bots
+              OWN = admin + Bots
            if op.param2 in OWN:
               pass
            else:
