@@ -6,7 +6,7 @@ import time,random,sys,json,codecs,threading,glob
 
 
 cl = LINETCR.LINE()
-cl.login(token="EmVQo91UCwZQqZHwqz3f.FyCqvzVAe2RNaWr3/dbP3W.6KlnpU/Gx8m1aDjKHIADcpDCs245BRED/VxmLuuw1l0=")
+cl.login(token="EmUXn15KmOSBBeWTHH5f.FyCqvzVAe2RNaWr3/dbP3W.7TNK8NtczfuM2PAPEOIqkd/ytglLi/jyEpm7Ntq7OkY=")
 cl.loginResult()
 
 ad = LINETCR.LINE()
@@ -1884,13 +1884,8 @@ def bot(op):
                             pass
         if op.type == 19:        
            if op.param1 in protection:
-               OWN = "u7d8710559bda136ae7030477f83069df"
-           if op.param2 in OWN:
-               return
-           if op.param2 in Bots:
-               return
-           if op.param2 in admin:
-               return
+           if op.param2 in Bots + admin:
+               pass
            elif wait["P"] == True:
                  try:
                      ki.kickoutFromGroup(op.param1,[op.param2])
@@ -1933,7 +1928,7 @@ def bot(op):
    
         if op.param3 == "1":
             if op.param1 in protectname:
-                if op.param2 in admin:
+                if op.param2 in admin + Bots:
                     pass
                 elif wait["P"] == True:
                      group = cl.getGroup(op.param1)
@@ -1949,12 +1944,7 @@ def bot(op):
                          pass
                
         if op.param1 in autocancel:
-           OWN = "u7d8710559bda136ae7030477f83069df"
-           if op.param2 in OWN:
-              pass
-           if op.param2 in Bots:
-              pass
-           if op.param2 in admin:
+           if op.param2 in Bots + admin:
               pass
            else:
                Inviter = op.param3.replace("",',')
