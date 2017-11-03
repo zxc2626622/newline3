@@ -10,7 +10,7 @@ cl.login(token="EmUXn15KmOSBBeWTHH5f.FyCqvzVAe2RNaWr3/dbP3W.7TNK8NtczfuM2PAPEOIq
 cl.loginResult()
 
 ad = LINETCR.LINE()
-ad.login(token="EmYVsh0wWOzPgB4Bo6m5.iur748Us1jyfpKv4oxGLDq.SkWCz7ASYXkxK0W1sEW4J19PzTjQmRTdtrAWjwiJb34=")
+ad.login(token="Emtxa1xy0AMhXiEHKAP5.iur748Us1jyfpKv4oxGLDq.EkqBjvk6FS5UCqXHO5AP5WV+Eyxn163JDJGEvlphEMM=")
 ad.loginResult()
 
 ki = LINETCR.LINE()
@@ -78,6 +78,7 @@ Jmid = kj.getProfile().mid
 Lmid = kl.getProfile().mid
 Nmid = kn.getProfile().mid
 Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Jmid,Lmid,Nmid,admid]
+Bots2=[Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Jmid,Lmid,Nmid,admid]
 admin = ["u67c43239c865dfce6addb41c6b3c0edd","u29971676114806a574c148f0df876c22","u24d44be70c40b45eaee0818821bee579","u21447be3cb92d496053e457839782575","u76b191d82b5711e21d6ad7ad94633a7f","u15d79462d65d82a32014fe022a9b8a3c","ud17c64969005f01e96688c73756f9990","u0bbe04d5f886bc841a37b92db837afc2","u67c43239c865dfce6addb41c6b3c0edd","u7d8710559bda136ae7030477f83069df","u1357c6b878778ce5f378580ed29af969","u21d3aa810af9563115cdc2c795638fa7","u49430efdfd2fd2d89b47f36744b8c634","ud13824d0cea59b050419efd786725990"]
 protectname = []
 protecturl = []
@@ -96,7 +97,7 @@ wait = {
     'leaveRoom':False,
     'timeline':True,
     'autoAdd':True,
-    'message':"感謝加",
+    'message':"詞語Bot/nhttp://line.me/ti/p/~fang_xin/nhttp://line.me/ti/p/~.90.11.24.",
     "lang":"JP",
     "comment":"http://line.me/ti/p/~fang_xin\nAuto like By fung xin 放芯",
     "likeOn":True,
@@ -1696,6 +1697,17 @@ def bot(op):
             if wait["autoAdd"] == True:
                 cl.findAndAddContactsByMid(op.param1)
                 ad.findAndAddContactsByMid(op.param1)
+                ki.findAndAddContactsByMid(op.param1)
+                kk.findAndAddContactsByMid(op.param1)
+                kc.findAndAddContactsByMid(op.param1)
+                kd.findAndAddContactsByMid(op.param1)
+                ke.findAndAddContactsByMid(op.param1)
+                kf.findAndAddContactsByMid(op.param1)
+                kg.findAndAddContactsByMid(op.param1)
+                kh.findAndAddContactsByMid(op.param1)
+                kj.findAndAddContactsByMid(op.param1)
+                kl.findAndAddContactsByMid(op.param1)
+                kn.findAndAddContactsByMid(op.param1)
                 if (wait["message"] in [""," ","\n",None]):
                     pass
                 else:
@@ -1714,7 +1726,83 @@ def bot(op):
                     for jj in matched_list:
                         cl.kickoutFromGroup(msg.to,[jj])
                     cl.sendText(msg.to,"黑單勿近")
-
+        if op.type ==13:
+           if Bots2 in op.param3:
+              try:
+                   ad.acceptGroupInvitation(op.param1)
+              except:
+                  try:
+                      ki.acceptGroupInvitation(op.param1)
+                  except:
+                      try:
+                          kk.acceptGroupInvitation(op.param1)
+                      except:
+                          try:
+                              kc.acceptGroupInvitation(op.param1)
+                          except:
+                              try:
+                                  kd.acceptGroupInvitation(op.param1)
+                              except:
+                                  try:
+                                      ke.acceptGroupInvitation(op.param1)
+                                  except:
+                                      try:
+                                          kf.acceptGroupInvitation(op.param1)
+                                      except:
+                                          try:
+                                              kg.acceptGroupInvitation(op.param1)
+                                          except:
+                                              try:
+                                                  kh.acceptGroupInvitation(op.param1)
+                                              except:
+                                                  try:
+                                                      kj.acceptGroupInvitation(op.param1)
+                                                  except:
+                                                      try:
+                                                          kl.acceptGroupInvitation(op.param1)
+                                                      except:
+                                                          try:
+                                                              kn.acceptGroupInvitation(op.param1)
+                                                          except:
+                                                              pass
+              if wait["P"] == True:
+                  try:
+                      ad.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                  except:
+                      try:
+                          ki.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                      except:
+                          try:
+                              kk.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                          except:
+                              try:
+                                  kc.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                              except:
+                                  try:
+                                      kd.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                                  except:
+                                      try:
+                                          ke.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                                      except:
+                                          try:
+                                              kf.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                                          except:
+                                              try:
+                                                  kg.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                                              except:
+                                                  try:
+                                                      kh.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                                                  except:
+                                                      try:
+                                                          kj.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                                                      except:
+                                                          try:
+                                                              kl.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                                                          except:
+                                                              try:
+                                                                  kn.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                                                              except:
+                                                                  pass
         if op.type == 13:
             if mid in op.param3:
                 if wait["autoJoin"] == True:
