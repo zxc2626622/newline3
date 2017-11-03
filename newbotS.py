@@ -1696,7 +1696,7 @@ def bot(op):
 
 	            cl.sendText(msg.to, " %s\n\n\n已讀者\n(｀・ω・´)\n%s\n\n---------------------------------------(｀・ω・´)\n[%s]"  % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
 	          else:
-	            cl.sendText(msg.to, "輸入#set"
+	            cl.sendText(msg.to, "輸入#set")
 #-----------------------------------------------------------speed
             elif "Admin add @" in msg.text:
                 if msg.from_ in admin:
