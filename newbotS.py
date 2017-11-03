@@ -222,7 +222,8 @@ def bot(op):
                                         cl.sendMessage(c)
         if op.param3 == "4":
             if op.param1 in protecturl:
-                if op.param2 in admin:
+                OWN = admin + Bots
+                if op.param2 in OWN:
                     pass
                 elif wait["P"] == True:
 				     group = cl.getGroup(op.param1)
@@ -1754,8 +1755,8 @@ def bot(op):
                             pass
         if op.type == 19:        
            if op.param1 in protection:
-           cc = admin + Bots
-           if op.param2 in cc:
+           OWN = admin + Bots
+           if op.param2 in OWN:
                pass
            elif wait["P"] == True:
                  try:
@@ -1799,8 +1800,8 @@ def bot(op):
    
         if op.param3 == "1":
             if op.param1 in protectname:
-                cc = admin + Bots
-                if op.param2 in cc:
+                OWN = admin + Bots
+                if op.param2 in OWN:
                     pass
                 elif wait["P"] == True:
                      group = cl.getGroup(op.param1)
@@ -1816,8 +1817,8 @@ def bot(op):
                          pass
                
         if op.param1 in autocancel:
-            cc = admin + Bots
-           if op.param2 in cc:
+            OWN = admin + Bots
+           if op.param2 in OWN:
               pass
            else:
                Inviter = op.param3.replace("",',')
