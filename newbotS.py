@@ -78,7 +78,7 @@ Jmid = kj.getProfile().mid
 Lmid = kl.getProfile().mid
 Nmid = kn.getProfile().mid
 Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Jmid,Lmid,Nmid,admid]
-admin = ["u7d8710559bda136ae7030477f83069df"]
+admin = ["u67c43239c865dfce6addb41c6b3c0edd","u29971676114806a574c148f0df876c22","u24d44be70c40b45eaee0818821bee579","u21447be3cb92d496053e457839782575","u76b191d82b5711e21d6ad7ad94633a7f","u15d79462d65d82a32014fe022a9b8a3c","ud17c64969005f01e96688c73756f9990","u0bbe04d5f886bc841a37b92db837afc2","u67c43239c865dfce6addb41c6b3c0edd","u7d8710559bda136ae7030477f83069df","u1357c6b878778ce5f378580ed29af969","u21d3aa810af9563115cdc2c795638fa7","u49430efdfd2fd2d89b47f36744b8c634","ud13824d0cea59b050419efd786725990"]
 protectname = []
 protecturl = []
 protection = []
@@ -1800,7 +1800,7 @@ def bot(op):
    
         if op.param3 == "1":
             if op.param1 in protectname:
-            OWN = admin + Bots
+                OWN = admin
                 if op.param2 in OWN:
                     pass
                 elif wait["P"] == True:
@@ -1817,7 +1817,7 @@ def bot(op):
                          pass
                
         if op.param1 in autocancel:
-        OWN = admin + Bots
+          OWN = admin
            if op.param2 in OWN:
               pass
            else:
