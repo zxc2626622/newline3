@@ -934,8 +934,8 @@ def bot(op):
                 else: md +=" 自動加好友:關閉\n"
                 if wait["leaveRoom"] == True: md+=" 自動離開副本:開啟\n"
                 else: md+=" 自動離開副本:關閉\n"
-                if wait["autoAdd"] == True: md+=" 自動加好友:開啟\n"
-                else:md+=" 自動加好友:關閉\n"
+                if wait["autoAdd"] == True: md+=" 自動加好友:開啟"
+                else:md+=" 自動加好友:關閉"
                 cl.sendText(msg.to,md)
             elif msg.text in ["Group id","group id"]:
                 gid = cl.getGroupIdsJoined()
@@ -1654,15 +1654,19 @@ def bot(op):
                         gid = msg.to
                         autocancel[gid] = "poni"
                         protecturl.append(msg.to)
+                        cl.sendText(msg.to,"全開啟")
                     except:
 					    pass
             elif msg.text in ["all:off"]:
                 if msg.from_ in Administrator:
                     try:
+                        del wait["pnharfbot"][msg.to] = cl.getGroup(msg.to).name
                         protection.remove(msg.to)
+                        del wait['pro_name'][msg.to] = cl.getGroup(msg.to).name
                         del wait['pname'][msg.to]
                         del autocancel[msg.to]
                         protecturl.remove(msg.to)
+                        cl.sendText(msg.to,"全關閉")
                     except:
                         pass
             elif msg.text in ["url:on"]:
@@ -1683,8 +1687,8 @@ def bot(op):
                 else: md+=" 鎖群名:關閉\n"
                 if msg.to in autocancel: md+=" 鎖邀請:開啟\n"
                 else: md+=" 鎖邀請:關閉\n"
-                if msg.to in protecturl: md+=" 鎖網址:開啟\n"
-                else: md+=" 鎖網址:關閉中\n"
+                if msg.to in protecturl: md+=" 鎖網址:開啟"
+                else: md+=" 鎖網址:關閉"
                 cl.sendText(msg.to,md)
 #---------------FUNGSI RATAIN GRUP TANPA KICK SESAMA BOT/Admin/Bots----------#
 #-----------
