@@ -1694,9 +1694,9 @@ def bot(op):
 	                print rom
 	                chiya += rom[1] + "\n"
 
-	            cl.sendText(msg.to, " %s\n\n\n已讀名單\n(｀・ω・´)\n%s(｀・ω・´)\n[%s]"  % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
+	            cl.sendText(msg.to, " %s\n\n\n已讀者\n(｀・ω・´)\n%s\n\n---------------------------------------(｀・ω・´)\n[%s]"  % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
 	          else:
-	            cl.sendText(msg.to, "請輸入#set")
+	            cl.sendText(msg.to, "輸入#set"
 #-----------------------------------------------------------speed
             elif "Admin add @" in msg.text:
                 if msg.from_ in admin:
@@ -2527,6 +2527,20 @@ def bot(op):
                 pass
 
 #----------------------------------------------------------------------------------
+        if op.type == 55:
+            try:
+                if op.param1 in wait2['readPoint']:
+                    Name = cl.getContact(op.param2).displayName
+                    if Name in wait2['readMember'][op.param1]:
+                        pass
+                    else:
+                        wait2['readMember'][op.param1] += "\n☑" + Name
+                        wait2['ROM'][op.param1][op.param2] = "☑" + Name
+                else:
+                    cl.sendText
+            except:
+                  pass
+                  
 #-----------------------------------------------------
 #-----------------------------------------------------
 #-----------
