@@ -1514,7 +1514,7 @@ def bot(op):
 	                print rom
 	                chiya += rom[1] + "\n"
 
-	            cl.sendText(msg.to, " 已讀的人\n(｀・ω・´)\n%s" % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
+	            cl.sendText(msg.to, " 已讀的人\n(｀・ω・´)\n%s"  % (wait2['readMember'][msg.to]))
 	          else:
 	            cl.sendText(msg.to, "輸入#set")
 #-----------------------------------------------------------speed
