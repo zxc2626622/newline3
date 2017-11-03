@@ -1678,7 +1678,7 @@ def bot(op):
                 md = ""
                 if msg.to in wait["pnharfbot"]: md+=" 防踢:開啟\n"
                 else: md+=" 防踢:關閉\n"
-                if msg.to inwait["pro_name"]: md+=" 鎖群名:開啟\n"
+                if msg.to in wait["pro_name"]: md+=" 鎖群名:開啟\n"
                 else: md+=" 鎖群名:關閉\n"
                 if msg.to in autocancel: md+=" 鎖邀請:開啟\n"
                 else: md+=" 鎖邀請:關閉\n"
