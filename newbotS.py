@@ -1768,7 +1768,7 @@ def bot(op):
                     cl.sendText(msg.to,"鎖群名已關閉")
             elif "Invite:on" == msg.text:
 				gid = msg.to
-                protecturl.append(msg.to)
+				protecturl.append(msg.to)
 				cl.sendText(msg.to,"鎖邀請已開啟")
             elif "Invite:off" == msg.text:
 				try:
