@@ -1811,11 +1811,11 @@ def bot(op):
                         pass
             elif msg.text in ["url:on"]:
                 if msg.from_ in Administrator:
-                    wait['pinv'][msg.to]
+                    wait['purl'][msg.to]
                     cl.sendText(msg.to,"已開")
             elif msg.text in ["url:off"]:
                 if msg.from_ in Administrator:
-                    del wait['pinv'][msg.to]
+                    del wait['purl'][msg.to]
                     cl.sendText(msg.to,"已關閉")
                 else:
                     cl.sendText(msg.to,"已關閉")                
