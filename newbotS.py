@@ -1758,7 +1758,7 @@ def bot(op):
 					json.dump(wait['pro'], f, sort_keys=True, indent=4,ensure_ascii=False)
 					cl.sendText(msg.to,"保護開啟")
             elif "Pro:off" == msg.text:
-                if msg.from_ in Administrator:
+                if msg.from_ in admin:
 				  try:
                        cl.sendText(msg.to,"保護關閉")
                        del wait['pro'][msg.to]
