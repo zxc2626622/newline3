@@ -1753,13 +1753,15 @@ def bot(op):
 				if msg.to in wait["pro"]:
 					cl.sendText(msg.to,"保護已開啟")
 				else:
-					wait['pro'][msg.to]
+					wait['pro'][msg.to] = cl.getGroup(msg.to).name
 					f=codecs.open('pro.json','w','utf-8')
 					json.dump(wait['pro'], f, sort_keys=True, indent=4,ensure_ascii=False)
+					protection.append(msg.to)
 					cl.sendText(msg.to,"保護開啟")
             elif "Pro:off" == msg.text:
 				try:
-					del wait['pro'][msg.to]
+					del wait['pro'][msg.to] = cl.getGroup(msg.to).name
+					protection.remove(msg.to)
 					cl.sendText(msg.to,"鎖邀請已關閉")
 				except:
 					pass
@@ -1778,7 +1780,7 @@ def bot(op):
                     cl.sendText(msg.to,"鎖群名已關閉")
             elif "Invite:on" == msg.text:
 				gid = msg.to
-				wait['pinv'][gid] = "poni"
+				wait['pinv'][msg.to]
 				cl.sendText(msg.to,"鎖邀請已開啟")
             elif "Invite:off" == msg.text:
 				try:
@@ -1789,7 +1791,8 @@ def bot(op):
             elif msg.text in ["all:on"]:
                 if msg.from_ in Administrator:
                     try:
-                        wait['pro'][msg.to]
+                        wait['pro'][msg.to] = cl.getGroup(msg.to).name
+                        protection.append(msg.to)                        
                         wait['pname'][msg.to] = True
                         wait['pro_name'][msg.to] = cl.getGroup(msg.to).name
                         gid = msg.to
@@ -1801,7 +1804,8 @@ def bot(op):
             elif msg.text in ["all:off"]:
                 if msg.from_ in Administrator:
                     try:
-                        del wait['pro'][msg.to]
+                        del wait['pro'][msg.to] = cl.getGroup(msg.to).name
+                        protection.remove(msg.to)
                         del wait['pro_name'][msg.to]
                         del wait['pname'][msg.to]
                         del wait['pinv'][msg.to]
