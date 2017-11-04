@@ -1773,7 +1773,7 @@ def bot(op):
             elif "Invite:off" == msg.text:
                 try:
                     del wait['pinv'][msg.to]
-					cl.sendText(msg.to,"鎖邀請已關閉")
+                    cl.sendText(msg.to,"鎖邀請已關閉")
 				except:
 					pass
             elif msg.text in ["all:on"]:
