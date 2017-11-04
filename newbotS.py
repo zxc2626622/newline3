@@ -1739,7 +1739,7 @@ def bot(op):
                         cl.sendText(msg.to,"Admin permission required.")
                 elif msg.text in ["Roomtagall"]:
                   group = cl.getRoom(msg.to)
-                  nama = [contact.mid for contact in room.members]
+                  nama = [contact.mid for contact in group.members]
 
                   cb = ""
                   cb2 = ""
