@@ -54,7 +54,7 @@ kl.login(token="EmDYYHfLm2MgzaDU8Je1.3QcCJv4kHUj+58p8vc5viq.IGUJpvgLq9JiHSsgtO6i
 ki.loginResult()
 
 kn = LINETCR.LINE()
-kn.login(token="Em8QNccQ4JCDWqtxdTb1.3QcCJv4kHUj+58p8vc5viq.coWadB3+6/B9jRcR9TH7Ab2ixq1x/6rPz7t3hoJMQwU=")
+kn.login(token="Emjt3hPSHGsBMFDjQ6l0.0tGK0m6LMWuegE+xHNjzKa.rcrrzi7OuwCZX10EMwVlvo4MALmjsK1xZaP5mw1w9Jg=")
 kn.loginResult()
 
 
