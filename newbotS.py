@@ -1819,7 +1819,7 @@ def bot(op):
                 else: md+=" 鎖群名:關閉\n"
                 if msg.to in wait["pinv"]: md+=" 鎖邀請:開啟\n"
                 else: md+=" 鎖邀請:關閉\n"
-                if msg.to in wait["purl"]: md+=" 鎖網址:開啟"
+                if msg.to in protecturl: md+=" 鎖網址:開啟"
                 else: md+=" 鎖網址:關閉"
                 cl.sendText(msg.to,md)
 #---------------FUNGSI RATAIN GRUP TANPA KICK SESAMA BOT/Admin/Bots----------#
