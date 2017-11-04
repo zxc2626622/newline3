@@ -1759,10 +1759,10 @@ def bot(op):
 					cl.sendText(msg.to,"保護開啟")
             elif "Pro:off" == msg.text:
 				try:
-                    if msg.from_ in Administrator:
+                     if msg.from_ in Administrator:
                         del wait['pro'][msg.to]
                         cl.sendText(msg.to,"保護關閉")
-					else:
+				     else:
 						cl.sendText(msg.to,"保護已關閉")
 				except:
 					pass
