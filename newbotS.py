@@ -1774,8 +1774,8 @@ def bot(op):
                 try:
                     del wait['pinv'][msg.to]
                     cl.sendText(msg.to,"鎖邀請已關閉")
-				except:
-					pass
+                except:
+                    pass
             elif msg.text in ["all:on"]:
                 if msg.from_ in Administrator:
                     try:
