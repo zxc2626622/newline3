@@ -1768,10 +1768,10 @@ def bot(op):
                     cl.sendText(msg.to,"鎖群名已關閉")
             elif "Invite:on" == msg.text:
 				gid = msg.to
-				wait['pinv'][msg.to]
+				wait['pinv'][gid]
 				cl.sendText(msg.to,"鎖邀請已開啟")
             elif "Invite:off" == msg.text:
-				try:
+                try:
                     del wait['pinv'][msg.to]
 					cl.sendText(msg.to,"鎖邀請已關閉")
 				except:
@@ -1785,7 +1785,7 @@ def bot(op):
                         wait['pro_name'][msg.to] = cl.getGroup(msg.to).name
                         gid = msg.to
                         wait['pinv'][gid] = "poni"
-                        wait['purl'][msg.to]
+                        protecturl.append(msg.to)
                         cl.sendText(msg.to,"全開啟")
                     except:
 					    pass
