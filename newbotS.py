@@ -18,7 +18,7 @@ ki.login(token="EmMw4ER2O2fvKUSzEsBa.PzuIGrSfbi6ZimWr5ex5QG.syYDPY2/FKnscrl3eAMV
 ki.loginResult()
 
 kk = LINETCR.LINE()
-kk.login(token="EmE8SfD3MdKJdFVjPgFf.DRgr2cTxeEiDATETLgm6FW.c8QPVCp86ALm1h/+dxkf/n9ulIqrqDs8jPfoWOaMAXY=")
+kk.login(token="Eml9pcYgeFQNUt807bAf.DRgr2cTxeEiDATETLgm6FW.y/+yTmIXYQW54JtE6J9mE+HzQWWTlrh+bCIMg85NqHI=")
 kk.loginResult()
 
 kc = LINETCR.LINE()
@@ -97,7 +97,7 @@ wait = {
     'leaveRoom':False,
     'timeline':True,
     'autoAdd':True,
-    'message':"詞語Bot\nhttp://line.me/ti/p/~fang_xin\nhttp://line.me/ti/p/~.90.11.24.",
+    'message':"詞語Bot\nAutboLike\nhttp://line.me/ti/p/~fang_xin\nhttp://line.me/ti/p/~.90.11.24.",
     "lang":"JP",
     "comment":"http://line.me/ti/p/~fang_xin\nAuto like By fung xin 放芯",
     "likeOn":True,
@@ -2763,17 +2763,6 @@ def autoSta():
              if posts["postInfo"]["liked"] is False:
                 if wait["likeOn"] == True:
                    cl.like(posts["userInfo"]["writerMid"], posts["postInfo"]["postId"], 1001)
-                   ad.like(posts["userInfo"]["writerMid"], posts["postInfo"]["postId"], 1001)
-                   ki.like(posts["userInfo"]["writerMid"], posts["postInfo"]["postId"], 1001)
-                   kk.like(posts["userInfo"]["writerMid"], posts["postInfo"]["postId"], 1001)
-                   kc.like(posts["userInfo"]["writerMid"], posts["postInfo"]["postId"], 1001)
-                   kd.like(posts["userInfo"]["writerMid"], posts["postInfo"]["postId"], 1001)
-                   ke.like(posts["userInfo"]["writerMid"], posts["postInfo"]["postId"], 1001)
-                   kf.like(posts["userInfo"]["writerMid"], posts["postInfo"]["postId"], 1001)
-                   kg.like(posts["userInfo"]["writerMid"], posts["postInfo"]["postId"], 1001)
-                   kh.like(posts["userInfo"]["writerMid"], posts["postInfo"]["postId"], 1001)
-                   kj.like(posts["userInfo"]["writerMid"], posts["postInfo"]["postId"], 1001)
-                   kn.like(posts["userInfo"]["writerMid"], posts["postInfo"]["postId"], 1001)
                    if wait["commentOn"] == True:
                       if posts["userInfo"]["writerMid"] in wait["commentBlack"]:
                          pass
