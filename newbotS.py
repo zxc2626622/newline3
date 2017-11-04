@@ -1871,7 +1871,7 @@ def bot(op):
                         cl.kickoutFromGroup(msg.to,[jj])
                     cl.sendText(msg.to,"黑單勿近")
         if op.type ==13:
-           OWN = Amid + Bmid + Cmid + Dmid + Emid + Fmid + Gmid + Hmid + Jmid + Lmid + Nmid + admid]
+           OWN = Amid + Bmid + Cmid + Dmid + Emid + Fmid + Gmid + Hmid + Jmid + Lmid + Nmid + admid
            if OWN in op.param3:
                if wait["P"] == True:
                   try:
