@@ -1758,14 +1758,12 @@ def bot(op):
 					json.dump(wait['pro'], f, sort_keys=True, indent=4,ensure_ascii=False)
 					cl.sendText(msg.to,"保護開啟")
             elif "Pro:off" == msg.text:
-				try:
-                     if msg.from_ in Administrator:
-                         cl.sendText(msg.to,"保護關閉")
-                         del wait['pro'][msg.to]
-				     else:
-                         cl.sendText(msg.to,"保護已關閉")
-				except:
-					pass
+                if msg.from_ in Administrator:
+				  try:
+                       cl.sendText(msg.to,"保護關閉")
+                       del wait['pro'][msg.to]
+                  except:
+                      cl.sendText(msg.to,"保護已關閉")
             elif "Name:on" in msg.text:
                 if msg.to in wait['pname']:
                     cl.sendText(msg.to,"已開啟")
