@@ -1802,15 +1802,14 @@ def bot(op):
                     except:
                         pass
             elif msg.text in ["url:on"]:
-                if msg.from_ in Administrator:
-				    protecturl.append(msg.to)
-				    cl.sendText(msg.to,"已開")
+                protecturl.append(msg.to)
+                cl.sendText(msg.to,"鎖網址已開")
             elif msg.text in ["url:off"]:
                 if msg.from_ in Administrator:
-				    protecturl.remove(msg.to)
-				    cl.sendText(msg.to,"已關閉")
+                    protecturl.remove(msg.to)
+                    cl.sendText(msg.to,"鎖網址已關")
                 else:
-				    cl.sendText(msg.to,"已關閉")                
+                    cl.sendText(msg.to,"已鎖網址")
             elif msg.text in ["Sset"]:
                 md = ""
                 if msg.to in wait["pro"]: md+=" 防踢:開啟\n"
