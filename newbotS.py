@@ -346,7 +346,7 @@ def bot(op):
                     print "SUKSES -- CHANGE NAME GROUP"
                 else:
                     cl.sendText(msg.to,"It can't be used besides the group.")
-            elif ("RaBye " in msg.text):
+            elif ("Raye " in msg.text):
               if msg.from_ in admin:
                 key = eval(msg.contentMetadata["MENTION"])
                 key["MENTIONEES"][0]["M"]
@@ -370,7 +370,7 @@ def bot(op):
                       cl.kickoutFromGroup(msg.to,[target])
                    except:
                       pass
-            elif ("AdBye " in msg.text):
+            elif ("Aye " in msg.text):
               if msg.from_ in admin:
                 key = eval(msg.contentMetadata["MENTION"])
                 key["MENTIONEES"][0]["M"]
@@ -382,7 +382,7 @@ def bot(op):
                       ad.kickoutFromGroup(msg.to,[target])
                    except:
                       pass
-            elif ("KiBye " in msg.text):
+            elif ("Iye " in msg.text):
               if msg.from_ in admin:
                 key = eval(msg.contentMetadata["MENTION"])
                 key["MENTIONEES"][0]["M"]
@@ -394,7 +394,7 @@ def bot(op):
                       ki.kickoutFromGroup(msg.to,[target])
                    except:
                       pass
-            elif ("KkBye " in msg.text):
+            elif ("Kye " in msg.text):
               if msg.from_ in admin:
                 key = eval(msg.contentMetadata["MENTION"])
                 key["MENTIONEES"][0]["M"]
@@ -406,7 +406,7 @@ def bot(op):
                       kk.kickoutFromGroup(msg.to,[target])
                    except:
                       pass
-            elif ("KcBye " in msg.text):
+            elif ("Cye " in msg.text):
               if msg.from_ in admin:
                 key = eval(msg.contentMetadata["MENTION"])
                 key["MENTIONEES"][0]["M"]
@@ -418,7 +418,7 @@ def bot(op):
                       kc.kickoutFromGroup(msg.to,[target])
                    except:
                       pass
-            elif ("KdBye " in msg.text):
+            elif ("Dye " in msg.text):
               if msg.from_ in admin:
                 key = eval(msg.contentMetadata["MENTION"])
                 key["MENTIONEES"][0]["M"]
@@ -430,7 +430,7 @@ def bot(op):
                       kd.kickoutFromGroup(msg.to,[target])
                    except:
                       pass
-            elif ("KeBye " in msg.text):
+            elif ("Eye " in msg.text):
               if msg.from_ in admin:
                 key = eval(msg.contentMetadata["MENTION"])
                 key["MENTIONEES"][0]["M"]
@@ -442,7 +442,7 @@ def bot(op):
                       ke.kickoutFromGroup(msg.to,[target])
                    except:
                       pass
-            elif ("KfBye " in msg.text):
+            elif ("Fye " in msg.text):
               if msg.from_ in admin:
                 key = eval(msg.contentMetadata["MENTION"])
                 key["MENTIONEES"][0]["M"]
@@ -454,7 +454,7 @@ def bot(op):
                       kf.kickoutFromGroup(msg.to,[target])
                    except:
                       pass
-            elif ("KgBye " in msg.text):
+            elif ("Gye " in msg.text):
               if msg.from_ in admin:
                 key = eval(msg.contentMetadata["MENTION"])
                 key["MENTIONEES"][0]["M"]
@@ -466,7 +466,7 @@ def bot(op):
                       kg.kickoutFromGroup(msg.to,[target])
                    except:
                       pass
-            elif ("KhBye " in msg.text):
+            elif ("Hye " in msg.text):
               if msg.from_ in admin:
                 key = eval(msg.contentMetadata["MENTION"])
                 key["MENTIONEES"][0]["M"]
@@ -478,7 +478,7 @@ def bot(op):
                       kh.kickoutFromGroup(msg.to,[target])
                    except:
                       pass
-            elif ("KjBye " in msg.text):
+            elif ("Jye " in msg.text):
               if msg.from_ in admin:
                 key = eval(msg.contentMetadata["MENTION"])
                 key["MENTIONEES"][0]["M"]
@@ -490,7 +490,7 @@ def bot(op):
                       kj.kickoutFromGroup(msg.to,[target])
                    except:
                       pass
-            elif ("KlBye " in msg.text):
+            elif ("Lye " in msg.text):
               if msg.from_ in admin:
                 key = eval(msg.contentMetadata["MENTION"])
                 key["MENTIONEES"][0]["M"]
@@ -502,7 +502,7 @@ def bot(op):
                       kl.kickoutFromGroup(msg.to,[target])
                    except:
                       pass
-            elif ("KnBye " in msg.text):
+            elif ("Nye " in msg.text):
               if msg.from_ in admin:
                 key = eval(msg.contentMetadata["MENTION"])
                 key["MENTIONEES"][0]["M"]
