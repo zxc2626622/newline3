@@ -1760,10 +1760,10 @@ def bot(op):
             elif "Pro:off" == msg.text:
 				try:
                      if msg.from_ in Administrator:
-                        del wait['pro'][msg.to]
-                        cl.sendText(msg.to,"保護關閉")
+                         cl.sendText(msg.to,"保護關閉")
+                         del wait['pro'][msg.to]
 				     else:
-						cl.sendText(msg.to,"保護已關閉")
+                         cl.sendText(msg.to,"保護已關閉")
 				except:
 					pass
             elif "Name:on" in msg.text:
