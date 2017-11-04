@@ -223,19 +223,7 @@ def bot(op):
                                         c = Message(to=op.param1, from_=None, text=None, contentType=13)
                                         c.contentMetadata={'mid':op.param2}
                                         cl.sendMessage(c)
-        if op.param3 == "4":
-            if op.param1 in wait["purl"]:
-                OWN = admin + Bots
-                if op.param2 in OWN:
-                    pass
-                elif wait["P"] == True:
-				     group = cl.getGroup(op.param1)
-				     if group.preventJoinByTicket == False:
-					     group.preventJoinByTicket = True
-					     cl.updateGroup(group)
-					     cl.sendText(op.param1,"---[不能亂開網址哦]---")
-				     else:
-					     pass                
+
         if op.type == 0:
             return 
         if op.type == 22:
@@ -1780,11 +1768,11 @@ def bot(op):
                     cl.sendText(msg.to,"鎖群名已關閉")
             elif "Invite:on" == msg.text:
 				gid = msg.to
-				wait['pinv'][msg.to]
+                protecturl.append(msg.to)
 				cl.sendText(msg.to,"鎖邀請已開啟")
             elif "Invite:off" == msg.text:
 				try:
-					del wait['pinv'][msg.to]
+                    protecturl.remove(msg.to)
 					cl.sendText(msg.to,"鎖邀請已關閉")
 				except:
 					pass
@@ -2092,7 +2080,19 @@ def bot(op):
                kl.cancelGroupInvitation(op.param1,InviterX)
                kn.cancelGroupInvitation(op.param1,InviterX)            
 
-
+        if op.param3 == "4":
+            if op.param1 in protecturl:
+                OWN = admin + Bots
+                if op.param2 in OWN:
+                    pass
+                elif wait["P"] == True:
+				     group = cl.getGroup(op.param1)
+				     if group.preventJoinByTicket == False:
+					     group.preventJoinByTicket = True
+					     cl.updateGroup(group)
+					     cl.sendText(op.param1,"[不能亂開網址哦]")
+				     else:
+					     pass                
 
         if op.type == 19:
             try:
