@@ -1871,84 +1871,113 @@ def bot(op):
                         cl.kickoutFromGroup(msg.to,[jj])
                     cl.sendText(msg.to,"黑單勿近")
         if op.type ==13:
-           OWN = Amid + Bmid + Cmid + Dmid + Emid + Fmid + Gmid + Hmid + Jmid + Lmid + Nmid + admid
-           if OWN in op.param3:
+           if admid in op.param3:
                if wait["P"] == True:
                   try:
                        ad.acceptGroupInvitation(op.param1)
+                       ad.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                       ad.leaveGroup(op.param1)
                   except:
-                      try:
-                          ki.acceptGroupInvitation(op.param1)
-                      except:
-                          try:
-                              kk.acceptGroupInvitation(op.param1)
-                          except:
-                              try:
-                                  kc.acceptGroupInvitation(op.param1)
-                              except:
-                                  try:
-                                      kd.acceptGroupInvitation(op.param1)
-                                  except:
-                                      try:
-                                          ke.acceptGroupInvitation(op.param1)
-                                      except:
-                                          try:
-                                              kf.acceptGroupInvitation(op.param1)
-                                          except:
-                                              try:
-                                                  kg.acceptGroupInvitation(op.param1)
-                                              except:
-                                                  try:
-                                                      kh.acceptGroupInvitation(op.param1)
-                                                  except:
-                                                      try:
-                                                          kj.acceptGroupInvitation(op.param1)
-                                                      except:
-                                                          try:
-                                                              kl.acceptGroupInvitation(op.param1)
-                                                          except:
-                                                              try:
-                                                                  kn.acceptGroupInvitation(op.param1)
-                                                              except:
-                                                                  pass
-                  if wait["P"] == True:
-                      try:
-                          ad.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
-                      except:
-                          try:
-                              ki.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
-                          except:
-                              try:
-                                  kk.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
-                              except:
-                                  try:
-                                      kc.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
-                                  except:
-                                      try:
-                                          kd.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
-                                      except:
-                                          try:
-                                              ke.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
-                                          except:
-                                              try:
-                                                  kf.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
-                                              except:
-                                                  try:
-                                                      kg.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
-                                                  except:
-                                                      try:
-                                                          kh.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
-                                                      except:
-                                                          try:
-                                                              kj.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
-                                                          except:
-                                                              try:
-                                                                  kl.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
-                                                              except:
-                                                                  try:
-                                                                      kn.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
-                                                                  except:
-                                                                      pass
+                      pass
+        if op.type ==13:
+           if Amid in op.param3:
+               if wait["P"] == True:
+                  try:
+                       ki.acceptGroupInvitation(op.param1)
+                       ki.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                       ki.leaveGroup(op.param1)
+                  except:
+                      pass
+        if op.type ==13:
+           if Bmid in op.param3:
+               if wait["P"] == True:
+                  try:
+                       kk.acceptGroupInvitation(op.param1)
+                       kk.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                       kk.leaveGroup(op.param1)
+                  except:
+                      pass
+        if op.type ==13:
+           if Cmid in op.param3:
+               if wait["P"] == True:
+                  try:
+                       kc.acceptGroupInvitation(op.param1)
+                       kc.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                       kc.leaveGroup(op.param1)
+                  except:
+                      pass
+        if op.type ==13:
+           if Dmid in op.param3:
+               if wait["P"] == True:
+                  try:
+                       kd.acceptGroupInvitation(op.param1)
+                       kd.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                       kd.leaveGroup(op.param1)
+                  except:
+                      pass
+        if op.type ==13:
+           if Emid in op.param3:
+               if wait["P"] == True:
+                  try:
+                       ke.acceptGroupInvitation(op.param1)
+                       ke.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                       ke.leaveGroup(op.param1)
+                  except:
+                      pass
+        if op.type ==13:
+           if Fmid in op.param3:
+               if wait["P"] == True:
+                  try:
+                       kf.acceptGroupInvitation(op.param1)
+                       kf.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                       kf.leaveGroup(op.param1)
+                  except:
+                      pass
+        if op.type ==13:
+           if Gmid in op.param3:
+               if wait["P"] == True:
+                  try:
+                       kg.acceptGroupInvitation(op.param1)
+                       kg.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                       kg.leaveGroup(op.param1)
+                  except:
+                      pass
+        if op.type ==13:
+           if Hmid in op.param3:
+               if wait["P"] == True:
+                  try:
+                       kh.acceptGroupInvitation(op.param1)
+                       kh.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                       kh.leaveGroup(op.param1)
+                  except:
+                      pass
+        if op.type ==13:
+           if Jmid in op.param3:
+               if wait["P"] == True:
+                  try:
+                       kj.acceptGroupInvitation(op.param1)
+                       kj.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                       kj.leaveGroup(op.param1)
+                  except:
+                      pass
+        if op.type ==13:
+           if Lmid in op.param3:
+               if wait["P"] == True:
+                  try:
+                       kl.acceptGroupInvitation(op.param1)
+                       kl.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                       kl.leaveGroup(op.param1)
+                  except:
+                      pass
+        if op.type ==13:
+           if Nmid in op.param3:
+               if wait["P"] == True:
+                  try:
+                       kn.acceptGroupInvitation(op.param1)
+                       kn.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                       kn.leaveGroup(op.param1)
+                  except:
+                      pass
         if op.type == 13:
             if mid in op.param3:
                 if wait["autoJoin"] == True:
