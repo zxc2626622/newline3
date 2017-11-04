@@ -1768,11 +1768,11 @@ def bot(op):
                     cl.sendText(msg.to,"鎖群名已關閉")
             elif "Invite:on" == msg.text:
 				gid = msg.to
-				protecturl.append(msg.to)
+				wait['pinv'][msg.to]
 				cl.sendText(msg.to,"鎖邀請已開啟")
             elif "Invite:off" == msg.text:
 				try:
-                    protecturl.remove(msg.to)
+                    del wait['pinv'][msg.to]
 					cl.sendText(msg.to,"鎖邀請已關閉")
 				except:
 					pass
@@ -1803,11 +1803,11 @@ def bot(op):
                         pass
             elif msg.text in ["url:on"]:
                 if msg.from_ in Administrator:
-                    wait['purl'][msg.to]
+				    protecturl.append(msg.to)
                     cl.sendText(msg.to,"已開")
             elif msg.text in ["url:off"]:
                 if msg.from_ in Administrator:
-                    del wait['purl'][msg.to]
+				    protecturl.remove(msg.to)
                     cl.sendText(msg.to,"已關閉")
                 else:
                     cl.sendText(msg.to,"已關閉")                
