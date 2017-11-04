@@ -115,6 +115,8 @@ wait = {
     "pnharfbot":{},
     "pname":{},
     "pro_name":{},    
+    "pinv":{},
+    "purl":{},
     "atjointicket":True,
     "string":"Boter",
     "kickme":False
@@ -222,7 +224,7 @@ def bot(op):
                                         c.contentMetadata={'mid':op.param2}
                                         cl.sendMessage(c)
         if op.param3 == "4":
-            if op.param1 in protecturl:
+            if op.param1 in wait["purl"]:
                 OWN = admin + Bots
                 if op.param2 in OWN:
                     pass
@@ -231,7 +233,7 @@ def bot(op):
 				     if group.preventJoinByTicket == False:
 					     group.preventJoinByTicket = True
 					     cl.updateGroup(group)
-					     cl.sendText(op.param1,"---[不能亂開網址ㄡ]---")
+					     cl.sendText(op.param1,"---[不能亂開網址哦]---")
 				     else:
 					     pass                
         if op.type == 0:
@@ -1751,15 +1753,14 @@ def bot(op):
 				if msg.to in protection:
 					cl.sendText(msg.to,"保護已開啟")
 				else:
-					wait["pnharfbot"][msg.to] = cl.getGroup(msg.to).name
+					wait["pro"][msg.to]
 					f=codecs.open('pnharfbot.json','w','utf-8')
 					json.dump(wait["pnharfbot"], f, sort_keys=True, indent=4,ensure_ascii=False)
-					protection.append(msg.to)
 					cl.sendText(msg.to,"保護開啟")
             elif "Pro:off" == msg.text:
 				try:
 					if msg.from_ in Administrator:
-						protection.remove(msg.to)
+					    del wait["pro"][msg.to]
 						cl.sendText(msg.to,"保護關閉")
 					else:
 						cl.sendText(msg.to,"保護已關閉")
@@ -1781,58 +1782,56 @@ def bot(op):
 					
             elif "Invite:on" == msg.text:
 				gid = msg.to
-				autocancel[gid] = "poni"
+				wait['pinv'][gid] = "poni"
 				cl.sendText(msg.to,"鎖邀請已開啟")
             elif "Invite:off" == msg.text:
 				try:
-					del autocancel[msg.to]
+					del wait['pinv'][msg.to]
 					cl.sendText(msg.to,"鎖邀請已關閉")
 				except:
 					pass
             elif msg.text in ["all:on"]:
                 if msg.from_ in Administrator:
                     try:
-                        wait["pnharfbot"][msg.to] = cl.getGroup(msg.to).name
-                        protection.append(msg.to)
+                        wait['pro'][msg.to]
                         wait['pname'][msg.to] = True
                         wait['pro_name'][msg.to] = cl.getGroup(msg.to).name
                         gid = msg.to
-                        autocancel[gid] = "poni"
-                        protecturl.append(msg.to)
+                        wait['pinv'][gid] = "poni"
+                        wait['purl'][msg.to]
                         cl.sendText(msg.to,"全開啟")
                     except:
 					    pass
             elif msg.text in ["all:off"]:
                 if msg.from_ in Administrator:
                     try:
-                        del wait["pnharfbot"][msg.to]
-                        protection.remove(msg.to)
+                        del wait['pro'][msg.to]
                         del wait['pro_name'][msg.to]
                         del wait['pname'][msg.to]
-                        del autocancel[msg.to]
-                        protecturl.remove(msg.to)
+                        del wait['pinv'][msg.to]
+                        del wait['purl'][msg.to]
                         cl.sendText(msg.to,"全關閉")
                     except:
                         pass
             elif msg.text in ["url:on"]:
                 if msg.from_ in Administrator:
-                    protecturl.append(msg.to)
+                    wait['pinv'][msg.to]
                     cl.sendText(msg.to,"已開")
             elif msg.text in ["url:off"]:
                 if msg.from_ in Administrator:
-                    protecturl.remove(msg.to)
+                    del wait['pinv'][msg.to]
                     cl.sendText(msg.to,"已關閉")
                 else:
                     cl.sendText(msg.to,"已關閉")                
             elif msg.text in ["Sset"]:
                 md = ""
-                if msg.to in wait["pnharfbot"]: md+=" 防踢:開啟\n"
+                if msg.to in wait["pro"]: md+=" 防踢:開啟\n"
                 else: md+=" 防踢:關閉\n"
                 if msg.to in wait["pro_name"]: md+=" 鎖群名:開啟\n"
                 else: md+=" 鎖群名:關閉\n"
-                if msg.to in autocancel: md+=" 鎖邀請:開啟\n"
+                if msg.to in wait["pinv"]: md+=" 鎖邀請:開啟\n"
                 else: md+=" 鎖邀請:關閉\n"
-                if msg.to in protecturl: md+=" 鎖網址:開啟"
+                if msg.to in wait["purl"]: md+=" 鎖網址:開啟"
                 else: md+=" 鎖網址:關閉"
                 cl.sendText(msg.to,md)
 #---------------FUNGSI RATAIN GRUP TANPA KICK SESAMA BOT/Admin/Bots----------#
@@ -2009,7 +2008,7 @@ def bot(op):
                             print "Bot can't cancel the invitation"
                             pass
         if op.type == 19:        
-           if op.param1 in protection:
+           if op.param1 in wait["pro"]:
               OWN = admin + Bots
            if op.param2 in OWN:
                pass
@@ -2071,7 +2070,7 @@ def bot(op):
                          print e
                          pass
                
-        if op.param1 in autocancel:
+        if op.param1 in wait["pinv"]:
            OWN = admin
            if op.param2 in OWN:
               pass
