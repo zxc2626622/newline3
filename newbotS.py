@@ -1750,17 +1750,17 @@ def bot(op):
 
 #-----------------------------保護------------------------------
             elif "Pro:on" == msg.text:
-				if msg.to in protection:
+				if msg.to in wait["pro"]:
 					cl.sendText(msg.to,"保護已開啟")
 				else:
-					wait["pro"][msg.to]
-					f=codecs.open('pnharfbot.json','w','utf-8')
-					json.dump(wait["pnharfbot"], f, sort_keys=True, indent=4,ensure_ascii=False)
+					wait['pro'][msg.to]
+					f=codecs.open('pro.json','w','utf-8')
+					json.dump(wait['pro'], f, sort_keys=True, indent=4,ensure_ascii=False)
 					cl.sendText(msg.to,"保護開啟")
             elif "Pro:off" == msg.text:
 				try:
 					if msg.from_ in Administrator:
-					    del wait["pro"][msg.to]
+					    del wait['pro'][msg.to]
 						cl.sendText(msg.to,"保護關閉")
 					else:
 						cl.sendText(msg.to,"保護已關閉")
