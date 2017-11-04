@@ -504,143 +504,143 @@ def bot(op):
                       kn.kickoutFromGroup(msg.to,[target])
                    except:
                       pass
-            elif "Kick " in msg.text:
+            elif "Kick:" in msg.text:
               if msg.from_ in admin:
-                midd = msg.text.replace("Kick ","")
+                midd = msg.text.replace("Kick:","")
                 cl.kickoutFromGroup(msg.to,[midd])
                 print "SUKSES -- KICK BY MID"
-            elif "AdKick " in msg.text:
+            elif "AdKo:" in msg.text:
               if msg.from_ in admin:
-                midd = msg.text.replace("AdKick ","")
+                midd = msg.text.replace("AdKo:","")
                 ad.kickoutFromGroup(msg.to,[midd])
                 print "SUKSES -- KICK BY MID"
-            elif "KiKick " in msg.text:
+            elif "KiKo:" in msg.text:
               if msg.from_ in admin:
-                midd = msg.text.replace("KiKick ","")
+                midd = msg.text.replace("KiKo:","")
                 ki.kickoutFromGroup(msg.to,[midd])
-            elif "KkKick " in msg.text:
+            elif "KkKo:" in msg.text:
               if msg.from_ in admin:
-                midd = msg.text.replace("KkKick ","")
+                midd = msg.text.replace("KkKo:","")
                 kk.kickoutFromGroup(msg.to,[midd])
                 print "SUKSES -- KICK BY MID"
-            elif "KcKick " in msg.text:
+            elif "KcKo:" in msg.text:
               if msg.from_ in admin:
-                midd = msg.text.replace("KcKick ","")
+                midd = msg.text.replace("KcKo:","")
                 kc.kickoutFromGroup(msg.to,[midd])
-            elif "KdKick " in msg.text:
+            elif "KdKo:" in msg.text:
               if msg.from_ in admin:
-                midd = msg.text.replace("KdKick ","")
+                midd = msg.text.replace("KdKo:","")
                 kd.kickoutFromGroup(msg.to,[midd])
-            elif "KeKick " in msg.text:
+            elif "KeKo:" in msg.text:
               if msg.from_ in admin:
-                midd = msg.text.replace("KeKick ","")
+                midd = msg.text.replace("KeKo:","")
                 ke.kickoutFromGroup(msg.to,[midd])
                 print "SUKSES -- KICK BY MID"
-            elif "KfKick " in msg.text:
+            elif "KfKo:" in msg.text:
               if msg.from_ in admin:
-                midd = msg.text.replace("KfKick ","")
+                midd = msg.text.replace("KfKo:","")
                 kf.kickoutFromGroup(msg.to,[midd])
                 print "SUKSES -- KICK BY MID"
-            elif "KgKick " in msg.text:
+            elif "KgKo:" in msg.text:
               if msg.from_ in admin:
-                midd = msg.text.replace("KgKick ","")
+                midd = msg.text.replace("KgKo:","")
                 kg.kickoutFromGroup(msg.to,[midd])
                 print "SUKSES -- KICK BY MID"
-            elif "KhKick " in msg.text:
+            elif "KhKo:" in msg.text:
               if msg.from_ in admin:
-                midd = msg.text.replace("KhKick ","")
+                midd = msg.text.replace("KhKo:","")
                 kh.kickoutFromGroup(msg.to,[midd])
                 print "SUKSES -- KICK BY MID"
-            elif "KjKick " in msg.text:
+            elif "KjKo:" in msg.text:
               if msg.from_ in admin:
-                midd = msg.text.replace("KjKick ","")
+                midd = msg.text.replace("KjKo:","")
                 kj.kickoutFromGroup(msg.to,[midd])
                 print "SUKSES -- KICK BY MID"
-            elif "KlKick " in msg.text:
+            elif "KlKo:" in msg.text:
               if msg.from_ in admin:
-                midd = msg.text.replace("KlKick ","")
+                midd = msg.text.replace("KlKo:","")
                 kl.kickoutFromGroup(msg.to,[midd])
                 print "SUKSES -- KICK BY MID"
-            elif "KnKick " in msg.text:
+            elif "KnKo:" in msg.text:
               if msg.from_ in admin:
-                midd = msg.text.replace("KnKick ","")
+                midd = msg.text.replace("KnKo:","")
                 kn.kickoutFromGroup(msg.to,[midd])
                 print "SUKSES -- KICK BY MID"
-            elif "Invite " in msg.text:
+            elif "Invite:" in msg.text:
               if msg.from_ in admin:
-                midd = msg.text.replace("Invite ","")
+                midd = msg.text.replace("Invite:","")
                 ad.findAndAddContactsByMid(midd)
                 ad.inviteIntoGroup(msg.to,[midd])
                 print "SUKSES -- INVITED BY MID"
-            elif "AdInvite " in msg.text:
+            elif "AdIn:" in msg.text:
               if msg.from_ in admin:
-                midd = msg.text.replace("AdInvite ","")
+                midd = msg.text.replace("AdIn:","")
                 ad.findAndAddContactsByMid(midd)
                 ad.inviteIntoGroup(msg.to,[midd])
                 print "SUKSES -- INVITED BY MID"
-            elif "KiInvite " in msg.text:
+            elif "KiIn:" in msg.text:
               if msg.from_ in admin:
-                midd = msg.text.replace("KiInvite ","")
+                midd = msg.text.replace("KiIn:","")
                 ki.findAndAddContactsByMid(midd)
                 ki.inviteIntoGroup(msg.to,[midd])
                 print "SUKSES -- INVITED BY MID"
-            elif "KkInvite " in msg.text:
+            elif "KkIn:" in msg.text:
               if msg.from_ in admin:
-                midd = msg.text.replace("KkInvite ","")
+                midd = msg.text.replace("KkIn:","")
                 kk.findAndAddContactsByMid(midd)
                 kk.inviteIntoGroup(msg.to,[midd])
                 print "SUKSES -- INVITED BY MID"
-            elif "KcInvite " in msg.text:
+            elif "KcIn:" in msg.text:
               if msg.from_ in admin:
-                midd = msg.text.replace("KcInvite ","")
+                midd = msg.text.replace("KcIn:","")
                 kc.findAndAddContactsByMid(midd)
                 kc.inviteIntoGroup(msg.to,[midd])
                 print "SUKSES -- INVITED BY MID"
-            elif "KdInvite " in msg.text:
+            elif "KdIn:" in msg.text:
               if msg.from_ in admin:
-                midd = msg.text.replace("KdInvite ","")
+                midd = msg.text.replace("KdIn:","")
                 kd.findAndAddContactsByMid(midd)
                 kd.inviteIntoGroup(msg.to,[midd])
                 print "SUKSES -- INVITED BY MID"
-            elif "KeInvite " in msg.text:
+            elif "KeIn:" in msg.text:
               if msg.from_ in admin:
-                midd = msg.text.replace("KeInvite ","")
+                midd = msg.text.replace("KeIn:","")
                 ke.findAndAddContactsByMid(midd)
                 ke.inviteIntoGroup(msg.to,[midd])
                 print "SUKSES -- INVITED BY MID"
-            elif "KfInvite " in msg.text:
+            elif "KfIn:" in msg.text:
               if msg.from_ in admin:
-                midd = msg.text.replace("KfInvite ","")
+                midd = msg.text.replace("KfIn:","")
                 kf.findAndAddContactsByMid(midd)
                 kf.inviteIntoGroup(msg.to,[midd])
                 print "SUKSES -- INVITED BY MID"         
-            elif "KgInvite " in msg.text:
+            elif "KgIn:" in msg.text:
               if msg.from_ in admin:
-                midd = msg.text.replace("KgInvite ","")
+                midd = msg.text.replace("KgIn:","")
                 kg.findAndAddContactsByMid(midd)
                 kg.inviteIntoGroup(msg.to,[midd])
                 print "SUKSES -- INVITED BY MID"
-            elif "KhInvite " in msg.text:
+            elif "KhIn:" in msg.text:
               if msg.from_ in admin:
-                midd = msg.text.replace("KhInvite ","")
+                midd = msg.text.replace("KhIn:","")
                 kh.findAndAddContactsByMid(midd)
                 kh.inviteIntoGroup(msg.to,[midd])
                 print "SUKSES -- INVITED BY MID"
-            elif "KjInvite " in msg.text:
+            elif "KjIn:" in msg.text:
               if msg.from_ in admin:
-                midd = msg.text.replace("KjInvite ","")
+                midd = msg.text.replace("KjIn:","")
                 kj.findAndAddContactsByMid(midd)
                 kj.inviteIntoGroup(msg.to,[midd])
                 print "SUKSES -- INVITED BY MID"
-            elif "KlInvite " in msg.text:
+            elif "KlIn:" in msg.text:
               if msg.from_ in admin:
-                midd = msg.text.replace("KlInvite ","")
+                midd = msg.text.replace("KlIn:","")
                 kl.findAndAddContactsByMid(midd)
                 kl.inviteIntoGroup(msg.to,[midd])
                 print "SUKSES -- INVITED BY MID"
-            elif "KnInvite " in msg.text:
+            elif "KnIn:" in msg.text:
               if msg.from_ in admin:
-                midd = msg.text.replace("KnInvite ","")
+                midd = msg.text.replace("KnIn:","")
                 kn.findAndAddContactsByMid(midd)
                 kn.inviteIntoGroup(msg.to,[midd])
                 print "SUKSES -- INVITED BY MID"
