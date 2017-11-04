@@ -46,7 +46,7 @@ kh.login(token="EmfuVR8Bqx5W941oxLy7.iDoQGqR5vJevZClhLwopPW.p6dQMnn51VOX+jZ8resN
 kh.loginResult()
 
 kj = LINETCR.LINE()
-kj.login(token="EmJtZKOBCDENmNZYZuB4.sumo+F0V0TIBr+nNrlJgna.35WSsKaujEfZKML1iyMIAJf9eEkhoN4Wwj/SN3ifjWA=")
+kj.login(token="EmkLDiNX1Aoc1vsVn1g4.sumo+F0V0TIBr+nNrlJgna.C6tvvZY7GCy32h4CwFrAn+9eO3U07kh0KCKSKjrZZfg=")
 kj.loginResult()
 
 kl = LINETCR.LINE()
@@ -1768,7 +1768,7 @@ def bot(op):
                     cl.sendText(msg.to,"鎖群名已關閉")
             elif "Invite:on" == msg.text:
 				gid = msg.to
-				wait['pinv'][gid]
+				wait['pinv'][gid] = "poin"
 				cl.sendText(msg.to,"鎖邀請已開啟")
             elif "Invite:off" == msg.text:
                 try:
@@ -1797,7 +1797,7 @@ def bot(op):
                         del wait['pro_name'][msg.to]
                         del wait['pname'][msg.to]
                         del wait['pinv'][msg.to]
-                        del wait['purl'][msg.to]
+                        protecturl.remove(msg.to)
                         cl.sendText(msg.to,"全關閉")
                     except:
                         pass
