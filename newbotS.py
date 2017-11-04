@@ -1760,7 +1760,7 @@ def bot(op):
 					cl.sendText(msg.to,"保護開啟")
             elif "Pro:off" == msg.text:
 				try:
-					del wait['pro'][msg.to] = cl.getGroup(msg.to).name
+					del wait['pro'][msg.to]
 					protection.remove(msg.to)
 					cl.sendText(msg.to,"鎖邀請已關閉")
 				except:
@@ -1804,7 +1804,7 @@ def bot(op):
             elif msg.text in ["all:off"]:
                 if msg.from_ in Administrator:
                     try:
-                        del wait['pro'][msg.to] = cl.getGroup(msg.to).name
+                        del wait['pro'][msg.to]
                         protection.remove(msg.to)
                         del wait['pro_name'][msg.to]
                         del wait['pname'][msg.to]
