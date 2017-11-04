@@ -112,7 +112,7 @@ wait = {
     "wblacklist":False,
     "dblacklist":False,
     "protectionOn":False,
-    "pnharfbot":{},
+    "pro":{},
     "pname":{},
     "pro_name":{},    
     "pinv":{},
