@@ -14,7 +14,7 @@ ad.login(token="Emtxa1xy0AMhXiEHKAP5.iur748Us1jyfpKv4oxGLDq.EkqBjvk6FS5UCqXHO5AP
 ad.loginResult()
 
 ki = LINETCR.LINE()
-ki.login(token="EmoJ9dflBWazZA9B6lFa.PzuIGrSfbi6ZimWr5ex5QG.djHPcdayfn9OUsxmyJ3Y6B6BnJ98nQeLDDZ/pudNTpM=")
+ki.login(token="EmMw4ER2O2fvKUSzEsBa.PzuIGrSfbi6ZimWr5ex5QG.syYDPY2/FKnscrl3eAMV0bGmvnZIjh0J77//M9TYAEo=")
 ki.loginResult()
 
 kk = LINETCR.LINE()
@@ -97,7 +97,7 @@ wait = {
     'leaveRoom':False,
     'timeline':True,
     'autoAdd':True,
-    'message':"詞語Bot/nhttp://line.me/ti/p/~fang_xin/nhttp://line.me/ti/p/~.90.11.24.",
+    'message':"詞語Bot\nhttp://line.me/ti/p/~fang_xin\nhttp://line.me/ti/p/~.90.11.24.",
     "lang":"JP",
     "comment":"http://line.me/ti/p/~fang_xin\nAuto like By fung xin 放芯",
     "likeOn":True,
@@ -1116,6 +1116,150 @@ def bot(op):
                     print "SUKSES -- SUMMON BOT"
                     G.preventJoinByTicket(G)
                     kn.updateGroup(G)
+            elif msg.text in ["Cljoin"]:
+                if msg.from_ in admin:
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = False
+                    cl.updateGroup(G)
+                    print "EXECUTED -- SUMMON BOT"
+                    invsend = 0
+                    Ticket = cl.reissueGroupTicket(msg.to)
+                    ad.acceptGroupInvitationByTicket(msg.to,Ticket)
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = True
+                    cl.updateGroup(G)
+            elif msg.text in ["Kijoin"]:
+                if msg.from_ in admin:
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = False
+                    cl.updateGroup(G)
+                    print "EXECUTED -- SUMMON BOT"
+                    invsend = 0
+                    Ticket = cl.reissueGroupTicket(msg.to)
+                    ki.acceptGroupInvitationByTicket(msg.to,Ticket)
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = True
+                    cl.updateGroup(G)
+            elif msg.text in ["Kkjoin"]:
+                if msg.from_ in admin:
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = False
+                    cl.updateGroup(G)
+                    print "EXECUTED -- SUMMON BOT"
+                    invsend = 0
+                    Ticket = cl.reissueGroupTicket(msg.to)
+                    kk.acceptGroupInvitationByTicket(msg.to,Ticket)
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = True
+                    cl.updateGroup(G)
+            elif msg.text in ["Kcjoin"]:
+                if msg.from_ in admin:
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = False
+                    cl.updateGroup(G)
+                    print "EXECUTED -- SUMMON BOT"
+                    invsend = 0
+                    Ticket = cl.reissueGroupTicket(msg.to)
+                    kc.acceptGroupInvitationByTicket(msg.to,Ticket)
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = True
+                    cl.updateGroup(G)
+            elif msg.text in ["Kdjoin"]:
+                if msg.from_ in admin:
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = False
+                    cl.updateGroup(G)
+                    print "EXECUTED -- SUMMON BOT"
+                    invsend = 0
+                    Ticket = cl.reissueGroupTicket(msg.to)
+                    kd.acceptGroupInvitationByTicket(msg.to,Ticket)
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = True
+                    cl.updateGroup(G)
+            elif msg.text in ["Kejoin"]:
+                if msg.from_ in admin:
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = False
+                    cl.updateGroup(G)
+                    print "EXECUTED -- SUMMON BOT"
+                    invsend = 0
+                    Ticket = cl.reissueGroupTicket(msg.to)
+                    Ake.acceptGroupInvitationByTicket(msg.to,Ticket)
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = True
+                    cl.updateGroup(G)
+            elif msg.text in ["Kfjoin"]:
+                if msg.from_ in admin:
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = False
+                    cl.updateGroup(G)
+                    print "EXECUTED -- SUMMON BOT"
+                    invsend = 0
+                    Ticket = cl.reissueGroupTicket(msg.to)
+                    kf.acceptGroupInvitationByTicket(msg.to,Ticket)
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = True
+                    cl.updateGroup(G)
+            elif msg.text in ["Kgjoin"]:
+                if msg.from_ in admin:
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = False
+                    cl.updateGroup(G)
+                    print "EXECUTED -- SUMMON BOT"
+                    invsend = 0
+                    Ticket = cl.reissueGroupTicket(msg.to)
+                    kg.acceptGroupInvitationByTicket(msg.to,Ticket)
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = True
+                    cl.updateGroup(G)
+            elif msg.text in ["Khjoin"]:
+                if msg.from_ in admin:
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = False
+                    cl.updateGroup(G)
+                    print "EXECUTED -- SUMMON BOT"
+                    invsend = 0
+                    Ticket = cl.reissueGroupTicket(msg.to)
+                    kh.acceptGroupInvitationByTicket(msg.to,Ticket)
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = True
+                    cl.updateGroup(G)
+            elif msg.text in ["Kjjoin"]:
+                if msg.from_ in admin:
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = False
+                    cl.updateGroup(G)
+                    print "EXECUTED -- SUMMON BOT"
+                    invsend = 0
+                    Ticket = cl.reissueGroupTicket(msg.to)
+                    kj.acceptGroupInvitationByTicket(msg.to,Ticket)
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = True
+                    cl.updateGroup(G)
+            elif msg.text in ["Kljoin"]:
+                if msg.from_ in admin:
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = False
+                    cl.updateGroup(G)
+                    print "EXECUTED -- SUMMON BOT"
+                    invsend = 0
+                    Ticket = cl.reissueGroupTicket(msg.to)
+                    kl.acceptGroupInvitationByTicket(msg.to,Ticket)
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = True
+                    cl.updateGroup(G)
+            elif msg.text in ["Knjoin"]:
+                if msg.from_ in admin:
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = False
+                    cl.updateGroup(G)
+                    print "EXECUTED -- SUMMON BOT"
+                    invsend = 0
+                    Ticket = cl.reissueGroupTicket(msg.to)
+                    kn.acceptGroupInvitationByTicket(msg.to,Ticket)
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = True
+                    cl.updateGroup(G)
 #-----------------------------------------------
 #.acceptGroupInvitationByTicket(msg.to,Ticket)
 #-----------------------------------------------
@@ -1452,9 +1596,9 @@ def bot(op):
                 cl.sendText(msg.to,"send contact")
             elif msg.text in ["Banlist"]:
                 if wait["blacklist"] == {}:
-                    cl.sendText(msg.to,"nothing")
+                    cl.sendText(msg.to,"[黑單沒有人]")
                 else:
-                    cl.sendText(msg.to,"Blacklist user")
+                    cl.sendText(msg.to,"[黑單用戶]")
                     mc = ""
                     for mi_d in wait["blacklist"]:
                         mc += "->" +cl.getContact(mi_d).displayName + "\n"
@@ -1515,7 +1659,7 @@ def bot(op):
 	                print rom
 	                chiya += rom[1] + "\n"
 
-	            cl.sendText(msg.to, " 已讀的人\n(｀・ω・´)%s"  % (wait2['readMember'][msg.to]))
+	            cl.sendText(msg.to, "↓↓↓↓↓↓↓↓↓↓已讀的人↓↓↓↓↓↓↓↓↓↓%s"  % (wait2['readMember'][msg.to]))
 	          else:
 	            cl.sendText(msg.to, "輸入#set")
 #-----------------------------------------------------------speed
@@ -1602,7 +1746,7 @@ def bot(op):
                         cl.sendText(msg.to,"Command denied.")
                         cl.sendText(msg.to,"Admin permission required.")
 
-#-----------------------------------------------------------
+#-----------------------------保護------------------------------
             elif "Pro:on" == msg.text:
 				if msg.to in protection:
 					cl.sendText(msg.to,"保護已開啟")
