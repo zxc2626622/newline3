@@ -2010,7 +2010,8 @@ def bot(op):
                             pass
         if op.type == 19:        
            if op.param1 in protection:
-           if op.param2 in Administrator:
+              OWN = admin + Bots
+           if op.param2 in OWN:
                pass
            elif wait["P"] == True:
                  try:
@@ -2054,7 +2055,8 @@ def bot(op):
    
         if op.param3 == "1":
             if op.param1 in protectname:
-                if op.param2 in Administrator:
+                OWN = admin
+                if op.param2 in OWN:
                     pass
                 elif wait["P"] == True:
                      group = cl.getGroup(op.param1)
@@ -2070,7 +2072,8 @@ def bot(op):
                          pass
                
         if op.param1 in autocancel:
-           if op.param2 in Administrator:
+           OWN = admin
+           if op.param2 in OWN:
               pass
            else:
                Inviter = op.param3.replace("",',')
@@ -2181,7 +2184,6 @@ def bot(op):
                         kn.acceptGroupInvitationByTicket(op.param1,Ticket)
                         G.preventJoinByTicket = True
                         cl.updateGroup(G)
-
 
                 elif op.param3 in Bmid:
                     if op.param2 in Cmid:
