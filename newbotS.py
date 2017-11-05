@@ -1870,8 +1870,20 @@ def bot(op):
                 else:
                     cl.sendText(op.param1,str(wait["message"]))
         if op.type == 13:
-            if op.param3 in wait["blacklist"]:
-                cl.kickoutFromGroup(op.param1,[op.param3])
+            if wait["blacklist"] in op.param3:
+                 X = cl.getGroup(op.param1)
+                 gInviMids = [contact.mid for contact in X.invitee]
+                 cl.cancelGroupInvitation(op.param1, gInviMids)
+            else:
+                pass
+        if op.type == 26:
+            if wait["blacklist"] in op.param3:
+                 cl.kickoutFromGroup(op.param1,op.param3)
+            else:
+                pass
+        if op.type == 17:
+            if wait["blacklist"] in op.param3:
+                 cl.kickoutFromGroup(op.param1,op.param3)
             else:
                 pass
         if op.type == 17:
