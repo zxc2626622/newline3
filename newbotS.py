@@ -1273,7 +1273,7 @@ def bot(op):
                         print "SUKSES -- BOT OUT GROUP"
                     except:
                         pass
-            elif msg.text in ["Ad bye"]:
+            elif msg.text in ["Adbye"]:
               if msg.from_ in admin:
                     ginfo = ad.getGroup(msg.to)
                     print "EXECUTED -- BOT OUT GROUP"
@@ -1281,7 +1281,7 @@ def bot(op):
                         ad.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["Ki bye"]:
+            elif msg.text in ["Kibye"]:
               if msg.from_ in admin:
                     ginfo = ki.getGroup(msg.to)
                     print "EXECUTED -- BOT OUT GROUP"
@@ -1289,7 +1289,7 @@ def bot(op):
                         ki.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["Kk bye"]:
+            elif msg.text in ["Kkbye"]:
               if msg.from_ in admin:
                     ginfo = kk.getGroup(msg.to)
                     print "EXECUTED -- BOT OUT GROUP"
@@ -1297,7 +1297,7 @@ def bot(op):
                         kk.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["Kc bye"]:
+            elif msg.text in ["Kcbye"]:
               if msg.from_ in admin:
                     ginfo = kc.getGroup(msg.to)
                     print "EXECUTED -- BOT OUT GROUP"
@@ -1305,7 +1305,7 @@ def bot(op):
                         kc.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["Kd bye"]:
+            elif msg.text in ["Kdbye"]:
               if msg.from_ in admin:
                     ginfo = kd.getGroup(msg.to)
                     print "EXECUTED -- BOT OUT GROUP"
@@ -1313,7 +1313,7 @@ def bot(op):
                         kd.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["Ke bye"]:
+            elif msg.text in ["Kebye"]:
               if msg.from_ in admin:
                     ginfo = ke.getGroup(msg.to)
                     print "EXECUTED -- BOT OUT GROUP"
@@ -1321,7 +1321,7 @@ def bot(op):
                         ke.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["Kf bye"]:
+            elif msg.text in ["Kfbye"]:
               if msg.from_ in admin:
                     ginfo = kf.getGroup(msg.to)
                     print "EXECUTED -- BOT OUT GROUP"
@@ -1329,7 +1329,7 @@ def bot(op):
                         kf.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["Kg bye"]:
+            elif msg.text in ["Kgbye"]:
               if msg.from_ in admin:
                     ginfo = kg.getGroup(msg.to)
                     print "EXECUTED -- BOT OUT GROUP"
@@ -1337,7 +1337,7 @@ def bot(op):
                         kg.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["Kh bye"]:
+            elif msg.text in ["Khbye"]:
               if msg.from_ in admin:
                     ginfo = cl.getGroup(msg.to)
                     print "EXECUTED -- BOT OUT GROUP"
@@ -1345,7 +1345,7 @@ def bot(op):
                         kh.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["Kj bye"]:
+            elif msg.text in ["Kjbye"]:
               if msg.from_ in admin:
                    ginfo = kj.getGroup(msg.to)
                    print "EXECUTED -- BOT OUT GROUP"
@@ -1353,7 +1353,7 @@ def bot(op):
                        kj.leaveGroup(msg.to)
                    except:
                         pass
-            elif msg.text in ["Kl bye"]:
+            elif msg.text in ["Klbye"]:
               if msg.from_ in admin:
                     ginfo = kl.getGroup(msg.to)
                     print "EXECUTED -- BOT OUT GROUP"
@@ -1361,7 +1361,7 @@ def bot(op):
                         kl.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["Kn bye"]:
+            elif msg.text in ["Knbye"]:
               if msg.from_ in admin:
                     ginfo = kn.getGroup(msg.to)
                     print "EXECUTED -- BOT OUT GROUP"
@@ -1624,7 +1624,7 @@ def bot(op):
                         ki.kickoutFromGroup(msg.to,[jj])
                         kk.kickoutFromGroup(msg.to,[jj])
                         kc.kickoutFromGroup(msg.to,[jj])
-                    cl.sendText(msg.to,"Good Bye Sampah")
+                    cl.sendText(msg.to,"Goodbye Sampah")
 #--------------------
             elif msg.text == "#set":
               if msg.from_ in admin:
@@ -1887,7 +1887,9 @@ def bot(op):
            if admid in op.param3:
                if wait["P"] == True:
                    ad.acceptGroupInvitation(op.param1)
-                   ad.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                   ad.sendText(op.param1,"請不要邀保鏢,請邀請主帳號
+↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓
+http://line.me/ti/p/~fang_xin")
                    ad.leaveGroup(op.param1)
                else:
                    pass
@@ -1895,7 +1897,9 @@ def bot(op):
            if Amid in op.param3:
                if wait["P"] == True:
                    ki.acceptGroupInvitation(op.param1)
-                   ki.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                   ki.sendText(op.param1,"請不要邀保鏢,請邀請主帳號
+↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓
+http://line.me/ti/p/~fang_xin")
                    ki.leaveGroup(op.param1)
                else:
                    pass
@@ -1903,7 +1907,9 @@ def bot(op):
            if Bmid in op.param3:
                if wait["P"] == True:
                    kk.acceptGroupInvitation(op.param1)
-                   kk.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                   kk.sendText(op.param1,"請不要邀保鏢,請邀請主帳號
+↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓
+http://line.me/ti/p/~fang_xin")
                    kk.leaveGroup(op.param1)
                else:
                    pass
@@ -1911,7 +1917,9 @@ def bot(op):
            if Cmid in op.param3:
                if wait["P"] == True:
                    kc.acceptGroupInvitation(op.param1)
-                   kc.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                   kc.sendText(op.param1,"請不要邀保鏢,請邀請主帳號
+↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓
+http://line.me/ti/p/~fang_xin")
                    kc.leaveGroup(op.param1)
                else:
                    pass
@@ -1919,7 +1927,9 @@ def bot(op):
            if Dmid in op.param3:
                if wait["P"] == True:
                    kd.acceptGroupInvitation(op.param1)
-                   kd.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                   kd.sendText(op.param1,"請不要邀保鏢,請邀請主帳號
+↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓
+http://line.me/ti/p/~fang_xin")
                    kd.leaveGroup(op.param1)
                else:
                    pass
@@ -1927,7 +1937,9 @@ def bot(op):
            if Emid in op.param3:
                if wait["P"] == True:
                    ke.acceptGroupInvitation(op.param1)
-                   ke.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                   ke.sendText(op.param1,"請不要邀保鏢,請邀請主帳號
+↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓
+http://line.me/ti/p/~fang_xin")
                    ke.leaveGroup(op.param1)
                else:
                    pass
@@ -1935,7 +1947,9 @@ def bot(op):
            if Fmid in op.param3:
                if wait["P"] == True:
                    kf.acceptGroupInvitation(op.param1)
-                   kf.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                   kf.sendText(op.param1,"請不要邀保鏢,請邀請主帳號
+↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓
+http://line.me/ti/p/~fang_xin")
                    kf.leaveGroup(op.param1)
                else:
                    pass
@@ -1943,7 +1957,9 @@ def bot(op):
            if Gmid in op.param3:
                if wait["P"] == True:
                    kg.acceptGroupInvitation(op.param1)
-                   kg.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                   kg.sendText(op.param1,"請不要邀保鏢,請邀請主帳號
+↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓
+http://line.me/ti/p/~fang_xin")
                    kg.leaveGroup(op.param1)
                else:
                    pass
@@ -1951,7 +1967,9 @@ def bot(op):
            if Hmid in op.param3:
                if wait["P"] == True:
                    kh.acceptGroupInvitation(op.param1)
-                   kh.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                   kh.sendText(op.param1,"請不要邀保鏢,請邀請主帳號
+↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓
+http://line.me/ti/p/~fang_xin")
                    kh.leaveGroup(op.param1)
                else:
                    pass
@@ -1959,7 +1977,9 @@ def bot(op):
            if Jmid in op.param3:
                if wait["P"] == True:
                    kj.acceptGroupInvitation(op.param1)
-                   kj.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                   kj.sendText(op.param1,"請不要邀保鏢,請邀請主帳號
+↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓
+http://line.me/ti/p/~fang_xin")
                    kj.leaveGroup(op.param1)
                else:
                    pass
@@ -1967,7 +1987,9 @@ def bot(op):
            if Lmid in op.param3:
                if wait["P"] == True:
                    kl.acceptGroupInvitation(op.param1)
-                   kl.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                   kl.sendText(op.param1,"請不要邀保鏢,請邀請主帳號
+↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓
+http://line.me/ti/p/~fang_xin")
                    kl.leaveGroup(op.param1)
                else:
                    pass
@@ -1975,7 +1997,9 @@ def bot(op):
            if Nmid in op.param3:
                if wait["P"] == True:
                    kn.acceptGroupInvitation(op.param1)
-                   kn.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\nhttp://line.me/ti/p/~fang_xin")
+                   kn.sendText(op.param1,"請不要邀保鏢,請邀請主帳號
+↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓
+http://line.me/ti/p/~fang_xin")
                    kn.leaveGroup(op.param1)
                else:
                    pass
