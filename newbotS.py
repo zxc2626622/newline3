@@ -1871,7 +1871,7 @@ def bot(op):
                     cl.sendText(op.param1,str(wait["message"]))
         if op.type == 13:
             if op.param3 in wait["blacklist"]:
-                cl.kickoutFromGroup(msg.to,[op.param3])
+                cl.kickoutFromGroup(op.param1,[op.param3])
             else:
                 pass
         if op.type == 17:
