@@ -85,6 +85,7 @@ def bot(op):
             if wait["leaveRoom"] == True:
                 cl.leaveRoom(op.param1)
         if op.type == 26:
+            msg = op.message
             if msg.toType == 0:
                 msg.to = msg.from_
                 if msg.from_ == profile.mid:
@@ -104,6 +105,7 @@ def bot(op):
                 url = msg.contentMetadata("line://home/post?userMid="+mid+"&postId="+"new_post")
                 cl.like(url[25:58], url[66:], likeType=1001)
         if op.type == 26:
+            msg = op.message
             if msg.contentType == 13:
                if wait["wblack"] == True:
                     if msg.contentMetadata["mid"] in wait["commentBlack"]:
@@ -174,7 +176,6 @@ def bot(op):
                 else:
                     cl.sendText(msg.to,helpt)
             elif "#Invite:" in msg.text:
-               if msg.from_ in admin:
                 midd = msg.text.replace("#Invite:","")
                 cl.findAndAddContactsByMid(midd)
                 cl.inviteIntoGroup(msg.to,[midd])
