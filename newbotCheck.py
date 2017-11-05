@@ -18,7 +18,7 @@ KAC=[cl]
 mid = cl.getProfile().mid
 
 Bots=[mid]
-admin=["uaa75cafbc718153f1b0e69998c51f4e7"]
+admin=["ucd9332352d3460cbca62f39047a990fe"]
 wait = {
     'contact':True,
     'autoJoin':True,
@@ -84,6 +84,14 @@ def bot(op):
         if op.type == 24:
             if wait["leaveRoom"] == True:
                 cl.leaveRoom(op.param1)
+        if op.type == 25:
+            msg = op.message
+            if "AGc " in msg.text:
+              if msg.from_ in admin:
+                bctxt = msg.text.replace("AGc ","")
+                gid = cl.getGroupIdsJoined()
+                for i in gid:
+                  cl.sendText(i,(bctxt))
         if op.type == 26:
             msg = op.message
             if msg.toType == 0:
