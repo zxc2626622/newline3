@@ -13,7 +13,7 @@ print "login success"
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-helpMessage ="""====[已讀機 Help]====\n輸入-->[#Check]設定讀取點\n輸入-->[#See]查看已讀\n輸入-->[#Invite:MID]可以邀請MID\n輸入-->[#Ginfo]可查看群組資料\n輸入-->[#Cancel]可以取消邀請\n輸入-->[#Bye]機器離開群組\n[功能有待增加]製作者:\nhttp://line.me/ti/p/~fang_xin\nhttp://line.me/ti/p/~.90.11.24."""
+helpMessage ="""====[已讀機 Help]====\n輸入-->[#Check]設定讀取點\n輸入-->[#See]查看已讀\n輸入-->[#Invite:MID]可以邀請MID\n輸入-->[#Ginfo]可查看群組資料\n輸入-->[#Cancel]可以取消邀請\n輸入-->[#Bye]機器離開群組\n[重要]\n1.不要私訊傳指令\n2.不要過度猛玩怕壞掉\n3.如果進去沒用可以邀請翻譯進群在發送指令再把翻譯用走就好\n[功能有待增加]\n製作者:\nhttp://line.me/ti/p/~fang_xin\nhttp://line.me/ti/p/~.90.11.24."""
 KAC=[cl]
 mid = cl.getProfile().mid
 
@@ -26,7 +26,7 @@ wait = {
     'leaveRoom':True,
     'timeline':True,
     'autoAdd':True,
-    'message':"====[已讀機 Help]====\n輸入-->[#Check]設定讀取點\n輸入-->[#See]查看已讀\n輸入-->[#Invite:MID]可以邀請MID\n輸入-->[#Ginfo]可查看群組資料\n輸入-->[#Cancel]可以取消邀請\n輸入-->[#Bye]機器離開群組\n[功能有待增加]製作者:\nhttp://line.me/ti/p/~fang_xin\nhttp://line.me/ti/p/~.90.11.24.",
+    'message':"====[已讀機 Help]====\n輸入-->[#Check]設定讀取點\n輸入-->[#See]查看已讀\n輸入-->[#Invite:MID]可以邀請MID\n輸入-->[#Ginfo]可查看群組資料\n輸入-->[#Cancel]可以取消邀請\n輸入-->[#Bye]機器離開群組\n[重要]\n1.不要私訊傳指令\n2.不要過度猛玩怕壞掉\n3.如果進去沒用可以邀請翻譯進群在發送指令再把翻譯用走就好\n[功能有待增加]\n製作者:\nhttp://line.me/ti/p/~fang_xin\nhttp://line.me/ti/p/~.90.11.24.",
     "lang":"JP",
     "comment":"====[已讀機]====\nhttp://line.me/ti/p/~fang_xin\nAuto like By fung xin 放芯",
     "commentOn":True,
