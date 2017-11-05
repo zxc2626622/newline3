@@ -1876,11 +1876,6 @@ def bot(op):
                  cl.cancelGroupInvitation(op.param1, gInviMids)
             else:
                 pass
-        if op.type == 26:
-            if wait["blacklist"] in op.param3:
-                 cl.kickoutFromGroup(op.param1,op.param3)
-            else:
-                pass
         if op.type == 17:
             if wait["blacklist"] in op.param3:
                  cl.kickoutFromGroup(op.param1,op.param3)
