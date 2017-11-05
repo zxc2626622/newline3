@@ -66,6 +66,11 @@ def bot(op):
     try:
         if op.type == 0:
             return
+        if op.type == 13:
+            if mid in op.param3:
+                if wait["autoJoin"] == True:
+                    cl.acceptGroupInvitation(op.param1)
+                    cl.sendText(msg.to,helpMessage)
         if op.type == 5:
             if wait["autoAdd"] == True:
                 cl.findAndAddContactsByMid(op.param1)
