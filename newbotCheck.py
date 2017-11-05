@@ -13,7 +13,7 @@ print "login success"
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-helpMessage ="""====[已讀機 Help]====\n輸入-->[#Check]設定讀取點\n輸入-->[#See]查看已讀\n輸入-->[#Invite:MID]可以邀請MID\n輸入-->[#Me @]此功能需要標註 獲得標註人的友資\n輸入-->[#Mid @]此功能需要標註 獲得標註人的MID\n輸入-->[#Ginfo]可查看群組資料\n輸入-->[#Cancel]可以取消邀請\n輸入-->[#Bye]機器離開群組\n====[重要]====\n1.不要私訊傳指令\n2.不要過度猛玩怕壞掉\n3.如果進去沒用可以邀請翻譯進群在發送指令再把翻譯用走就好\n====[功能有待增加]====\n製作者:\nhttp://line.me/ti/p/~fang_xin\n\nhttp://line.me/ti/p/~.90.11.24."""
+helpMessage ="""====[已讀機 Help]====\n輸入-->[#Check]設定讀取點\n輸入-->[#See]查看已讀\n輸入-->[#Invite:MID]可以邀請MID\n輸入-->[#Me @]此功能需要標註 獲得標註人的友資\n輸入-->[#Mid @]此功能需要標註 獲得標註人的MID\n輸入-->[#Ginfo]可查看群組資料\n輸入-->[#Cancel]可以取消邀請\n輸入-->[#Bye]機器離開群組\n====[重要]====\n1.不要私訊傳指令\n2.不要過度猛玩怕壞掉\n3.如果進去沒用可以邀請翻譯進群在發送指令再把翻譯用走就好\n=====[特重要]=====\n1.不定時退全部群\n====[功能有待增加]====\n製作者:\nhttp://line.me/ti/p/~fang_xin\n\nhttp://line.me/ti/p/~.90.11.24."""
 KAC=[cl]
 mid = cl.getProfile().mid
 
@@ -92,6 +92,36 @@ def bot(op):
                 gid = cl.getGroupIdsJoined()
                 for i in gid:
                   cl.sendText(i,(bctxt))
+            elif "AGbye" in msg.text:
+              if msg.from_ in admin:
+                gid = cl.getGroupIdsJoined()
+                for i in gid:
+                  cl.leaveGroup(i)
+            elif msg.text in ["Join on","Auto join:on"]:
+              if msg.from_ in admin:
+                if wait["autoJoin"] == True:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"已開啟")
+                    else:
+                        cl.sendText(msg.to,"完成")
+                else:
+                    wait["autoJoin"] = True
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"已開啟")
+                    else:
+                        cl.sendText(msg.to,"完成")
+            elif msg.text in ["Join off","Auto join:off"]:
+                if wait["autoJoin"] == False:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"已關閉")
+                    else:
+                        cl.sendText(msg.to,"完成")
+                else:
+                    wait["autoJoin"] = False
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"已關閉")
+                    else:
+                        cl.sendText(msg.to,"完成")
         if op.type == 26:
             msg = op.message
             if msg.toType == 0:
