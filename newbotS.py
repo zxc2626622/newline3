@@ -1869,7 +1869,11 @@ def bot(op):
                     pass
                 else:
                     cl.sendText(op.param1,str(wait["message"]))
-
+        if op.type == 13:
+            if op.param3 in wait["blacklist"]:
+                cl.kickoutFromGroup(msg.to,[op.param3])
+            else:
+                pass
         if op.type == 17:
             if mid in op.param3:
                     group = cl.getGroup(msg.to)
@@ -1887,9 +1891,7 @@ def bot(op):
            if admid in op.param3:
                if wait["P"] == True:
                    ad.acceptGroupInvitation(op.param1)
-                   ad.sendText(op.param1,"請不要邀保鏢,請邀請主帳號
-↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓
-http://line.me/ti/p/~fang_xin")
+                   ad.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\n↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓\nhttp://line.me/ti/p/~fang_xin")
                    ad.leaveGroup(op.param1)
                else:
                    pass
@@ -1897,9 +1899,7 @@ http://line.me/ti/p/~fang_xin")
            if Amid in op.param3:
                if wait["P"] == True:
                    ki.acceptGroupInvitation(op.param1)
-                   ki.sendText(op.param1,"請不要邀保鏢,請邀請主帳號
-↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓
-http://line.me/ti/p/~fang_xin")
+                   ki.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\n↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓\nhttp://line.me/ti/p/~fang_xin")
                    ki.leaveGroup(op.param1)
                else:
                    pass
@@ -1907,9 +1907,7 @@ http://line.me/ti/p/~fang_xin")
            if Bmid in op.param3:
                if wait["P"] == True:
                    kk.acceptGroupInvitation(op.param1)
-                   kk.sendText(op.param1,"請不要邀保鏢,請邀請主帳號
-↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓
-http://line.me/ti/p/~fang_xin")
+                   kk.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\n↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓\nhttp://line.me/ti/p/~fang_xin")
                    kk.leaveGroup(op.param1)
                else:
                    pass
@@ -1917,9 +1915,7 @@ http://line.me/ti/p/~fang_xin")
            if Cmid in op.param3:
                if wait["P"] == True:
                    kc.acceptGroupInvitation(op.param1)
-                   kc.sendText(op.param1,"請不要邀保鏢,請邀請主帳號
-↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓
-http://line.me/ti/p/~fang_xin")
+                   kc.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\n↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓\nhttp://line.me/ti/p/~fang_xin")
                    kc.leaveGroup(op.param1)
                else:
                    pass
@@ -1927,9 +1923,7 @@ http://line.me/ti/p/~fang_xin")
            if Dmid in op.param3:
                if wait["P"] == True:
                    kd.acceptGroupInvitation(op.param1)
-                   kd.sendText(op.param1,"請不要邀保鏢,請邀請主帳號
-↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓
-http://line.me/ti/p/~fang_xin")
+                   kd.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\n↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓\nhttp://line.me/ti/p/~fang_xin")
                    kd.leaveGroup(op.param1)
                else:
                    pass
@@ -1937,9 +1931,7 @@ http://line.me/ti/p/~fang_xin")
            if Emid in op.param3:
                if wait["P"] == True:
                    ke.acceptGroupInvitation(op.param1)
-                   ke.sendText(op.param1,"請不要邀保鏢,請邀請主帳號
-↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓
-http://line.me/ti/p/~fang_xin")
+                   ke.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\n↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓\nhttp://line.me/ti/p/~fang_xin")
                    ke.leaveGroup(op.param1)
                else:
                    pass
@@ -1947,9 +1939,7 @@ http://line.me/ti/p/~fang_xin")
            if Fmid in op.param3:
                if wait["P"] == True:
                    kf.acceptGroupInvitation(op.param1)
-                   kf.sendText(op.param1,"請不要邀保鏢,請邀請主帳號
-↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓
-http://line.me/ti/p/~fang_xin")
+                   kf.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\n↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓\nhttp://line.me/ti/p/~fang_xin")
                    kf.leaveGroup(op.param1)
                else:
                    pass
@@ -1957,9 +1947,7 @@ http://line.me/ti/p/~fang_xin")
            if Gmid in op.param3:
                if wait["P"] == True:
                    kg.acceptGroupInvitation(op.param1)
-                   kg.sendText(op.param1,"請不要邀保鏢,請邀請主帳號
-↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓
-http://line.me/ti/p/~fang_xin")
+                   kg.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\n↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓\nhttp://line.me/ti/p/~fang_xin")
                    kg.leaveGroup(op.param1)
                else:
                    pass
@@ -1967,9 +1955,7 @@ http://line.me/ti/p/~fang_xin")
            if Hmid in op.param3:
                if wait["P"] == True:
                    kh.acceptGroupInvitation(op.param1)
-                   kh.sendText(op.param1,"請不要邀保鏢,請邀請主帳號
-↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓
-http://line.me/ti/p/~fang_xin")
+                   kh.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\n↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓\nhttp://line.me/ti/p/~fang_xin")
                    kh.leaveGroup(op.param1)
                else:
                    pass
@@ -1977,9 +1963,7 @@ http://line.me/ti/p/~fang_xin")
            if Jmid in op.param3:
                if wait["P"] == True:
                    kj.acceptGroupInvitation(op.param1)
-                   kj.sendText(op.param1,"請不要邀保鏢,請邀請主帳號
-↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓
-http://line.me/ti/p/~fang_xin")
+                   kj.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\n↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓\nhttp://line.me/ti/p/~fang_xin")
                    kj.leaveGroup(op.param1)
                else:
                    pass
@@ -1987,9 +1971,7 @@ http://line.me/ti/p/~fang_xin")
            if Lmid in op.param3:
                if wait["P"] == True:
                    kl.acceptGroupInvitation(op.param1)
-                   kl.sendText(op.param1,"請不要邀保鏢,請邀請主帳號
-↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓
-http://line.me/ti/p/~fang_xin")
+                   kl.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\n↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓\nhttp://line.me/ti/p/~fang_xin")
                    kl.leaveGroup(op.param1)
                else:
                    pass
@@ -1997,9 +1979,7 @@ http://line.me/ti/p/~fang_xin")
            if Nmid in op.param3:
                if wait["P"] == True:
                    kn.acceptGroupInvitation(op.param1)
-                   kn.sendText(op.param1,"請不要邀保鏢,請邀請主帳號
-↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓
-http://line.me/ti/p/~fang_xin")
+                   kn.sendText(op.param1,"請不要邀保鏢,請邀請主帳號\n↓↓↓↓↓Dont't Invite Kicker plz Invite↓↓↓↓↓\nhttp://line.me/ti/p/~fang_xin")
                    kn.leaveGroup(op.param1)
                else:
                    pass
