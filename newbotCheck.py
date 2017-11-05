@@ -253,19 +253,21 @@ def bot(op):
                         cl.leaveGroup(msg.to)
                     except:
                         pass
-    if op.type == 55:
+#----------------------------------------------------------------------------------
+        if op.type == 55:
             try:
                 if op.param1 in wait2['readPoint']:
                     Name = cl.getContact(op.param2).displayName
                     if Name in wait2['readMember'][op.param1]:
                         pass
                     else:
-                        wait2['readMember'][op.param1] += "\n✏️" + Name
-                        wait2['ROM'][op.param1][op.param2] = "✏️" + Name
+                        wait2['readMember'][op.param1] += "\n☑" + Name
+                        wait2['ROM'][op.param1][op.param2] = "☑" + Name
                 else:
                     cl.sendText
             except:
-                  pass
+                  pass              
+#-----------------------------------------------------
         if op.type == 59:
             print op
 
