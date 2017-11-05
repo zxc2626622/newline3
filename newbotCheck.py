@@ -1,0 +1,329 @@
+# -*- coding: utf-8 -*-
+
+import LINETCR
+from LINETCR.lib.curve.ttypes import *
+from datetime import datetime
+import time,random,sys,json,codecs,threading,glob
+
+cl = LINETCR.LINE()
+cl.login(token="EmgisJJQWYZUlZvN73ye.ZzmYns00ymVkyVoqr6Mq+G.CNjpWtz9zVn70Tl9XaVRJN4zNRAMygBMBAcrnSc07ho=")
+cl.loginResult()
+
+print "login success"
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
+helpMessage ="""====[已讀機 Help]====\n輸入-->[#Check]設定讀取點\n輸入-->[#See]查看已讀/n輸入-->[#Invite:MID]可以邀請MID\n輸入-->[#Ginfo]可查看群組資料\n輸入-->[#Cancel]可以取消邀請\n輸入-->[#Bye]機器離開群組\n[功能有待增加]製作者:\nhttp://line.me/ti/p/~fang_xin\nhttp://line.me/ti/p/~.90.11.24."""
+KAC=[cl]
+mid = cl.getProfile().mid
+
+Bots=[mid]
+admin=["uaa75cafbc718153f1b0e69998c51f4e7"]
+wait = {
+    'contact':True,
+    'autoJoin':True,
+    'autoCancel':{"on":True,"members":1},
+    'leaveRoom':True,
+    'timeline':True,
+    'autoAdd':True,
+    'message':"====[已讀機 Help]====\n輸入-->[#Check]設定讀取點\n輸入-->[#See]查看已讀/n輸入-->[#Invite:MID]可以邀請MID\n輸入-->[#Ginfo]可查看群組資料\n輸入-->[#Cancel]可以取消邀請\n輸入-->[#Bye]機器離開群組\n[功能有待增加]製作者:\nhttp://line.me/ti/p/~fang_xin\nhttp://line.me/ti/p/~.90.11.24.",
+    "lang":"JP",
+    "comment":"====[已讀機]====\nhttp://line.me/ti/p/~fang_xin\nAuto like By fung xin 放芯",
+    "commentOn":False,
+    "likeOn":True,
+    "commentBlack":{},
+    "wblack":False,
+    "dblack":False,
+    "clock":False,
+    "blacklist":{},
+    "wblacklist":False,
+    "dblacklist":False,
+    "protectionOn":True
+    }
+
+wait2 = {
+    'readPoint':{},
+    'readMember':{},
+    'setTime':{},
+    'ROM':{}
+    }
+
+setTime = {}
+setTime = wait2['setTime']
+
+
+def sendMessage(to, text, contentMetadata={}, contentType=0):
+    mes = Message()
+    mes.to, mes.from_ = to, profile.mid
+    mes.text = text
+    mes.contentType, mes.contentMetadata = contentType, contentMetadata
+    if to not in messageReq:
+        messageReq[to] = -1
+    messageReq[to] += 1
+
+
+def bot(op):
+    try:
+        if op.type == 0:
+            return
+        if op.type == 5:
+            if wait["autoAdd"] == True:
+                cl.findAndAddContactsByMid(op.param1)
+                if (wait["message"] in [""," ","\n",None]):
+                    pass
+                else:
+                    cl.sendText(op.param1,str(wait["message"]))
+        if op.type == 22:
+            if wait["leaveRoom"] == True:
+                cl.leaveRoom(op.param1)
+        if op.type == 24:
+            if wait["leaveRoom"] == True:
+                cl.leaveRoom(op.param1)
+        if op.type == 26:
+            if msg.toType == 0:
+                msg.to = msg.from_
+                if msg.from_ == profile.mid:
+                    if "join:" in msg.text:
+                        list_ = msg.text.split(":")
+                        try:
+                            cl.acceptGroupInvitationByTicket(list_[1],list_[2])
+                            X = cl.getGroup(list_[1])
+                            X.preventJoinByTicket = True
+                            cl.updateGroup(X)
+                        except:
+                            cl.sendText(msg.to,"error")
+            if msg.toType == 1:
+                if wait["leaveRoom"] == True:
+                    cl.leaveRoom(msg.to)
+            if msg.contentType == 16:
+                url = msg.contentMetadata("line://home/post?userMid="+mid+"&postId="+"new_post")
+                cl.like(url[25:58], url[66:], likeType=1001)
+        if op.type == 26:
+            if msg.contentType == 13:
+               if wait["wblack"] == True:
+                    if msg.contentMetadata["mid"] in wait["commentBlack"]:
+                        cl.sendText(msg.to,"already")
+                        wait["wblack"] = False
+                    else:
+                        wait["commentBlack"][msg.contentMetadata["mid"]] = True
+                        wait["wblack"] = False
+                        cl.sendText(msg.to,"decided not to comment")
+
+               elif wait["dblack"] == True:
+                   if msg.contentMetadata["mid"] in wait["commentBlack"]:
+                        del wait["commentBlack"][msg.contentMetadata["mid"]]
+                        cl.sendText(msg.to,"deleted")
+                        wait["dblack"] = False
+
+                   else:
+                        wait["dblack"] = False
+                        cl.sendText(msg.to,"It is not in the black list")
+               elif wait["wblacklist"] == True:
+                   if msg.contentMetadata["mid"] in wait["blacklist"]:
+                        cl.sendText(msg.to,"already")
+                        wait["wblacklist"] = False
+                   else:
+                        wait["blacklist"][msg.contentMetadata["mid"]] = True
+                        wait["wblacklist"] = False
+                        cl.sendText(msg.to,"aded")
+
+               elif wait["dblacklist"] == True:
+                   if msg.contentMetadata["mid"] in wait["blacklist"]:
+                        del wait["blacklist"][msg.contentMetadata["mid"]]
+                        cl.sendText(msg.to,"deleted")
+                        wait["dblacklist"] = False
+
+                   else:
+                        wait["dblacklist"] = False
+                        cl.sendText(msg.to,"It is not in the black list")
+               elif wait["contact"] == True:
+                    msg.contentType = 0
+                    cl.sendText(msg.to,msg.contentMetadata["mid"])
+                    if 'displayName' in msg.contentMetadata:
+                        contact = cl.getContact(msg.contentMetadata["mid"])
+                        try:
+                            cu = cl.channel.getCover(msg.contentMetadata["mid"])
+                        except:
+                            cu = ""
+                        cl.sendText(msg.to,"[名稱]:\n" + msg.contentMetadata["displayName"] + "\n[mid]:\n" + msg.contentMetadata["mid"] + "\n[個性簽名]:\n" + contact.statusMessage + "\n[頭貼網址]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n[主頁照片網址]:\n" + str(cu))
+                    else:
+                        contact = cl.getContact(msg.contentMetadata["mid"])
+                        try:
+                            cu = cl.channel.getCover(msg.contentMetadata["mid"])
+                        except:
+                            cu = ""
+                        cl.sendText(msg.to,"[名稱]:\n" + contact.displayName + "\n[mid]:\n" + msg.contentMetadata["mid"] + "\n[個性簽名]:\n" + contact.statusMessage + "\n[頭貼網址]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n[主頁照片網址]:\n" + str(cu))
+            elif msg.contentType == 16:
+                if wait["timeline"] == True:
+                    msg.contentType = 0
+                    if wait["lang"] == "JP":
+                        msg.text = "post URL\n" + msg.contentMetadata["postEndUrl"]
+                    else:
+                        msg.text = "URLâ†’\n" + msg.contentMetadata["postEndUrl"]
+                    cl.sendText(msg.to,msg.text)
+            elif msg.text is None:
+                return
+            elif msg.text in ["#help","#Help"]:
+                if wait["lang"] == "JP":
+                    cl.sendText(msg.to,helpMessage)
+                else:
+                    cl.sendText(msg.to,helpt)
+            elif "#Invite:" in msg.text:
+               if msg.from_ in admin:
+                midd = msg.text.replace("#Invite:","")
+                cl.findAndAddContactsByMid(midd)
+                cl.inviteIntoGroup(msg.to,[midd])
+            elif msg.text in ["#cancel","#Cancel"]:
+                if msg.toType == 2:
+                    X = cl.getGroup(msg.to)
+                    if X.invitee is not None:
+                        gInviMids = [contact.mid for contact in X.invitee]
+                        cl.cancelGroupInvitation(msg.to, gInviMids)
+                    else:
+                        if wait["lang"] == "JP":
+                            cl.sendText(msg.to,"沒有邀請")
+                        else:
+                            cl.sendText(msg.to,"沒有邀請")
+                else:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Can not be used outside the group")
+                    else:
+                        cl.sendText(msg.to,"Not for use less than group")
+            elif msg.text == "#Ginfo":
+                if msg.toType == 2:
+                    ginfo = cl.getGroup(msg.to)
+                    try:
+                        gCreator = ginfo.creator.displayName
+                    except:
+                        gCreator = "Error"
+                    if wait["lang"] == "JP":
+                        if ginfo.invitee is None:
+                            sinvitee = "0"
+                        else:
+                            sinvitee = str(len(ginfo.invitee))
+                        if ginfo.preventJoinByTicket == True:
+                            u = "關閉中"
+                        else:
+                            u = "開啟中"
+                        cl.sendText(msg.to,"[群組名稱]\n" + str(ginfo.name) + "\n[gid]\n" + msg.to + "\n[群創者]\n" + gCreator + "\n[群組圖片]\nhttp://dl.profile.line.naver.jp/" + ginfo.pictureStatus + "\n成員:" + str(len(ginfo.members)) + "\n邀請中人數:" + sinvitee + "\n網址:" + u)
+                    else:
+                        cl.sendText(msg.to,"[群組名稱]\n" + str(ginfo.name) + "\n[gid]\n" + msg.to + "\n[群創者]\n" + gCreator + "\n[群組圖片]\nhttp://dl.profile.line.naver.jp/" + ginfo.pictureStatus)
+                else:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Can not be used outside the group")
+                    else:
+                        cl.sendText(msg.to,"Not for use less than group")
+            elif msg.text == "#Check":
+                cl.sendText(msg.to, "輸入#See(｀・ω・´)")
+                try:
+                  del wait2['readPoint'][msg.to]
+                  del wait2['readMember'][msg.to]
+                except:
+	            pass
+                now2 = datetime.now()
+                wait2['readPoint'][msg.to] = msg.id
+                wait2['readMember'][msg.to] = ""
+                wait2['setTime'][msg.to] = datetime.strftime(now2,"%H:%M")
+                wait2['ROM'][msg.to] = {}
+                print wait2
+            elif msg.text == "#See":
+		  if msg.to in wait2['readPoint']:
+	            if wait2["ROM"][msg.to].items() == []:
+	              chiya = ""
+	            else:
+	              chiya = ""
+	              for rom in wait2["ROM"][msg.to].items():
+	                print rom
+	                chiya += rom[1] + "\n"
+
+	            cl.sendText(msg.to, "↓↓↓↓↓↓↓↓↓↓已讀的人↓↓↓↓↓↓↓↓↓↓%s"  % (wait2['readMember'][msg.to]))
+	          else:
+	            cl.sendText(msg.to, "輸入#Check")
+#-----------------------------------------------
+#-----------------------------------------------
+            elif msg.text in ["#Bye"]:
+                if msg.toType == 2:
+                    ginfo = cl.getGroup(msg.to)
+                    try:
+                        cl.leaveGroup(msg.to)
+                    except:
+                        pass
+    if op.type == 55:
+            try:
+                if op.param1 in wait2['readPoint']:
+                    Name = cl.getContact(op.param2).displayName
+                    if Name in wait2['readMember'][op.param1]:
+                        pass
+                    else:
+                        wait2['readMember'][op.param1] += "\n✏️" + Name
+                        wait2['ROM'][op.param1][op.param2] = "✏️" + Name
+                else:
+                    cl.sendText
+            except:
+                  pass
+        if op.type == 59:
+            print op
+
+
+    except Exception as error:
+        print error
+
+
+def a2():
+    now2 = datetime.now()
+    nowT = datetime.strftime(now2,"%M")
+    if nowT[14:] in ["10","20","30","40","50","00"]:
+        return False
+    else:
+        return True
+def autoSta():
+    count = 1
+    while True:
+        try:
+           for posts in cl.activity(1)["result"]["posts"]:
+             if posts["postInfo"]["liked"] is False:
+                if wait["likeOn"] == True:
+                   cl.like(posts["userInfo"]["writerMid"], posts["postInfo"]["postId"], 1001)
+                   if wait["commentOn"] == True:
+                      if posts["userInfo"]["writerMid"] in wait["commentBlack"]:
+                         pass
+                      else:
+                          cl.comment(posts["userInfo"]["writerMid"],posts["postInfo"]["postId"],wait["comment"])
+        except:
+            count += 1
+            if(count == 50):
+                sys.exit(0)
+            else:
+                pass
+thread1 = threading.Thread(target=autoSta)
+thread1.daemon = True
+thread1.start()
+
+def nameUpdate():
+    while True:
+        try:
+        #while a2():
+            #pass
+            if wait["clock"] == True:
+                now2 = datetime.now()
+                nowT = datetime.strftime(now2,"(%H:%M)")
+                profile = cl.getProfile()
+                profile.displayName = wait["cName"] + nowT
+                cl.updateProfile(profile)
+            time.sleep(600)
+        except:
+            pass
+thread2 = threading.Thread(target=nameUpdate)
+thread2.daemon = True
+thread2.start()
+
+while True:
+    try:
+        Ops = cl.fetchOps(cl.Poll.rev, 5)
+    except EOFError:
+        raise Exception("It might be wrong revision\n" + str(cl.Poll.rev))
+
+    for Op in Ops:
+        if (Op.type != OpType.END_OF_OPERATION):
+            cl.Poll.rev = max(cl.Poll.rev, Op.revision)
+            bot(Op)
