@@ -220,7 +220,7 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"Not for use less than group")
             elif msg.text == "#Check":
-                cl.sendText(msg.to, "輸入#See(｀・ω・´)")
+                cl.sendText(msg.to, "輸入#See查看已讀(｀・ω・´)")
                 try:
                   del wait2['readPoint'][msg.to]
                   del wait2['readMember'][msg.to]
@@ -244,7 +244,7 @@ def bot(op):
 
 	            cl.sendText(msg.to, "↓↓↓↓↓↓↓↓↓↓已讀的人↓↓↓↓↓↓↓↓↓↓%s"  % (wait2['readMember'][msg.to]))
 	          else:
-	            cl.sendText(msg.to, "輸入#Check")
+	            cl.sendText(msg.to, "請先輸入#Check讀取已讀點")
 #-----------------------------------------------
 #-----------------------------------------------
             elif msg.text in ["#Bye"]:
