@@ -195,26 +195,6 @@ def bot(op):
                         cl.sendText(msg.to,"Can not be used outside the group")
                     else:
                         cl.sendText(msg.to,"Not for use less than group")
-            elif "Mid @" in msg.text:
-                _name = msg.text.replace("#Mid @","")
-                _nametarget = _name.rstrip(' ')
-                gs = cl.getGroup(msg.to)
-                for g in gs.members:
-                    if _nametarget == g.displayName:
-                        cl.sendText(msg.to, g.mid)
-                    else:
-                        pass
-            elif "Me @" in msg.text:
-                msg.contentType = 13
-                _name = msg.text.replace("#Me @","")
-                _nametarget = _name.rstrip(' ')
-                gs = cl.getGroup(msg.to)
-                for g in gs.members:
-                    if _nametarget == g.displayName:
-                        msg.contentMetadata = {'mid': g.mid}
-                        cl.sendMessage(msg)
-                    else:
-                        pass
             elif msg.text in ["check","Check"]:
                 cl.sendText(msg.to, "[輸入See查看已讀(｀・ω・´)]")
                 try:
