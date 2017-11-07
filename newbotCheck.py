@@ -26,7 +26,7 @@ wait = {
     'leaveRoom':True,
     'timeline':True,
     'autoAdd':True,
-    'message':"====[已讀機 Help]====\n輸入-->[#Check]設定讀取點\n輸入-->[#See]查看已讀\n輸入-->[#Invite:MID]可以邀請MID\n輸入-->[#Me @]此功能需要標註 獲得標註人的友資\n輸入-->[#Mid @]此功能需要標註 獲得標註人的MID\n輸入-->[#Yid]可獲取自己MID\n輸入-->[#Ginfo]可查看群組資料\n輸入-->[#Cancel]可以取消邀請\n輸入-->[#Bye]機器離開群組\n====[重要]====\n1.不要私訊傳指令\n2.不要過度猛玩怕壞掉\n3.如果進去沒用可以邀請翻譯進群在發送指令再把翻譯用走就好\n====[功能有待增加]====\n製作者:\nhttp://line.me/ti/p/~fang_xin\n\nhttp://line.me/ti/p/~.90.11.24.",
+    'message':"====[Help]====\n輸入-->[#Check]設定讀取點\n輸入-->[#See]查看已讀\n[以上注意事項]\n1.如果發現已讀數跟實際出來的人數不一樣請重新[#check]\n輸入-->[#Invite:MID]可以邀請MID[以上注意事項]\n1.是用mid邀請如果要拿去好友的Mid,請丟出友資即會顯示,把那串mid放在 : 後面即可邀請\n輸入-->[#Me @]此功能需要標註 獲得標註人的友資\n輸入-->[#Mid @]此功能需要標註 獲得標註人的MID\n[以上兩個標註注意事項]\n1.開頭都要大寫其餘小寫\n2.輸入完#Mid #Me 後要空一格\n輸入-->[#Yid]可獲取自己MID\n輸入-->[#Ginfo]可查看群組資料\n輸入-->[#Cancel]可以取消邀請\n輸入-->[#Bye]機器離開群組\n====[功能有待增加]====\n====[重要 此為很重要一定要看!!]====\n1.不要私訊傳指令\n2.不要過度猛玩怕壞掉\n3.如果進群之後,輸入指令沒有用,請邀請官方翻譯機進來群組,發幾次指令之後在退翻譯機\n4.如果早上發現機器沒回應,不是壞掉而是關閉機器\n製作者:\nhttp://line.me/ti/p/~fang_xin\n\nhttp://line.me/ti/p/~.90.11.24.",
     "lang":"JP",
     "comment":"====[已讀機]====\nhttp://line.me/ti/p/~fang_xin\nAuto like By fung xin 放芯",
     "commentOn":True,
@@ -122,6 +122,127 @@ def bot(op):
                         cl.sendText(msg.to,"已關閉")
                     else:
                         cl.sendText(msg.to,"完成")
+            elif msg.text in ["å¼·åˆ¶è‡ªå‹•é€€å‡º:ã‚ªãƒ³","Leave on","Auto leave:on","å¼·åˆ¶è‡ªå‹•é€€å‡ºï¼šé–‹"]:
+                if wait["leaveRoom"] == True:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"已開啟")
+                    else:
+                        cl.sendText(msg.to,"完成")
+                else:
+                    wait["leaveRoom"] = True
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"完成")
+                    else:
+                        cl.sendText(msg.to,"è¦äº†å¼€ã€‚")
+            elif msg.text in ["å¼·åˆ¶è‡ªå‹•é€€å‡º:ã‚ªãƒ•","Leave off","Auto leave:off","å¼·åˆ¶è‡ªå‹•é€€å‡ºï¼šé—œ"]:
+                if wait["leaveRoom"] == False:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"已關閉")
+                    else:
+                        cl.sendText(msg.to,"完成")
+                else:
+                    wait["leaveRoom"] = False
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"完成")
+                    else:
+                        cl.sendText(msg.to,"already")
+            elif msg.text in ["#help","#Help"]:
+                if wait["lang"] == "JP":
+                    cl.sendText(msg.to,str(wait["message"]))
+                else:
+                    cl.sendText(msg.to,helpt)
+            elif "#Invite:" in msg.text:
+                midd = msg.text.replace("#Invite:","")
+                cl.findAndAddContactsByMid(midd)
+                cl.inviteIntoGroup(msg.to,[midd])
+            elif msg.text in ["#cancel","#Cancel"]:
+                if msg.toType == 2:
+                    X = cl.getGroup(msg.to)
+                    if X.invitee is not None:
+                        gInviMids = [contact.mid for contact in X.invitee]
+                        cl.cancelGroupInvitation(msg.to, gInviMids)
+                    else:
+                        if wait["lang"] == "JP":
+                            cl.sendText(msg.to,"沒有邀請")
+                        else:
+                            cl.sendText(msg.to,"沒有邀請")
+                else:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Can not be used outside the group")
+                    else:
+                        cl.sendText(msg.to,"Not for use less than group")
+            elif msg.text in ["#ginfo","#Ginfo"]:
+                if msg.toType == 2:
+                    ginfo = cl.getGroup(msg.to)
+                    try:
+                        gCreator = ginfo.creator.displayName
+                    except:
+                        gCreator = "Error"
+                    if wait["lang"] == "JP":
+                        if ginfo.invitee is None:
+                            sinvitee = "0"
+                        else:
+                            sinvitee = str(len(ginfo.invitee))
+                        if ginfo.preventJoinByTicket == True:
+                            u = "關閉中"
+                        else:
+                            u = "開啟中"
+                        cl.sendText(msg.to,"[群組名稱]\n" + str(ginfo.name) + "\n[gid]\n" + msg.to + "\n[群創者]\n" + gCreator + "\n[群組圖片]\nhttp://dl.profile.line.naver.jp/" + ginfo.pictureStatus + "\n成員:" + str(len(ginfo.members)) + "\n邀請中人數:" + sinvitee + "\n網址:" + u)
+                    else:
+                        cl.sendText(msg.to,"[群組名稱]\n" + str(ginfo.name) + "\n[gid]\n" + msg.to + "\n[群創者]\n" + gCreator + "\n[群組圖片]\nhttp://dl.profile.line.naver.jp/" + ginfo.pictureStatus)
+                else:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Can not be used outside the group")
+                    else:
+                        cl.sendText(msg.to,"Not for use less than group")
+            elif msg.text in ["#Yid","#yid"]:
+                cl.sendText(msg.to,msg.from_)
+            elif "#Mid @" in msg.text:
+                _name = msg.text.replace("#Mid @","")
+                _nametarget = _name.rstrip(' ')
+                gs = cl.getGroup(msg.to)
+                for g in gs.members:
+                    if _nametarget == g.displayName:
+                        cl.sendText(msg.to, g.mid)
+                    else:
+                        pass
+            elif "#Me @" in msg.text:
+                msg.contentType = 13
+                _name = msg.text.replace("#Me @","")
+                _nametarget = _name.rstrip(' ')
+                gs = cl.getGroup(msg.to)
+                for g in gs.members:
+                    if _nametarget == g.displayName:
+                        msg.contentMetadata = {'mid': g.mid}
+                        cl.sendMessage(msg)
+                    else:
+                        pass
+            elif msg.text in ["#check","#Check"]:
+                cl.sendText(msg.to, "[輸入#See查看已讀(｀・ω・´)]")
+                try:
+                  del wait2['readPoint'][msg.to]
+                  del wait2['readMember'][msg.to]
+                except:
+	            pass
+                now2 = datetime.now()
+                wait2['readPoint'][msg.to] = msg.id
+                wait2['readMember'][msg.to] = ""
+                wait2['setTime'][msg.to] = datetime.strftime(now2,"%H:%M")
+                wait2['ROM'][msg.to] = {}
+                print wait2
+            elif msg.text in ["#see","#See"]:
+		  if msg.to in wait2['readPoint']:
+	            if wait2["ROM"][msg.to].items() == []:
+	              chiya = ""
+	            else:
+	              chiya = ""
+	              for rom in wait2["ROM"][msg.to].items():
+	                print rom
+	                chiya += rom[1] + "\n"
+
+	            cl.sendText(msg.to, "↓↓↓↓↓↓↓↓↓↓已讀的人↓↓↓↓↓↓↓↓↓↓%s"  % (wait2['readMember'][msg.to]))
+	          else:
+	            cl.sendText(msg.to, "[請先輸入#Check讀取已讀點]")
         if op.type == 26:
             msg = op.message
             if msg.toType == 0:
