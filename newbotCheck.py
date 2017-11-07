@@ -26,7 +26,7 @@ wait = {
     'leaveRoom':True,
     'timeline':True,
     'autoAdd':True,
-    'message':"====[Help]====\n輸入-->[#Check]設定讀取點\n輸入-->[#See]查看已讀\n[以上注意事項]\n1.如果發現已讀數跟實際出來的人數不一樣請重新[#check]\n輸入-->[#Invite:MID]可以邀請MID[以上注意事項]\n1.是用mid邀請如果要拿去好友的Mid,請丟出友資即會顯示,把那串mid放在 : 後面即可邀請\n輸入-->[#Me @]此功能需要標註 獲得標註人的友資\n輸入-->[#Mid @]此功能需要標註 獲得標註人的MID\n[以上兩個標註注意事項]\n1.開頭都要大寫其餘小寫\n2.輸入完#Mid #Me 後要空一格\n輸入-->[#Yid]可獲取自己MID\n輸入-->[#Ginfo]可查看群組資料\n輸入-->[#Cancel]可以取消邀請\n輸入-->[#Bye]機器離開群組\n====[功能有待增加]====\n====[重要 此為很重要一定要看!!]====\n1.不要私訊傳指令\n2.不要過度猛玩怕壞掉\n3.如果進群之後,輸入指令沒有用,請邀請官方翻譯機進來群組,發幾次指令之後在退翻譯機\n4.如果早上發現機器沒回應,不是壞掉而是關閉機器\n製作者:\nhttp://line.me/ti/p/~fang_xin\n\nhttp://line.me/ti/p/~.90.11.24.",
+    'message':"====[Help]====\n輸入-->[#Check]設定讀取點\n輸入-->[#See]查看已讀\n[以上注意事項]\n .如果發現已讀數跟實際出來的人數不一樣請重新[#check]\n輸入-->[#Invite:MID]可以邀請MID\n[以上注意事項]\n1.是用mid邀請如果要拿去好友的Mid,請丟出友資即會顯示,把那串mid放在 : 後面即可邀請\n輸入-->[#Me @]此功能需要標註 獲得標註人的友資\n輸入-->[#Mid @]此功能需要標註 獲得標註人的MID\n[以上兩個標註注意事項]\n1.開頭都要大寫其餘小寫\n2.輸入完#Mid #Me 後要空一格\n輸入-->[#Yid]可獲取自己MID\n輸入-->[#Ginfo]可查看群組資料\n輸入-->[#Cancel]可以取消邀請\n輸入-->[#Bye]機器離開群組\n====[功能有待增加]====\n====[重要 此為很重要一定要看!!]====\n1.不要私訊傳指令\n2.不要過度猛玩怕壞掉\n3.如果進群之後,輸入指令沒有用,請邀請官方翻譯機進來群組,發幾次指令之後在退翻譯機\n4.如果早上發現機器沒回應,不是壞掉而是關閉機器\n製作者:\nhttp://line.me/ti/p/~fang_xin\n\nhttp://line.me/ti/p/~.90.11.24.",
     "lang":"JP",
     "comment":"====[已讀機]====\nhttp://line.me/ti/p/~fang_xin\nAuto like By fung xin 放芯",
     "commentOn":True,
@@ -146,16 +146,16 @@ def bot(op):
                         cl.sendText(msg.to,"完成")
                     else:
                         cl.sendText(msg.to,"already")
-            elif msg.text in ["#help","#Help"]:
+            elif msg.text in ["#help","#Help","help","Help"]:
                 if wait["lang"] == "JP":
                     cl.sendText(msg.to,str(wait["message"]))
                 else:
                     cl.sendText(msg.to,helpt)
-            elif "#Invite:" in msg.text:
-                midd = msg.text.replace("#Invite:","")
+            elif "Invite:" in msg.text:
+                midd = msg.text.replace("Invite:","")
                 cl.findAndAddContactsByMid(midd)
                 cl.inviteIntoGroup(msg.to,[midd])
-            elif msg.text in ["#cancel","#Cancel"]:
+            elif msg.text in ["cancel","Cancel"]:
                 if msg.toType == 2:
                     X = cl.getGroup(msg.to)
                     if X.invitee is not None:
@@ -171,7 +171,7 @@ def bot(op):
                         cl.sendText(msg.to,"Can not be used outside the group")
                     else:
                         cl.sendText(msg.to,"Not for use less than group")
-            elif msg.text in ["#ginfo","#Ginfo"]:
+            elif msg.text in ["ginfo","Ginfo"]:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
@@ -195,9 +195,7 @@ def bot(op):
                         cl.sendText(msg.to,"Can not be used outside the group")
                     else:
                         cl.sendText(msg.to,"Not for use less than group")
-            elif msg.text in ["#Yid","#yid"]:
-                cl.sendText(msg.to,msg.from_)
-            elif "#Mid @" in msg.text:
+            elif "Mid @" in msg.text:
                 _name = msg.text.replace("#Mid @","")
                 _nametarget = _name.rstrip(' ')
                 gs = cl.getGroup(msg.to)
@@ -206,7 +204,7 @@ def bot(op):
                         cl.sendText(msg.to, g.mid)
                     else:
                         pass
-            elif "#Me @" in msg.text:
+            elif "Me @" in msg.text:
                 msg.contentType = 13
                 _name = msg.text.replace("#Me @","")
                 _nametarget = _name.rstrip(' ')
@@ -217,8 +215,8 @@ def bot(op):
                         cl.sendMessage(msg)
                     else:
                         pass
-            elif msg.text in ["#check","#Check"]:
-                cl.sendText(msg.to, "[輸入#See查看已讀(｀・ω・´)]")
+            elif msg.text in ["check","Check"]:
+                cl.sendText(msg.to, "[輸入See查看已讀(｀・ω・´)]")
                 try:
                   del wait2['readPoint'][msg.to]
                   del wait2['readMember'][msg.to]
@@ -230,7 +228,7 @@ def bot(op):
                 wait2['setTime'][msg.to] = datetime.strftime(now2,"%H:%M")
                 wait2['ROM'][msg.to] = {}
                 print wait2
-            elif msg.text in ["#see","#See"]:
+            elif msg.text in ["see","See"]:
 		  if msg.to in wait2['readPoint']:
 	            if wait2["ROM"][msg.to].items() == []:
 	              chiya = ""
@@ -242,7 +240,7 @@ def bot(op):
 
 	            cl.sendText(msg.to, "↓↓↓↓↓↓↓↓↓↓已讀的人↓↓↓↓↓↓↓↓↓↓%s"  % (wait2['readMember'][msg.to]))
 	          else:
-	            cl.sendText(msg.to, "[請先輸入#Check讀取已讀點]")
+	            cl.sendText(msg.to, "[請先輸入Check讀取已讀點]")
         if op.type == 26:
             msg = op.message
             if msg.toType == 0:
