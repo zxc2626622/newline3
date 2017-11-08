@@ -10,7 +10,7 @@ cl.login(token="EmUXn15KmOSBBeWTHH5f.FyCqvzVAe2RNaWr3/dbP3W.7TNK8NtczfuM2PAPEOIq
 cl.loginResult()
 
 ad = LINETCR.LINE()
-ad.login(token="Emtxa1xy0AMhXiEHKAP5.iur748Us1jyfpKv4oxGLDq.EkqBjvk6FS5UCqXHO5AP5WV+Eyxn163JDJGEvlphEMM=")
+ad.login(token="EmZTtgxTQmw17v0woz55.iur748Us1jyfpKv4oxGLDq.ONf8DvGvwvvOVyKeHgNTADZT/ccbM0cDVlzIsbxsMwM=")
 ad.loginResult()
 
 ki = LINETCR.LINE()
@@ -1869,18 +1869,7 @@ def bot(op):
                     pass
                 else:
                     cl.sendText(op.param1,str(wait["message"]))
-        if op.type == 13:
-            if wait["blacklist"] in op.param3:
-                 X = cl.getGroup(op.param1)
-                 gInviMids = [contact.mid for contact in X.invitee]
-                 cl.cancelGroupInvitation(op.param1, gInviMids)
-            else:
-                pass
-        if op.type == 17:
-            if wait["blacklist"] in op.param3:
-                 cl.kickoutFromGroup(op.param1,op.param3)
-            else:
-                pass
+
         if op.type == 17:
             if mid in op.param3:
                     group = cl.getGroup(msg.to)
