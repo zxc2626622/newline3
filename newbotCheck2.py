@@ -69,7 +69,6 @@ def bot(op):
         if op.type == 13:
             if mid in op.param3:
                 if wait["autoJoin"] == True:
-                    msg.contentType = 13
                     cl.acceptGroupInvitation(op.param1)
                     cl.sendText(op.param1,str(wait["message"]))
                     msg.contentMetadata = {'mid': 'u219cfb34db6d3dc96a35023a74579bc0'}
