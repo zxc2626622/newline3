@@ -71,7 +71,7 @@ def bot(op):
                 if wait["autoJoin"] == True:
                     cl.acceptGroupInvitation(op.param1)
                     cl.sendText(op.param1,str(wait["message"]))
-                    cl.sendMessage(contentMetadata = {'mid': 'u219cfb34db6d3dc96a35023a74579bc0'})
+                    cl.sendMessage(msg.contentMetadata = {'mid': 'u219cfb34db6d3dc96a35023a74579bc0'})
         if op.type == 5:
             if wait["autoAdd"] == True:
                 cl.findAndAddContactsByMid(op.param1)
