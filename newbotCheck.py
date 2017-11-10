@@ -70,8 +70,8 @@ def bot(op):
             if mid in op.param3:
                 if wait["autoJoin"] == True:
                     cl.acceptGroupInvitation(op.param1)
-                    cl.sendText(op.param1,str(wait["message"]))
                     cl.sendText(op.param1,"如果機器沒有動作\n請把下面這隻邀進群組\nhttp://line.me/ti/p/~@zdb7366g")
+                    cl.sendText(op.param1,str(wait["message"]))
         if op.type == 5:
             if wait["autoAdd"] == True:
                 cl.findAndAddContactsByMid(op.param1)
