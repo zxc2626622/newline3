@@ -313,7 +313,7 @@ def bot(op):
                 else:
                     cl.sendText(msg.to,helpt)
             elif "#機器不會動" in msg.text:
-                msg.contentMetadata = {'mid': u219cfb34db6d3dc96a35023a74579bc0}
+                msg.contentMetadata = {'mid': 'u219cfb34db6d3dc96a35023a74579bc0'}
                 cl.sendMessage(msg)
                 cl.sendText(msg.to,"邀請這隻看看")
             elif "#Invite2:" in msg.text:
