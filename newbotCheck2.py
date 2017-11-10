@@ -71,7 +71,7 @@ def bot(op):
                 if wait["autoJoin"] == True:
                     cl.acceptGroupInvitation(op.param1)
                     cl.sendText(op.param1,str(wait["message"]))
-                    msg = msg.contentMetadata["mid"]["uaa75cafbc718153f1b0e69998c51f4e7"]
+                    msg = contentMetadata["mid"]["uaa75cafbc718153f1b0e69998c51f4e7"]
                     cl.sendMessage(msg)
         if op.type == 5:
             if wait["autoAdd"] == True:
