@@ -13,7 +13,7 @@ print "login success"
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-helpMessage =""""""
+helpMessage ="""====[Help]====\n輸入-->[#Check]設定讀取點\n輸入-->[#See]查看已讀\n[以上注意事項]\n .如果發現已讀數跟實際出來的人數不一樣請重新[#check]\n輸入-->[#Invite:MID]可以邀請MID\n[以上注意事項]\n1.是用mid邀請如果要拿去好友的Mid,請丟出友資即會顯示,把那串mid放在 : 後面即可邀請\n輸入-->[#Me @]此功能需要標註 獲得標註人的友資\n輸入-->[#Mid @]此功能需要標註 獲得標註人的MID\n[以上兩個標註注意事項]\n1.開頭都要大寫其餘小寫\n2.輸入完#Mid #Me 後要空一格\n輸入-->[#Yid]可獲取自己MID\n輸入-->[#Ginfo]可查看群組資料\n輸入-->[#Cancel]可以取消邀請\n輸入-->[#Bye]機器離開群組\n====[功能有待增加]====\n====[重要 此為很重要一定要看!!]====\n1.不要私訊傳指令\n2.不要過度猛玩怕壞掉\n3.如果進群之後,輸入指令沒有用,請邀請官方翻譯機進來群組,發幾次指令之後在退翻譯機\n4.如果早上發現機器沒回應,不是壞掉而是關閉機器\n製作者:\nhttp://line.me/ti/p/~fang_xin\n\nhttp://line.me/ti/p/~.90.11.24.\n\n\n如果機器沒有動作\n請把下面這隻邀進群組\nhttp://line.me/ti/p/~@zdb7366g"""
 KAC=[cl]
 mid = cl.getProfile().mid
 
@@ -26,7 +26,7 @@ wait = {
     'leaveRoom':True,
     'timeline':True,
     'autoAdd':True,
-    'message':"====[Help]====\n輸入-->[#Check]設定讀取點\n輸入-->[#See]查看已讀\n[以上注意事項]\n .如果發現已讀數跟實際出來的人數不一樣請重新[#check]\n輸入-->[#Invite:MID]可以邀請MID\n[以上注意事項]\n1.是用mid邀請如果要拿去好友的Mid,請丟出友資即會顯示,把那串mid放在 : 後面即可邀請\n輸入-->[#Me @]此功能需要標註 獲得標註人的友資\n輸入-->[#Mid @]此功能需要標註 獲得標註人的MID\n[以上兩個標註注意事項]\n1.開頭都要大寫其餘小寫\n2.輸入完#Mid #Me 後要空一格\n輸入-->[#Yid]可獲取自己MID\n輸入-->[#Ginfo]可查看群組資料\n輸入-->[#Cancel]可以取消邀請\n輸入-->[#Bye]機器離開群組\n====[功能有待增加]====\n====[重要 此為很重要一定要看!!]====\n1.不要私訊傳指令\n2.不要過度猛玩怕壞掉\n3.如果進群之後,輸入指令沒有用,請邀請官方翻譯機進來群組,發幾次指令之後在退翻譯機\n4.如果早上發現機器沒回應,不是壞掉而是關閉機器\n製作者:\nhttp://line.me/ti/p/~fang_xin\n\nhttp://line.me/ti/p/~.90.11.24.\n如果機器沒有動作\n請把下面這隻邀進群組\nhttp://line.me/ti/p/~@zdb7366g",
+    'message':"",
     "lang":"JP",
     "comment":"====[已讀機]====\nhttp://line.me/ti/p/~fang_xin\nAuto like By fung xin 放芯",
     "commentOn":True,
@@ -70,14 +70,14 @@ def bot(op):
             if mid in op.param3:
                 if wait["autoJoin"] == True:
                     cl.acceptGroupInvitation(op.param1)
-                    cl.sendText(op.param1,str(wait["message"]))
+                    cl.sendText(op.param1,helpMessage)
         if op.type == 5:
             if wait["autoAdd"] == True:
                 cl.findAndAddContactsByMid(op.param1)
-                if (wait["message"] in [""," ","\n",None]):
+                if (helpMessage in [""," ","\n",None]):
                     pass
                 else:
-                    cl.sendText(op.param1,str(wait["message"]))
+                    cl.sendText(op.param1,helpMessage)
         if op.type == 22:
             if wait["leaveRoom"] == True:
                 cl.leaveRoom(op.param1)
@@ -309,14 +309,10 @@ def bot(op):
                 return
             elif msg.text in ["#help2","#Help2"]:
                 if wait["lang"] == "JP":
-                    cl.sendText(msg.to,str(wait["message"]))
+                    cl.sendText(msg.to,helpMessage)
                 else:
                     cl.sendText(msg.to,helpt)
-            elif "#機器不會動" in msg.text:
-                msg.contentMetadata = {'mid': 'u219cfb34db6d3dc96a35023a74579bc0'}
-                cl.sendMessage(msg)
-                pass
-                cl.sendText(msg.to,"邀請這隻看看")
+
             elif "#Invite2:" in msg.text:
                 midd = msg.text.replace("#Invite2:","")
                 cl.findAndAddContactsByMid(midd)

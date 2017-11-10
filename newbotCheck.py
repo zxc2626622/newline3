@@ -74,10 +74,10 @@ def bot(op):
         if op.type == 5:
             if wait["autoAdd"] == True:
                 cl.findAndAddContactsByMid(op.param1)
-                if (wait["message"] in [""," ","\n",None]):
+                if (helpMessage in [""," ","\n",None]):
                     pass
                 else:
-                    cl.sendText(op.param1,str(wait["message"]))
+                    cl.sendText(op.param1,helpMessage)
         if op.type == 22:
             if wait["leaveRoom"] == True:
                 cl.leaveRoom(op.param1)
@@ -148,7 +148,7 @@ def bot(op):
                         cl.sendText(msg.to,"already")
             elif msg.text in ["#help","#Help","help","Help"]:
                 if wait["lang"] == "JP":
-                    cl.sendText(msg.to,str(wait["message"]))
+                    cl.sendText(msg.to,helpMessage)
                 else:
                     cl.sendText(msg.to,helpt)
             elif "Invite:" in msg.text:
