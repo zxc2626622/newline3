@@ -34,7 +34,7 @@ ke.login(token="EmBnNRFR9D5ip9PoWbbc.fDEuyTzDGQmGfp4ckPUkpa.av0/hxyfvLlNcz7nfk5V
 ke.loginResult()
 
 kf = LINETCR.LINE()
-kf.login(token="authToken : Em4pilyjpAm0mmfnLFy9.jnrl5WXaTf6U4igiiB7LEq.Ih9fduRbqmJVVhKnknWCYOmCTsQTVBiCzkRSRi3VXr4=")
+kf.login(token="Em4pilyjpAm0mmfnLFy9.jnrl5WXaTf6U4igiiB7LEq.Ih9fduRbqmJVVhKnknWCYOmCTsQTVBiCzkRSRi3VXr4=")
 kf.loginResult()
 
 kg = LINETCR.LINE()
