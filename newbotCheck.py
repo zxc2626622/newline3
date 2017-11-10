@@ -309,7 +309,7 @@ def bot(op):
                 return
             elif msg.text in ["#help","#Help"]:
                 if wait["lang"] == "JP":
-                    cl.sendText(msg.to,str(wait["message"]))
+                    cl.sendText(msg.to,helpMessage)
                 else:
                     cl.sendText(msg.to,helpt)
             elif "#Invite:" in msg.text:
