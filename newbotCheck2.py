@@ -403,7 +403,7 @@ def bot(op):
 
 	            cl.sendText(msg.to, "↓↓↓↓↓↓↓↓↓↓已讀的人↓↓↓↓↓↓↓↓↓↓%s"  % (wait2['readMember'][msg.to]))
 	          else:
-	            cl.sendText(msg.to, "[請先輸入#Check讀取已讀點]")
+	            cl.sendText(msg.to, "[請先輸入#Check2讀取已讀點]")
 #-----------------------------------------------
 #-----------------------------------------------
             elif msg.text in ["#Bye2","#bye2"]:
