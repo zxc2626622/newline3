@@ -2108,8 +2108,8 @@ def bot(op):
                 if op.param2 not in admin:
                     group = cl.getGroup(op.param1)
                     if group.preventJoinByTicket == False:
-                    group.preventJoinByTicket = True
-                    cl.updateGroup(group)
+                      group.preventJoinByTicket = True
+                      cl.updateGroup(group)
                     else:
                         pass
                 else:
