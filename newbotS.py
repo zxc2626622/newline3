@@ -1795,11 +1795,11 @@ def bot(op):
                     cl.sendText(msg.to,"鎖群名已關閉")
             elif "Invite:on" == msg.text:
 				gid = msg.to
-				wait['pinv'][gid] = "poin"
+				autocancel[gid] = "poin"
 				cl.sendText(msg.to,"鎖邀請已開啟")
             elif "Invite:off" == msg.text:
                 try:
-                    del wait['pinv'][msg.to]
+                    del autocancel[msg.to]
                     cl.sendText(msg.to,"鎖邀請已關閉")
                 except:
                     pass
@@ -1811,7 +1811,7 @@ def bot(op):
                         wait['pname'][msg.to] = True
                         wait['pro_name'][msg.to] = cl.getGroup(msg.to).name
                         gid = msg.to
-                        wait['pinv'][gid] = "poni"
+                        autocancel[gid] = "poni"
                         protecturl.append(msg.to)
                         cl.sendText(msg.to,"全開啟")
                     except:
@@ -1823,7 +1823,7 @@ def bot(op):
                         protection.remove(msg.to)
                         del wait['pro_name'][msg.to]
                         del wait['pname'][msg.to]
-                        del wait['pinv'][msg.to]
+                        del autocancel[msg.to]
                         protecturl.remove(msg.to)
                         cl.sendText(msg.to,"全關閉")
                     except:
@@ -1843,7 +1843,7 @@ def bot(op):
                 else: md+=" 防踢:關閉\n"
                 if msg.to in wait["pro_name"]: md+=" 鎖群名:開啟\n"
                 else: md+=" 鎖群名:關閉\n"
-                if msg.to in wait["pinv"]: md+=" 鎖邀請:開啟\n"
+                if msg.to in autocancel: md+=" 鎖邀請:開啟\n"
                 else: md+=" 鎖邀請:關閉\n"
                 if msg.to in protecturl: md+=" 鎖網址:開啟"
                 else: md+=" 鎖網址:關閉"
