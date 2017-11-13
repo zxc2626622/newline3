@@ -1795,14 +1795,14 @@ def bot(op):
                     cl.sendText(msg.to,"鎖群名已關閉")
             elif "Invite:on" == msg.text:
 				gid = msg.to
-				autocancel[gid] = "poin"
-				cl.sendText(msg.to,"鎖邀請已開啟")
+				autocancel[gid] = "poni"
+				cl.sendText(msg.to,"鎖邀請已開")
             elif "Invite:off" == msg.text:
-                try:
-                    del autocancel[msg.to]
-                    cl.sendText(msg.to,"鎖邀請已關閉")
-                except:
-                    pass
+				try:
+					del autocancel[msg.to]
+					cl.sendText(msg.to,"鎖邀請已關")
+				except:
+					pass                                 
             elif msg.text in ["all:on"]:
                 if msg.from_ in Administrator:
                     try:
@@ -2106,14 +2106,13 @@ def bot(op):
         if op.param3 == "4":
             if op.param1 in protecturl:
                 if op.param2 not in admin:
-                    group = cl.getGroup(op.param1)
-                    if group.preventJoinByTicket == False:
-                      group.preventJoinByTicket = True
-                      cl.updateGroup(group)
-                    else:
+                    try:
+                        group = cl.getGroup(op.param1)
+                        if group.preventJoinByTicket == False:
+                          group.preventJoinByTicket = True
+                          cl.updateGroup(group)
+                    except:
                         pass
-                else:
-                    pass
         if op.type == 19:
             try:
                 if op.param3 in mid:
