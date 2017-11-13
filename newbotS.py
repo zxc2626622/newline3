@@ -198,7 +198,7 @@ def bot(op):
                                             ke.updateGroup(G)
                                         except:
                                             pass
-                    if op.param2 in ken:
+                    if op.param2 in admin:
                         pass
                     else:
                         try:
@@ -2083,43 +2083,35 @@ def bot(op):
                      except Exception as e:
                          print e
                          pass
-               
-        if op.param1 in wait["pinv"]:
-           OWN = admin
-           if op.param2 in OWN:
-              pass
-           else:
-               Inviter = op.param3.replace("",',')
-               InviterX = Inviter.split(",")
-               contact = cl.getContact(op.param2)
-               cl.cancelGroupInvitation(op.param1,InviterX)
-               ki.cancelGroupInvitation(op.param1,InviterX)
-               kk.cancelGroupInvitation(op.param1,InviterX)
-               kk.cancelGroupInvitation(op.param1,InviterX)
-               kc.cancelGroupInvitation(op.param1,InviterX)
-               kd.cancelGroupInvitation(op.param1,InviterX)
-               ke.cancelGroupInvitation(op.param1,InviterX)
-               kf.cancelGroupInvitation(op.param1,InviterX)
-               kg.cancelGroupInvitation(op.param1,InviterX)
-               kh.cancelGroupInvitation(op.param1,InviterX)
-               kj.cancelGroupInvitation(op.param1,InviterX)
-               kl.cancelGroupInvitation(op.param1,InviterX)
-               kn.cancelGroupInvitation(op.param1,InviterX)            
-
+        if op.param1 in autocancel:
+            if op.param2 in admin:
+                pass
+            else:
+                Inviter = op.param3.replace("",',')
+                InviterX = Inviter.split(",")
+                contact = cl.getContact(op.param2)
+                cl.cancelGroupInvitation(op.param1,InviterX)
+                ki.cancelGroupInvitation(op.param1,InviterX)
+                kk.cancelGroupInvitation(op.param1,InviterX)
+                kk.cancelGroupInvitation(op.param1,InviterX)
+                kc.cancelGroupInvitation(op.param1,InviterX)
+                kd.cancelGroupInvitation(op.param1,InviterX)
+                ke.cancelGroupInvitation(op.param1,InviterX)
+                kf.cancelGroupInvitation(op.param1,InviterX)
+                kg.cancelGroupInvitation(op.param1,InviterX)
+                kh.cancelGroupInvitation(op.param1,InviterX)
+                kj.cancelGroupInvitation(op.param1,InviterX)
+                kl.cancelGroupInvitation(op.param1,InviterX)
+                kn.cancelGroupInvitation(op.param1,InviterX)            
         if op.param3 == "4":
             if op.param1 in protecturl:
-                OWN = admin + Bots
-                if op.param2 in OWN:
-                    pass
-                elif wait["P"] == True:
-				     group = cl.getGroup(op.param1)
-				     if group.preventJoinByTicket == False:
-					     group.preventJoinByTicket = True
-					     cl.updateGroup(group)
-					     cl.sendText(op.param1,"[不能亂開網址哦]")
-				     else:
-					     pass                
-
+                if op.param2 not in admin:
+                    group = cl.getGroup(op.param1)
+                    if group.preventJoinByTicket == False:
+                    group.preventJoinByTicket = True
+                    cl.updateGroup(group)
+                    else:
+                        pass
         if op.type == 19:
             try:
                 if op.param3 in mid:
