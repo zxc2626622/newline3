@@ -2112,6 +2112,8 @@ def bot(op):
                     cl.updateGroup(group)
                     else:
                         pass
+                else:
+                    pass
         if op.type == 19:
             try:
                 if op.param3 in mid:
