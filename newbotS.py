@@ -1869,20 +1869,6 @@ def bot(op):
                     pass
                 else:
                     cl.sendText(op.param1,str(wait["message"]))
-
-        if op.type == 17:
-            if mid in op.param3:
-                    group = cl.getGroup(msg.to)
-                    gMembMids = [contact.mid for contact in group.members]
-                    matched_list = []
-                    for tag in wait["blacklist"]:
-                        matched_list+=filter(lambda str: str == tag, gMembMids)
-                    if matched_list == []:
-                        cl.sendText(msg.to,"這裡沒有黑單用戶")
-                        return
-                    for jj in matched_list:
-                        cl.kickoutFromGroup(msg.to,[jj])
-                    cl.sendText(msg.to,"黑單勿近")
         if op.type ==13:
            if admid in op.param3:
                if wait["P"] == True:
@@ -2105,14 +2091,12 @@ def bot(op):
                 kn.cancelGroupInvitation(op.param1,InviterX)            
         if op.param3 == "4":
             if op.param1 in protecturl:
-                if op.param2 not in admin:
-                    try:
-                        group = cl.getGroup(op.param1)
-                        if group.preventJoinByTicket == False:
-                          group.preventJoinByTicket = True
-                          cl.updateGroup(group)
-                    except:
-                        pass
+				group = cl.getGroup(op.param1)
+				if group.preventJoinByTicket == False:
+					group.preventJoinByTicket = True
+					cl.updateGroup(group)
+				else:
+					pass                
         if op.type == 19:
             try:
                 if op.param3 in mid:
