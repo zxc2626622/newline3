@@ -223,6 +223,95 @@ def bot(op):
                                         c = Message(to=op.param1, from_=None, text=None, contentType=13)
                                         c.contentMetadata={'mid':op.param2}
                                         cl.sendMessage(c)
+   
+        if op.param3 == "1":
+            if op.param1 in protectname:
+                OWN = admin
+                if op.param2 in OWN:
+                    pass
+                elif wait["P"] == True:
+                     group = cl.getGroup(op.param1)
+                     try:
+                         group.name = wait["pro_name"][op.param1]
+                         cl.updateGroup(group)
+                         cl.sendText(op.param1, "Groupname protect now")
+                         wait["blacklist"][op.param2] = True
+                         f=codecs.open('st2__b.json','w','utf-8')
+                         json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
+                     except Exception as e:
+                         print e
+                         pass
+        if op.param1 in autocancel:
+            if op.param2 in admin:
+                pass
+            else:
+                Inviter = op.param3.replace("",',')
+                InviterX = Inviter.split(",")
+                contact = cl.getContact(op.param2)
+                cl.cancelGroupInvitation(op.param1,InviterX)
+                ki.cancelGroupInvitation(op.param1,InviterX)
+                kk.cancelGroupInvitation(op.param1,InviterX)
+                kk.cancelGroupInvitation(op.param1,InviterX)
+                kc.cancelGroupInvitation(op.param1,InviterX)
+                kd.cancelGroupInvitation(op.param1,InviterX)
+                ke.cancelGroupInvitation(op.param1,InviterX)
+                kf.cancelGroupInvitation(op.param1,InviterX)
+                kg.cancelGroupInvitation(op.param1,InviterX)
+                kh.cancelGroupInvitation(op.param1,InviterX)
+                kj.cancelGroupInvitation(op.param1,InviterX)
+                kl.cancelGroupInvitation(op.param1,InviterX)
+                kn.cancelGroupInvitation(op.param1,InviterX)            
+        if op.param3 == "4":
+            if op.param1 in protecturl:
+				group = cl.getGroup(op.param1)
+				if group.preventJoinByTicket == False:
+					group.preventJoinByTicket = True
+					cl.updateGroup(group)
+				else:
+					pass                
+        if op.type == 19:        
+           if op.param1 in wait["pro"]:
+              OWN = admin + Bots
+           if op.param2 in OWN:
+               pass
+           elif wait["P"] == True:
+                 try:
+                     ki.kickoutFromGroup(op.param1,[op.param2])
+                 except:
+                     try:
+                         kk.kickoutFromGroup(op.param1,[op.param2])
+                     except:
+                         try:
+                             kc.kickoutFromGroup(op.param1,[op.param2])
+                         except:
+                             try:
+                                 kd.kickoutFromGroup(op.param1,[op.param2])
+                             except:
+                                 try:
+                                     ke.kickoutFromGroup(op.param1,[op.param2])
+                                 except:
+                                     try:
+                                         kf.kickoutFromGroup(op.param1,[op.param2])
+                                     except:
+                                         try:
+                                             kg.kickoutFromGroup(op.param1,[op.param2])
+                                         except:
+                                             try:
+                                                 kh.kickoutFromGroup(op.param1,[op.param2])
+                                             except:
+                                                 try:
+                                                     kj.kickoutFromGroup(op.param1,[op.param2])
+                                                 except:
+                                                     try:
+                                                         kl.kickoutFromGroup(op.param1,[op.param2])
+                                                     except:
+                                                         try:
+                                                             kn.kickoutFromGroup(op.param1,[op.param2])
+                                                         except:
+                                                             pass
+                                                             wait["blacklist"][op.param2] = True
+                                                             f=codecs.open('st2__b.json','w','utf-8')
+                                                             json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
 
         if op.type == 0:
             return 
@@ -2032,52 +2121,6 @@ def bot(op):
                             print "Bot can't cancel the invitation"
                             pass
 
-   
-        if op.param3 == "1":
-            if op.param1 in protectname:
-                OWN = admin
-                if op.param2 in OWN:
-                    pass
-                elif wait["P"] == True:
-                     group = cl.getGroup(op.param1)
-                     try:
-                         group.name = wait["pro_name"][op.param1]
-                         cl.updateGroup(group)
-                         cl.sendText(op.param1, "Groupname protect now")
-                         wait["blacklist"][op.param2] = True
-                         f=codecs.open('st2__b.json','w','utf-8')
-                         json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
-                     except Exception as e:
-                         print e
-                         pass
-        if op.param1 in autocancel:
-            if op.param2 in admin:
-                pass
-            else:
-                Inviter = op.param3.replace("",',')
-                InviterX = Inviter.split(",")
-                contact = cl.getContact(op.param2)
-                cl.cancelGroupInvitation(op.param1,InviterX)
-                ki.cancelGroupInvitation(op.param1,InviterX)
-                kk.cancelGroupInvitation(op.param1,InviterX)
-                kk.cancelGroupInvitation(op.param1,InviterX)
-                kc.cancelGroupInvitation(op.param1,InviterX)
-                kd.cancelGroupInvitation(op.param1,InviterX)
-                ke.cancelGroupInvitation(op.param1,InviterX)
-                kf.cancelGroupInvitation(op.param1,InviterX)
-                kg.cancelGroupInvitation(op.param1,InviterX)
-                kh.cancelGroupInvitation(op.param1,InviterX)
-                kj.cancelGroupInvitation(op.param1,InviterX)
-                kl.cancelGroupInvitation(op.param1,InviterX)
-                kn.cancelGroupInvitation(op.param1,InviterX)            
-        if op.param3 == "4":
-            if op.param1 in protecturl:
-				group = cl.getGroup(op.param1)
-				if group.preventJoinByTicket == False:
-					group.preventJoinByTicket = True
-					cl.updateGroup(group)
-				else:
-					pass                
         if op.type == 19:
             try:
                 if op.param3 in mid:
@@ -2634,49 +2677,6 @@ def bot(op):
                     
             except:
                 pass
-        if op.type == 19:        
-           if op.param1 in wait["pro"]:
-              OWN = admin + Bots
-           if op.param2 in OWN:
-               pass
-           elif wait["P"] == True:
-                 try:
-                     ki.kickoutFromGroup(op.param1,[op.param2])
-                 except:
-                     try:
-                         kk.kickoutFromGroup(op.param1,[op.param2])
-                     except:
-                         try:
-                             kc.kickoutFromGroup(op.param1,[op.param2])
-                         except:
-                             try:
-                                 kd.kickoutFromGroup(op.param1,[op.param2])
-                             except:
-                                 try:
-                                     ke.kickoutFromGroup(op.param1,[op.param2])
-                                 except:
-                                     try:
-                                         kf.kickoutFromGroup(op.param1,[op.param2])
-                                     except:
-                                         try:
-                                             kg.kickoutFromGroup(op.param1,[op.param2])
-                                         except:
-                                             try:
-                                                 kh.kickoutFromGroup(op.param1,[op.param2])
-                                             except:
-                                                 try:
-                                                     kj.kickoutFromGroup(op.param1,[op.param2])
-                                                 except:
-                                                     try:
-                                                         kl.kickoutFromGroup(op.param1,[op.param2])
-                                                     except:
-                                                         try:
-                                                             kn.kickoutFromGroup(op.param1,[op.param2])
-                                                         except:
-                                                             pass
-                                                             wait["blacklist"][op.param2] = True
-                                                             f=codecs.open('st2__b.json','w','utf-8')
-                                                             json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
 
 #----------------------------------------------------------------------------------
         if op.type == 55:
