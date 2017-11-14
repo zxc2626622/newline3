@@ -1664,29 +1664,43 @@ def bot(op):
 	          else:
 	            cl.sendText(msg.to, "輸入#set")
 #-----------------------------------------------------------speed
-            elif "Admin add @" in msg.text:
-                if msg.from_ in admin:
-                    print "[Command]Staff add executing"
-                    _name = msg.text.replace("Admin add @","")
-                    _nametarget = _name.rstrip('  ')
-                    gs = cl.getGroup(msg.to)
-                    targets = []
-                    for g in gs.members:
-                        if _nametarget == g.displayName:
-                            targets.append(g.mid)
-                    if targets == []:
-                        ki.sendText(msg.to,"Contact not found")
-                    else:
-                        for target in targets:
-                            try:
-                                admin.append(target)
-                                cl.sendText(msg.to,"已給權")
-                            except:
-                                pass
-                    print "[Command]Staff add executed"
-                else:
-                    cl.sendText(msg.to,"Command denied.")
-                    cl.sendText(msg.to,"Admin permission required.")
+            elif ("Admin add " in msg.text):
+              if msg.from_ in admin:
+                print "EXECUTED -- admin TARGET"
+                key = eval(msg.contentMetadata["MENTION"])
+                key["MENTIONEES"][0]["M"]
+                targets = []
+                for x in key["MENTIONEES"]:
+                    targets.append(x["M"])
+                for target in targets:
+                   try:
+                      admin.append(target)
+                      cl.sendText(msg.to,"已給權")
+                   except:
+                      pass
+#            elif "Admin add @" in msg.text:
+#                if msg.from_ in admin:
+#                    print "[Command]Staff add executing"
+#                    _name = msg.text.replace("Admin add @","")
+#                    _nametarget = _name.rstrip('  ')
+#                    gs = cl.getGroup(msg.to)
+#                    targets = []
+#                    for g in gs.members:
+#                        if _nametarget == g.displayName:
+#                            targets.append(g.mid)
+#                    if targets == []:
+#                        ki.sendText(msg.to,"Contact not found")
+#                    else:
+#                        for target in targets:
+#                            try:
+#                                admin.append(target)
+#                                cl.sendText(msg.to,"已給權")
+#                            except:
+#                                pass
+#                    print "[Command]Staff add executed"
+#                else:
+#                    cl.sendText(msg.to,"Command denied.")
+#                    cl.sendText(msg.to,"Admin permission required.")
             elif "Admin remove @" in msg.text:
                 if msg.from_ in admin:
                     print "[Command]Staff remove executing"
@@ -1710,6 +1724,16 @@ def bot(op):
                 else:
                     cl.sendText(msg.to,"Command denied.")
                     cl.sendText(msg.to,"Admin permission required.")
+            elif msg.text in ["Adminlist","adminlist"]:
+                if admin == []:
+                    cl.sendText(msg.to,"The stafflist is empty")
+                else:
+                    cl.sendText(msg.to,"權限名單:")
+                    mc = ""
+                    for mi_d in admin:
+                        mc += "->" +cl.getContact(mi_d).displayName + "\n"
+                    cl.sendText(msg.to,mc)
+                    print "[Command]Stafflist executed"
 #--------------------
             elif "Sb Add @" in msg.text:
                 if msg.toType == 2:
