@@ -10,7 +10,7 @@ cl.login(token="EmUXn15KmOSBBeWTHH5f.FyCqvzVAe2RNaWr3/dbP3W.7TNK8NtczfuM2PAPEOIq
 cl.loginResult()
 
 ad = LINETCR.LINE()
-ad.login(token="EmZTtgxTQmw17v0woz55.iur748Us1jyfpKv4oxGLDq.ONf8DvGvwvvOVyKeHgNTADZT/ccbM0cDVlzIsbxsMwM=")
+ad.login(token="Em4RCPJmV5Zi3AUOVhP5.iur748Us1jyfpKv4oxGLDq.p5uSdumUKETLX+agVq6sAf33OSCdzLmy/tGDovmbx6g=")
 ad.loginResult()
 
 ki = LINETCR.LINE()
@@ -1856,18 +1856,6 @@ def bot(op):
         if op.type == 5:
             if wait["autoAdd"] == True:
                 cl.findAndAddContactsByMid(op.param1)
-                ad.findAndAddContactsByMid(op.param1)
-                ki.findAndAddContactsByMid(op.param1)
-                kk.findAndAddContactsByMid(op.param1)
-                kc.findAndAddContactsByMid(op.param1)
-                kd.findAndAddContactsByMid(op.param1)
-                ke.findAndAddContactsByMid(op.param1)
-                kf.findAndAddContactsByMid(op.param1)
-                kg.findAndAddContactsByMid(op.param1)
-                kh.findAndAddContactsByMid(op.param1)
-                kj.findAndAddContactsByMid(op.param1)
-                kl.findAndAddContactsByMid(op.param1)
-                kn.findAndAddContactsByMid(op.param1)
                 if (wait["message"] in [""," ","\n",None]):
                     pass
                 else:
