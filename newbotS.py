@@ -1802,7 +1802,7 @@ def bot(op):
 					pass
             elif "Invite:off" == msg.text:
 				try:
-                    del autocancel[msg.to]
+					del autocancel[msg.to]
 					cl.sendText(msg.to,"鎖邀請已關")
 				except:
 					pass
