@@ -2031,49 +2031,6 @@ def bot(op):
                         except:
                             print "Bot can't cancel the invitation"
                             pass
-        if op.type == 19:        
-           if op.param1 in wait["pro"]:
-              OWN = admin + Bots
-           if op.param2 in OWN:
-               pass
-           elif wait["P"] == True:
-                 try:
-                     ki.kickoutFromGroup(op.param1,[op.param2])
-                 except:
-                     try:
-                         kk.kickoutFromGroup(op.param1,[op.param2])
-                     except:
-                         try:
-                             kc.kickoutFromGroup(op.param1,[op.param2])
-                         except:
-                             try:
-                                 kd.kickoutFromGroup(op.param1,[op.param2])
-                             except:
-                                 try:
-                                     ke.kickoutFromGroup(op.param1,[op.param2])
-                                 except:
-                                     try:
-                                         kf.kickoutFromGroup(op.param1,[op.param2])
-                                     except:
-                                         try:
-                                             kg.kickoutFromGroup(op.param1,[op.param2])
-                                         except:
-                                             try:
-                                                 kh.kickoutFromGroup(op.param1,[op.param2])
-                                             except:
-                                                 try:
-                                                     kj.kickoutFromGroup(op.param1,[op.param2])
-                                                 except:
-                                                     try:
-                                                         kl.kickoutFromGroup(op.param1,[op.param2])
-                                                     except:
-                                                         try:
-                                                             kn.kickoutFromGroup(op.param1,[op.param2])
-                                                         except:
-                                                             pass
-                                                             wait["blacklist"][op.param2] = True
-                                                             f=codecs.open('st2__b.json','w','utf-8')
-                                                             json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
 
    
         if op.param3 == "1":
@@ -2677,6 +2634,49 @@ def bot(op):
                     
             except:
                 pass
+        if op.type == 19:        
+           if op.param1 in wait["pro"]:
+              OWN = admin + Bots
+           if op.param2 in OWN:
+               pass
+           elif wait["P"] == True:
+                 try:
+                     ki.kickoutFromGroup(op.param1,[op.param2])
+                 except:
+                     try:
+                         kk.kickoutFromGroup(op.param1,[op.param2])
+                     except:
+                         try:
+                             kc.kickoutFromGroup(op.param1,[op.param2])
+                         except:
+                             try:
+                                 kd.kickoutFromGroup(op.param1,[op.param2])
+                             except:
+                                 try:
+                                     ke.kickoutFromGroup(op.param1,[op.param2])
+                                 except:
+                                     try:
+                                         kf.kickoutFromGroup(op.param1,[op.param2])
+                                     except:
+                                         try:
+                                             kg.kickoutFromGroup(op.param1,[op.param2])
+                                         except:
+                                             try:
+                                                 kh.kickoutFromGroup(op.param1,[op.param2])
+                                             except:
+                                                 try:
+                                                     kj.kickoutFromGroup(op.param1,[op.param2])
+                                                 except:
+                                                     try:
+                                                         kl.kickoutFromGroup(op.param1,[op.param2])
+                                                     except:
+                                                         try:
+                                                             kn.kickoutFromGroup(op.param1,[op.param2])
+                                                         except:
+                                                             pass
+                                                             wait["blacklist"][op.param2] = True
+                                                             f=codecs.open('st2__b.json','w','utf-8')
+                                                             json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
 
 #----------------------------------------------------------------------------------
         if op.type == 55:
