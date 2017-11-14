@@ -1793,19 +1793,19 @@ def bot(op):
                     del wait['pname'][msg.to]
                 else:
                     cl.sendText(msg.to,"鎖群名已關閉")
-            elif "Invite:off" == msg.text:
+            elif "Invite:on" == msg.text:
 				try:
                     gid = msg.to
                     autocancel[gid] = "poni"
                     cl.sendText(msg.to,"鎖邀請已開")
 				except:
-					pass                                 
+					pass
             elif "Invite:off" == msg.text:
 				try:
                     del autocancel[msg.to]
 					cl.sendText(msg.to,"鎖邀請已關")
 				except:
-					pass                                 
+					pass
             elif msg.text in ["all:on"]:
                 if msg.from_ in Administrator:
                     try:
