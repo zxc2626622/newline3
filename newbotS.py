@@ -1794,12 +1794,15 @@ def bot(op):
                 else:
                     cl.sendText(msg.to,"鎖群名已關閉")
             elif "Invite:on" == msg.text:
-				gid = msg.to
-				autocancel[gid] = "poni"
-				cl.sendText(msg.to,"鎖邀請已開")
+                try:
+                    gid = msg.to
+                    autocancel[gid] = "poni"
+				    cl.sendText(msg.to,"鎖邀請已開")
+				except:
+					pass
             elif "Invite:off" == msg.text:
 				try:
-					del autocancel[msg.to]
+                    del autocancel[msg.to]
 					cl.sendText(msg.to,"鎖邀請已關")
 				except:
 					pass                                 
