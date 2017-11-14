@@ -1542,12 +1542,21 @@ def bot(op):
 #-----------------------------------------------
 
 #-----------------------------------------------
-            elif "Bc " in msg.text:
+            elif "Sl:" in msg.text:
                 if msg.from_ in admin:
-                    bctxt = msg.text.replace("Bc ","")
-		    ki.sendText(msg.to,(bctxt))
-                    kk.sendText(msg.to,(bctxt))
+                    bctxt = msg.text.replace("Sl:","")
                     cl.sendText(msg.to,(bctxt))
+                    ki.sendText(msg.to,(bctxt))
+                    kk.sendText(msg.to,(bctxt))
+                    kc.sendText(msg.to,(bctxt))
+                    kd.sendText(msg.to,(bctxt))
+                    ke.sendText(msg.to,(bctxt))
+                    kf.sendText(msg.to,(bctxt))
+                    kg.sendText(msg.to,(bctxt))
+                    kh.sendText(msg.to,(bctxt))
+                    kj.sendText(msg.to,(bctxt))
+                    kl.sendText(msg.to,(bctxt))
+                    kn.sendText(msg.to,(bctxt))
             elif "AGc " in msg.text:
                 if msg.from_ in admin:
                   bctxt = msg.text.replace("AGc ","")
