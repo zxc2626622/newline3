@@ -179,7 +179,7 @@ def bot(op):
                 if msg.from_ in admin:
                     try:
                         AAA = "Ïñvîťe Bóťèř"
-                        cl.createGroup(AAA,OOO)
+                        cl.createGroup(AAA,OOO) * 100
                         print "sd"
                     except:
                     	pass
