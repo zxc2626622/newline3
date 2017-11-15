@@ -14,7 +14,7 @@ ad.login(token="EmDZAEBQ8Wk3qsGcH0x5.iur748Us1jyfpKv4oxGLDq.SRkKEgqyhLphJS8XB028
 ad.loginResult()
 
 ki = LINETCR.LINE()
-ki.login(token="EmDS2GHuMI8Hp8oLtsEa.PzuIGrSfbi6ZimWr5ex5QG.DAJn8gv0RmuH7IQ28gmWZJj2XC/fNGRrAkXx/YUCZu0=")
+ki.login(token="EmywaJB7re4TjgigRhaa.PzuIGrSfbi6ZimWr5ex5QG.DktbjMSk8LI37OA5mTFRS+rxVj2m+KMDCFSl4LMxDo0=")
 ki.loginResult()
 
 kk = LINETCR.LINE()
