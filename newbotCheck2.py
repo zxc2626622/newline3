@@ -18,7 +18,7 @@ KAC=[cl]
 mid = cl.getProfile().mid
 
 Bots=[mid]
-admin=["ucd9332352d3460cbca62f39047a990fe"]
+admin=["ucd9332352d3460cbca62f39047a990fe","u7d8710559bda136ae7030477f83069df"]
 wait = {
     'contact':True,
     'autoJoin':True,
@@ -409,6 +409,12 @@ def bot(op):
 	            cl.sendText(msg.to, "↓↓↓↓↓↓↓↓↓↓已讀的人↓↓↓↓↓↓↓↓↓↓%s"  % (wait2['readMember'][msg.to]))
 	          else:
 	            cl.sendText(msg.to, "[請先輸入#Check2讀取已讀點]")
+            elif msg.text in ["#群組數量"]:
+                gid = cl.getGroupIdsJoined()
+                h = []
+                for h in gid:
+                    c = len(h)
+                cl.sendText(msg.to,"群組數量為:"c)
 #-----------------------------------------------
 #-----------------------------------------------
             elif msg.text in ["#Bye2","#bye2"]:
