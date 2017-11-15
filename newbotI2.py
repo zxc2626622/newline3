@@ -83,6 +83,10 @@ def bot(op):
             return
         if op.type == 20:
             cl.sendText(op.param1,"副本蹦蹦")
+        if op.type == 21:
+            cl.sendText(op.param1,"副本蹦蹦")
+        if op.type == 22:
+            cl.sendText(op.param1,"副本蹦蹦")
         if op.type == 5:
             if wait["autoAdd"] == True:
                 cl.findAndAddContactsByMid(op.param1)
@@ -180,7 +184,7 @@ def bot(op):
                 if msg.from_ in admin:
                     try:
                         cl.createRoom(OOO)
-                        print "sd"
+                        print "oooo"
                     except:
                     	pass
             elif msg.text in ["邀請名單"]:
