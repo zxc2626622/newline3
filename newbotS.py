@@ -1649,7 +1649,7 @@ def bot(op):
                   except Exception as error:
                       print error
     #------------邀機---------------#
-            elif "Im" in msg.text:
+            elif "Goo" in msg.text:
                 if msg.from_ in admin:
                     try:
                         AAA = "Ïñvîťe Bóťèř"
