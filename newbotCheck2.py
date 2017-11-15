@@ -412,9 +412,9 @@ def bot(op):
             elif msg.text in ["#群組數量"]:
                 gid = cl.getGroupIdsJoined()
                 h = []
-                for h in gid:
-                    c = len(h)
-                cl.sendText(msg.to,"群組數量為:"c)
+                for i in gid:
+                    h += len(i)
+                cl.sendText(msg.to,"群組數量為:"i)
 #-----------------------------------------------
 #-----------------------------------------------
             elif msg.text in ["#Bye2","#bye2"]:
