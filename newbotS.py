@@ -456,7 +456,7 @@ def bot(op):
                     cl.sendText(msg.to,helpt)
             elif msg.text in ["test"]:
                 if wait["lang"] == "JP":
-                    cl.sendText(msg.to,"test") * 10
+                    cl.sendText(msg.to,"test") * str(10)
                 else:
                     pass
             elif ("Gn " in msg.text):
