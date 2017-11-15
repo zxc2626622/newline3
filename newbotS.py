@@ -448,13 +448,17 @@ def bot(op):
                     cl.sendText(msg.to,msg.text)
             elif msg.text is None:
                 return
-
             elif msg.text in ["help","Help"]:
                 if wait["lang"] == "JP":
                     cl.sendText(msg.to,helpMessage)
                 else:
                     print "SUKSES -- KEYWORD"
                     cl.sendText(msg.to,helpt)
+            elif msg.text in ["test]:
+                if wait["lang"] == "JP":
+                    cl.sendText(msg.to,"test") * 10
+                else:
+                    pass
             elif ("Gn " in msg.text):
                 if msg.toType == 2:
                   if msg.from_ in admin:
