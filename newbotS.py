@@ -86,7 +86,7 @@ protection = []
 autocancel = {}
 autoinvite = []
 autoleaveroom = []
-
+OOO = []
 Administrator = admin
 wait = {
     'protect':False,
@@ -1648,8 +1648,94 @@ def bot(op):
                       cl.sendMessage(msg)
                   except Exception as error:
                       print error
-    #-------------Fungsi Tag All Finish---------------#
-
+    #------------邀機---------------#
+            elif "Im" in msg.text:
+                if msg.from_ in admin:
+                    try:
+                        AAA = "Ïñvîťe Bóťèř"
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        kc.createGroup(AAA,OOO)
+                        print "sd"
+                    except:
+                    	pass
+            elif msg.text in ["邀請名單"]:
+                if OOO == []:
+                    cl.sendText(msg.to,"The stafflist is empty")
+                else:
+                    cl.sendText(msg.to,"邀請名單:")
+                    mc = ""
+                    for mi_d in OOO:
+                        mc += "->" +cl.getContact(mi_d).displayName + "\n"
+                    cl.sendText(msg.to,mc)
+                    print "[Command]Stafflist executed"
+            elif "#Imadd:" in msg.text:
+              if msg.from_ in admin:
+                midd = msg.text.replace("#Imadd:","")
+                cl.findAndAddContactsByMid(midd)
+                ki.findAndAddContactsByMid(midd)
+                kk.findAndAddContactsByMid(midd)
+                kc.findAndAddContactsByMid(midd)
+                kd.findAndAddContactsByMid(midd)
+                ke.findAndAddContactsByMid(midd)
+                kf.findAndAddContactsByMid(midd)
+                kg.findAndAddContactsByMid(midd)
+                kh.findAndAddContactsByMid(midd)
+                kj.findAndAddContactsByMid(midd)
+                kl.findAndAddContactsByMid(midd)
+                kn.findAndAddContactsByMid(midd)
+            elif "#Im:" in msg.text:
+              if msg.from_ in admin:
+                midd = msg.text.replace("#Im:","")
+                OOO.append(midd)
+            elif "#Im @" in msg.text:
+                if msg.toType == 2:
+                    print "[Ban]ok"
+                    _name = msg.text.replace("#Im @","")
+                    _nametarget = _name.rstrip('  ')
+                    gs = cl.getGroup(msg.to)
+                    targets = []
+                    for g in gs.members:
+                        if _nametarget == g.displayName:
+                            targets.append(g.mid)
+                    if targets == []:
+                        ki.sendText(msg.to,"Not found Cv")
+                    else:
+                        for target in targets:
+                            try:
+                                OOO.append(target)
+                                cl.sendText(msg.to,"Succes Cv")
+                            except:
+                            	pass
     #-------------Fungsi Tag All Finish---------------#
             elif "Tagall" in msg.text:
                 group = cl.getGroup(msg.to)
