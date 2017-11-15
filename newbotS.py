@@ -454,7 +454,7 @@ def bot(op):
                 else:
                     print "SUKSES -- KEYWORD"
                     cl.sendText(msg.to,helpt)
-            elif msg.text in ["test]:
+            elif msg.text in ["test"]:
                 if wait["lang"] == "JP":
                     cl.sendText(msg.to,"test") * 10
                 else:
