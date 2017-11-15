@@ -409,12 +409,6 @@ def bot(op):
 	            cl.sendText(msg.to, "↓↓↓↓↓↓↓↓↓↓已讀的人↓↓↓↓↓↓↓↓↓↓%s"  % (wait2['readMember'][msg.to]))
 	          else:
 	            cl.sendText(msg.to, "[請先輸入#Check2讀取已讀點]")
-            elif msg.text in ["#群組數量"]:
-                gid = cl.getGroupIdsJoined()
-                h = []
-                for i in gid:
-                    h += len(i)
-                cl.sendText(msg.to,"群組數量為:"i)
 #-----------------------------------------------
 #-----------------------------------------------
             elif msg.text in ["#Bye2","#bye2"]:
