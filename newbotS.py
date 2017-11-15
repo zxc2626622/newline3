@@ -1066,7 +1066,7 @@ def bot(op):
                 gid = cl.getGroupIdsJoined()
                 h = []
                 for h in gid:
-                cl.sendText(msg.to,str(len(h)))
+                    cl.sendText(msg.to,str(len(h)))
             elif msg.text in ["/listgroup","/Listgroup","/List group","/list group"]:
                 gid = cl.getGroupIdsJoined()
                 h = ""
