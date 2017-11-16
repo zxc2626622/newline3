@@ -1966,7 +1966,7 @@ def bot(op):
            if admid in op.param3:
                if wait["P"] == True:
                    ad.acceptGroupInvitation(op.param1)
-                   ad.sendText(op.param1,Immes)
+                   ad.sendText(op.param1,Inmes)
                    ad.leaveGroup(op.param1)
                else:
                    pass
@@ -1974,7 +1974,7 @@ def bot(op):
            if Amid in op.param3:
                if wait["P"] == True:
                    ki.acceptGroupInvitation(op.param1)
-                   ki.sendText(op.param1,Immes)
+                   ki.sendText(op.param1,Inmes)
                    ki.leaveGroup(op.param1)
                else:
                    pass
@@ -1982,7 +1982,7 @@ def bot(op):
            if Bmid in op.param3:
                if wait["P"] == True:
                    kk.acceptGroupInvitation(op.param1)
-                   kk.sendText(op.param1,Immes)
+                   kk.sendText(op.param1,Inmes)
                    kk.leaveGroup(op.param1)
                else:
                    pass
@@ -1990,7 +1990,7 @@ def bot(op):
            if Cmid in op.param3:
                if wait["P"] == True:
                    kc.acceptGroupInvitation(op.param1)
-                   kc.sendText(op.param1,Immes)
+                   kc.sendText(op.param1,Inmes)
                    kc.leaveGroup(op.param1)
                else:
                    pass
@@ -1998,7 +1998,7 @@ def bot(op):
            if Dmid in op.param3:
                if wait["P"] == True:
                    kd.acceptGroupInvitation(op.param1)
-                   kd.sendText(op.param1,Immes)
+                   kd.sendText(op.param1,Inmes)
                    kd.leaveGroup(op.param1)
                else:
                    pass
@@ -2006,7 +2006,7 @@ def bot(op):
            if Emid in op.param3:
                if wait["P"] == True:
                    ke.acceptGroupInvitation(op.param1)
-                   ke.sendText(op.param1,Immes)
+                   ke.sendText(op.param1,Inmes)
                    ke.leaveGroup(op.param1)
                else:
                    pass
@@ -2014,7 +2014,7 @@ def bot(op):
            if Fmid in op.param3:
                if wait["P"] == True:
                    kf.acceptGroupInvitation(op.param1)
-                   kf.sendText(op.param1,Immes)
+                   kf.sendText(op.param1,Inmes)
                    kf.leaveGroup(op.param1)
                else:
                    pass
@@ -2022,7 +2022,7 @@ def bot(op):
            if Gmid in op.param3:
                if wait["P"] == True:
                    kg.acceptGroupInvitation(op.param1)
-                   kg.sendText(op.param1,Immes)
+                   kg.sendText(op.param1,Inmes)
                    kg.leaveGroup(op.param1)
                else:
                    pass
@@ -2030,7 +2030,7 @@ def bot(op):
            if Hmid in op.param3:
                if wait["P"] == True:
                    kh.acceptGroupInvitation(op.param1)
-                   kh.sendText(op.param1,Immes)
+                   kh.sendText(op.param1,Inmes)
                    kh.leaveGroup(op.param1)
                else:
                    pass
@@ -2038,7 +2038,7 @@ def bot(op):
            if Jmid in op.param3:
                if wait["P"] == True:
                    kj.acceptGroupInvitation(op.param1)
-                   kj.sendText(op.param1,Immes)
+                   kj.sendText(op.param1,Inmes)
                    kj.leaveGroup(op.param1)
                else:
                    pass
@@ -2046,7 +2046,7 @@ def bot(op):
            if Lmid in op.param3:
                if wait["P"] == True:
                    kl.acceptGroupInvitation(op.param1)
-                   kl.sendText(op.param1,Immes)
+                   kl.sendText(op.param1,Inmes)
                    kl.leaveGroup(op.param1)
                else:
                    pass
@@ -2054,7 +2054,7 @@ def bot(op):
            if Nmid in op.param3:
                if wait["P"] == True:
                    kn.acceptGroupInvitation(op.param1)
-                   kn.sendText(op.param1,Immes)
+                   kn.sendText(op.param1,Inmes)
                    kn.leaveGroup(op.param1)
                else:
                    pass
