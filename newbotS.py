@@ -1672,6 +1672,8 @@ def bot(op):
                     kj.sendText(msg.to,"10")
                     kl.sendText(msg.to,"11")
                     kn.sendText(msg.to,"12")
+                except:
+                    pass
 #-----------------------------------------------
             elif msg.text in ["Sp","Speed","speed"]:
                 start = time.time()
