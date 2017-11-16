@@ -42,7 +42,7 @@ kg.login(token="EmJmSdILELDoKwCdwlz9.e1FgUhH3JoxZEfGo0PR5Aq.EDQZCGlfUrNSdsLVUfD1
 kg.loginResult()
 
 kh = LINETCR.LINE()
-kh.login(token="EmW2iuE4C61kAHwDXT27.iDoQGqR5vJevZClhLwopPW.q8KgltbxMyJuq3HAT6WpBsZzPcFUL7ISUkQvII4ehH8=")
+kh.login(token="EmS5usOzjzON3x0Vj3N7.iDoQGqR5vJevZClhLwopPW.rGb/FTRV5PJ7BcZw1EdrT96k5+w3VCrVOBIkGR0O0iQ=")
 kh.loginResult()
 
 kj = LINETCR.LINE()
