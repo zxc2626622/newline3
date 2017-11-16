@@ -1580,6 +1580,11 @@ def bot(op):
                         cl.sendMessage(msg)
                     else:
                         pass
+            elif msg.text in ["Mc:"]:
+                mmid = msg.text.replace("Mc:","")
+                msg.contentType = 13
+                msg.contentMetadata = {"mid":mmid}
+                cl.sendMessage(msg)
 #-----------------------------------------------
             elif msg.text in ["tagall","tag all","แทก","แท็ก"]:
                   group = cl.getGroup(msg.to)
