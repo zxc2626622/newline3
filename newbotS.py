@@ -1660,44 +1660,18 @@ def bot(op):
             elif msg.text in ["Respon","respon","absen","Absen"]:
                 try:
                     cl.sendText(msg.to,"保鏢答數")
-                except:
-                    try:
-                        ad.sendText(msg.to,"1")
-                    except:
-                        try:
-                            ki.sendText(msg.to,"2")
-                        except:
-                            try:
-                                kk.sendText(msg.to,"3")
-                            except:
-                                try:
-                                    kc.sendText(msg.to,"4")
-                                except:
-                                    try:
-                                        kd.sendText(msg.to,"5")
-                                    except:
-                                        try:
-                                            ke.sendText(msg.to,"6")
-                                        except:
-                                            try:
-                                                kf.sendText(msg.to,"7")
-                                            except:
-                                                try:
-                                                    kg.sendText(msg.to,"8")
-                                                except:
-                                                    try:
-                                                        kh.sendText(msg.to,"9")
-                                                    except:
-                                                        try:
-                                                            kj.sendText(msg.to,"10")
-                                                        except:
-                                                            try:
-                                                                kl.sendText(msg.to,"11")
-                                                            except:
-                                                                try:
-                                                                    kn.sendText(msg.to,"12")
-                                                                except:
-                                                                    pass
+                    ad.sendText(msg.to,"1")
+                    ki.sendText(msg.to,"2")
+                    kk.sendText(msg.to,"3")
+                    kc.sendText(msg.to,"4")
+                    kd.sendText(msg.to,"5")
+                    ke.sendText(msg.to,"6")
+                    kf.sendText(msg.to,"7")
+                    kg.sendText(msg.to,"8")
+                    kh.sendText(msg.to,"9")
+                    kj.sendText(msg.to,"10")
+                    kl.sendText(msg.to,"11")
+                    kn.sendText(msg.to,"12")
 #-----------------------------------------------
             elif msg.text in ["Sp","Speed","speed"]:
                 start = time.time()
