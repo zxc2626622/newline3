@@ -408,6 +408,17 @@ def bot(op):
 	            cl.sendText(msg.to, "↓↓↓↓↓↓↓↓↓↓已讀的人↓↓↓↓↓↓↓↓↓↓%s"  % (wait2['readMember'][msg.to]))
 	          else:
 	            cl.sendText(msg.to, "[請先輸入#Check讀取已讀點]")
+            elif msg.text in ["#Cancelall"]:
+              if msg.from_ in admin:
+                gid = cl.getGroupIdsInvited()
+                for i in gid:
+                    cl.rejectGroupInvitation(i)
+
+                    print "SUKSES -- SEND CANCELALL"
+                if wait["lang"] == "JP":
+                    cl.sendText(msg.to,"全部邀請已清除")
+                else:
+                    cl.sendText(msg.to,"錯誤")
 #-----------------------------------------------
 #-----------------------------------------------
             elif msg.text in ["#Bye","#bye"]:
