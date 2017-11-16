@@ -413,7 +413,6 @@ def bot(op):
                 gid = cl.getGroupIdsInvited()
                 for i in gid:
                     cl.rejectGroupInvitation(i)
-
                     print "SUKSES -- SEND CANCELALL"
                 if wait["lang"] == "JP":
                     cl.sendText(msg.to,"全部邀請已清除")
