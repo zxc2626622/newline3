@@ -451,36 +451,6 @@ def bot(op):
                     cl.sendText(msg.to,msg.text)
             elif msg.text is None:
                 return
-            elif "Cag" in msg.text:
-                if msg.from_ in admin:
-                    try:
-                        AGI = cl.getGroupIdsInvited()
-                        AGI = ki.getGroupIdsInvited()
-                        AGI = kk.getGroupIdsInvited()
-                        AGI = kc.getGroupIdsInvited()
-                        AGI = kd.getGroupIdsInvited()
-                        AGI = ke.getGroupIdsInvited()
-                        AGI = kf.getGroupIdsInvited()
-                        AGI = kg.getGroupIdsInvited()
-                        AGI = kh.getGroupIdsInvited()
-                        AGI = kj.getGroupIdsInvited()
-                        AGI = kl.getGroupIdsInvited()
-                        AGI = kn.getGroupIdsInvited()
-                        for c in AGI:
-                            cl.rejectGroupInvitation(c)
-                            ki.rejectGroupInvitation(c)
-                            kk.rejectGroupInvitation(c)
-                            kc.rejectGroupInvitation(c)
-                            kd.rejectGroupInvitation(c)
-                            ke.rejectGroupInvitation(c)
-                            kf.rejectGroupInvitation(c)
-                            kg.rejectGroupInvitation(c)
-                            kh.rejectGroupInvitation(c)
-                            kj.rejectGroupInvitation(c)
-                            kl.rejectGroupInvitation(c)
-                            kn.rejectGroupInvitation(c)
-                    except:
-                        pass
             elif msg.text in ["help","Help"]:
                 if wait["lang"] == "JP":
                     cl.sendText(msg.to,helpMessage)
@@ -1083,13 +1053,35 @@ def bot(op):
             elif msg.text in ["Cancelall"]:
               if msg.from_ in admin:
                 gid = cl.getGroupIdsInvited()
+                gid = ki.getGroupIdsInvited()
+                gid = kk.getGroupIdsInvited()
+                gid = kc.getGroupIdsInvited()
+                gid = kd.getGroupIdsInvited()
+                gid = ke.getGroupIdsInvited()
+                gid = kf.getGroupIdsInvited()
+                gid = kg.getGroupIdsInvited()
+                gid = kh.getGroupIdsInvited()
+                gid = kj.getGroupIdsInvited()
+                gid = kl.getGroupIdsInvited()
+                gid = kn.getGroupIdsInvited()
                 for i in gid:
                     cl.rejectGroupInvitation(i)
+                    ki.rejectGroupInvitation(i)
+                    kk.rejectGroupInvitation(i)
+                    kc.rejectGroupInvitation(i)
+                    kd.rejectGroupInvitation(i)
+                    ke.rejectGroupInvitation(i)
+                    kf.rejectGroupInvitation(i)
+                    kg.rejectGroupInvitation(i)
+                    kh.rejectGroupInvitation(i)
+                    kj.rejectGroupInvitation(i)
+                    kl.rejectGroupInvitation(i)
+                    kn.rejectGroupInvitation(i)
                     print "SUKSES -- SEND CANCELALL"
                 if wait["lang"] == "JP":
-                    cl.sendText(msg.to,"All invitations have been refused")
+                    cl.sendText(msg.to,"全部邀請已清除")
                 else:
-                    cl.sendText(msg.to,"æ‹’ç»äº†å…¨éƒ¨çš„é‚€è¯·ã€‚")
+                    cl.sendText(msg.to,"錯誤")
             elif msg.text in ["Add on","Auto add:on"]:
                 if wait["autoAdd"] == True:
                     if wait["lang"] == "JP":
