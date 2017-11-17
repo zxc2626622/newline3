@@ -1015,9 +1015,15 @@ def bot(op):
                 for i in gid:
                     h += "[%s]:%s\n" % (cl.getGroup(i).name,i)
                 cl.sendText(msg.to,h)
-            elif msg.text in ["群組數量"]:
+            elif msg.text in ["所有數量"]:
                 gid = cl.getGroupIdsJoined()
-                cl.sendText(msg.to,"總共:\n" + str(len(gid)))
+                fid =  cl.getAllContactIds()
+                Iid =  cl.getGroupIdsInvited()
+                if Iid is None:
+                    Iid = "0"
+                else:
+                    Iid = cl.getGroupIdsInvited()
+                cl.sendText(msg.to,"群組:" + str(len(gid)) + "\n群組邀請中:" + str(len(Iid)) + "\n好友:" + str(len(fid)))
             elif msg.text in ["/listgroup","/Listgroup","/List group","/list group"]:
                 gid = cl.getGroupIdsJoined()
                 h = ""
