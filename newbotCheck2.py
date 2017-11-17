@@ -18,7 +18,7 @@ KAC=[cl]
 mid = cl.getProfile().mid
 
 Bots=[mid]
-admin=["ucd9332352d3460cbca62f39047a990fe","u7d8710559bda136ae7030477f83069df"]
+admin=["ucd9332352d3460cbca62f39047a990fe","u7d8710559bda136ae7030477f83069df","ucea4bbeeeafc0ddd3ebc88b6b37baf7e"]
 wait = {
     'contact':True,
     'autoJoin':True,
