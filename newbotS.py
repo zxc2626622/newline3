@@ -1010,7 +1010,7 @@ def bot(op):
                 else: md+=" ❎自動離開副本:關閉\n" + O
                 if wait["autoAdd"] == True: md+=" ☑自動加好友:開啟\n" + O
                 else:md+=" ❎自動加好友:關閉\n" + O
-                 if msg.to in wait["pro"]: md+=" ☑防踢:開啟\n" + O
+                if msg.to in wait["pro"]: md+=" ☑防踢:開啟\n" + O
                 else: md+=" ❎防踢:關閉\n" + O
                 if msg.to in wait["pro_name"]: md+=" ☑鎖群名:開啟\n" + O
                 else: md+=" ❎鎖群名:關閉\n" + O
