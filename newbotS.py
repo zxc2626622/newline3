@@ -199,49 +199,41 @@ def bot(op):
                                             ke.updateGroup(G)
                                         except:
                                             pass
-                    if op.param2 in admin:
+#                    if op.param2 in admin:
+#                        pass
+#                    else:
+#                        try:
+#                            ki.kickoutFromGroup(op.param1,[op.param2])
+#                        except:
+#                            try:
+#                                kk.kickoutFromGroup(op.param1,[op.param2])
+#                            except:
+#                                try:
+#                                    kc.kickoutFromGroup(op.param1,[op.param2])
+#                                except:
+#                                    try:
+#                                        kd.kickoutFromGroup(op.param1,[op.param2])
+#                                    except:
+#                                        try:
+#                                            ke.kickoutFromGroup(op.param1,[op.param2])
+#                                        except:
+#                                            pass
+#                                        cl.sendText(op.param1,"群名已鎖")
+#                                        cl.sendText(op.param1,"更改者為")
+#                                        c = Message(to=op.param1, from_=None, text=None, contentType=13)
+#                                        c.contentMetadata={'mid':op.param2}
+#                                        cl.sendMessage(c)
+        if op.type == 11:
+            if op.param3 == '1':
+                if op.param1 in wait['pname']:
+                    try:
+                        cl.sendText(op.param1,"群名已鎖")
+                        cl.sendText(op.param1,"更改者為")
+                        c = Message(to=op.param1, from_=None, text=None, contentType=13)
+                        c.contentMetadata={'mid':op.param2}
+                        cl.sendMessage(c)
+                    except:
                         pass
-                    else:
-                        try:
-                            ki.kickoutFromGroup(op.param1,[op.param2])
-                        except:
-                            try:
-                                kk.kickoutFromGroup(op.param1,[op.param2])
-                            except:
-                                try:
-                                    kc.kickoutFromGroup(op.param1,[op.param2])
-                                except:
-                                    try:
-                                        kd.kickoutFromGroup(op.param1,[op.param2])
-                                    except:
-                                        try:
-                                            ke.kickoutFromGroup(op.param1,[op.param2])
-                                        except:
-                                            pass
-                            
-                                        cl.sendText(op.param1,"群名已鎖")
-                                        cl.sendText(op.param1,"更改者為")
-                                        c = Message(to=op.param1, from_=None, text=None, contentType=13)
-                                        c.contentMetadata={'mid':op.param2}
-                                        cl.sendMessage(c)
-   
-        if op.param3 == "1":
-            if op.param1 in protectname:
-                OWN = admin
-                if op.param2 in OWN:
-                    pass
-                elif wait["P"] == True:
-                     group = cl.getGroup(op.param1)
-                     try:
-                         group.name = wait["pro_name"][op.param1]
-                         cl.updateGroup(group)
-                         cl.sendText(op.param1, "Groupname protect now")
-                         wait["blacklist"][op.param2] = True
-                         f=codecs.open('st2__b.json','w','utf-8')
-                         json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
-                     except Exception as e:
-                         print e
-                         pass
         if op.param1 in autocancel:
             if op.param2 in admin:
                 pass
@@ -263,16 +255,14 @@ def bot(op):
                 kl.cancelGroupInvitation(op.param1,InviterX)
                 kn.cancelGroupInvitation(op.param1,InviterX)            
         if op.param3 == "4":
-            if op.param2 in admin:
-                pass
-                if op.param2 not in admin:
-                  if op.param1 in protecturl:
-                      group = cl.getGroup(op.param1)
-                      if group.preventJoinByTicket == False:
-                          group.preventJoinByTicket = True
-                          cl.updateGroup(group)
-                      else:
-                          pass
+            if op.param2 not in admin:
+              if op.param1 in protecturl:
+                  group = cl.getGroup(op.param1)
+                  if group.preventJoinByTicket == False:
+                      group.preventJoinByTicket = True
+                      cl.updateGroup(group)
+                  else:
+                      pass
 #        if op.type == 19:        
 #           if op.param1 in wait["pro"]:
 #             if op.param2 in admin:
