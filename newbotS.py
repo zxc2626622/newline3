@@ -999,45 +999,25 @@ def bot(op):
                         cl.sendText(msg.to,"完成")
                     else:
                         cl.sendText(msg.to,"è¦äº†å…³æ–­ã€‚")
-
-            elif msg.text in ["Cancel off","cancel off"]:
-                if msg.from_ in admin:
-                    if cancelinvite["autoCancel"] == True:
-                        cancelinvite["autoCancel"] = False
-                        cl.sendText(msg.to, "Auto Cancel turned off")
-                        print "[Command]Cancel off executed"
-                    else:
-                        cl.sendText(msg.to, "Auto Cancel already turned off")
-                        print "[Command]Cancel off executed"
-                else:
-                    cl.sendText(msg.to,"Command denied.")
-                    cl.sendText(msg.to,"Staff or higher permission required.")
-                    print "[Error]Command denied - staff or higher permission required"
-
-            elif msg.text in ["Cancel on","cancel on"]:
-                if msg.from_ in admin:
-                    if cancelinvite["autoCancel"] == False:
-                        cancelinvite["autoCancel"] = True
-                        cl.sendText(msg.to, "Auto Cancel turned on")
-                        print "[Command]Cancel on executed"
-                    else:
-                        cl.sendText(msg.to, "Auto Cancel already turned on")
-                        print "[Command]Cancel on executed"
-                else:
-                    cl.sendText(msg.to,"Command denied.")
-                    cl.sendText(msg.to,"Staff or higher permission required.")
-                    print "[Error]Command denied - staff or higher permission required"
-
             elif msg.text in ["Set"]:
                 md = ""
-                if wait["contact"] == True: md+=" 調查友資:開啟\n"
-                else: md+=" 調查友資:關閉\n"
-                if wait["autoJoin"] == True: md+=" 自動進群:開啟\n"
-                else: md +=" 自動進群:關閉\n"
-                if wait["leaveRoom"] == True: md+=" 自動離開副本:開啟\n"
-                else: md+=" 自動離開副本:關閉\n"
-                if wait["autoAdd"] == True: md+=" 自動加好友:開啟"
-                else:md+=" 自動加好友:關閉"
+                O = "================"
+                if wait["contact"] == True: md+=" ☑調查友資:開啟\n" + O
+                else: md+=" ❎調查友資:關閉\n" + O
+                if wait["autoJoin"] == True: md+=" ☑自動進群:開啟\n" + O
+                else: md +=" ❎自動進群:關閉\n" + O
+                if wait["leaveRoom"] == True: md+=" ☑自動離開副本:開啟\n" + O
+                else: md+=" ❎自動離開副本:關閉\n" + O
+                if wait["autoAdd"] == True: md+=" ☑自動加好友:開啟\n" + O
+                else:md+=" ❎自動加好友:關閉\n" + O
+                 if msg.to in wait["pro"]: md+=" ☑防踢:開啟\n" + O
+                else: md+=" ❎防踢:關閉\n" + O
+                if msg.to in wait["pro_name"]: md+=" ☑鎖群名:開啟\n" + O
+                else: md+=" ❎鎖群名:關閉\n" + O
+                if msg.to in autocancel: md+=" ☑鎖邀請:開啟\n" + O
+                else: md+=" ❎鎖邀請:關閉\n" + O
+                if msg.to in protecturl: md+=" ☑鎖網址:開啟" + O
+                else: md+=" ❎鎖網址:關閉" + O
                 cl.sendText(msg.to,md)
             elif msg.text in ["Group id","group id"]:
                 gid = cl.getGroupIdsJoined()
