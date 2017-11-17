@@ -419,12 +419,15 @@ def bot(op):
                     cl.sendText(msg.to,"全部邀請已清除")
                 else:
                     cl.sendText(msg.to,"錯誤")
-            elif msg.text in ["群組數量"]:
-                if msg.from_ in admin:
-                  gid = cl.getGroupIdsJoined()
-                  cl.sendText(msg.to,"總共:\n" + str(len(gid)))
+            elif msg.text in ["#所有數量"]:
+                gid = cl.getGroupIdsJoined()
+                fid =  cl.getAllContactIds()
+                Iid =  cl.getGroupIdsInvited()
+                if Iid is None:
+                    Iid = "0"
                 else:
-                    pass
+                    Iid = cl.getGroupIdsInvited()
+                cl.sendText(msg.to,"群組:" + str(len(gid)) + "\n群組邀請中:" + str(len(Iid)) + "\n好友:" + str(len(fid)))
 #-----------------------------------------------
 #-----------------------------------------------
             elif msg.text in ["#Bye2","#bye2"]:
