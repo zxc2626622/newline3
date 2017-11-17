@@ -697,9 +697,9 @@ def bot(op):
                 midd = msg.text.replace("KnKo:","")
                 kn.kickoutFromGroup(msg.to,[midd])
                 print "SUKSES -- KICK BY MID"
-            elif "Invite:" in msg.text:
+            elif "In:" in msg.text:
               if msg.from_ in admin:
-                midd = msg.text.replace("Invite:","")
+                midd = msg.text.replace("In:","")
                 ad.findAndAddContactsByMid(midd)
                 ad.inviteIntoGroup(msg.to,[midd])
                 print "SUKSES -- INVITED BY MID"
