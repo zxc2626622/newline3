@@ -1016,8 +1016,8 @@ def bot(op):
                 else: md+=" \n❎鎖群名:關閉\n" + O
                 if msg.to in autocancel: md+=" \n☑鎖邀請:開啟\n" + O
                 else: md+=" \n❎鎖邀請:關閉\n" + O
-                if msg.to in protecturl: md+=" \n☑鎖網址:開啟" + O
-                else: md+=" \n❎鎖網址:關閉" + O
+                if msg.to in protecturl: md+=" \n☑鎖網址:開啟\n" + O
+                else: md+=" \n❎鎖網址:關閉\n" + O
                 cl.sendText(msg.to,md)
             elif msg.text in ["Group id","group id"]:
                 gid = cl.getGroupIdsJoined()
