@@ -1845,7 +1845,7 @@ def bot(op):
                         cl.sendText(msg.to,"Command denied.")
                         cl.sendText(msg.to,"Admin permission required.")
 #-----------------------------保護------------------------------
-            elif "Pro:on" == msg.text:
+            elif "保護/開" == msg.text:
 				if msg.to in wait["pro"]:
 					cl.sendText(msg.to,"保護已開啟")
 				else:
@@ -1854,84 +1854,73 @@ def bot(op):
 					json.dump(wait['pro'], f, sort_keys=True, indent=4,ensure_ascii=False)
 					protection.append(msg.to)
 					cl.sendText(msg.to,"保護開啟")
-            elif "Pro:off" == msg.text:
+            elif "保護/關" == msg.text:
 				try:
 					del wait['pro'][msg.to]
 					protection.remove(msg.to)
 					cl.sendText(msg.to,"鎖邀請已關閉")
 				except:
 					pass
-            elif "Name:on" in msg.text:
+            elif "群名/開" in msg.text:
                 if msg.to in wait['pname']:
                     cl.sendText(msg.to,"已開啟")
                 else:
                     cl.sendText(msg.to,"鎖群名已開啟")
                     wait['pname'][msg.to] = True
                     wait['pro_name'][msg.to] = cl.getGroup(msg.to).name
-            elif "Name:off" in msg.text:
+            elif "群名/開" in msg.text:
                 if msg.to in wait['pname']:
                     cl.sendText(msg.to,"已關閉")
                     del wait['pname'][msg.to]
                 else:
                     cl.sendText(msg.to,"鎖群名已關閉")
-            elif "Invite:on" == msg.text:
+            elif "邀請/開" == msg.text:
 				try:
 					gid = msg.to
 					autocancel[gid] = "poni"
 					cl.sendText(msg.to,"鎖邀請已開")
 				except:
 					pass
-            elif "Invite:off" == msg.text:
+            elif "邀請/開" == msg.text:
 				try:
 					del autocancel[msg.to]
 					cl.sendText(msg.to,"鎖邀請已關")
 				except:
 					pass
-            elif msg.text in ["all:on"]:
+            elif msg.text in ["全部/開"]:
                 if msg.from_ in Administrator:
                     try:
+                        protecturl.append(msg.to)
                         wait['pro'][msg.to] = cl.getGroup(msg.to).name
                         protection.append(msg.to)                        
                         wait['pname'][msg.to] = True
                         wait['pro_name'][msg.to] = cl.getGroup(msg.to).name
                         gid = msg.to
                         autocancel[gid] = "poni"
-                        protecturl.append(msg.to)
                         cl.sendText(msg.to,"全開啟")
                     except:
 					    pass
-            elif msg.text in ["all:off"]:
+            elif msg.text in ["全部/關"]:
                 if msg.from_ in Administrator:
                     try:
+                        protecturl.remove(msg.to)
                         del wait['pro'][msg.to]
                         protection.remove(msg.to)
                         del wait['pro_name'][msg.to]
                         del wait['pname'][msg.to]
                         del autocancel[msg.to]
-                        protecturl.remove(msg.to)
                         cl.sendText(msg.to,"全關閉")
                     except:
                         pass
-            elif msg.text in ["url:on"]:
+            elif msg.text in ["網址/開"]:
                 protecturl.append(msg.to)
                 cl.sendText(msg.to,"鎖網址已開")
-            elif msg.text in ["url:off"]:
+            elif msg.text in ["網址/開"]:
                 if msg.from_ in Administrator:
                     protecturl.remove(msg.to)
                     cl.sendText(msg.to,"鎖網址已關")
                 else:
                     cl.sendText(msg.to,"已鎖網址")
-            elif msg.text in ["Sset"]:
-                md = ""
-                if msg.to in wait["pro"]: md+=" 防踢:開啟\n"
-                else: md+=" 防踢:關閉\n"
-                if msg.to in wait["pro_name"]: md+=" 鎖群名:開啟\n"
-                else: md+=" 鎖群名:關閉\n"
-                if msg.to in autocancel: md+=" 鎖邀請:開啟\n"
-                else: md+=" 鎖邀請:關閉\n"
-                if msg.to in protecturl: md+=" 鎖網址:開啟"
-                else: md+=" 鎖網址:關閉"
-                cl.sendText(msg.to,md)
 #---------------FUNGSI RATAIN GRUP TANPA KICK SESAMA BOT/Admin/Bots----------#
 #-----------
         if op.type == 5:
@@ -2063,22 +2052,7 @@ def bot(op):
                     kn.updateGroup(G)
                     print "all join"
             else:
-                if cancelinvite["autoCancel"] == True:
-                    try:
-                        X = cl.getGroup(op.param1)
-                        gInviMids = [contact.mid for contact in X.invitee]
-                        cl.cancelGroupInvitation(op.param1, gInviMids)
-                        print gInviMids + "invite canceled"
-                    except:
-                        try:
-                            print "Retry canceling invitation"
-                            X = random.choice(KAC).getGroup(op.param1)
-                            gInviMids = [contact.mid for contact in X.invitee]
-                            random.choice(KAC).cancelGroupInvitation(op.param1, gInviMids)
-                            print gInviMids + "invite canceled"
-                        except:
-                            print "Bot can't cancel the invitation"
-                            pass
+                pass
 
         if op.type == 19:
             try:
