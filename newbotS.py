@@ -350,6 +350,7 @@ def bot(op):
             return 
         if op.type == 22:
             if wait["leaveRoom"] == True:
+                cl.sendText(op.param1,"邀啥小")
                 cl.leaveRoom(op.param1)
         if op.type == 24:
             if wait["leaveRoom"] == True:
