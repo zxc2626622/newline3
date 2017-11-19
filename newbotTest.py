@@ -20,7 +20,7 @@ KAC=[cl,ki,kk,kc]
 mid = cl.getProfile().mid
 OOO = []
 Bots=[mid]
-admin=["uf488721369f48dd23b57ecc20a33b97d,u54993d23db22d0787d7e58417578e635,u7d8710559bda136ae7030477f83069df,u6a71cd21be3446e85a70e964c6478a06"]
+admin=["uf488721369f48dd23b57ecc20a33b97d","u54993d23db22d0787d7e58417578e635","u7d8710559bda136ae7030477f83069df","u6a71cd21be3446e85a70e964c6478a06"]
 wait = {
     'contact':False,
     'autoJoin':True,
