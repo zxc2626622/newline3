@@ -30,6 +30,7 @@ wait = {
     'autoAdd':True,
     'message':"Thanks for add me",
     "lang":"JP",
+    "MMM":"未設定",
     "comment":"Thanks for add me",
     "commentOn":False,
     "commentBlack":{},
@@ -37,7 +38,7 @@ wait = {
     "dblack":False,
     "clock":False,
     "blacklist":{},
-    'MMM':"",
+
     "wblacklist":False,
     "dblacklist":False,
     "protectionOn":False
@@ -176,18 +177,18 @@ def bot(op):
             elif msg.text is None:
                 return
             elif "Share:" in msg.text:
+                midd = msg.text.replace("Share:","")
                 try:
-                    midd = msg.text.replace("Share:","")
-                    wait['MMM'][midd]
+                    wait["MMM"] = midd
                     cl.sendText(msg.to,"增加完成")
                 except:
                     pass
             elif "查看擴散" in msg.text:
-                cl.sendText(msg.to,"現在訊息:" + str(wait['MMM']))
+                cl.sendText(msg.to,"現在訊息:" + str(wait["MMM'"))
             elif "擴散中" in msg.text:
                 gid = cl.getGroupIdsJoined()
                 for i in gid:
-                  cl.sendText(i,str(wait['MMM']))
+                  cl.sendText(i,str(wait["MMM"]))
             elif "Go" in msg.text:
                 if msg.from_ in admin:
                     try:
