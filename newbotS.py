@@ -6,11 +6,11 @@ import time,random,sys,json,codecs,threading,glob
 
 
 cl = LINETCR.LINE()
-cl.login(token="EmVtHVvtJfEwJmtUHgof.FyCqvzVAe2RNaWr3/dbP3W.kYBOWTNBBNMBaY7mkg4MvsYSGUTj2t2qEuxUxmTxeFc=")
+cl.login(token="EmRSeFDfMO3gyRtvNn3f.FyCqvzVAe2RNaWr3/dbP3W.HXAHmwGuYxhGcyWWb9mODvcvuRYkXRlLV0aEuuQHKZo=")
 cl.loginResult()
 
 ad = LINETCR.LINE()
-ad.login(token="EmfYtgXRZ2uxllM3u655.iur748Us1jyfpKv4oxGLDq.YCG6dAYRoRGxUPFxdsygxiimgHGGGF3NX6JQb57DzJM=")
+ad.login(token="EmUfRGU1G7MIikVGn9V5.iur748Us1jyfpKv4oxGLDq.dydbLKUG5yb6UzzfxroW7PQoaiMxotTwR7RSI421+eQ=")
 ad.loginResult()
 
 ki = LINETCR.LINE()
