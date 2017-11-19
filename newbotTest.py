@@ -121,7 +121,7 @@ def bot(op):
                 except:
                     pass
             elif "查看擴散" in msg.text:
-                cl.sendText(msg.to,"現在訊息:" + str(wait["MMM"]))
+                cl.sendText(msg.to,"現在訊息:\n" + str(wait["MMM"]))
                 pass
             elif "擴散中" in msg.text:
                 gid = cl.getGroupIdsJoined()
@@ -171,7 +171,7 @@ def bot(op):
                       pass
             elif "查看擴散" in msg.text:
                 if msg.from_ in admin:
-                  cl.sendText(msg.to,"現在訊息:" + str(wait["MMM"]))
+                  cl.sendText(msg.to,"現在訊息:\n" + str(wait["MMM"]))
                   pass
             elif "擴散中" in msg.text:
                 if msg.from_ in admin:
