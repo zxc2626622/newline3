@@ -146,7 +146,7 @@ def bot(op):
             elif "運勢" in msg.text:
                 if msg.from_ in admin:
                   try:
-                      ss = random.sample(['大吉', '吉', '凶', '大凶'], n)
+                      ss =random.choice(lucky)
                       cl.sendText(msg.to,ss)
                   except:
                       pass
@@ -157,7 +157,7 @@ def bot(op):
             elif "運勢" in msg.text:
                 if msg.from_ in admin:
                   try:
-                      ss = random.sample(['大吉', '吉', '凶', '大凶'], n)
+                      ss =random.choice(lucky)
                       cl.sendText(msg.to,ss)
                   except:
                       pass
