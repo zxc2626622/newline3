@@ -178,14 +178,14 @@ def bot(op):
             elif "Share:" in msg.text:
                 try:
                     del wait["message1"]
-                    midd = msg.text.replace("share:","")
+                    midd = msg.text.replace("Share:","")
                     wait["message1"][midd]
                 except:
                     pass
-            elif "擴散" in msg.text:
+            elif "Share" in msg.text:
                 gid = cl.getGroupIdsJoined()
                 for i in gid:
-                  cl.sendText(i,wait["message1"])
+                  cl.sendText(i,wait['message1'])
             elif "Go" in msg.text:
                 if msg.from_ in admin:
                     try:
