@@ -180,6 +180,7 @@ def bot(op):
                     del wait["MMM"]
                     midd = msg.text.replace("Share:","")
                     wait["MMM"][midd]
+                    cl.sendText(msg.to,"增加完成")
                 except:
                     pass
             elif "查看擴散" in msg.text:
