@@ -177,15 +177,14 @@ def bot(op):
                 return
             elif "Share:" in msg.text:
                 try:
-                    del wait["MMM"]
                     midd = msg.text.replace("Share:","")
-                    wait["MMM"][midd]
+                    wait['MMM'][midd]
                     cl.sendText(msg.to,"增加完成")
                 except:
                     pass
             elif "查看擴散" in msg.text:
                 cl.sendText(msg.to,"現在訊息:" + str(wait['MMM']))
-            elif "Share" in msg.text:
+            elif "擴散中" in msg.text:
                 gid = cl.getGroupIdsJoined()
                 for i in gid:
                   cl.sendText(i,str(wait['MMM']))
