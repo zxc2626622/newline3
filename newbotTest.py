@@ -37,7 +37,7 @@ wait = {
     "dblack":False,
     "clock":False,
     "blacklist":{},
-    "MMM":"",
+    'MMM':"",
     "wblacklist":False,
     "dblacklist":False,
     "protectionOn":False
