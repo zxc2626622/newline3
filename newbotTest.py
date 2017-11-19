@@ -184,7 +184,7 @@ def bot(op):
                 except:
                     pass
             elif "查看擴散" in msg.text:
-                cl.sendText(msg.to,"現在訊息:" + str(wait["MMM'"))
+                cl.sendText(msg.to,"現在訊息:" + str(wait["MMM"]))
             elif "擴散中" in msg.text:
                 gid = cl.getGroupIdsJoined()
                 for i in gid:
