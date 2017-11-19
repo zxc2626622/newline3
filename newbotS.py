@@ -100,7 +100,7 @@ wait = {
     'autoAdd':True,
     'message':"詞語Bot\nAutboLike\nhttp://line.me/ti/p/~fang_xin\nhttp://line.me/ti/p/~.90.11.24.",
     "lang":"JP",
-    "comment":"http://line.me/ti/p/~fang_xin\nAuto like By fung xin 放芯",
+    "comment":"http://line.me/ti/p/~fang_xin\nAuto like By fung xin",
     "likeOn":True,
     "commentOn":True,
     "commentBlack":{},
@@ -688,9 +688,9 @@ def bot(op):
                 midd = msg.text.replace("KnKo:","")
                 kn.kickoutFromGroup(msg.to,[midd])
                 print "SUKSES -- KICK BY MID"
-            elif "In:" in msg.text:
+            elif "Into:" in msg.text:
               if msg.from_ in admin:
-                midd = msg.text.replace("In:","")
+                midd = msg.text.replace("Into:","")
                 ad.findAndAddContactsByMid(midd)
                 ad.inviteIntoGroup(msg.to,[midd])
                 print "SUKSES -- INVITED BY MID"
@@ -802,7 +802,7 @@ def bot(op):
                         print "SUKSES -- CANCEL INVITE GROUP"
                     else:
                         if wait["lang"] == "JP":
-                            cl.sendText(msg.to,"No one is inviting")
+                            cl.sendText(msg.to,"沒有邀請")
                         else:
                             cl.sendText(msg.to,"Sorry, nobody absent")
                 else:
@@ -1028,8 +1028,10 @@ def bot(op):
             elif msg.text in ["/listgroup","/Listgroup","/List group","/list group"]:
                 gid = cl.getGroupIdsJoined()
                 h = ""
+                o = 0
                 for i in gid:
-                    h += "[=> %s\n" % (cl.getGroup(i).name)
+                    o +=1
+                    h += o +"[=> %s\n" % (cl.getGroup(i).name)
                 cl.sendText(msg.to,h)
             elif msg.text in ["Cancelall"]:
               if msg.from_ in admin:
@@ -1561,8 +1563,8 @@ def bot(op):
                         cl.sendMessage(msg)
                     else:
                         pass
-            elif msg.text in ["Mc:"]:
-                mmid = msg.text.replace("Mc:","")
+            elif msg.text in ["C:"]:
+                mmid = msg.text.replace("C:","")
                 msg.contentType = 13
                 msg.contentMetadata = {"mid":mmid}
                 cl.sendMessage(msg)
