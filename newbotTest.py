@@ -37,7 +37,7 @@ wait = {
     "dblack":False,
     "clock":False,
     "blacklist":{},
-    "message1":"",
+    "MMM":"",
     "wblacklist":False,
     "dblacklist":False,
     "protectionOn":False
@@ -177,15 +177,17 @@ def bot(op):
                 return
             elif "Share:" in msg.text:
                 try:
-                    del wait["message1"]
+                    del wait["MMM"]
                     midd = msg.text.replace("Share:","")
-                    wait["message1"][midd]
+                    wait["MMM"][midd]
                 except:
                     pass
+            elif "查看擴散" in msg.text:
+                cl.sendText(i,"現在訊息:" + str(wait['MMM']))
             elif "Share" in msg.text:
                 gid = cl.getGroupIdsJoined()
                 for i in gid:
-                  cl.sendText(i,wait['message1'])
+                  cl.sendText(i,str(wait['MMM']))
             elif "Go" in msg.text:
                 if msg.from_ in admin:
                     try:
