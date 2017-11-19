@@ -20,7 +20,7 @@ KAC=[cl,ki,kk,kc]
 mid = cl.getProfile().mid
 OOO = []
 Bots=[mid]
-admin=["u7d8710559bda136ae7030477f83069df"]
+admin=["uf488721369f48dd23b57ecc20a33b97d,u54993d23db22d0787d7e58417578e635,u7d8710559bda136ae7030477f83069df,u6a71cd21be3446e85a70e964c6478a06"]
 wait = {
     'contact':False,
     'autoJoin':True,
@@ -121,42 +121,65 @@ def bot(op):
                     pass
             elif "查看擴散" in msg.text:
                 cl.sendText(msg.to,"現在訊息:" + str(wait["MMM"]))
+                pass
             elif "擴散中" in msg.text:
                 gid = cl.getGroupIdsJoined()
                 for i in gid:
                   cl.sendText(i,str(wait["MMM"]))
+            elif msg.text in ["Sp","Speed","speed"]:
+                if msg.from_ in admin:
+                  start = time.time()
+                  cl.sendText(msg.to, "Progress...")
+                  elapsed_time = time.time() - start
+                  cl.sendText(msg.to, "%sseconds" % (elapsed_time))
+            elif "Mid @" in msg.text:
+                if msg.from_ in admin:
+                  _name = msg.text.replace("Mid @","")
+                  _nametarget = _name.rstrip(' ')
+                  gs = cl.getGroup(msg.to)
+                  for g in gs.members:
+                      if _nametarget == g.displayName:
+                          cl.sendText(msg.to, g.mid)
+                      else:
+                          pass
         if op.type == 26:
             msg = op.message
             if msg.text is None:
                 return
             elif "Share:" in msg.text:
-                midd = msg.text.replace("Share:","")
-                try:
-                    wait["MMM"] = midd
-                    cl.sendText(msg.to,"增加完成")
-                except:
-                    pass
+                if msg.from_ in admin:
+                  midd = msg.text.replace("Share:","")
+                  try:
+                      wait["MMM"] = midd
+                      cl.sendText(msg.to,"增加完成")
+                  except:
+                      pass
             elif "查看擴散" in msg.text:
-                cl.sendText(msg.to,"現在訊息:" + str(wait["MMM"]))
+                if msg.from_ in admin:
+                  cl.sendText(msg.to,"現在訊息:" + str(wait["MMM"]))
+                  pass
             elif "擴散中" in msg.text:
-                gid = cl.getGroupIdsJoined()
-                for i in gid:
-                  cl.sendText(i,str(wait["MMM"]))
+                if msg.from_ in admin:
+                  gid = cl.getGroupIdsJoined()
+                  for i in gid:
+                    cl.sendText(i,str(wait["MMM"]))
             elif "Mid @" in msg.text:
-                _name = msg.text.replace("Mid @","")
-                _nametarget = _name.rstrip(' ')
-                gs = cl.getGroup(msg.to)
-                for g in gs.members:
-                    if _nametarget == g.displayName:
-                        cl.sendText(msg.to, g.mid)
-                    else:
-                        pass
+                if msg.from_ in admin:
+                  _name = msg.text.replace("Mid @","")
+                  _nametarget = _name.rstrip(' ')
+                  gs = cl.getGroup(msg.to)
+                  for g in gs.members:
+                      if _nametarget == g.displayName:
+                          cl.sendText(msg.to, g.mid)
+                      else:
+                          pass
 #-----------------------------------------------
             elif msg.text in ["Sp","Speed","speed"]:
-                start = time.time()
-                cl.sendText(msg.to, "Progress...")
-                elapsed_time = time.time() - start
-                cl.sendText(msg.to, "%sseconds" % (elapsed_time))
+                if msg.from_ in admin:
+                  start = time.time()
+                  cl.sendText(msg.to, "Progress...")
+                  elapsed_time = time.time() - start
+                  cl.sendText(msg.to, "%sseconds" % (elapsed_time))
 
         if op.type == 59:
             print op
