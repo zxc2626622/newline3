@@ -1031,7 +1031,7 @@ def bot(op):
                 o = int(str(0))
                 for i in gid:
                     h += int(str(o)) +"[=> %s\n" % (cl.getGroup(i).name)
-                    o + int(str(1))
+                    o = (o + 1)
                 cl.sendText(msg.to,h)
             elif msg.text in ["Cancelall"]:
               if msg.from_ in admin:
