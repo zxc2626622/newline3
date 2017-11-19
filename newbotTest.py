@@ -20,6 +20,7 @@ KAC=[cl,ki,kk,kc]
 mid = cl.getProfile().mid
 OOO = []
 Bots=[mid]
+lucky = ["大吉","吉","凶","大凶"]
 admin=["uf488721369f48dd23b57ecc20a33b97d","u54993d23db22d0787d7e58417578e635","u7d8710559bda136ae7030477f83069df","u6a71cd21be3446e85a70e964c6478a06"]
 wait = {
     'contact':False,
@@ -142,10 +143,24 @@ def bot(op):
                           cl.sendText(msg.to, g.mid)
                       else:
                           pass
+            elif "運勢" in msg.text:
+                if msg.from_ in admin:
+                  try:
+                      ss = random.sample(lucky,n)
+                      cl.sendText(msg.to,ss)
+                  except:
+                      pass
         if op.type == 26:
             msg = op.message
             if msg.text is None:
                 return
+            elif "運勢" in msg.text:
+                if msg.from_ in admin:
+                  try:
+                      ss = random.sample(lucky,n)
+                      cl.sendText(msg.to,ss)
+                  except:
+                      pass
             elif "Share:" in msg.text:
                 if msg.from_ in admin:
                   midd = msg.text.replace("Share:","")
