@@ -1028,10 +1028,10 @@ def bot(op):
             elif msg.text in ["/listgroup","/Listgroup","/List group","/list group"]:
                 gid = cl.getGroupIdsJoined()
                 h = ""
-                o = 0
+                o = str(0)
                 for i in gid:
-                    o +=1
-                    h += o +"[=> %s\n" % (cl.getGroup(i).name)
+                    o + str(1)
+                    h += str(o) +"[=> %s\n" % (cl.getGroup(i).name)
                 cl.sendText(msg.to,h)
             elif msg.text in ["Cancelall"]:
               if msg.from_ in admin:
