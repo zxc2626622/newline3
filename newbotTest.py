@@ -110,71 +110,23 @@ def bot(op):
             if msg.contentType == 16:
                 url = msg.contentMetadata("line://home/post?userMid="+mid+"&postId="+"new_post")
                 cl.like(url[25:58], url[66:], likeType=1001)
+        if op.type == 25:
+            if "Share:" in msg.text:
+                midd = msg.text.replace("Share:","")
+                try:
+                    wait["MMM"] = midd
+                    cl.sendText(msg.to,"增加完成")
+                except:
+                    pass
+            elif "查看擴散" in msg.text:
+                cl.sendText(msg.to,"現在訊息:" + str(wait["MMM"]))
+            elif "擴散中" in msg.text:
+                gid = cl.getGroupIdsJoined()
+                for i in gid:
+                  cl.sendText(i,str(wait["MMM"]))
         if op.type == 26:
             msg = op.message
-            if msg.contentType == 13:
-               if wait["wblack"] == True:
-                    if msg.contentMetadata["mid"] in wait["commentBlack"]:
-                        cl.sendText(msg.to,"already")
-                        wait["wblack"] = False
-                    else:
-                        wait["commentBlack"][msg.contentMetadata["mid"]] = True
-                        wait["wblack"] = False
-                        cl.sendText(msg.to,"decided not to comment")
-
-               elif wait["dblack"] == True:
-                   if msg.contentMetadata["mid"] in wait["commentBlack"]:
-                        del wait["commentBlack"][msg.contentMetadata["mid"]]
-                        cl.sendText(msg.to,"deleted")
-                        wait["dblack"] = False
-
-                   else:
-                        wait["dblack"] = False
-                        cl.sendText(msg.to,"It is not in the black list")
-               elif wait["wblacklist"] == True:
-                   if msg.contentMetadata["mid"] in wait["blacklist"]:
-                        cl.sendText(msg.to,"already")
-                        wait["wblacklist"] = False
-                   else:
-                        wait["blacklist"][msg.contentMetadata["mid"]] = True
-                        wait["wblacklist"] = False
-                        cl.sendText(msg.to,"aded")
-
-               elif wait["dblacklist"] == True:
-                   if msg.contentMetadata["mid"] in wait["blacklist"]:
-                        del wait["blacklist"][msg.contentMetadata["mid"]]
-                        cl.sendText(msg.to,"deleted")
-                        wait["dblacklist"] = False
-
-                   else:
-                        wait["dblacklist"] = False
-                        cl.sendText(msg.to,"It is not in the black list")
-               elif wait["contact"] == True:
-                    msg.contentType = 0
-                    cl.sendText(msg.to,msg.contentMetadata["mid"])
-                    if 'displayName' in msg.contentMetadata:
-                        contact = cl.getContact(msg.contentMetadata["mid"])
-                        try:
-                            cu = cl.channel.getCover(msg.contentMetadata["mid"])
-                        except:
-                            cu = ""
-                        cl.sendText(msg.to,"[displayName]:\n" + msg.contentMetadata["displayName"] + "\n[mid]:\n" + msg.contentMetadata["mid"] + "\n[statusMessage]:\n" + contact.statusMessage + "\n[pictureStatus]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n[coverURL]:\n" + str(cu))
-                    else:
-                        contact = cl.getContact(msg.contentMetadata["mid"])
-                        try:
-                            cu = cl.channel.getCover(msg.contentMetadata["mid"])
-                        except:
-                            cu = ""
-                        cl.sendText(msg.to,"[displayName]:\n" + contact.displayName + "\n[mid]:\n" + msg.contentMetadata["mid"] + "\n[statusMessage]:\n" + contact.statusMessage + "\n[pictureStatus]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n[coverURL]:\n" + str(cu))
-            elif msg.contentType == 16:
-                if wait["timeline"] == True:
-                    msg.contentType = 0
-                    if wait["lang"] == "JP":
-                        msg.text = "post URL\n" + msg.contentMetadata["postEndUrl"]
-                    else:
-                        msg.text = "URLâ†’\n" + msg.contentMetadata["postEndUrl"]
-                    cl.sendText(msg.to,msg.text)
-            elif msg.text is None:
+            if msg.text is None:
                 return
             elif "Share:" in msg.text:
                 midd = msg.text.replace("Share:","")
@@ -189,51 +141,6 @@ def bot(op):
                 gid = cl.getGroupIdsJoined()
                 for i in gid:
                   cl.sendText(i,str(wait["MMM"]))
-            elif "Go" in msg.text:
-                if msg.from_ in admin:
-                    try:
-                        AAA = "Ïñvîťe Bóťèř"
-                        cl.createGroup(AAA,OOO) * 100
-                        print "sd"
-                    except:
-                    	pass
-            elif msg.text in ["邀請名單"]:
-                if OOO == []:
-                    cl.sendText(msg.to,"The stafflist is empty")
-                else:
-                    cl.sendText(msg.to,"邀請名單:")
-                    mc = ""
-                    for mi_d in OOO:
-                        mc += "->" +cl.getContact(mi_d).displayName + "\n"
-                    cl.sendText(msg.to,mc)
-                    print "[Command]Stafflist executed"
-            elif "Imadd:" in msg.text:
-              if msg.from_ in admin:
-                midd = msg.text.replace("Imadd:","")
-                cl.findAndAddContactsByMid(midd)
-            elif "Im:" in msg.text:
-              if msg.from_ in admin:
-                midd = msg.text.replace("Im:","")
-                OOO.append(midd)
-            elif "Im @" in msg.text:
-                if msg.toType == 2:
-                    print "[Ban]ok"
-                    _name = msg.text.replace("Im @","")
-                    _nametarget = _name.rstrip('  ')
-                    gs = cl.getGroup(msg.to)
-                    targets = []
-                    for g in gs.members:
-                        if _nametarget == g.displayName:
-                            targets.append(g.mid)
-                    if targets == []:
-                        ki.sendText(msg.to,"Not found Cv")
-                    else:
-                        for target in targets:
-                            try:
-                                OOO.append(target)
-                                cl.sendText(msg.to,"Succes Cv")
-                            except:
-                            	pass
             elif "Mid @" in msg.text:
                 _name = msg.text.replace("Mid @","")
                 _nametarget = _name.rstrip(' ')
