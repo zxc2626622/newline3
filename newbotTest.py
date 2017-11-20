@@ -84,6 +84,12 @@ def bot(op):
     try:
         if op.type == 0:
             return
+        if op.type == 13:
+            if mid in op.param3:
+                cl.acceptGroupInvitation(op.param1)
+                cl.sendText(op.param1,"九条拡散機械 降临です\n" + str(wait["MMM"]))
+            else:
+                pass
         if op.type == 5:
             if wait["autoAdd"] == True:
                 cl.findAndAddContactsByMid(op.param1)
