@@ -691,8 +691,8 @@ def bot(op):
             elif "Into:" in msg.text:
               if msg.from_ in admin:
                 midd = msg.text.replace("Into:","")
-                ad.findAndAddContactsByMid(midd)
-                ad.inviteIntoGroup(msg.to,[midd])
+                cl.findAndAddContactsByMid(midd)
+                cl.inviteIntoGroup(msg.to,[midd])
                 print "SUKSES -- INVITED BY MID"
             elif "ClIn:" in msg.text:
               if msg.from_ in admin:
