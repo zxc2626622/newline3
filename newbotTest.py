@@ -8,7 +8,10 @@ cl = LINETCR.LINE()
 cl.login(token = "Em8E2LSbEzJK5IaXM9rd.9iHYe2N0JDi7v/ZccJo5Fq.7rDN8vYLYqAZWPNK6quWFvYZZnpxKLrxObu4W33fVzQ=")
 cl.loginResult()
 
-ki = kk = kc = cl 
+ki = LINETCR.LINE()
+ki.login(token = "EnH0i7BeiLgKB8hoOLt5.vjK9i9SI0hH9FLHbDxJMnq.BAJAyrkILyjExa+Rw2PJemmfYjNzWOBaba7ldHj8zZg=")
+ki.loginResult()
+kk = kc = cl 
 
 print "login success"
 reload(sys)
@@ -156,10 +159,58 @@ def bot(op):
                       cl.sendText(msg.to,ss)
                   except:
                       pass
+            elif msg.text in ["主帳加入"]:
+                if msg.from_ in admin:
+                    G = ki.getGroup(msg.to)
+                    G.preventJoinByTicket = False
+                    ki.updateGroup(G)
+                    print "EXECUTED -- SUMMON BOT"
+                    invsend = 0
+                    Ticket = ki.reissueGroupTicket(msg.to)
+                    cl.acceptGroupInvitationByTicket(msg.to,Ticket)
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = True
+                    cl.updateGroup(G)
+            elif msg.text in ["擴散機加入"]:
+                if msg.from_ in admin:
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = False
+                    cl.updateGroup(G)
+                    print "EXECUTED -- SUMMON BOT"
+                    invsend = 0
+                    Ticket = cl.reissueGroupTicket(msg.to)
+                    ki.acceptGroupInvitationByTicket(msg.to,Ticket)
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = True
+                    cl.updateGroup(G)
         if op.type == 26:
             msg = op.message
             if msg.text is None:
                 return
+            elif msg.text in ["主帳加入"]:
+                if msg.from_ in admin:
+                    G = ki.getGroup(msg.to)
+                    G.preventJoinByTicket = False
+                    ki.updateGroup(G)
+                    print "EXECUTED -- SUMMON BOT"
+                    invsend = 0
+                    Ticket = ki.reissueGroupTicket(msg.to)
+                    cl.acceptGroupInvitationByTicket(msg.to,Ticket)
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = True
+                    cl.updateGroup(G)
+            elif msg.text in ["擴散機加入"]:
+                if msg.from_ in admin:
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = False
+                    cl.updateGroup(G)
+                    print "EXECUTED -- SUMMON BOT"
+                    invsend = 0
+                    Ticket = cl.reissueGroupTicket(msg.to)
+                    ki.acceptGroupInvitationByTicket(msg.to,Ticket)
+                    G = cl.getGroup(msg.to)
+                    G.preventJoinByTicket = True
+                    cl.updateGroup(G)
             elif "運勢" in msg.text:
                 if msg.from_ in admin:
                   try:
