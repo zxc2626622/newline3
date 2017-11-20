@@ -11,7 +11,6 @@ cl.loginResult()
 ki = LINETCR.LINE()
 ki.login(token = "EngYmQyvJw8ZchKKK0Z5.vjK9i9SI0hH9FLHbDxJMnq.30StCWQJKmAi/IJ94p+nKNAfuQiLZPJyo7pDfHP4Wp8=")
 ki.loginResult()
-kk = kc = cl 
 
 print "login success"
 reload(sys)
@@ -21,8 +20,9 @@ helpMessage ="""
 """
 KAC=[cl,ki,kk,kc]
 mid = cl.getProfile().mid
+Amid = ki.getProfile().mid
 OOO = []
-Bots=[mid]
+Bots=[mid,Amid]
 lucky = ["大吉","吉","凶","大凶"]
 admin=["uf488721369f48dd23b57ecc20a33b97d","u54993d23db22d0787d7e58417578e635","u7d8710559bda136ae7030477f83069df","u6a71cd21be3446e85a70e964c6478a06"]
 wait = {
@@ -42,7 +42,6 @@ wait = {
     "dblack":False,
     "clock":False,
     "blacklist":{},
-
     "wblacklist":False,
     "dblacklist":False,
     "protectionOn":False
@@ -165,7 +164,6 @@ def bot(op):
                     G.preventJoinByTicket = False
                     ki.updateGroup(G)
                     print "EXECUTED -- SUMMON BOT"
-                    invsend = 0
                     Ticket = ki.reissueGroupTicket(msg.to)
                     cl.acceptGroupInvitationByTicket(msg.to,Ticket)
                     G = cl.getGroup(msg.to)
@@ -177,7 +175,6 @@ def bot(op):
                     G.preventJoinByTicket = False
                     cl.updateGroup(G)
                     print "EXECUTED -- SUMMON BOT"
-                    invsend = 0
                     Ticket = cl.reissueGroupTicket(msg.to)
                     ki.acceptGroupInvitationByTicket(msg.to,Ticket)
                     G = cl.getGroup(msg.to)
@@ -193,7 +190,6 @@ def bot(op):
                     G.preventJoinByTicket = False
                     ki.updateGroup(G)
                     print "EXECUTED -- SUMMON BOT"
-                    invsend = 0
                     Ticket = ki.reissueGroupTicket(msg.to)
                     cl.acceptGroupInvitationByTicket(msg.to,Ticket)
                     G = cl.getGroup(msg.to)
@@ -205,7 +201,6 @@ def bot(op):
                     G.preventJoinByTicket = False
                     cl.updateGroup(G)
                     print "EXECUTED -- SUMMON BOT"
-                    invsend = 0
                     Ticket = cl.reissueGroupTicket(msg.to)
                     ki.acceptGroupInvitationByTicket(msg.to,Ticket)
                     G = cl.getGroup(msg.to)
