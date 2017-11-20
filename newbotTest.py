@@ -168,9 +168,9 @@ def bot(op):
                     print "EXECUTED -- SUMMON BOT"
                     Ticket = ki.reissueGroupTicket(msg.to)
                     cl.acceptGroupInvitationByTicket(msg.to,Ticket)
-                    G = cl.getGroup(msg.to)
+                    G = ki.getGroup(msg.to)
                     G.preventJoinByTicket = True
-                    cl.updateGroup(G)
+                    ki.updateGroup(G)
             elif msg.text in ["星星進入","星星加入"]:
                 if msg.from_ in admin:
                     G = cl.getGroup(msg.to)
@@ -194,9 +194,9 @@ def bot(op):
                     print "EXECUTED -- SUMMON BOT"
                     Ticket = ki.reissueGroupTicket(msg.to)
                     cl.acceptGroupInvitationByTicket(msg.to,Ticket)
-                    G = cl.getGroup(msg.to)
+                    G = ki.getGroup(msg.to)
                     G.preventJoinByTicket = True
-                    cl.updateGroup(G)
+                    ki.updateGroup(G)
             elif msg.text in ["星星進入","星星加入"]:
                 if msg.from_ in admin:
                     G = cl.getGroup(msg.to)
