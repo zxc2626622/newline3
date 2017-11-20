@@ -160,7 +160,7 @@ def bot(op):
                       cl.sendText(msg.to,ss)
                   except:
                       pass
-            elif msg.text in ["主帳加入"]:
+            elif msg.text in ["高調進入"]:
                 if msg.from_ in admin:
                     G = ki.getGroup(msg.to)
                     G.preventJoinByTicket = False
@@ -171,7 +171,7 @@ def bot(op):
                     G = cl.getGroup(msg.to)
                     G.preventJoinByTicket = True
                     cl.updateGroup(G)
-            elif msg.text in ["擴散機加入"]:
+            elif msg.text in ["星星進入"]:
                 if msg.from_ in admin:
                     G = cl.getGroup(msg.to)
                     G.preventJoinByTicket = False
@@ -186,7 +186,7 @@ def bot(op):
             msg = op.message
             if msg.text is None:
                 return
-            elif msg.text in ["主帳加入"]:
+            elif msg.text in ["高調進入"]:
                 if msg.from_ in admin:
                     G = ki.getGroup(msg.to)
                     G.preventJoinByTicket = False
@@ -197,7 +197,7 @@ def bot(op):
                     G = cl.getGroup(msg.to)
                     G.preventJoinByTicket = True
                     cl.updateGroup(G)
-            elif msg.text in ["擴散機加入"]:
+            elif msg.text in ["星星進入"]:
                 if msg.from_ in admin:
                     G = cl.getGroup(msg.to)
                     G.preventJoinByTicket = False
