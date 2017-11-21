@@ -1536,7 +1536,7 @@ def bot(op):
                     targets.append(x["M"])
                 for target in targets:
                    try:
-                      del ["blacklist"][target]
+                      del wait["blacklist"][target]
                       f=codecs.open('st2__b.json','w','utf-8')
                       json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
                       cl.sendText(msg.to,"已解除")
