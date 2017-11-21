@@ -1552,6 +1552,15 @@ def bot(op):
                         cl.sendText(msg.to, g.mid)
                     else:
                         pass
+            elif "mid @" in msg.text:
+                _name = msg.text.replace("mid @","")
+                _nametarget = _name.rstrip(' ')
+                gs = cl.getContact(msg.to)
+                for g in gs.mid:
+                    if _nametarget == g.displayName:
+                        cl.sendText(msg.to, g.mid)
+                    else:
+                        pass
             elif "Me @" in msg.text:
                 msg.contentType = 13
                 _name = msg.text.replace("Me @","")
