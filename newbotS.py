@@ -1555,7 +1555,7 @@ def bot(op):
             elif "mid @" in msg.text:
                 aa = msg.text.replace("mid @","")
                 gs = cl.getContact(aa)
-                cl.sendText(msg.to,gs)
+                cl.sendText(msg.to,aa)
             elif "Me @" in msg.text:
                 msg.contentType = 13
                 _name = msg.text.replace("Me @","")
