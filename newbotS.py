@@ -64,7 +64,7 @@ sys.setdefaultencoding('utf-8')
 
 helpMessage ="""[Help 不給看勒]"""
 Inmes ="""邀三小"""
-KAC=[cl,ki,kk,kc,kd,ke,kf,kg,kh,kj,kl,kn]
+KAC=[cl,ki,kk,kc,kd,ke,kf,kg,kh,kj,kl,kn,ad]
 admid = ad.getProfile().mid
 mid = cl.getProfile().mid
 Amid = ki.getProfile().mid
@@ -2081,13 +2081,167 @@ def bot(op):
                         G.preventJoinByTicket = True
                         ki.updateGroup(G)
                     else:
-                        G = ki.getGroup(op.param1)
-
-                        ki.kickoutFromGroup(op.param1,[op.param2])
-                        
+                        try:
+                            G = random.choice(KAC).getGroup(op.param1)
+                        except:
+                            try:
+                                G = cl.getGroup(op.param1)
+                            except:
+                                try:
+                                    G = ki.getGroup(op.param1)
+                                except:
+                                    try:
+                                        G = kk.getGroup(op.param1)
+                                    except:
+                                        try:
+                                            G = kc.getGroup(op.param1)
+                                        except:
+                                            try:
+                                                G = kd.getGroup(op.param1)
+                                            except:
+                                                try:
+                                                    G = ke.getGroup(op.param1)
+                                                except:
+                                                    try:
+                                                        G = kf.getGroup(op.param1)
+                                                    except:
+                                                        try:
+                                                            G = kg.getGroup(op.param1)
+                                                        except:
+                                                            try:
+                                                                G = kh.getGroup(op.param1)
+                                                            except:
+                                                                try:
+                                                                    G = kj.getGroup(op.param1)
+                                                                except:
+                                                                    try:
+                                                                        G = kl.getGroup(op.param1)
+                                                                    except:
+                                                                        try:
+                                                                            G = kn.getGroup(op.param1)
+                                                                        except:
+                                                                            pass
+                        try:
+                            random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                        except:
+                            try:
+                                cl.kickoutFromGroup(op.param1,[op.param2])
+                            except:
+                                try:
+                                    ki.kickoutFromGroup(op.param1,[op.param2])
+                                except:
+                                    try:
+                                        kk.kickoutFromGroup(op.param1,[op.param2])
+                                    except:
+                                        try:
+                                            kc.kickoutFromGroup(op.param1,[op.param2])
+                                        except:
+                                            try:
+                                                kd.kickoutFromGroup(op.param1,[op.param2])
+                                            except:
+                                                try:
+                                                    ke.kickoutFromGroup(op.param1,[op.param2])
+                                                except:
+                                                    try:
+                                                        kf.kickoutFromGroup(op.param1,[op.param2])
+                                                    except:
+                                                        try:
+                                                            kg.kickoutFromGroup(op.param1,[op.param2])
+                                                        except:
+                                                            try:
+                                                                kh.kickoutFromGroup(op.param1,[op.param2])
+                                                            except:
+                                                                try:
+                                                                    kj.kickoutFromGroup(op.param1,[op.param2])
+                                                                except:
+                                                                    try:
+                                                                        kl.kickoutFromGroup(op.param1,[op.param2])
+                                                                    except:
+                                                                        try:
+                                                                            kn.kickoutFromGroup(op.param1,[op.param2])
+                                                                        except:
+                                                                            pass
                         G.preventJoinByTicket = False
-                        ki.updateGroup(G)
-                        Ticket = ki.reissueGroupTicket(op.param1)
+                        try:
+                            random.choice(KAC).updateGroup(G)
+                        except:
+                            try:
+                                cl.updateGroup(G)
+                            except:
+                                try:
+                                    ki.updateGroup(G)
+                                except:
+                                    try:
+                                        kk.updateGroup(G)
+                                    except:
+                                        try:
+                                            kc.updateGroup(G)
+                                        except:
+                                            try:
+                                                kd.updateGroup(G)
+                                            except:
+                                                try:
+                                                    ke.updateGroup(G)
+                                                except:
+                                                    try:
+                                                        kf.updateGroup(G)
+                                                    except:
+                                                        try:
+                                                            kg.updateGroup(G)
+                                                        except:
+                                                            try:
+                                                                kh.updateGroup(G)
+                                                            except:
+                                                                try:
+                                                                    kj.updateGroup(G)
+                                                                except:
+                                                                    try:
+                                                                        kl.updateGroup(G)
+                                                                    except:
+                                                                        try:
+                                                                            kn.updateGroup(G)
+                                                                        except:
+                                                                            pass
+                        try:
+                            Ticket = random.choice(KAC).reissueGroupTicket(op.param1)
+                        except:
+                            try:
+                                Ticket = cl.reissueGroupTicket(op.param1)
+                            except:
+                                try:
+                                    Ticket = ki.reissueGroupTicket(op.param1)
+                                except:
+                                    try:
+                                        Ticket = kk.reissueGroupTicket(op.param1)
+                                    except:
+                                        try:
+                                            Ticket = kc.reissueGroupTicket(op.param1)
+                                        except:
+                                            try:
+                                                Ticket = kd.reissueGroupTicket(op.param1)
+                                            except:
+                                                try:
+                                                    Ticket = ke.reissueGroupTicket(op.param1)
+                                                except:
+                                                    try:
+                                                        Ticket = kf.reissueGroupTicket(op.param1)
+                                                    except:
+                                                        try:
+                                                            Ticket = kg.reissueGroupTicket(op.param1)
+                                                        except:
+                                                            try:
+                                                                Ticket = kh.reissueGroupTicket(op.param1)
+                                                            except:
+                                                                try:
+                                                                    Ticket = kk.reissueGroupTicket(op.param1)
+                                                                except:
+                                                                    try:
+                                                                        Ticket = kl.reissueGroupTicket(op.param1)
+                                                                    except:
+                                                                        try:
+                                                                            Ticket = kn.reissueGroupTicket(op.param1)
+                                                                        except:
+                                                                            pass
                         cl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         ki.acceptGroupInvitationByTicket(op.param1,Ticket)
                         kk.acceptGroupInvitationByTicket(op.param1,Ticket)
@@ -2101,7 +2255,46 @@ def bot(op):
                         kl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         kn.acceptGroupInvitationByTicket(op.param1,Ticket)
                         G.preventJoinByTicket = True
-                        ki.updateGroup(G)
+                        try:
+                            random.choice(KAC).updateGroup(G)
+                        except:
+                            try:
+                                cl.updateGroup(G)
+                            except:
+                                try:
+                                    ki.updateGroup(G)
+                                except:
+                                    try:
+                                        kk.updateGroup(G)
+                                    except:
+                                        try:
+                                            kc.updateGroup(G)
+                                        except:
+                                            try:
+                                                kd.updateGroup(G)
+                                            except:
+                                                try:
+                                                    ke.updateGroup(G)
+                                                except:
+                                                    try:
+                                                        kf.updateGroup(G)
+                                                    except:
+                                                        try:
+                                                            kg.updateGroup(G)
+                                                        except:
+                                                            try:
+                                                                kh.updateGroup(G)
+                                                            except:
+                                                                try:
+                                                                    kj.updateGroup(G)
+                                                                except:
+                                                                    try:
+                                                                        kl.updateGroup(G)
+                                                                    except:
+                                                                        try:
+                                                                            kn.updateGroup(G)
+                                                                        except:
+                                                                            pass
                         wait["blacklist"][op.param2] = True
 
                        
@@ -2126,13 +2319,167 @@ def bot(op):
                         G.preventJoinByTicket = True
                         cl.updateGroup(G)
                     else:
-                        G = cl.getGroup(op.param1)
-
-                        kk.kickoutFromGroup(op.param1,[op.param2])
-
+                        try:
+                            G = random.choice(KAC).getGroup(op.param1)
+                        except:
+                            try:
+                                G = cl.getGroup(op.param1)
+                            except:
+                                try:
+                                    G = ki.getGroup(op.param1)
+                                except:
+                                    try:
+                                        G = kk.getGroup(op.param1)
+                                    except:
+                                        try:
+                                            G = kc.getGroup(op.param1)
+                                        except:
+                                            try:
+                                                G = kd.getGroup(op.param1)
+                                            except:
+                                                try:
+                                                    G = ke.getGroup(op.param1)
+                                                except:
+                                                    try:
+                                                        G = kf.getGroup(op.param1)
+                                                    except:
+                                                        try:
+                                                            G = kg.getGroup(op.param1)
+                                                        except:
+                                                            try:
+                                                                G = kh.getGroup(op.param1)
+                                                            except:
+                                                                try:
+                                                                    G = kj.getGroup(op.param1)
+                                                                except:
+                                                                    try:
+                                                                        G = kl.getGroup(op.param1)
+                                                                    except:
+                                                                        try:
+                                                                            G = kn.getGroup(op.param1)
+                                                                        except:
+                                                                            pass
+                        try:
+                            random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                        except:
+                            try:
+                                cl.kickoutFromGroup(op.param1,[op.param2])
+                            except:
+                                try:
+                                    ki.kickoutFromGroup(op.param1,[op.param2])
+                                except:
+                                    try:
+                                        kk.kickoutFromGroup(op.param1,[op.param2])
+                                    except:
+                                        try:
+                                            kc.kickoutFromGroup(op.param1,[op.param2])
+                                        except:
+                                            try:
+                                                kd.kickoutFromGroup(op.param1,[op.param2])
+                                            except:
+                                                try:
+                                                    ke.kickoutFromGroup(op.param1,[op.param2])
+                                                except:
+                                                    try:
+                                                        kf.kickoutFromGroup(op.param1,[op.param2])
+                                                    except:
+                                                        try:
+                                                            kg.kickoutFromGroup(op.param1,[op.param2])
+                                                        except:
+                                                            try:
+                                                                kh.kickoutFromGroup(op.param1,[op.param2])
+                                                            except:
+                                                                try:
+                                                                    kj.kickoutFromGroup(op.param1,[op.param2])
+                                                                except:
+                                                                    try:
+                                                                        kl.kickoutFromGroup(op.param1,[op.param2])
+                                                                    except:
+                                                                        try:
+                                                                            kn.kickoutFromGroup(op.param1,[op.param2])
+                                                                        except:
+                                                                            pass
                         G.preventJoinByTicket = False
-                        cl.updateGroup(G)
-                        Ticket = cl.reissueGroupTicket(op.param1)
+                        try:
+                            random.choice(KAC).updateGroup(G)
+                        except:
+                            try:
+                                cl.updateGroup(G)
+                            except:
+                                try:
+                                    ki.updateGroup(G)
+                                except:
+                                    try:
+                                        kk.updateGroup(G)
+                                    except:
+                                        try:
+                                            kc.updateGroup(G)
+                                        except:
+                                            try:
+                                                kd.updateGroup(G)
+                                            except:
+                                                try:
+                                                    ke.updateGroup(G)
+                                                except:
+                                                    try:
+                                                        kf.updateGroup(G)
+                                                    except:
+                                                        try:
+                                                            kg.updateGroup(G)
+                                                        except:
+                                                            try:
+                                                                kh.updateGroup(G)
+                                                            except:
+                                                                try:
+                                                                    kj.updateGroup(G)
+                                                                except:
+                                                                    try:
+                                                                        kl.updateGroup(G)
+                                                                    except:
+                                                                        try:
+                                                                            kn.updateGroup(G)
+                                                                        except:
+                                                                            pass
+                        try:
+                            Ticket = random.choice(KAC).reissueGroupTicket(op.param1)
+                        except:
+                            try:
+                                Ticket = cl.reissueGroupTicket(op.param1)
+                            except:
+                                try:
+                                    Ticket = ki.reissueGroupTicket(op.param1)
+                                except:
+                                    try:
+                                        Ticket = kk.reissueGroupTicket(op.param1)
+                                    except:
+                                        try:
+                                            Ticket = kc.reissueGroupTicket(op.param1)
+                                        except:
+                                            try:
+                                                Ticket = kd.reissueGroupTicket(op.param1)
+                                            except:
+                                                try:
+                                                    Ticket = ke.reissueGroupTicket(op.param1)
+                                                except:
+                                                    try:
+                                                        Ticket = kf.reissueGroupTicket(op.param1)
+                                                    except:
+                                                        try:
+                                                            Ticket = kg.reissueGroupTicket(op.param1)
+                                                        except:
+                                                            try:
+                                                                Ticket = kh.reissueGroupTicket(op.param1)
+                                                            except:
+                                                                try:
+                                                                    Ticket = kk.reissueGroupTicket(op.param1)
+                                                                except:
+                                                                    try:
+                                                                        Ticket = kl.reissueGroupTicket(op.param1)
+                                                                    except:
+                                                                        try:
+                                                                            Ticket = kn.reissueGroupTicket(op.param1)
+                                                                        except:
+                                                                            pass
                         cl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         ki.acceptGroupInvitationByTicket(op.param1,Ticket)
                         kk.acceptGroupInvitationByTicket(op.param1,Ticket)
@@ -2146,7 +2493,47 @@ def bot(op):
                         kl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         kn.acceptGroupInvitationByTicket(op.param1,Ticket)
                         G.preventJoinByTicket = True
-                        cl.updateGroup(G)
+                        try:
+                            random.choice(KAC).updateGroup(G)
+                        except:
+                            try:
+                                cl.updateGroup(G)
+                            except:
+                                try:
+                                    ki.updateGroup(G)
+                                except:
+                                    try:
+                                        kk.updateGroup(G)
+                                    except:
+                                        try:
+                                            kc.updateGroup(G)
+                                        except:
+                                            try:
+                                                kd.updateGroup(G)
+                                            except:
+                                                try:
+                                                    ke.updateGroup(G)
+                                                except:
+                                                    try:
+                                                        kf.updateGroup(G)
+                                                    except:
+                                                        try:
+                                                            kg.updateGroup(G)
+                                                        except:
+                                                            try:
+                                                                kh.updateGroup(G)
+                                                            except:
+                                                                try:
+                                                                    kj.updateGroup(G)
+                                                                except:
+                                                                    try:
+                                                                        kl.updateGroup(G)
+                                                                    except:
+                                                                        try:
+                                                                            kn.updateGroup(G)
+                                                                        except:
+                                                                            pass
+                        wait["blacklist"][op.param2] = True
 
                 elif op.param3 in Bmid:
                     if op.param2 in Cmid:
@@ -2169,13 +2556,167 @@ def bot(op):
                         G.preventJoinByTicket = True
                         ki.updateGroup(G)
                     else:
-                        G = kk.getGroup(op.param1)
-
-                        kc.kickoutFromGroup(op.param1,[op.param2])
-
+                        try:
+                            G = random.choice(KAC).getGroup(op.param1)
+                        except:
+                            try:
+                                G = cl.getGroup(op.param1)
+                            except:
+                                try:
+                                    G = ki.getGroup(op.param1)
+                                except:
+                                    try:
+                                        G = kk.getGroup(op.param1)
+                                    except:
+                                        try:
+                                            G = kc.getGroup(op.param1)
+                                        except:
+                                            try:
+                                                G = kd.getGroup(op.param1)
+                                            except:
+                                                try:
+                                                    G = ke.getGroup(op.param1)
+                                                except:
+                                                    try:
+                                                        G = kf.getGroup(op.param1)
+                                                    except:
+                                                        try:
+                                                            G = kg.getGroup(op.param1)
+                                                        except:
+                                                            try:
+                                                                G = kh.getGroup(op.param1)
+                                                            except:
+                                                                try:
+                                                                    G = kj.getGroup(op.param1)
+                                                                except:
+                                                                    try:
+                                                                        G = kl.getGroup(op.param1)
+                                                                    except:
+                                                                        try:
+                                                                            G = kn.getGroup(op.param1)
+                                                                        except:
+                                                                            pass
+                        try:
+                            random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                        except:
+                            try:
+                                cl.kickoutFromGroup(op.param1,[op.param2])
+                            except:
+                                try:
+                                    ki.kickoutFromGroup(op.param1,[op.param2])
+                                except:
+                                    try:
+                                        kk.kickoutFromGroup(op.param1,[op.param2])
+                                    except:
+                                        try:
+                                            kc.kickoutFromGroup(op.param1,[op.param2])
+                                        except:
+                                            try:
+                                                kd.kickoutFromGroup(op.param1,[op.param2])
+                                            except:
+                                                try:
+                                                    ke.kickoutFromGroup(op.param1,[op.param2])
+                                                except:
+                                                    try:
+                                                        kf.kickoutFromGroup(op.param1,[op.param2])
+                                                    except:
+                                                        try:
+                                                            kg.kickoutFromGroup(op.param1,[op.param2])
+                                                        except:
+                                                            try:
+                                                                kh.kickoutFromGroup(op.param1,[op.param2])
+                                                            except:
+                                                                try:
+                                                                    kj.kickoutFromGroup(op.param1,[op.param2])
+                                                                except:
+                                                                    try:
+                                                                        kl.kickoutFromGroup(op.param1,[op.param2])
+                                                                    except:
+                                                                        try:
+                                                                            kn.kickoutFromGroup(op.param1,[op.param2])
+                                                                        except:
+                                                                            pass
                         G.preventJoinByTicket = False
-                        ki.updateGroup(G)
-                        Ticket = kk.reissueGroupTicket(op.param1)
+                        try:
+                            random.choice(KAC).updateGroup(G)
+                        except:
+                            try:
+                                cl.updateGroup(G)
+                            except:
+                                try:
+                                    ki.updateGroup(G)
+                                except:
+                                    try:
+                                        kk.updateGroup(G)
+                                    except:
+                                        try:
+                                            kc.updateGroup(G)
+                                        except:
+                                            try:
+                                                kd.updateGroup(G)
+                                            except:
+                                                try:
+                                                    ke.updateGroup(G)
+                                                except:
+                                                    try:
+                                                        kf.updateGroup(G)
+                                                    except:
+                                                        try:
+                                                            kg.updateGroup(G)
+                                                        except:
+                                                            try:
+                                                                kh.updateGroup(G)
+                                                            except:
+                                                                try:
+                                                                    kj.updateGroup(G)
+                                                                except:
+                                                                    try:
+                                                                        kl.updateGroup(G)
+                                                                    except:
+                                                                        try:
+                                                                            kn.updateGroup(G)
+                                                                        except:
+                                                                            pass
+                        try:
+                            Ticket = random.choice(KAC).reissueGroupTicket(op.param1)
+                        except:
+                            try:
+                                Ticket = cl.reissueGroupTicket(op.param1)
+                            except:
+                                try:
+                                    Ticket = ki.reissueGroupTicket(op.param1)
+                                except:
+                                    try:
+                                        Ticket = kk.reissueGroupTicket(op.param1)
+                                    except:
+                                        try:
+                                            Ticket = kc.reissueGroupTicket(op.param1)
+                                        except:
+                                            try:
+                                                Ticket = kd.reissueGroupTicket(op.param1)
+                                            except:
+                                                try:
+                                                    Ticket = ke.reissueGroupTicket(op.param1)
+                                                except:
+                                                    try:
+                                                        Ticket = kf.reissueGroupTicket(op.param1)
+                                                    except:
+                                                        try:
+                                                            Ticket = kg.reissueGroupTicket(op.param1)
+                                                        except:
+                                                            try:
+                                                                Ticket = kh.reissueGroupTicket(op.param1)
+                                                            except:
+                                                                try:
+                                                                    Ticket = kk.reissueGroupTicket(op.param1)
+                                                                except:
+                                                                    try:
+                                                                        Ticket = kl.reissueGroupTicket(op.param1)
+                                                                    except:
+                                                                        try:
+                                                                            Ticket = kn.reissueGroupTicket(op.param1)
+                                                                        except:
+                                                                            pass
                         cl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         ki.acceptGroupInvitationByTicket(op.param1,Ticket)
                         kk.acceptGroupInvitationByTicket(op.param1,Ticket)
@@ -2189,7 +2730,47 @@ def bot(op):
                         kl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         kn.acceptGroupInvitationByTicket(op.param1,Ticket)
                         G.preventJoinByTicket = True
-                        ki.updateGroup(G)
+                        try:
+                            random.choice(KAC).updateGroup(G)
+                        except:
+                            try:
+                                cl.updateGroup(G)
+                            except:
+                                try:
+                                    ki.updateGroup(G)
+                                except:
+                                    try:
+                                        kk.updateGroup(G)
+                                    except:
+                                        try:
+                                            kc.updateGroup(G)
+                                        except:
+                                            try:
+                                                kd.updateGroup(G)
+                                            except:
+                                                try:
+                                                    ke.updateGroup(G)
+                                                except:
+                                                    try:
+                                                        kf.updateGroup(G)
+                                                    except:
+                                                        try:
+                                                            kg.updateGroup(G)
+                                                        except:
+                                                            try:
+                                                                kh.updateGroup(G)
+                                                            except:
+                                                                try:
+                                                                    kj.updateGroup(G)
+                                                                except:
+                                                                    try:
+                                                                        kl.updateGroup(G)
+                                                                    except:
+                                                                        try:
+                                                                            kn.updateGroup(G)
+                                                                        except:
+                                                                            pass
+                        wait["blacklist"][op.param2] = True
                         
                 elif op.param3 in Cmid:
                     if op.param2 in Dmid:
@@ -2212,13 +2793,167 @@ def bot(op):
                         G.preventJoinByTicket = True
                         kd.updateGroup(G)
                     else:
-                        G = kd.getGroup(op.param1)
-
-                        kd.kickoutFromGroup(op.param1,[op.param2])
-
+                        try:
+                            G = random.choice(KAC).getGroup(op.param1)
+                        except:
+                            try:
+                                G = cl.getGroup(op.param1)
+                            except:
+                                try:
+                                    G = ki.getGroup(op.param1)
+                                except:
+                                    try:
+                                        G = kk.getGroup(op.param1)
+                                    except:
+                                        try:
+                                            G = kc.getGroup(op.param1)
+                                        except:
+                                            try:
+                                                G = kd.getGroup(op.param1)
+                                            except:
+                                                try:
+                                                    G = ke.getGroup(op.param1)
+                                                except:
+                                                    try:
+                                                        G = kf.getGroup(op.param1)
+                                                    except:
+                                                        try:
+                                                            G = kg.getGroup(op.param1)
+                                                        except:
+                                                            try:
+                                                                G = kh.getGroup(op.param1)
+                                                            except:
+                                                                try:
+                                                                    G = kj.getGroup(op.param1)
+                                                                except:
+                                                                    try:
+                                                                        G = kl.getGroup(op.param1)
+                                                                    except:
+                                                                        try:
+                                                                            G = kn.getGroup(op.param1)
+                                                                        except:
+                                                                            pass
+                        try:
+                            random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                        except:
+                            try:
+                                cl.kickoutFromGroup(op.param1,[op.param2])
+                            except:
+                                try:
+                                    ki.kickoutFromGroup(op.param1,[op.param2])
+                                except:
+                                    try:
+                                        kk.kickoutFromGroup(op.param1,[op.param2])
+                                    except:
+                                        try:
+                                            kc.kickoutFromGroup(op.param1,[op.param2])
+                                        except:
+                                            try:
+                                                kd.kickoutFromGroup(op.param1,[op.param2])
+                                            except:
+                                                try:
+                                                    ke.kickoutFromGroup(op.param1,[op.param2])
+                                                except:
+                                                    try:
+                                                        kf.kickoutFromGroup(op.param1,[op.param2])
+                                                    except:
+                                                        try:
+                                                            kg.kickoutFromGroup(op.param1,[op.param2])
+                                                        except:
+                                                            try:
+                                                                kh.kickoutFromGroup(op.param1,[op.param2])
+                                                            except:
+                                                                try:
+                                                                    kj.kickoutFromGroup(op.param1,[op.param2])
+                                                                except:
+                                                                    try:
+                                                                        kl.kickoutFromGroup(op.param1,[op.param2])
+                                                                    except:
+                                                                        try:
+                                                                            kn.kickoutFromGroup(op.param1,[op.param2])
+                                                                        except:
+                                                                            pass
                         G.preventJoinByTicket = False
-                        kd.updateGroup(G)
-                        Ticket = kd.reissueGroupTicket(op.param1)
+                        try:
+                            random.choice(KAC).updateGroup(G)
+                        except:
+                            try:
+                                cl.updateGroup(G)
+                            except:
+                                try:
+                                    ki.updateGroup(G)
+                                except:
+                                    try:
+                                        kk.updateGroup(G)
+                                    except:
+                                        try:
+                                            kc.updateGroup(G)
+                                        except:
+                                            try:
+                                                kd.updateGroup(G)
+                                            except:
+                                                try:
+                                                    ke.updateGroup(G)
+                                                except:
+                                                    try:
+                                                        kf.updateGroup(G)
+                                                    except:
+                                                        try:
+                                                            kg.updateGroup(G)
+                                                        except:
+                                                            try:
+                                                                kh.updateGroup(G)
+                                                            except:
+                                                                try:
+                                                                    kj.updateGroup(G)
+                                                                except:
+                                                                    try:
+                                                                        kl.updateGroup(G)
+                                                                    except:
+                                                                        try:
+                                                                            kn.updateGroup(G)
+                                                                        except:
+                                                                            pass
+                        try:
+                            Ticket = random.choice(KAC).reissueGroupTicket(op.param1)
+                        except:
+                            try:
+                                Ticket = cl.reissueGroupTicket(op.param1)
+                            except:
+                                try:
+                                    Ticket = ki.reissueGroupTicket(op.param1)
+                                except:
+                                    try:
+                                        Ticket = kk.reissueGroupTicket(op.param1)
+                                    except:
+                                        try:
+                                            Ticket = kc.reissueGroupTicket(op.param1)
+                                        except:
+                                            try:
+                                                Ticket = kd.reissueGroupTicket(op.param1)
+                                            except:
+                                                try:
+                                                    Ticket = ke.reissueGroupTicket(op.param1)
+                                                except:
+                                                    try:
+                                                        Ticket = kf.reissueGroupTicket(op.param1)
+                                                    except:
+                                                        try:
+                                                            Ticket = kg.reissueGroupTicket(op.param1)
+                                                        except:
+                                                            try:
+                                                                Ticket = kh.reissueGroupTicket(op.param1)
+                                                            except:
+                                                                try:
+                                                                    Ticket = kk.reissueGroupTicket(op.param1)
+                                                                except:
+                                                                    try:
+                                                                        Ticket = kl.reissueGroupTicket(op.param1)
+                                                                    except:
+                                                                        try:
+                                                                            Ticket = kn.reissueGroupTicket(op.param1)
+                                                                        except:
+                                                                            pass
                         cl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         ki.acceptGroupInvitationByTicket(op.param1,Ticket)
                         kk.acceptGroupInvitationByTicket(op.param1,Ticket)
@@ -2232,7 +2967,47 @@ def bot(op):
                         kl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         kn.acceptGroupInvitationByTicket(op.param1,Ticket)
                         G.preventJoinByTicket = True
-                        kd.updateGroup(G)
+                        try:
+                            random.choice(KAC).updateGroup(G)
+                        except:
+                            try:
+                                cl.updateGroup(G)
+                            except:
+                                try:
+                                    ki.updateGroup(G)
+                                except:
+                                    try:
+                                        kk.updateGroup(G)
+                                    except:
+                                        try:
+                                            kc.updateGroup(G)
+                                        except:
+                                            try:
+                                                kd.updateGroup(G)
+                                            except:
+                                                try:
+                                                    ke.updateGroup(G)
+                                                except:
+                                                    try:
+                                                        kf.updateGroup(G)
+                                                    except:
+                                                        try:
+                                                            kg.updateGroup(G)
+                                                        except:
+                                                            try:
+                                                                kh.updateGroup(G)
+                                                            except:
+                                                                try:
+                                                                    kj.updateGroup(G)
+                                                                except:
+                                                                    try:
+                                                                        kl.updateGroup(G)
+                                                                    except:
+                                                                        try:
+                                                                            kn.updateGroup(G)
+                                                                        except:
+                                                                            pass
+                        wait["blacklist"][op.param2] = True
                 elif op.param3 in Dmid:
                     if op.param2 in Emid:
                         G = ke.getGroup(op.param1)
@@ -2254,13 +3029,167 @@ def bot(op):
                         G.preventJoinByTicket = True
                         ke.updateGroup(G)
                     else:
-                        G = ke.getGroup(op.param1)
-
-                        ke.kickoutFromGroup(op.param1,[op.param2])
-
+                        try:
+                            G = random.choice(KAC).getGroup(op.param1)
+                        except:
+                            try:
+                                G = cl.getGroup(op.param1)
+                            except:
+                                try:
+                                    G = ki.getGroup(op.param1)
+                                except:
+                                    try:
+                                        G = kk.getGroup(op.param1)
+                                    except:
+                                        try:
+                                            G = kc.getGroup(op.param1)
+                                        except:
+                                            try:
+                                                G = kd.getGroup(op.param1)
+                                            except:
+                                                try:
+                                                    G = ke.getGroup(op.param1)
+                                                except:
+                                                    try:
+                                                        G = kf.getGroup(op.param1)
+                                                    except:
+                                                        try:
+                                                            G = kg.getGroup(op.param1)
+                                                        except:
+                                                            try:
+                                                                G = kh.getGroup(op.param1)
+                                                            except:
+                                                                try:
+                                                                    G = kj.getGroup(op.param1)
+                                                                except:
+                                                                    try:
+                                                                        G = kl.getGroup(op.param1)
+                                                                    except:
+                                                                        try:
+                                                                            G = kn.getGroup(op.param1)
+                                                                        except:
+                                                                            pass
+                        try:
+                            random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                        except:
+                            try:
+                                cl.kickoutFromGroup(op.param1,[op.param2])
+                            except:
+                                try:
+                                    ki.kickoutFromGroup(op.param1,[op.param2])
+                                except:
+                                    try:
+                                        kk.kickoutFromGroup(op.param1,[op.param2])
+                                    except:
+                                        try:
+                                            kc.kickoutFromGroup(op.param1,[op.param2])
+                                        except:
+                                            try:
+                                                kd.kickoutFromGroup(op.param1,[op.param2])
+                                            except:
+                                                try:
+                                                    ke.kickoutFromGroup(op.param1,[op.param2])
+                                                except:
+                                                    try:
+                                                        kf.kickoutFromGroup(op.param1,[op.param2])
+                                                    except:
+                                                        try:
+                                                            kg.kickoutFromGroup(op.param1,[op.param2])
+                                                        except:
+                                                            try:
+                                                                kh.kickoutFromGroup(op.param1,[op.param2])
+                                                            except:
+                                                                try:
+                                                                    kj.kickoutFromGroup(op.param1,[op.param2])
+                                                                except:
+                                                                    try:
+                                                                        kl.kickoutFromGroup(op.param1,[op.param2])
+                                                                    except:
+                                                                        try:
+                                                                            kn.kickoutFromGroup(op.param1,[op.param2])
+                                                                        except:
+                                                                            pass
                         G.preventJoinByTicket = False
-                        ke.updateGroup(G)
-                        Ticket = ke.reissueGroupTicket(op.param1)
+                        try:
+                            random.choice(KAC).updateGroup(G)
+                        except:
+                            try:
+                                cl.updateGroup(G)
+                            except:
+                                try:
+                                    ki.updateGroup(G)
+                                except:
+                                    try:
+                                        kk.updateGroup(G)
+                                    except:
+                                        try:
+                                            kc.updateGroup(G)
+                                        except:
+                                            try:
+                                                kd.updateGroup(G)
+                                            except:
+                                                try:
+                                                    ke.updateGroup(G)
+                                                except:
+                                                    try:
+                                                        kf.updateGroup(G)
+                                                    except:
+                                                        try:
+                                                            kg.updateGroup(G)
+                                                        except:
+                                                            try:
+                                                                kh.updateGroup(G)
+                                                            except:
+                                                                try:
+                                                                    kj.updateGroup(G)
+                                                                except:
+                                                                    try:
+                                                                        kl.updateGroup(G)
+                                                                    except:
+                                                                        try:
+                                                                            kn.updateGroup(G)
+                                                                        except:
+                                                                            pass
+                        try:
+                            Ticket = random.choice(KAC).reissueGroupTicket(op.param1)
+                        except:
+                            try:
+                                Ticket = cl.reissueGroupTicket(op.param1)
+                            except:
+                                try:
+                                    Ticket = ki.reissueGroupTicket(op.param1)
+                                except:
+                                    try:
+                                        Ticket = kk.reissueGroupTicket(op.param1)
+                                    except:
+                                        try:
+                                            Ticket = kc.reissueGroupTicket(op.param1)
+                                        except:
+                                            try:
+                                                Ticket = kd.reissueGroupTicket(op.param1)
+                                            except:
+                                                try:
+                                                    Ticket = ke.reissueGroupTicket(op.param1)
+                                                except:
+                                                    try:
+                                                        Ticket = kf.reissueGroupTicket(op.param1)
+                                                    except:
+                                                        try:
+                                                            Ticket = kg.reissueGroupTicket(op.param1)
+                                                        except:
+                                                            try:
+                                                                Ticket = kh.reissueGroupTicket(op.param1)
+                                                            except:
+                                                                try:
+                                                                    Ticket = kk.reissueGroupTicket(op.param1)
+                                                                except:
+                                                                    try:
+                                                                        Ticket = kl.reissueGroupTicket(op.param1)
+                                                                    except:
+                                                                        try:
+                                                                            Ticket = kn.reissueGroupTicket(op.param1)
+                                                                        except:
+                                                                            pass
                         cl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         ki.acceptGroupInvitationByTicket(op.param1,Ticket)
                         kk.acceptGroupInvitationByTicket(op.param1,Ticket)
@@ -2274,7 +3203,47 @@ def bot(op):
                         kl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         kn.acceptGroupInvitationByTicket(op.param1,Ticket)
                         G.preventJoinByTicket = True
-                        ke.updateGroup(G)
+                        try:
+                            random.choice(KAC).updateGroup(G)
+                        except:
+                            try:
+                                cl.updateGroup(G)
+                            except:
+                                try:
+                                    ki.updateGroup(G)
+                                except:
+                                    try:
+                                        kk.updateGroup(G)
+                                    except:
+                                        try:
+                                            kc.updateGroup(G)
+                                        except:
+                                            try:
+                                                kd.updateGroup(G)
+                                            except:
+                                                try:
+                                                    ke.updateGroup(G)
+                                                except:
+                                                    try:
+                                                        kf.updateGroup(G)
+                                                    except:
+                                                        try:
+                                                            kg.updateGroup(G)
+                                                        except:
+                                                            try:
+                                                                kh.updateGroup(G)
+                                                            except:
+                                                                try:
+                                                                    kj.updateGroup(G)
+                                                                except:
+                                                                    try:
+                                                                        kl.updateGroup(G)
+                                                                    except:
+                                                                        try:
+                                                                            kn.updateGroup(G)
+                                                                        except:
+                                                                            pass
+                        wait["blacklist"][op.param2] = True
                 elif op.param3 in Emid:
                     if op.param2 in Fmid:
                         G = kf.getGroup(op.param1)
@@ -2296,13 +3265,167 @@ def bot(op):
                         G.preventJoinByTicket = True
                         kf.updateGroup(G)
                     else:
-                        G = kf.getGroup(op.param1)
-
-                        kf.kickoutFromGroup(op.param1,[op.param2])
-
+                        try:
+                            G = random.choice(KAC).getGroup(op.param1)
+                        except:
+                            try:
+                                G = cl.getGroup(op.param1)
+                            except:
+                                try:
+                                    G = ki.getGroup(op.param1)
+                                except:
+                                    try:
+                                        G = kk.getGroup(op.param1)
+                                    except:
+                                        try:
+                                            G = kc.getGroup(op.param1)
+                                        except:
+                                            try:
+                                                G = kd.getGroup(op.param1)
+                                            except:
+                                                try:
+                                                    G = ke.getGroup(op.param1)
+                                                except:
+                                                    try:
+                                                        G = kf.getGroup(op.param1)
+                                                    except:
+                                                        try:
+                                                            G = kg.getGroup(op.param1)
+                                                        except:
+                                                            try:
+                                                                G = kh.getGroup(op.param1)
+                                                            except:
+                                                                try:
+                                                                    G = kj.getGroup(op.param1)
+                                                                except:
+                                                                    try:
+                                                                        G = kl.getGroup(op.param1)
+                                                                    except:
+                                                                        try:
+                                                                            G = kn.getGroup(op.param1)
+                                                                        except:
+                                                                            pass
+                        try:
+                            random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                        except:
+                            try:
+                                cl.kickoutFromGroup(op.param1,[op.param2])
+                            except:
+                                try:
+                                    ki.kickoutFromGroup(op.param1,[op.param2])
+                                except:
+                                    try:
+                                        kk.kickoutFromGroup(op.param1,[op.param2])
+                                    except:
+                                        try:
+                                            kc.kickoutFromGroup(op.param1,[op.param2])
+                                        except:
+                                            try:
+                                                kd.kickoutFromGroup(op.param1,[op.param2])
+                                            except:
+                                                try:
+                                                    ke.kickoutFromGroup(op.param1,[op.param2])
+                                                except:
+                                                    try:
+                                                        kf.kickoutFromGroup(op.param1,[op.param2])
+                                                    except:
+                                                        try:
+                                                            kg.kickoutFromGroup(op.param1,[op.param2])
+                                                        except:
+                                                            try:
+                                                                kh.kickoutFromGroup(op.param1,[op.param2])
+                                                            except:
+                                                                try:
+                                                                    kj.kickoutFromGroup(op.param1,[op.param2])
+                                                                except:
+                                                                    try:
+                                                                        kl.kickoutFromGroup(op.param1,[op.param2])
+                                                                    except:
+                                                                        try:
+                                                                            kn.kickoutFromGroup(op.param1,[op.param2])
+                                                                        except:
+                                                                            pass
                         G.preventJoinByTicket = False
-                        kf.updateGroup(G)
-                        Ticket = kf.reissueGroupTicket(op.param1)
+                        try:
+                            random.choice(KAC).updateGroup(G)
+                        except:
+                            try:
+                                cl.updateGroup(G)
+                            except:
+                                try:
+                                    ki.updateGroup(G)
+                                except:
+                                    try:
+                                        kk.updateGroup(G)
+                                    except:
+                                        try:
+                                            kc.updateGroup(G)
+                                        except:
+                                            try:
+                                                kd.updateGroup(G)
+                                            except:
+                                                try:
+                                                    ke.updateGroup(G)
+                                                except:
+                                                    try:
+                                                        kf.updateGroup(G)
+                                                    except:
+                                                        try:
+                                                            kg.updateGroup(G)
+                                                        except:
+                                                            try:
+                                                                kh.updateGroup(G)
+                                                            except:
+                                                                try:
+                                                                    kj.updateGroup(G)
+                                                                except:
+                                                                    try:
+                                                                        kl.updateGroup(G)
+                                                                    except:
+                                                                        try:
+                                                                            kn.updateGroup(G)
+                                                                        except:
+                                                                            pass
+                        try:
+                            Ticket = random.choice(KAC).reissueGroupTicket(op.param1)
+                        except:
+                            try:
+                                Ticket = cl.reissueGroupTicket(op.param1)
+                            except:
+                                try:
+                                    Ticket = ki.reissueGroupTicket(op.param1)
+                                except:
+                                    try:
+                                        Ticket = kk.reissueGroupTicket(op.param1)
+                                    except:
+                                        try:
+                                            Ticket = kc.reissueGroupTicket(op.param1)
+                                        except:
+                                            try:
+                                                Ticket = kd.reissueGroupTicket(op.param1)
+                                            except:
+                                                try:
+                                                    Ticket = ke.reissueGroupTicket(op.param1)
+                                                except:
+                                                    try:
+                                                        Ticket = kf.reissueGroupTicket(op.param1)
+                                                    except:
+                                                        try:
+                                                            Ticket = kg.reissueGroupTicket(op.param1)
+                                                        except:
+                                                            try:
+                                                                Ticket = kh.reissueGroupTicket(op.param1)
+                                                            except:
+                                                                try:
+                                                                    Ticket = kk.reissueGroupTicket(op.param1)
+                                                                except:
+                                                                    try:
+                                                                        Ticket = kl.reissueGroupTicket(op.param1)
+                                                                    except:
+                                                                        try:
+                                                                            Ticket = kn.reissueGroupTicket(op.param1)
+                                                                        except:
+                                                                            pass
                         cl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         ki.acceptGroupInvitationByTicket(op.param1,Ticket)
                         kk.acceptGroupInvitationByTicket(op.param1,Ticket)
@@ -2316,7 +3439,47 @@ def bot(op):
                         kl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         kn.acceptGroupInvitationByTicket(op.param1,Ticket)
                         G.preventJoinByTicket = True
-                        kf.updateGroup(G)
+                        try:
+                            random.choice(KAC).updateGroup(G)
+                        except:
+                            try:
+                                cl.updateGroup(G)
+                            except:
+                                try:
+                                    ki.updateGroup(G)
+                                except:
+                                    try:
+                                        kk.updateGroup(G)
+                                    except:
+                                        try:
+                                            kc.updateGroup(G)
+                                        except:
+                                            try:
+                                                kd.updateGroup(G)
+                                            except:
+                                                try:
+                                                    ke.updateGroup(G)
+                                                except:
+                                                    try:
+                                                        kf.updateGroup(G)
+                                                    except:
+                                                        try:
+                                                            kg.updateGroup(G)
+                                                        except:
+                                                            try:
+                                                                kh.updateGroup(G)
+                                                            except:
+                                                                try:
+                                                                    kj.updateGroup(G)
+                                                                except:
+                                                                    try:
+                                                                        kl.updateGroup(G)
+                                                                    except:
+                                                                        try:
+                                                                            kn.updateGroup(G)
+                                                                        except:
+                                                                            pass
+                        wait["blacklist"][op.param2] = True
                 elif op.param3 in Fmid:
                     if op.param2 in Gmid:
                         G = kg.getGroup(op.param1)
@@ -2338,13 +3501,167 @@ def bot(op):
                         G.preventJoinByTicket = True
                         kg.updateGroup(G)
                     else:
-                        G = kg.getGroup(op.param1)
-
-                        kg.kickoutFromGroup(op.param1,[op.param2])
-
+                        try:
+                            G = random.choice(KAC).getGroup(op.param1)
+                        except:
+                            try:
+                                G = cl.getGroup(op.param1)
+                            except:
+                                try:
+                                    G = ki.getGroup(op.param1)
+                                except:
+                                    try:
+                                        G = kk.getGroup(op.param1)
+                                    except:
+                                        try:
+                                            G = kc.getGroup(op.param1)
+                                        except:
+                                            try:
+                                                G = kd.getGroup(op.param1)
+                                            except:
+                                                try:
+                                                    G = ke.getGroup(op.param1)
+                                                except:
+                                                    try:
+                                                        G = kf.getGroup(op.param1)
+                                                    except:
+                                                        try:
+                                                            G = kg.getGroup(op.param1)
+                                                        except:
+                                                            try:
+                                                                G = kh.getGroup(op.param1)
+                                                            except:
+                                                                try:
+                                                                    G = kj.getGroup(op.param1)
+                                                                except:
+                                                                    try:
+                                                                        G = kl.getGroup(op.param1)
+                                                                    except:
+                                                                        try:
+                                                                            G = kn.getGroup(op.param1)
+                                                                        except:
+                                                                            pass
+                        try:
+                            random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                        except:
+                            try:
+                                cl.kickoutFromGroup(op.param1,[op.param2])
+                            except:
+                                try:
+                                    ki.kickoutFromGroup(op.param1,[op.param2])
+                                except:
+                                    try:
+                                        kk.kickoutFromGroup(op.param1,[op.param2])
+                                    except:
+                                        try:
+                                            kc.kickoutFromGroup(op.param1,[op.param2])
+                                        except:
+                                            try:
+                                                kd.kickoutFromGroup(op.param1,[op.param2])
+                                            except:
+                                                try:
+                                                    ke.kickoutFromGroup(op.param1,[op.param2])
+                                                except:
+                                                    try:
+                                                        kf.kickoutFromGroup(op.param1,[op.param2])
+                                                    except:
+                                                        try:
+                                                            kg.kickoutFromGroup(op.param1,[op.param2])
+                                                        except:
+                                                            try:
+                                                                kh.kickoutFromGroup(op.param1,[op.param2])
+                                                            except:
+                                                                try:
+                                                                    kj.kickoutFromGroup(op.param1,[op.param2])
+                                                                except:
+                                                                    try:
+                                                                        kl.kickoutFromGroup(op.param1,[op.param2])
+                                                                    except:
+                                                                        try:
+                                                                            kn.kickoutFromGroup(op.param1,[op.param2])
+                                                                        except:
+                                                                            pass
                         G.preventJoinByTicket = False
-                        kg.updateGroup(G)
-                        Ticket = kg.reissueGroupTicket(op.param1)
+                        try:
+                            random.choice(KAC).updateGroup(G)
+                        except:
+                            try:
+                                cl.updateGroup(G)
+                            except:
+                                try:
+                                    ki.updateGroup(G)
+                                except:
+                                    try:
+                                        kk.updateGroup(G)
+                                    except:
+                                        try:
+                                            kc.updateGroup(G)
+                                        except:
+                                            try:
+                                                kd.updateGroup(G)
+                                            except:
+                                                try:
+                                                    ke.updateGroup(G)
+                                                except:
+                                                    try:
+                                                        kf.updateGroup(G)
+                                                    except:
+                                                        try:
+                                                            kg.updateGroup(G)
+                                                        except:
+                                                            try:
+                                                                kh.updateGroup(G)
+                                                            except:
+                                                                try:
+                                                                    kj.updateGroup(G)
+                                                                except:
+                                                                    try:
+                                                                        kl.updateGroup(G)
+                                                                    except:
+                                                                        try:
+                                                                            kn.updateGroup(G)
+                                                                        except:
+                                                                            pass
+                        try:
+                            Ticket = random.choice(KAC).reissueGroupTicket(op.param1)
+                        except:
+                            try:
+                                Ticket = cl.reissueGroupTicket(op.param1)
+                            except:
+                                try:
+                                    Ticket = ki.reissueGroupTicket(op.param1)
+                                except:
+                                    try:
+                                        Ticket = kk.reissueGroupTicket(op.param1)
+                                    except:
+                                        try:
+                                            Ticket = kc.reissueGroupTicket(op.param1)
+                                        except:
+                                            try:
+                                                Ticket = kd.reissueGroupTicket(op.param1)
+                                            except:
+                                                try:
+                                                    Ticket = ke.reissueGroupTicket(op.param1)
+                                                except:
+                                                    try:
+                                                        Ticket = kf.reissueGroupTicket(op.param1)
+                                                    except:
+                                                        try:
+                                                            Ticket = kg.reissueGroupTicket(op.param1)
+                                                        except:
+                                                            try:
+                                                                Ticket = kh.reissueGroupTicket(op.param1)
+                                                            except:
+                                                                try:
+                                                                    Ticket = kk.reissueGroupTicket(op.param1)
+                                                                except:
+                                                                    try:
+                                                                        Ticket = kl.reissueGroupTicket(op.param1)
+                                                                    except:
+                                                                        try:
+                                                                            Ticket = kn.reissueGroupTicket(op.param1)
+                                                                        except:
+                                                                            pass
                         cl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         ki.acceptGroupInvitationByTicket(op.param1,Ticket)
                         kk.acceptGroupInvitationByTicket(op.param1,Ticket)
@@ -2358,7 +3675,47 @@ def bot(op):
                         kl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         kn.acceptGroupInvitationByTicket(op.param1,Ticket)
                         G.preventJoinByTicket = True
-                        kg.updateGroup(G)
+                        try:
+                            random.choice(KAC).updateGroup(G)
+                        except:
+                            try:
+                                cl.updateGroup(G)
+                            except:
+                                try:
+                                    ki.updateGroup(G)
+                                except:
+                                    try:
+                                        kk.updateGroup(G)
+                                    except:
+                                        try:
+                                            kc.updateGroup(G)
+                                        except:
+                                            try:
+                                                kd.updateGroup(G)
+                                            except:
+                                                try:
+                                                    ke.updateGroup(G)
+                                                except:
+                                                    try:
+                                                        kf.updateGroup(G)
+                                                    except:
+                                                        try:
+                                                            kg.updateGroup(G)
+                                                        except:
+                                                            try:
+                                                                kh.updateGroup(G)
+                                                            except:
+                                                                try:
+                                                                    kj.updateGroup(G)
+                                                                except:
+                                                                    try:
+                                                                        kl.updateGroup(G)
+                                                                    except:
+                                                                        try:
+                                                                            kn.updateGroup(G)
+                                                                        except:
+                                                                            pass
+                        wait["blacklist"][op.param2] = True
                 elif op.param3 in Gmid:
                     if op.param2 in Hmid:
                         G = kh.getGroup(op.param1)
@@ -2380,13 +3737,167 @@ def bot(op):
                         G.preventJoinByTicket = True
                         kh.updateGroup(G)
                     else:
-                        G = kh.getGroup(op.param1)
-
-                        kh.kickoutFromGroup(op.param1,[op.param2])
-
+                        try:
+                            G = random.choice(KAC).getGroup(op.param1)
+                        except:
+                            try:
+                                G = cl.getGroup(op.param1)
+                            except:
+                                try:
+                                    G = ki.getGroup(op.param1)
+                                except:
+                                    try:
+                                        G = kk.getGroup(op.param1)
+                                    except:
+                                        try:
+                                            G = kc.getGroup(op.param1)
+                                        except:
+                                            try:
+                                                G = kd.getGroup(op.param1)
+                                            except:
+                                                try:
+                                                    G = ke.getGroup(op.param1)
+                                                except:
+                                                    try:
+                                                        G = kf.getGroup(op.param1)
+                                                    except:
+                                                        try:
+                                                            G = kg.getGroup(op.param1)
+                                                        except:
+                                                            try:
+                                                                G = kh.getGroup(op.param1)
+                                                            except:
+                                                                try:
+                                                                    G = kj.getGroup(op.param1)
+                                                                except:
+                                                                    try:
+                                                                        G = kl.getGroup(op.param1)
+                                                                    except:
+                                                                        try:
+                                                                            G = kn.getGroup(op.param1)
+                                                                        except:
+                                                                            pass
+                        try:
+                            random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                        except:
+                            try:
+                                cl.kickoutFromGroup(op.param1,[op.param2])
+                            except:
+                                try:
+                                    ki.kickoutFromGroup(op.param1,[op.param2])
+                                except:
+                                    try:
+                                        kk.kickoutFromGroup(op.param1,[op.param2])
+                                    except:
+                                        try:
+                                            kc.kickoutFromGroup(op.param1,[op.param2])
+                                        except:
+                                            try:
+                                                kd.kickoutFromGroup(op.param1,[op.param2])
+                                            except:
+                                                try:
+                                                    ke.kickoutFromGroup(op.param1,[op.param2])
+                                                except:
+                                                    try:
+                                                        kf.kickoutFromGroup(op.param1,[op.param2])
+                                                    except:
+                                                        try:
+                                                            kg.kickoutFromGroup(op.param1,[op.param2])
+                                                        except:
+                                                            try:
+                                                                kh.kickoutFromGroup(op.param1,[op.param2])
+                                                            except:
+                                                                try:
+                                                                    kj.kickoutFromGroup(op.param1,[op.param2])
+                                                                except:
+                                                                    try:
+                                                                        kl.kickoutFromGroup(op.param1,[op.param2])
+                                                                    except:
+                                                                        try:
+                                                                            kn.kickoutFromGroup(op.param1,[op.param2])
+                                                                        except:
+                                                                            pass
                         G.preventJoinByTicket = False
-                        kh.updateGroup(G)
-                        Ticket = kh.reissueGroupTicket(op.param1)
+                        try:
+                            random.choice(KAC).updateGroup(G)
+                        except:
+                            try:
+                                cl.updateGroup(G)
+                            except:
+                                try:
+                                    ki.updateGroup(G)
+                                except:
+                                    try:
+                                        kk.updateGroup(G)
+                                    except:
+                                        try:
+                                            kc.updateGroup(G)
+                                        except:
+                                            try:
+                                                kd.updateGroup(G)
+                                            except:
+                                                try:
+                                                    ke.updateGroup(G)
+                                                except:
+                                                    try:
+                                                        kf.updateGroup(G)
+                                                    except:
+                                                        try:
+                                                            kg.updateGroup(G)
+                                                        except:
+                                                            try:
+                                                                kh.updateGroup(G)
+                                                            except:
+                                                                try:
+                                                                    kj.updateGroup(G)
+                                                                except:
+                                                                    try:
+                                                                        kl.updateGroup(G)
+                                                                    except:
+                                                                        try:
+                                                                            kn.updateGroup(G)
+                                                                        except:
+                                                                            pass
+                        try:
+                            Ticket = random.choice(KAC).reissueGroupTicket(op.param1)
+                        except:
+                            try:
+                                Ticket = cl.reissueGroupTicket(op.param1)
+                            except:
+                                try:
+                                    Ticket = ki.reissueGroupTicket(op.param1)
+                                except:
+                                    try:
+                                        Ticket = kk.reissueGroupTicket(op.param1)
+                                    except:
+                                        try:
+                                            Ticket = kc.reissueGroupTicket(op.param1)
+                                        except:
+                                            try:
+                                                Ticket = kd.reissueGroupTicket(op.param1)
+                                            except:
+                                                try:
+                                                    Ticket = ke.reissueGroupTicket(op.param1)
+                                                except:
+                                                    try:
+                                                        Ticket = kf.reissueGroupTicket(op.param1)
+                                                    except:
+                                                        try:
+                                                            Ticket = kg.reissueGroupTicket(op.param1)
+                                                        except:
+                                                            try:
+                                                                Ticket = kh.reissueGroupTicket(op.param1)
+                                                            except:
+                                                                try:
+                                                                    Ticket = kk.reissueGroupTicket(op.param1)
+                                                                except:
+                                                                    try:
+                                                                        Ticket = kl.reissueGroupTicket(op.param1)
+                                                                    except:
+                                                                        try:
+                                                                            Ticket = kn.reissueGroupTicket(op.param1)
+                                                                        except:
+                                                                            pass
                         cl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         ki.acceptGroupInvitationByTicket(op.param1,Ticket)
                         kk.acceptGroupInvitationByTicket(op.param1,Ticket)
@@ -2400,7 +3911,47 @@ def bot(op):
                         kl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         kn.acceptGroupInvitationByTicket(op.param1,Ticket)
                         G.preventJoinByTicket = True
-                        kh.updateGroup(G)
+                        try:
+                            random.choice(KAC).updateGroup(G)
+                        except:
+                            try:
+                                cl.updateGroup(G)
+                            except:
+                                try:
+                                    ki.updateGroup(G)
+                                except:
+                                    try:
+                                        kk.updateGroup(G)
+                                    except:
+                                        try:
+                                            kc.updateGroup(G)
+                                        except:
+                                            try:
+                                                kd.updateGroup(G)
+                                            except:
+                                                try:
+                                                    ke.updateGroup(G)
+                                                except:
+                                                    try:
+                                                        kf.updateGroup(G)
+                                                    except:
+                                                        try:
+                                                            kg.updateGroup(G)
+                                                        except:
+                                                            try:
+                                                                kh.updateGroup(G)
+                                                            except:
+                                                                try:
+                                                                    kj.updateGroup(G)
+                                                                except:
+                                                                    try:
+                                                                        kl.updateGroup(G)
+                                                                    except:
+                                                                        try:
+                                                                            kn.updateGroup(G)
+                                                                        except:
+                                                                            pass
+                        wait["blacklist"][op.param2] = True
                 elif op.param3 in Hmid:
                     if op.param2 in Jmid:
                         G = ki.getGroup(op.param1)
@@ -2422,13 +3973,167 @@ def bot(op):
                         G.preventJoinByTicket = True
                         ki.updateGroup(G)
                     else:
-                        G = ki.getGroup(op.param1)
-
-                        kj.kickoutFromGroup(op.param1,[op.param2])
-
+                        try:
+                            G = random.choice(KAC).getGroup(op.param1)
+                        except:
+                            try:
+                                G = cl.getGroup(op.param1)
+                            except:
+                                try:
+                                    G = ki.getGroup(op.param1)
+                                except:
+                                    try:
+                                        G = kk.getGroup(op.param1)
+                                    except:
+                                        try:
+                                            G = kc.getGroup(op.param1)
+                                        except:
+                                            try:
+                                                G = kd.getGroup(op.param1)
+                                            except:
+                                                try:
+                                                    G = ke.getGroup(op.param1)
+                                                except:
+                                                    try:
+                                                        G = kf.getGroup(op.param1)
+                                                    except:
+                                                        try:
+                                                            G = kg.getGroup(op.param1)
+                                                        except:
+                                                            try:
+                                                                G = kh.getGroup(op.param1)
+                                                            except:
+                                                                try:
+                                                                    G = kj.getGroup(op.param1)
+                                                                except:
+                                                                    try:
+                                                                        G = kl.getGroup(op.param1)
+                                                                    except:
+                                                                        try:
+                                                                            G = kn.getGroup(op.param1)
+                                                                        except:
+                                                                            pass
+                        try:
+                            random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                        except:
+                            try:
+                                cl.kickoutFromGroup(op.param1,[op.param2])
+                            except:
+                                try:
+                                    ki.kickoutFromGroup(op.param1,[op.param2])
+                                except:
+                                    try:
+                                        kk.kickoutFromGroup(op.param1,[op.param2])
+                                    except:
+                                        try:
+                                            kc.kickoutFromGroup(op.param1,[op.param2])
+                                        except:
+                                            try:
+                                                kd.kickoutFromGroup(op.param1,[op.param2])
+                                            except:
+                                                try:
+                                                    ke.kickoutFromGroup(op.param1,[op.param2])
+                                                except:
+                                                    try:
+                                                        kf.kickoutFromGroup(op.param1,[op.param2])
+                                                    except:
+                                                        try:
+                                                            kg.kickoutFromGroup(op.param1,[op.param2])
+                                                        except:
+                                                            try:
+                                                                kh.kickoutFromGroup(op.param1,[op.param2])
+                                                            except:
+                                                                try:
+                                                                    kj.kickoutFromGroup(op.param1,[op.param2])
+                                                                except:
+                                                                    try:
+                                                                        kl.kickoutFromGroup(op.param1,[op.param2])
+                                                                    except:
+                                                                        try:
+                                                                            kn.kickoutFromGroup(op.param1,[op.param2])
+                                                                        except:
+                                                                            pass
                         G.preventJoinByTicket = False
-                        ki.updateGroup(G)
-                        Ticket = ki.reissueGroupTicket(op.param1)
+                        try:
+                            random.choice(KAC).updateGroup(G)
+                        except:
+                            try:
+                                cl.updateGroup(G)
+                            except:
+                                try:
+                                    ki.updateGroup(G)
+                                except:
+                                    try:
+                                        kk.updateGroup(G)
+                                    except:
+                                        try:
+                                            kc.updateGroup(G)
+                                        except:
+                                            try:
+                                                kd.updateGroup(G)
+                                            except:
+                                                try:
+                                                    ke.updateGroup(G)
+                                                except:
+                                                    try:
+                                                        kf.updateGroup(G)
+                                                    except:
+                                                        try:
+                                                            kg.updateGroup(G)
+                                                        except:
+                                                            try:
+                                                                kh.updateGroup(G)
+                                                            except:
+                                                                try:
+                                                                    kj.updateGroup(G)
+                                                                except:
+                                                                    try:
+                                                                        kl.updateGroup(G)
+                                                                    except:
+                                                                        try:
+                                                                            kn.updateGroup(G)
+                                                                        except:
+                                                                            pass
+                        try:
+                            Ticket = random.choice(KAC).reissueGroupTicket(op.param1)
+                        except:
+                            try:
+                                Ticket = cl.reissueGroupTicket(op.param1)
+                            except:
+                                try:
+                                    Ticket = ki.reissueGroupTicket(op.param1)
+                                except:
+                                    try:
+                                        Ticket = kk.reissueGroupTicket(op.param1)
+                                    except:
+                                        try:
+                                            Ticket = kc.reissueGroupTicket(op.param1)
+                                        except:
+                                            try:
+                                                Ticket = kd.reissueGroupTicket(op.param1)
+                                            except:
+                                                try:
+                                                    Ticket = ke.reissueGroupTicket(op.param1)
+                                                except:
+                                                    try:
+                                                        Ticket = kf.reissueGroupTicket(op.param1)
+                                                    except:
+                                                        try:
+                                                            Ticket = kg.reissueGroupTicket(op.param1)
+                                                        except:
+                                                            try:
+                                                                Ticket = kh.reissueGroupTicket(op.param1)
+                                                            except:
+                                                                try:
+                                                                    Ticket = kk.reissueGroupTicket(op.param1)
+                                                                except:
+                                                                    try:
+                                                                        Ticket = kl.reissueGroupTicket(op.param1)
+                                                                    except:
+                                                                        try:
+                                                                            Ticket = kn.reissueGroupTicket(op.param1)
+                                                                        except:
+                                                                            pass
                         cl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         ki.acceptGroupInvitationByTicket(op.param1,Ticket)
                         kk.acceptGroupInvitationByTicket(op.param1,Ticket)
@@ -2442,7 +4147,47 @@ def bot(op):
                         kl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         kn.acceptGroupInvitationByTicket(op.param1,Ticket)
                         G.preventJoinByTicket = True
-                        ki.updateGroup(G)
+                        try:
+                            random.choice(KAC).updateGroup(G)
+                        except:
+                            try:
+                                cl.updateGroup(G)
+                            except:
+                                try:
+                                    ki.updateGroup(G)
+                                except:
+                                    try:
+                                        kk.updateGroup(G)
+                                    except:
+                                        try:
+                                            kc.updateGroup(G)
+                                        except:
+                                            try:
+                                                kd.updateGroup(G)
+                                            except:
+                                                try:
+                                                    ke.updateGroup(G)
+                                                except:
+                                                    try:
+                                                        kf.updateGroup(G)
+                                                    except:
+                                                        try:
+                                                            kg.updateGroup(G)
+                                                        except:
+                                                            try:
+                                                                kh.updateGroup(G)
+                                                            except:
+                                                                try:
+                                                                    kj.updateGroup(G)
+                                                                except:
+                                                                    try:
+                                                                        kl.updateGroup(G)
+                                                                    except:
+                                                                        try:
+                                                                            kn.updateGroup(G)
+                                                                        except:
+                                                                            pass
+                        wait["blacklist"][op.param2] = True
                 elif op.param3 in Jmid:
                     if op.param2 in Lmid:
                         G = kl.getGroup(op.param1)
@@ -2464,13 +4209,167 @@ def bot(op):
                         G.preventJoinByTicket = True
                         kj.updateGroup(G)
                     else:
-                        G = kl.getGroup(op.param1)
-
-                        kc.kickoutFromGroup(op.param1,[op.param2])
-
+                        try:
+                            G = random.choice(KAC).getGroup(op.param1)
+                        except:
+                            try:
+                                G = cl.getGroup(op.param1)
+                            except:
+                                try:
+                                    G = ki.getGroup(op.param1)
+                                except:
+                                    try:
+                                        G = kk.getGroup(op.param1)
+                                    except:
+                                        try:
+                                            G = kc.getGroup(op.param1)
+                                        except:
+                                            try:
+                                                G = kd.getGroup(op.param1)
+                                            except:
+                                                try:
+                                                    G = ke.getGroup(op.param1)
+                                                except:
+                                                    try:
+                                                        G = kf.getGroup(op.param1)
+                                                    except:
+                                                        try:
+                                                            G = kg.getGroup(op.param1)
+                                                        except:
+                                                            try:
+                                                                G = kh.getGroup(op.param1)
+                                                            except:
+                                                                try:
+                                                                    G = kj.getGroup(op.param1)
+                                                                except:
+                                                                    try:
+                                                                        G = kl.getGroup(op.param1)
+                                                                    except:
+                                                                        try:
+                                                                            G = kn.getGroup(op.param1)
+                                                                        except:
+                                                                            pass
+                        try:
+                            random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                        except:
+                            try:
+                                cl.kickoutFromGroup(op.param1,[op.param2])
+                            except:
+                                try:
+                                    ki.kickoutFromGroup(op.param1,[op.param2])
+                                except:
+                                    try:
+                                        kk.kickoutFromGroup(op.param1,[op.param2])
+                                    except:
+                                        try:
+                                            kc.kickoutFromGroup(op.param1,[op.param2])
+                                        except:
+                                            try:
+                                                kd.kickoutFromGroup(op.param1,[op.param2])
+                                            except:
+                                                try:
+                                                    ke.kickoutFromGroup(op.param1,[op.param2])
+                                                except:
+                                                    try:
+                                                        kf.kickoutFromGroup(op.param1,[op.param2])
+                                                    except:
+                                                        try:
+                                                            kg.kickoutFromGroup(op.param1,[op.param2])
+                                                        except:
+                                                            try:
+                                                                kh.kickoutFromGroup(op.param1,[op.param2])
+                                                            except:
+                                                                try:
+                                                                    kj.kickoutFromGroup(op.param1,[op.param2])
+                                                                except:
+                                                                    try:
+                                                                        kl.kickoutFromGroup(op.param1,[op.param2])
+                                                                    except:
+                                                                        try:
+                                                                            kn.kickoutFromGroup(op.param1,[op.param2])
+                                                                        except:
+                                                                            pass
                         G.preventJoinByTicket = False
-                        kl.updateGroup(G)
-                        Ticket = kl.reissueGroupTicket(op.param1)
+                        try:
+                            random.choice(KAC).updateGroup(G)
+                        except:
+                            try:
+                                cl.updateGroup(G)
+                            except:
+                                try:
+                                    ki.updateGroup(G)
+                                except:
+                                    try:
+                                        kk.updateGroup(G)
+                                    except:
+                                        try:
+                                            kc.updateGroup(G)
+                                        except:
+                                            try:
+                                                kd.updateGroup(G)
+                                            except:
+                                                try:
+                                                    ke.updateGroup(G)
+                                                except:
+                                                    try:
+                                                        kf.updateGroup(G)
+                                                    except:
+                                                        try:
+                                                            kg.updateGroup(G)
+                                                        except:
+                                                            try:
+                                                                kh.updateGroup(G)
+                                                            except:
+                                                                try:
+                                                                    kj.updateGroup(G)
+                                                                except:
+                                                                    try:
+                                                                        kl.updateGroup(G)
+                                                                    except:
+                                                                        try:
+                                                                            kn.updateGroup(G)
+                                                                        except:
+                                                                            pass
+                        try:
+                            Ticket = random.choice(KAC).reissueGroupTicket(op.param1)
+                        except:
+                            try:
+                                Ticket = cl.reissueGroupTicket(op.param1)
+                            except:
+                                try:
+                                    Ticket = ki.reissueGroupTicket(op.param1)
+                                except:
+                                    try:
+                                        Ticket = kk.reissueGroupTicket(op.param1)
+                                    except:
+                                        try:
+                                            Ticket = kc.reissueGroupTicket(op.param1)
+                                        except:
+                                            try:
+                                                Ticket = kd.reissueGroupTicket(op.param1)
+                                            except:
+                                                try:
+                                                    Ticket = ke.reissueGroupTicket(op.param1)
+                                                except:
+                                                    try:
+                                                        Ticket = kf.reissueGroupTicket(op.param1)
+                                                    except:
+                                                        try:
+                                                            Ticket = kg.reissueGroupTicket(op.param1)
+                                                        except:
+                                                            try:
+                                                                Ticket = kh.reissueGroupTicket(op.param1)
+                                                            except:
+                                                                try:
+                                                                    Ticket = kk.reissueGroupTicket(op.param1)
+                                                                except:
+                                                                    try:
+                                                                        Ticket = kl.reissueGroupTicket(op.param1)
+                                                                    except:
+                                                                        try:
+                                                                            Ticket = kn.reissueGroupTicket(op.param1)
+                                                                        except:
+                                                                            pass
                         cl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         ki.acceptGroupInvitationByTicket(op.param1,Ticket)
                         kk.acceptGroupInvitationByTicket(op.param1,Ticket)
@@ -2484,7 +4383,47 @@ def bot(op):
                         kl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         kn.acceptGroupInvitationByTicket(op.param1,Ticket)
                         G.preventJoinByTicket = True
-                        kn.updateGroup(G)
+                        try:
+                            random.choice(KAC).updateGroup(G)
+                        except:
+                            try:
+                                cl.updateGroup(G)
+                            except:
+                                try:
+                                    ki.updateGroup(G)
+                                except:
+                                    try:
+                                        kk.updateGroup(G)
+                                    except:
+                                        try:
+                                            kc.updateGroup(G)
+                                        except:
+                                            try:
+                                                kd.updateGroup(G)
+                                            except:
+                                                try:
+                                                    ke.updateGroup(G)
+                                                except:
+                                                    try:
+                                                        kf.updateGroup(G)
+                                                    except:
+                                                        try:
+                                                            kg.updateGroup(G)
+                                                        except:
+                                                            try:
+                                                                kh.updateGroup(G)
+                                                            except:
+                                                                try:
+                                                                    kj.updateGroup(G)
+                                                                except:
+                                                                    try:
+                                                                        kl.updateGroup(G)
+                                                                    except:
+                                                                        try:
+                                                                            kn.updateGroup(G)
+                                                                        except:
+                                                                            pass
+                        wait["blacklist"][op.param2] = True
                 elif op.param3 in Lmid:
                     if op.param2 in Nmid:
                         G = kn.getGroup(op.param1)
@@ -2506,13 +4445,167 @@ def bot(op):
                         G.preventJoinByTicket = True
                         ke.updateGroup(G)
                     else:
-                        G = kn.getGroup(op.param1)
-
-                        kf.kickoutFromGroup(op.param1,[op.param2])
-
+                        try:
+                            G = random.choice(KAC).getGroup(op.param1)
+                        except:
+                            try:
+                                G = cl.getGroup(op.param1)
+                            except:
+                                try:
+                                    G = ki.getGroup(op.param1)
+                                except:
+                                    try:
+                                        G = kk.getGroup(op.param1)
+                                    except:
+                                        try:
+                                            G = kc.getGroup(op.param1)
+                                        except:
+                                            try:
+                                                G = kd.getGroup(op.param1)
+                                            except:
+                                                try:
+                                                    G = ke.getGroup(op.param1)
+                                                except:
+                                                    try:
+                                                        G = kf.getGroup(op.param1)
+                                                    except:
+                                                        try:
+                                                            G = kg.getGroup(op.param1)
+                                                        except:
+                                                            try:
+                                                                G = kh.getGroup(op.param1)
+                                                            except:
+                                                                try:
+                                                                    G = kj.getGroup(op.param1)
+                                                                except:
+                                                                    try:
+                                                                        G = kl.getGroup(op.param1)
+                                                                    except:
+                                                                        try:
+                                                                            G = kn.getGroup(op.param1)
+                                                                        except:
+                                                                            pass
+                        try:
+                            random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                        except:
+                            try:
+                                cl.kickoutFromGroup(op.param1,[op.param2])
+                            except:
+                                try:
+                                    ki.kickoutFromGroup(op.param1,[op.param2])
+                                except:
+                                    try:
+                                        kk.kickoutFromGroup(op.param1,[op.param2])
+                                    except:
+                                        try:
+                                            kc.kickoutFromGroup(op.param1,[op.param2])
+                                        except:
+                                            try:
+                                                kd.kickoutFromGroup(op.param1,[op.param2])
+                                            except:
+                                                try:
+                                                    ke.kickoutFromGroup(op.param1,[op.param2])
+                                                except:
+                                                    try:
+                                                        kf.kickoutFromGroup(op.param1,[op.param2])
+                                                    except:
+                                                        try:
+                                                            kg.kickoutFromGroup(op.param1,[op.param2])
+                                                        except:
+                                                            try:
+                                                                kh.kickoutFromGroup(op.param1,[op.param2])
+                                                            except:
+                                                                try:
+                                                                    kj.kickoutFromGroup(op.param1,[op.param2])
+                                                                except:
+                                                                    try:
+                                                                        kl.kickoutFromGroup(op.param1,[op.param2])
+                                                                    except:
+                                                                        try:
+                                                                            kn.kickoutFromGroup(op.param1,[op.param2])
+                                                                        except:
+                                                                            pass
                         G.preventJoinByTicket = False
-                        kn.updateGroup(G)
-                        Ticket = kn.reissueGroupTicket(op.param1)
+                        try:
+                            random.choice(KAC).updateGroup(G)
+                        except:
+                            try:
+                                cl.updateGroup(G)
+                            except:
+                                try:
+                                    ki.updateGroup(G)
+                                except:
+                                    try:
+                                        kk.updateGroup(G)
+                                    except:
+                                        try:
+                                            kc.updateGroup(G)
+                                        except:
+                                            try:
+                                                kd.updateGroup(G)
+                                            except:
+                                                try:
+                                                    ke.updateGroup(G)
+                                                except:
+                                                    try:
+                                                        kf.updateGroup(G)
+                                                    except:
+                                                        try:
+                                                            kg.updateGroup(G)
+                                                        except:
+                                                            try:
+                                                                kh.updateGroup(G)
+                                                            except:
+                                                                try:
+                                                                    kj.updateGroup(G)
+                                                                except:
+                                                                    try:
+                                                                        kl.updateGroup(G)
+                                                                    except:
+                                                                        try:
+                                                                            kn.updateGroup(G)
+                                                                        except:
+                                                                            pass
+                        try:
+                            Ticket = random.choice(KAC).reissueGroupTicket(op.param1)
+                        except:
+                            try:
+                                Ticket = cl.reissueGroupTicket(op.param1)
+                            except:
+                                try:
+                                    Ticket = ki.reissueGroupTicket(op.param1)
+                                except:
+                                    try:
+                                        Ticket = kk.reissueGroupTicket(op.param1)
+                                    except:
+                                        try:
+                                            Ticket = kc.reissueGroupTicket(op.param1)
+                                        except:
+                                            try:
+                                                Ticket = kd.reissueGroupTicket(op.param1)
+                                            except:
+                                                try:
+                                                    Ticket = ke.reissueGroupTicket(op.param1)
+                                                except:
+                                                    try:
+                                                        Ticket = kf.reissueGroupTicket(op.param1)
+                                                    except:
+                                                        try:
+                                                            Ticket = kg.reissueGroupTicket(op.param1)
+                                                        except:
+                                                            try:
+                                                                Ticket = kh.reissueGroupTicket(op.param1)
+                                                            except:
+                                                                try:
+                                                                    Ticket = kk.reissueGroupTicket(op.param1)
+                                                                except:
+                                                                    try:
+                                                                        Ticket = kl.reissueGroupTicket(op.param1)
+                                                                    except:
+                                                                        try:
+                                                                            Ticket = kn.reissueGroupTicket(op.param1)
+                                                                        except:
+                                                                            pass
                         cl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         ki.acceptGroupInvitationByTicket(op.param1,Ticket)
                         kk.acceptGroupInvitationByTicket(op.param1,Ticket)
@@ -2526,7 +4619,47 @@ def bot(op):
                         kl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         kn.acceptGroupInvitationByTicket(op.param1,Ticket)
                         G.preventJoinByTicket = True
-                        kn.updateGroup(G)
+                        try:
+                            random.choice(KAC).updateGroup(G)
+                        except:
+                            try:
+                                cl.updateGroup(G)
+                            except:
+                                try:
+                                    ki.updateGroup(G)
+                                except:
+                                    try:
+                                        kk.updateGroup(G)
+                                    except:
+                                        try:
+                                            kc.updateGroup(G)
+                                        except:
+                                            try:
+                                                kd.updateGroup(G)
+                                            except:
+                                                try:
+                                                    ke.updateGroup(G)
+                                                except:
+                                                    try:
+                                                        kf.updateGroup(G)
+                                                    except:
+                                                        try:
+                                                            kg.updateGroup(G)
+                                                        except:
+                                                            try:
+                                                                kh.updateGroup(G)
+                                                            except:
+                                                                try:
+                                                                    kj.updateGroup(G)
+                                                                except:
+                                                                    try:
+                                                                        kl.updateGroup(G)
+                                                                    except:
+                                                                        try:
+                                                                            kn.updateGroup(G)
+                                                                        except:
+                                                                            pass
+                        wait["blacklist"][op.param2] = True
                 elif op.param3 in Nmid:
                     if op.param2 in admid:
                         G = ad.getGroup(op.param1)
@@ -2548,13 +4681,167 @@ def bot(op):
                         G.preventJoinByTicket = True
                         ad.updateGroup(G)
                     else:
-                        G = ad.getGroup(op.param1)
-
-                        kg.kickoutFromGroup(op.param1,[op.param2])
-
+                        try:
+                            G = random.choice(KAC).getGroup(op.param1)
+                        except:
+                            try:
+                                G = cl.getGroup(op.param1)
+                            except:
+                                try:
+                                    G = ki.getGroup(op.param1)
+                                except:
+                                    try:
+                                        G = kk.getGroup(op.param1)
+                                    except:
+                                        try:
+                                            G = kc.getGroup(op.param1)
+                                        except:
+                                            try:
+                                                G = kd.getGroup(op.param1)
+                                            except:
+                                                try:
+                                                    G = ke.getGroup(op.param1)
+                                                except:
+                                                    try:
+                                                        G = kf.getGroup(op.param1)
+                                                    except:
+                                                        try:
+                                                            G = kg.getGroup(op.param1)
+                                                        except:
+                                                            try:
+                                                                G = kh.getGroup(op.param1)
+                                                            except:
+                                                                try:
+                                                                    G = kj.getGroup(op.param1)
+                                                                except:
+                                                                    try:
+                                                                        G = kl.getGroup(op.param1)
+                                                                    except:
+                                                                        try:
+                                                                            G = kn.getGroup(op.param1)
+                                                                        except:
+                                                                            pass
+                        try:
+                            random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                        except:
+                            try:
+                                cl.kickoutFromGroup(op.param1,[op.param2])
+                            except:
+                                try:
+                                    ki.kickoutFromGroup(op.param1,[op.param2])
+                                except:
+                                    try:
+                                        kk.kickoutFromGroup(op.param1,[op.param2])
+                                    except:
+                                        try:
+                                            kc.kickoutFromGroup(op.param1,[op.param2])
+                                        except:
+                                            try:
+                                                kd.kickoutFromGroup(op.param1,[op.param2])
+                                            except:
+                                                try:
+                                                    ke.kickoutFromGroup(op.param1,[op.param2])
+                                                except:
+                                                    try:
+                                                        kf.kickoutFromGroup(op.param1,[op.param2])
+                                                    except:
+                                                        try:
+                                                            kg.kickoutFromGroup(op.param1,[op.param2])
+                                                        except:
+                                                            try:
+                                                                kh.kickoutFromGroup(op.param1,[op.param2])
+                                                            except:
+                                                                try:
+                                                                    kj.kickoutFromGroup(op.param1,[op.param2])
+                                                                except:
+                                                                    try:
+                                                                        kl.kickoutFromGroup(op.param1,[op.param2])
+                                                                    except:
+                                                                        try:
+                                                                            kn.kickoutFromGroup(op.param1,[op.param2])
+                                                                        except:
+                                                                            pass
                         G.preventJoinByTicket = False
-                        ad.updateGroup(G)
-                        Ticket = ad.reissueGroupTicket(op.param1)
+                        try:
+                            random.choice(KAC).updateGroup(G)
+                        except:
+                            try:
+                                cl.updateGroup(G)
+                            except:
+                                try:
+                                    ki.updateGroup(G)
+                                except:
+                                    try:
+                                        kk.updateGroup(G)
+                                    except:
+                                        try:
+                                            kc.updateGroup(G)
+                                        except:
+                                            try:
+                                                kd.updateGroup(G)
+                                            except:
+                                                try:
+                                                    ke.updateGroup(G)
+                                                except:
+                                                    try:
+                                                        kf.updateGroup(G)
+                                                    except:
+                                                        try:
+                                                            kg.updateGroup(G)
+                                                        except:
+                                                            try:
+                                                                kh.updateGroup(G)
+                                                            except:
+                                                                try:
+                                                                    kj.updateGroup(G)
+                                                                except:
+                                                                    try:
+                                                                        kl.updateGroup(G)
+                                                                    except:
+                                                                        try:
+                                                                            kn.updateGroup(G)
+                                                                        except:
+                                                                            pass
+                        try:
+                            Ticket = random.choice(KAC).reissueGroupTicket(op.param1)
+                        except:
+                            try:
+                                Ticket = cl.reissueGroupTicket(op.param1)
+                            except:
+                                try:
+                                    Ticket = ki.reissueGroupTicket(op.param1)
+                                except:
+                                    try:
+                                        Ticket = kk.reissueGroupTicket(op.param1)
+                                    except:
+                                        try:
+                                            Ticket = kc.reissueGroupTicket(op.param1)
+                                        except:
+                                            try:
+                                                Ticket = kd.reissueGroupTicket(op.param1)
+                                            except:
+                                                try:
+                                                    Ticket = ke.reissueGroupTicket(op.param1)
+                                                except:
+                                                    try:
+                                                        Ticket = kf.reissueGroupTicket(op.param1)
+                                                    except:
+                                                        try:
+                                                            Ticket = kg.reissueGroupTicket(op.param1)
+                                                        except:
+                                                            try:
+                                                                Ticket = kh.reissueGroupTicket(op.param1)
+                                                            except:
+                                                                try:
+                                                                    Ticket = kk.reissueGroupTicket(op.param1)
+                                                                except:
+                                                                    try:
+                                                                        Ticket = kl.reissueGroupTicket(op.param1)
+                                                                    except:
+                                                                        try:
+                                                                            Ticket = kn.reissueGroupTicket(op.param1)
+                                                                        except:
+                                                                            pass
                         cl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         ki.acceptGroupInvitationByTicket(op.param1,Ticket)
                         kk.acceptGroupInvitationByTicket(op.param1,Ticket)
@@ -2568,7 +4855,47 @@ def bot(op):
                         kl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         kn.acceptGroupInvitationByTicket(op.param1,Ticket)
                         G.preventJoinByTicket = True
-                        kh.updateGroup(G)
+                        try:
+                            random.choice(KAC).updateGroup(G)
+                        except:
+                            try:
+                                cl.updateGroup(G)
+                            except:
+                                try:
+                                    ki.updateGroup(G)
+                                except:
+                                    try:
+                                        kk.updateGroup(G)
+                                    except:
+                                        try:
+                                            kc.updateGroup(G)
+                                        except:
+                                            try:
+                                                kd.updateGroup(G)
+                                            except:
+                                                try:
+                                                    ke.updateGroup(G)
+                                                except:
+                                                    try:
+                                                        kf.updateGroup(G)
+                                                    except:
+                                                        try:
+                                                            kg.updateGroup(G)
+                                                        except:
+                                                            try:
+                                                                kh.updateGroup(G)
+                                                            except:
+                                                                try:
+                                                                    kj.updateGroup(G)
+                                                                except:
+                                                                    try:
+                                                                        kl.updateGroup(G)
+                                                                    except:
+                                                                        try:
+                                                                            kn.updateGroup(G)
+                                                                        except:
+                                                                            pass
+                        wait["blacklist"][op.param2] = True
                 elif op.param3 in admid:
                     if op.param2 in mid:
                         G = cl.getGroup(op.param1)
@@ -2590,14 +4917,168 @@ def bot(op):
                         G.preventJoinByTicket = True
                         kj.updateGroup(G)
                     else:
-                        G = cl.getGroup(op.param1)
-
-                        kj.kickoutFromGroup(op.param1,[op.param2])
-
+                        try:
+                            G = random.choice(KAC).getGroup(op.param1)
+                        except:
+                            try:
+                                G = cl.getGroup(op.param1)
+                            except:
+                                try:
+                                    G = ki.getGroup(op.param1)
+                                except:
+                                    try:
+                                        G = kk.getGroup(op.param1)
+                                    except:
+                                        try:
+                                            G = kc.getGroup(op.param1)
+                                        except:
+                                            try:
+                                                G = kd.getGroup(op.param1)
+                                            except:
+                                                try:
+                                                    G = ke.getGroup(op.param1)
+                                                except:
+                                                    try:
+                                                        G = kf.getGroup(op.param1)
+                                                    except:
+                                                        try:
+                                                            G = kg.getGroup(op.param1)
+                                                        except:
+                                                            try:
+                                                                G = kh.getGroup(op.param1)
+                                                            except:
+                                                                try:
+                                                                    G = kj.getGroup(op.param1)
+                                                                except:
+                                                                    try:
+                                                                        G = kl.getGroup(op.param1)
+                                                                    except:
+                                                                        try:
+                                                                            G = kn.getGroup(op.param1)
+                                                                        except:
+                                                                            pass
+                        try:
+                            random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                        except:
+                            try:
+                                cl.kickoutFromGroup(op.param1,[op.param2])
+                            except:
+                                try:
+                                    ki.kickoutFromGroup(op.param1,[op.param2])
+                                except:
+                                    try:
+                                        kk.kickoutFromGroup(op.param1,[op.param2])
+                                    except:
+                                        try:
+                                            kc.kickoutFromGroup(op.param1,[op.param2])
+                                        except:
+                                            try:
+                                                kd.kickoutFromGroup(op.param1,[op.param2])
+                                            except:
+                                                try:
+                                                    ke.kickoutFromGroup(op.param1,[op.param2])
+                                                except:
+                                                    try:
+                                                        kf.kickoutFromGroup(op.param1,[op.param2])
+                                                    except:
+                                                        try:
+                                                            kg.kickoutFromGroup(op.param1,[op.param2])
+                                                        except:
+                                                            try:
+                                                                kh.kickoutFromGroup(op.param1,[op.param2])
+                                                            except:
+                                                                try:
+                                                                    kj.kickoutFromGroup(op.param1,[op.param2])
+                                                                except:
+                                                                    try:
+                                                                        kl.kickoutFromGroup(op.param1,[op.param2])
+                                                                    except:
+                                                                        try:
+                                                                            kn.kickoutFromGroup(op.param1,[op.param2])
+                                                                        except:
+                                                                            pass
                         G.preventJoinByTicket = False
-                        cl.updateGroup(G)
-                        Ticket = cl.reissueGroupTicket(op.param1)
-                        ad.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        try:
+                            random.choice(KAC).updateGroup(G)
+                        except:
+                            try:
+                                cl.updateGroup(G)
+                            except:
+                                try:
+                                    ki.updateGroup(G)
+                                except:
+                                    try:
+                                        kk.updateGroup(G)
+                                    except:
+                                        try:
+                                            kc.updateGroup(G)
+                                        except:
+                                            try:
+                                                kd.updateGroup(G)
+                                            except:
+                                                try:
+                                                    ke.updateGroup(G)
+                                                except:
+                                                    try:
+                                                        kf.updateGroup(G)
+                                                    except:
+                                                        try:
+                                                            kg.updateGroup(G)
+                                                        except:
+                                                            try:
+                                                                kh.updateGroup(G)
+                                                            except:
+                                                                try:
+                                                                    kj.updateGroup(G)
+                                                                except:
+                                                                    try:
+                                                                        kl.updateGroup(G)
+                                                                    except:
+                                                                        try:
+                                                                            kn.updateGroup(G)
+                                                                        except:
+                                                                            pass
+                        try:
+                            Ticket = random.choice(KAC).reissueGroupTicket(op.param1)
+                        except:
+                            try:
+                                Ticket = cl.reissueGroupTicket(op.param1)
+                            except:
+                                try:
+                                    Ticket = ki.reissueGroupTicket(op.param1)
+                                except:
+                                    try:
+                                        Ticket = kk.reissueGroupTicket(op.param1)
+                                    except:
+                                        try:
+                                            Ticket = kc.reissueGroupTicket(op.param1)
+                                        except:
+                                            try:
+                                                Ticket = kd.reissueGroupTicket(op.param1)
+                                            except:
+                                                try:
+                                                    Ticket = ke.reissueGroupTicket(op.param1)
+                                                except:
+                                                    try:
+                                                        Ticket = kf.reissueGroupTicket(op.param1)
+                                                    except:
+                                                        try:
+                                                            Ticket = kg.reissueGroupTicket(op.param1)
+                                                        except:
+                                                            try:
+                                                                Ticket = kh.reissueGroupTicket(op.param1)
+                                                            except:
+                                                                try:
+                                                                    Ticket = kk.reissueGroupTicket(op.param1)
+                                                                except:
+                                                                    try:
+                                                                        Ticket = kl.reissueGroupTicket(op.param1)
+                                                                    except:
+                                                                        try:
+                                                                            Ticket = kn.reissueGroupTicket(op.param1)
+                                                                        except:
+                                                                            pass
+                        cl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         ki.acceptGroupInvitationByTicket(op.param1,Ticket)
                         kk.acceptGroupInvitationByTicket(op.param1,Ticket)
                         kc.acceptGroupInvitationByTicket(op.param1,Ticket)
@@ -2610,10 +5091,51 @@ def bot(op):
                         kl.acceptGroupInvitationByTicket(op.param1,Ticket)
                         kn.acceptGroupInvitationByTicket(op.param1,Ticket)
                         G.preventJoinByTicket = True
-                        kk.updateGroup(G)
+                        try:
+                            random.choice(KAC).updateGroup(G)
+                        except:
+                            try:
+                                cl.updateGroup(G)
+                            except:
+                                try:
+                                    ki.updateGroup(G)
+                                except:
+                                    try:
+                                        kk.updateGroup(G)
+                                    except:
+                                        try:
+                                            kc.updateGroup(G)
+                                        except:
+                                            try:
+                                                kd.updateGroup(G)
+                                            except:
+                                                try:
+                                                    ke.updateGroup(G)
+                                                except:
+                                                    try:
+                                                        kf.updateGroup(G)
+                                                    except:
+                                                        try:
+                                                            kg.updateGroup(G)
+                                                        except:
+                                                            try:
+                                                                kh.updateGroup(G)
+                                                            except:
+                                                                try:
+                                                                    kj.updateGroup(G)
+                                                                except:
+                                                                    try:
+                                                                        kl.updateGroup(G)
+                                                                    except:
+                                                                        try:
+                                                                            kn.updateGroup(G)
+                                                                        except:
+                                                                            pass
+                        wait["blacklist"][op.param2] = True
                     
             except:
                 pass
+
 
 #----------------------------------------------------------------------------------
         if op.type == 55:
