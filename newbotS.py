@@ -1872,7 +1872,7 @@ def bot(op):
                     cl.sendText(msg.to,"鎖群名已開啟")
                     wait['pname'][msg.to] = True
                     wait['pro_name'][msg.to] = cl.getGroup(msg.to).name
-            elif "群名/開" in msg.text:
+            elif "群名/關" in msg.text:
                 if msg.to in wait['pname']:
                     cl.sendText(msg.to,"已關閉")
                     del wait['pname'][msg.to]
@@ -1885,7 +1885,7 @@ def bot(op):
 					cl.sendText(msg.to,"鎖邀請已開")
 				except:
 					pass
-            elif "邀請/開" == msg.text:
+            elif "邀請/關" == msg.text:
 				try:
 					del autocancel[msg.to]
 					cl.sendText(msg.to,"鎖邀請已關")
@@ -1919,7 +1919,7 @@ def bot(op):
             elif msg.text in ["網址/開"]:
                 protecturl.append(msg.to)
                 cl.sendText(msg.to,"鎖網址已開")
-            elif msg.text in ["網址/開"]:
+            elif msg.text in ["網址/關"]:
                 if msg.from_ in Administrator:
                     protecturl.remove(msg.to)
                     cl.sendText(msg.to,"鎖網址已關")
