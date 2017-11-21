@@ -1551,17 +1551,12 @@ def bot(op):
                 key = eval(msg.contentMetadata["MENTION"])
                 c = key["MENTIONEES"][0]["M"]
                 cl.sendText(msg.to,c)
-            elif "Me @" in msg.text:
+            elif "Me " in msg.text:
                 msg.contentType = 13
-                _name = msg.text.replace("Me @","")
-                _nametarget = _name.rstrip(' ')
-                gs = cl.getGroup(msg.to)
-                for g in gs.members:
-                    if _nametarget == g.displayName:
-                        msg.contentMetadata = {'mid': g.mid}
-                        cl.sendMessage(msg)
-                    else:
-                        pass
+                key = eval(msg.contentMetadata["MENTION"])
+                c = key["MENTIONEES"][0]["M"]
+                msg.contentMetadata = {'mid': c}
+                cl.sendMessage(msg)
             elif "me " in msg.text:
                 msg.contentType = 13
                 key = eval(msg.contentMetadata["MENTION"])
@@ -1571,8 +1566,9 @@ def bot(op):
             elif msg.text in ["Slm:"]:
                 mmid = msg.text.replace("Slm:","")
                 msg.contentType = 13
-                msg.contentMetadata = {"mid":mmid}
+                msg.contentMetadata = {'mid':mmid}
                 cl.sendMessage(msg)
+                cl.sendText(msg.to,msg)
 #-----------------------------------------------
             elif msg.text in ["tagall","tag all","แทก","แท็ก"]:
                   group = cl.getGroup(msg.to)
