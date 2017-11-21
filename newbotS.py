@@ -1553,11 +1553,9 @@ def bot(op):
                     else:
                         pass
             elif "mid @" in msg.text:
-                aa = msg.text.replace("mid @","")
-                for b in aa.mid:
-                    gs = cl.getContact(b)
-                    for a in gs:
-                        cl.sendText(msg.to,a)
+                key = eval(msg.contentMetadata["MENTION"])
+                c = key["MENTIONEES"][0]["M"]
+                cl.sendText(msg.to,c)
             elif "Me @" in msg.text:
                 msg.contentType = 13
                 _name = msg.text.replace("Me @","")
