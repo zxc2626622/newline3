@@ -223,6 +223,19 @@ def bot(op):
 #                                        c = Message(to=op.param1, from_=None, text=None, contentType=13)
 #                                        c.contentMetadata={'mid':op.param2}
 #                                        cl.sendMessage(c)
+        if op.type == 17:
+            if mid in op.param3:
+                    group = cl.getGroup(msg.to)
+                    gMembMids = [contact.mid for contact in group.members]
+                    matched_list = []
+                    for tag in wait["blacklist"]:
+                        matched_list+=filter(lambda str: str == tag, gMembMids)
+                    if matched_list == []:
+                        cl.sendText(msg.to,"這裡沒有黑單用戶")
+                        return
+                    for jj in matched_list:
+                        cl.kickoutFromGroup(msg.to,[jj])
+                    cl.sendText(msg.to,"黑單已飛")
         if op.type == 11:
             if op.param3 == '1':
                 if op.param1 in wait['pname']:
