@@ -1862,7 +1862,7 @@ def bot(op):
 				try:
 					del wait['pro'][msg.to]
 					protection.remove(msg.to)
-					cl.sendText(msg.to,"鎖邀請已關閉")
+					cl.sendText(msg.to,"保護已關閉")
 				except:
 					pass
             elif "群名/開" in msg.text:
@@ -2084,7 +2084,7 @@ def bot(op):
                         G = ki.getGroup(op.param1)
 
                         ki.kickoutFromGroup(op.param1,[op.param2])
-
+                        
                         G.preventJoinByTicket = False
                         ki.updateGroup(G)
                         Ticket = ki.reissueGroupTicket(op.param1)
@@ -2654,40 +2654,40 @@ def nameUpdate():
         try:
             if wait["clock"] == True:
                 profile = ad.getProfile()
-                profile.displayName = "Cl.Bot"
+                profile.displayName = "Cl"
                 ad.updateProfile(profile)
                 profile = ki.getProfile()
-                profile.displayName = "Ki.Bot"
+                profile.displayName = "Ki"
                 ki.updateProfile(profile)
                 profile = kk.getProfile()
-                profile.displayName = "Kk.Bot"
+                profile.displayName = "Kk"
                 kk.updateProfile(profile)
                 profile = kc.getProfile()
-                profile.displayName = "Kc.Bot"
+                profile.displayName = "Kc"
                 kc.updateProfile(profile)
                 profile = kd.getProfile()
-                profile.displayName = "Kd.Bot"
+                profile.displayName = "Kd"
                 kd.updateProfile(profile)
                 profile = ke.getProfile()
-                profile.displayName = "Ke.Bot"
+                profile.displayName = "Ke"
                 ke.updateProfile(profile)
                 profile = kf.getProfile()
-                profile.displayName = "Kf.Bot"
+                profile.displayName = "Kf"
                 kf.updateProfile(profile)
                 profile = kg.getProfile()
-                profile.displayName = "Kg.Bot"
+                profile.displayName = "Kg"
                 kg.updateProfile(profile)
                 profile = kh.getProfile()
-                profile.displayName = "Kh.Bot"
+                profile.displayName = "Kh"
                 kh.updateProfile(profile)
                 profile = kj.getProfile()
-                profile.displayName = "Kj.Bot"
+                profile.displayName = "Kj"
                 kj.updateProfile(profile)
                 profile = kl.getProfile()
-                profile.displayName = "Kl.Bot"
+                profile.displayName = "Kl"
                 kl.updateProfile(profile)
                 profile = kn.getProfile()
-                profile.displayName = "Kn.Bot"
+                profile.displayName = "Kn"
                 kn.updateProfile(profile)
                 
                 #profile = cl.getProfile()
