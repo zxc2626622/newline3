@@ -904,7 +904,7 @@ def bot(op):
             elif msg.text in ["TL:"]:
                 tl_text = msg.text.replace("TL:","")
                 cl.sendText(msg.to,"line://home/post?userMid="+mid+"&postId="+cl.new_post(tl_text)["result"]["post"]["postInfo"]["postId"])
-            elif msg.text in ["é€£çµ¡å…ˆ:ã‚ªãƒ³","K on","Contact on","é¡¯ç¤ºï¼šé–‹"]:
+            elif msg.text in ["K on","Contact on"]:
               if msg.from_ in admin:
                 if wait["contact"] == True:
                     if wait["lang"] == "JP":
@@ -917,7 +917,7 @@ def bot(op):
                         cl.sendText(msg.to,"已開啟")
                     else:
                         cl.sendText(msg.to,"完成")
-            elif msg.text in ["é€£çµ¡å…ˆ:ã‚ªãƒ•","K off","Contact off","é¡¯ç¤ºï¼šé—œ"]:
+            elif msg.text in ["K off","Contact off"]:
               if msg.from_ in admin:
                 if wait["contact"] == False:
                     if wait["lang"] == "JP":
@@ -930,7 +930,7 @@ def bot(op):
                         cl.sendText(msg.to,"已關閉")
                     else:
                         cl.sendText(msg.to,"完成")
-            elif msg.text in ["è‡ªå‹•å‚åŠ :ã‚ªãƒ³","Join on","Auto join:on","è‡ªå‹•åƒåŠ ï¼šé–‹"]:
+            elif msg.text in ["Join on","Auto join:on"]:
               if msg.from_ in admin:
                 if wait["autoJoin"] == True:
                     if wait["lang"] == "JP":
@@ -943,7 +943,7 @@ def bot(op):
                         cl.sendText(msg.to,"已開啟")
                     else:
                         cl.sendText(msg.to,"完成")
-            elif msg.text in ["è‡ªå‹•å‚åŠ :ã‚ªãƒ•","Join off","Auto join:off","è‡ªå‹•åƒåŠ ï¼šé—œ"]:
+            elif msg.text in ["Join off","Auto join:off"]:
                 if wait["autoJoin"] == False:
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"已關閉")
@@ -955,7 +955,7 @@ def bot(op):
                         cl.sendText(msg.to,"已關閉")
                     else:
                         cl.sendText(msg.to,"完成")
-            elif msg.text in ["å¼·åˆ¶è‡ªå‹•é€€å‡º:ã‚ªãƒ³","Leave on","Auto leave:on","å¼·åˆ¶è‡ªå‹•é€€å‡ºï¼šé–‹"]:
+            elif msg.text in ["Leave on","Auto leave:on"]:
                 if wait["leaveRoom"] == True:
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"已開啟")
@@ -967,7 +967,7 @@ def bot(op):
                         cl.sendText(msg.to,"完成")
                     else:
                         cl.sendText(msg.to,"è¦äº†å¼€ã€‚")
-            elif msg.text in ["å¼·åˆ¶è‡ªå‹•é€€å‡º:ã‚ªãƒ•","Leave off","Auto leave:off","å¼·åˆ¶è‡ªå‹•é€€å‡ºï¼šé—œ"]:
+            elif msg.text in ["Leave off","Auto leave:off"]:
                 if wait["leaveRoom"] == False:
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"已關閉")
@@ -1089,7 +1089,7 @@ def bot(op):
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"完成")
                     else:
-                        cl.sendText(msg.to,"è¦äº†å¼€ã€‚")
+                        cl.sendText(msg.to,"完成")
             elif msg.text in ["Add off","Auto add:off"]:
                 if wait["autoAdd"] == False:
                     if wait["lang"] == "JP":
@@ -1101,7 +1101,7 @@ def bot(op):
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"完成")
                     else:
-                        cl.sendText(msg.to,"è¦äº†å…³æ–­ã€‚")
+                        cl.sendText(msg.to,"完成")
             elif msg.text in ["Gurl"]:
               if msg.from_ in admin:
                 if msg.toType == 2:
@@ -1117,57 +1117,7 @@ def bot(op):
                         cl.sendText(msg.to,"Can't be used outside the group")
                     else:
                         cl.sendText(msg.to,"Not for use less than group")
-            elif msg.text in ["Comment bl "]:
-                wait["wblack"] = True
-                cl.sendText(msg.to,"add to comment bl")
-            elif msg.text in ["Comment wl "]:
-                wait["dblack"] = True
-                cl.sendText(msg.to,"wl to comment bl")
-            elif msg.text in ["Comment bl confirm"]:
-                if wait["commentBlack"] == {}:
-                    cl.sendText(msg.to,"confirmed")
-                else:
-                    cl.sendText(msg.to,"Blacklist")
-                    mc = ""
-                    for mi_d in wait["commentBlack"]:
-                        mc += "" +cl.getContact(mi_d).displayName + "\n"
-                    cl.sendText(msg.to,mc)
-            elif msg.text in ["Jam on"]:
-                if wait["clock"] == True:
-                    cl.sendText(msg.to,"已開啟")
-                else:
-                    wait["clock"] = True
-                    now2 = datetime.now()
-                    nowT = datetime.strftime(now2,"(%H:%M)")
-                    profile = cl.getProfile()
-                    profile.displayName = wait["cName"] + nowT
-                    cl.updateProfile(profile)
-                    cl.sendText(msg.to,"完成")
-            elif msg.text in ["Jam off"]:
-                if wait["clock"] == False:
-                    cl.sendText(msg.to,"已關閉")
-                else:
-                    wait["clock"] = False
-                    cl.sendText(msg.to,"完成")
-            elif msg.text in ["Change clock "]:
-                n = msg.text.replace("Change clock ","")
-                if len(n.decode("utf-8")) > 13:
-                    cl.sendText(msg.to,"changed")
-                else:
-                    wait["cName"] = n
-                    cl.sendText(msg.to,"changed to\n\n" + n)
-            elif msg.text in ["Up"]:
-                if wait["clock"] == True:
-                    now2 = datetime.now()
-                    nowT = datetime.strftime(now2,"(%H:%M)")
-                    profile = cl.getProfile()
-                    profile.displayName = wait["cName"] + nowT
-                    cl.updateProfile(profile)
-                    cl.sendText(msg.to,"Jam Update")
-                else:
-                    cl.sendText(msg.to,"Please turn on the name clock")
-            
-#-----------------------------------------------
+#---------------------------------------------
             elif msg.text in ["Sljoin"]:
                 if msg.from_ in admin:
                     G = cl.getGroup(msg.to)
@@ -1339,7 +1289,6 @@ def bot(op):
                     G.preventJoinByTicket = True
                     cl.updateGroup(G)
 #-----------------------------------------------
-#.acceptGroupInvitationByTicket(msg.to,Ticket)
 #-----------------------------------------------
             elif msg.text in ["Slbye"]:
               if msg.from_ in admin:
@@ -1577,8 +1526,8 @@ def bot(op):
                 msg.contentMetadata = {'mid': c}
                 cl.sendMessage(msg)
             elif msg.text in ["Slm:"]:
-                mmid = msg.text.replace("Slm:","")
                 msg.contentType = 13
+                mmid = msg.text.replace("Slm:","")
                 msg.contentMetadata = {'mid':mmid}
                 cl.sendMessage(msg)
                 cl.sendText(msg.to,msg)
@@ -1657,17 +1606,53 @@ def bot(op):
             elif msg.text in ["Respon","respon","absen","Absen"]:
                 try:
                     cl.sendText(msg.to,"保鏢答數")
+                except:
+                    pass
+                try:
                     ad.sendText(msg.to,"1")
+                except:
+                    pass
+                try:
                     ki.sendText(msg.to,"2")
+                except:
+                    pass
+                try:
                     kk.sendText(msg.to,"3")
+                except:
+                    pass
+                try:
                     kc.sendText(msg.to,"4")
+                except:
+                    pass
+                try:
                     kd.sendText(msg.to,"5")
+                except:
+                    pass
+                try:
                     ke.sendText(msg.to,"6")
+                except:
+                    pass
+                try:
                     kf.sendText(msg.to,"7")
+                except:
+                    pass
+                try:
                     kg.sendText(msg.to,"8")
+                except:
+                    pass
+                try:
                     kh.sendText(msg.to,"9")
+                except:
+                    pass
+                try:
                     kj.sendText(msg.to,"10")
+                except:
+                    pass
+                try:
                     kl.sendText(msg.to,"11")
+                except:
+                    pass
+                try:
                     kn.sendText(msg.to,"12")
                 except:
                     pass
@@ -5164,7 +5149,6 @@ def bot(op):
                     cl.sendText
             except:
                   pass
-                  
 #-----------------------------------------------------
 #-----------------------------------------------------
 #-----------
