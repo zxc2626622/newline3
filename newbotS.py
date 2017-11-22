@@ -1033,7 +1033,7 @@ def bot(op):
                 md = ""
                 O = "•°•°•°•°•°•°•°•°•°•°•°•°•°•°•°•°•°•°•"
                 if wait["contact"] == True: md+= O + "\n☑調查友資:開啟\n" + O
-                else: md+="❎調查友資:關閉\n" + O
+                else: md+= O + "\n❎調查友資:關閉\n" + O
                 if wait["autoJoin"] == True: md+=" \n☑自動進群:開啟\n" + O
                 else: md +=" \n❎自動進群:關閉\n" + O
                 if wait["leaveRoom"] == True: md+=" \n☑自動離開副本:開啟\n" + O
