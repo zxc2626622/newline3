@@ -88,7 +88,6 @@ autocancel = {}
 autoinvite = []
 autoleaveroom = []
 OOO = []
-Administrator = admin
 wait = {
     'protect':False,
     'protectinv':False,
@@ -1890,7 +1889,7 @@ def bot(op):
 				except:
 					pass
             elif msg.text in ["全部/開"]:
-                if msg.from_ in Administrator:
+                if msg.from_ in admin:
                     try:
                         protecturl.append(msg.to)
                         wait['pro'][msg.to] = cl.getGroup(msg.to).name
@@ -1903,7 +1902,7 @@ def bot(op):
                     except:
 					    pass
             elif msg.text in ["全部/關"]:
-                if msg.from_ in Administrator:
+                if msg.from_ in admin:
                     try:
                         protecturl.remove(msg.to)
                         del wait['pro'][msg.to]
@@ -1918,7 +1917,7 @@ def bot(op):
                 protecturl.append(msg.to)
                 cl.sendText(msg.to,"鎖網址已開")
             elif msg.text in ["網址/關"]:
-                if msg.from_ in Administrator:
+                if msg.from_ in admin:
                     protecturl.remove(msg.to)
                     cl.sendText(msg.to,"鎖網址已關")
                 else:
