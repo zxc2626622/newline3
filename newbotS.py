@@ -1003,6 +1003,32 @@ def bot(op):
                         cl.sendText(msg.to,"完成")
                     else:
                         cl.sendText(msg.to,"è¦äº†å…³æ–­ã€‚")
+            elif msg.text in ["機制/開"]:
+              if msg.from_ in admin:
+                if wait["PP"] == True:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"已開啟")
+                    else:
+                        cl.sendText(msg.to,"完成")
+                else:
+                    wait["PP"] = True
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"已開啟")
+                    else:
+                        cl.sendText(msg.to,"完成")
+            elif msg.text in ["機制/關"]:
+              if msg.from_ in admin:
+                if wait["PP"] == False:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"已關閉")
+                    else:
+                        cl.sendText(msg.to,"完成 ")
+                else:
+                    wait["PP"] = False
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"已關閉")
+                    else:
+                        cl.sendText(msg.to,"完成")
             elif msg.text in ["Set"]:
                 md = ""
                 O = "================"
@@ -2055,32 +2081,6 @@ def bot(op):
                     print "all join"
             else:
                 pass
-            elif msg.text in ["機制/開"]:
-              if msg.from_ in admin:
-                if wait["PP"] == True:
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"已開啟")
-                    else:
-                        cl.sendText(msg.to,"完成")
-                else:
-                    wait["PP"] = True
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"已開啟")
-                    else:
-                        cl.sendText(msg.to,"完成")
-            elif msg.text in ["機制/關"]:
-              if msg.from_ in admin:
-                if wait["PP"] == False:
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"已關閉")
-                    else:
-                        cl.sendText(msg.to,"完成 ")
-                else:
-                    wait["PP"] = False
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"已關閉")
-                    else:
-                        cl.sendText(msg.to,"完成")
         if op.type == 19:
           if wait["PP"] == True:
             try:
