@@ -1031,7 +1031,7 @@ def bot(op):
                         cl.sendText(msg.to,"完成")
             elif msg.text in ["Set"]:
                 md = ""
-                O = "================"
+                O = "•°•°•°•°•°•°•°•°•°•°•°•°•°•°•°•°•°•°•"
                 if wait["contact"] == True: md+="☑調查友資:開啟\n" + O
                 else: md+="❎調查友資:關閉\n" + O
                 if wait["autoJoin"] == True: md+=" \n☑自動進群:開啟\n" + O
@@ -1040,6 +1040,8 @@ def bot(op):
                 else: md+=" \n❎自動離開副本:關閉\n" + O
                 if wait["autoAdd"] == True: md+=" \n☑自動加好友:開啟\n" + O
                 else:md+=" \n❎自動加好友:關閉\n" + O
+                if msg.to in wait["PP"]: md+=" \n☑機制:開啟\n" + O
+                else: md+=" \n❎機制:關閉\n" + O
                 if msg.to in wait["pro"]: md+=" \n☑防踢:開啟\n" + O
                 else: md+=" \n❎防踢:關閉\n" + O
                 if msg.to in wait["pro_name"]: md+=" \n☑鎖群名:開啟\n" + O
