@@ -1032,7 +1032,7 @@ def bot(op):
             elif msg.text in ["Set"]:
                 md = ""
                 O = "•°•°•°•°•°•°•°•°•°•°•°•°•°•°•°•°•°•°•"
-                if wait["contact"] == True: md+="☑調查友資:開啟\n" + O
+                if wait["contact"] == True: md+= O + "\n☑調查友資:開啟\n" + O
                 else: md+="❎調查友資:關閉\n" + O
                 if wait["autoJoin"] == True: md+=" \n☑自動進群:開啟\n" + O
                 else: md +=" \n❎自動進群:關閉\n" + O
