@@ -356,9 +356,9 @@ def bot(op):
                                                                kn.kickoutFromGroup(op.param1,[op.param2])
                                                            except:
                                                                pass
-                                                               wait["blacklist"][op.param2] = True
-                                                               f=codecs.open('st2__b.json','w','utf-8')
-                                                               json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
+                   wait["blacklist"][op.param2] = True
+                   f=codecs.open('st2__b.json','w','utf-8')
+                   json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
         if op.type == 0:
             return 
         if op.type == 22:
@@ -1496,7 +1496,7 @@ def bot(op):
                                     wait["blacklist"][target] = True
                                     f=codecs.open('st2__b.json','w','utf-8')
                                     json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
-                                    k3.sendText(msg.to,"Succes Cv")
+                                    cl.sendText(msg.to,"Succes Cv")
                                 except:
                                     ki.sendText(msg.to,"error")
             elif ("Ban " in msg.text):
@@ -1741,7 +1741,7 @@ def bot(op):
 #--------------------
             elif msg.text == "#set":
               if msg.from_ in admin:
-                cl.sendText(msg.to, "輸入#tes(｀・ω・´)")
+                cl.sendText(msg.to, "")
                 try:
                   del wait2['readPoint'][msg.to]
                   del wait2['readMember'][msg.to]
