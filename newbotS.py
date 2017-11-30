@@ -374,7 +374,7 @@ def bot(op):
             if ("Tchk" in msg.text):
                 myset = set(ticket)
                 for item in myset:
-                    cl.sendText(msg.to,%d "有" %d "張" % (item,mylist.count(item))
+                    cl.sendText(msg.to,"%d 有 %d 張 " % (item,mylist.count(item))
         if op.type == 25:
             msg = op.message
             if ("Tgive " in msg.text):
