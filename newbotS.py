@@ -88,6 +88,7 @@ autocancel = {}
 autoinvite = []
 autoleaveroom = []
 OOO = []
+ticket = []
 wait = {
     'protect':False,
     'protectinv':False,
@@ -174,8 +175,8 @@ def bot(op):
                                 except:
                                     try:
                                         G = kd.getGroup(op.param1)
-				    except:
-					try:
+                                    except:
+                                        try:
                                             G = ke.getGroup(op.param1)
                                         except:
                                             pass
@@ -356,9 +357,9 @@ def bot(op):
                                                                kn.kickoutFromGroup(op.param1,[op.param2])
                                                            except:
                                                                pass
-                   wait["blacklist"][op.param2] = True
-                   f=codecs.open('st2__b.json','w','utf-8')
-                   json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
+                                                               wait["blacklist"][op.param2] = True
+                                                               f=codecs.open('st2__b.json','w','utf-8')
+                                                               json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
         if op.type == 0:
             return 
         if op.type == 22:
@@ -368,6 +369,22 @@ def bot(op):
         if op.type == 24:
             if wait["leaveRoom"] == True:
                 cl.leaveRoom(op.param1)
+        if op.type == 25:
+            msg = op.message
+            if ("Tgive " in msg.text):
+              if msg.from_ in admin:
+                print "EXECUTED -- admin TARGET"
+                key = eval(msg.contentMetadata["MENTION"])
+                key["MENTIONEES"][0]["M"]
+                targets = []
+                for x in key["MENTIONEES"]:
+                    targets.append(x["M"])
+                for target in targets:
+                   try:
+                      ticket.append(target)
+                      cl.sendText(msg.to,"已給")
+                   except:
+                      pass
         if op.type == 25:
             msg = op.message
             if msg.toType == 0:
@@ -1496,7 +1513,7 @@ def bot(op):
                                     wait["blacklist"][target] = True
                                     f=codecs.open('st2__b.json','w','utf-8')
                                     json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
-                                    cl.sendText(msg.to,"Succes Cv")
+                                    k3.sendText(msg.to,"Succes Cv")
                                 except:
                                     ki.sendText(msg.to,"error")
             elif ("Ban " in msg.text):
@@ -1741,7 +1758,7 @@ def bot(op):
 #--------------------
             elif msg.text == "#set":
               if msg.from_ in admin:
-                cl.sendText(msg.to, "")
+                cl.sendText(msg.to, "輸入#tes(｀・ω・´)")
                 try:
                   del wait2['readPoint'][msg.to]
                   del wait2['readMember'][msg.to]
@@ -1962,10 +1979,15 @@ def bot(op):
                     cl.sendText(op.param1,str(wait["message"]))
         if op.type ==13:
            if admid in op.param3:
-               if wait["P"] == True:
+               if op.param2 in ticket:
                    ad.acceptGroupInvitation(op.param1)
-                   ad.sendText(op.param1,Inmes)
-                   ad.leaveGroup(op.param1)
+                   ticket.remove(op.param2)
+                 if wait["P"] == True:
+                     ad.acceptGroupInvitation(op.param1)
+                     ad.sendText(op.param1,Inmes)
+                     ad.leaveGroup(op.param1)
+                 else:
+                     pass
                else:
                    pass
         if op.type ==13:
