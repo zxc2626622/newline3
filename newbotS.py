@@ -375,9 +375,9 @@ def bot(op):
                 myset = set(ticket)
                 for item in myset:
                     try:
-                        cl.sendText(msg.to,"%d 有 %d 張 " % (item,mylist.count(item)))
+                        cl.sendText(msg.to,"%d 有 %d 張 " % (item,ticket.count(item)))
                     except:
-                        cl.sendTexy(msg.to,"什麼都沒有")
+                        cl.sendText(msg.to,"什麼都沒有")
         if op.type == 25:
             msg = op.message
             if ("Tgive " in msg.text):
@@ -413,9 +413,9 @@ def bot(op):
                     myset = set(ticket)
                     for item in myset:
                         try:
-                            cl.sendText(msg.to,"%d 有 %d 張 " % (item,mylist.count(item)))
+                            cl.sendText(msg.to,"%d 有 %d 張 " % (item,ticket.count(item)))
                         except:
-                            cl.sendTexy(msg.to,"什麼都沒有")
+                            cl.sendText(msg.to,"什麼都沒有")
         if op.type == 25:
             msg = op.message
             if msg.toType == 0:
