@@ -94,7 +94,7 @@ wait = {
     'protectinv':False,
     'protectqr':False,
     'contact':False,
-    'autoJoin':True,
+    'autoJoin':False,
     'leaveRoom':False,
     'timeline':True,
     'autoAdd':True,
@@ -369,15 +369,6 @@ def bot(op):
         if op.type == 24:
             if wait["leaveRoom"] == True:
                 cl.leaveRoom(op.param1)
-        if op.type == 26:
-            msg = op.message
-            if ("Tchk" in msg.text):
-                myset = set(ticket)
-                for item in myset:
-                    try:
-                        cl.sendText(msg.to,"%d 有 %d 張 " % (item,ticket.count(item)))
-                    except:
-                        cl.sendText(msg.to,"什麼都沒有")
         if op.type == 25:
             msg = op.message
             if ("Tgive " in msg.text):
@@ -396,7 +387,7 @@ def bot(op):
                       pass
             elif ("Tdel " in msg.text):
               if msg.from_ in admin:
-                print "EXECUTED -- admin TARGET"
+                print "EXECUTED -- 刪除"
                 key = eval(msg.contentMetadata["MENTION"])
                 key["MENTIONEES"][0]["M"]
                 targets = []
@@ -409,13 +400,13 @@ def bot(op):
                    except:
                       pass
             elif ("Tchk" in msg.text):
-                if msg.from_ in admin:
-                    myset = set(ticket)
-                    for item in myset:
-                        try:
-                            cl.sendText(msg.to,"%d 有 %d 張 " % (item,ticket.count(item)))
-                        except:
-                            cl.sendText(msg.to,"什麼都沒有")
+              if msg.from_ in admin:
+                  count_times = []
+                  for i in ticket :
+                      count_times.append(ticket.count(i))
+                  m = max(count_times)
+                  n = ticket.index(m)
+                  cl.sendText(msg.to,l[n])
         if op.type == 25:
             msg = op.message
             if msg.toType == 0:
