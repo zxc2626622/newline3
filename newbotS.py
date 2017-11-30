@@ -403,11 +403,10 @@ def bot(op):
               if msg.from_ in admin:
                 print "EXECUTED -- admin TARGET"
                 key = eval(msg.contentMetadata["MENTION"])
-                k =key["MENTIONEES"][0]["M"]
+                k = key["MENTIONEES"][0]["M"]
+                find = k
                 if k in ticket:
-                    find = k
-                    for i in find:
-                        cl.sendText(msg.to,"數量:" + str(len(ticket.index(i))))
+                    cl.sendText(msg.to,"數量:" + str(len(ticket.index(find))))
                 else:
                     cl.sendText(msg.to,"沒有")
         if op.type == 25:
