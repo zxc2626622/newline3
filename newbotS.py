@@ -375,9 +375,9 @@ def bot(op):
                 myset = set(ticket)
                 for item in myset:
                     try:
-                        cl.sendText(msg.to,"%d 有 %d 張 " % (item,mylist.count(item))
+                        cl.sendText(msg.to,"%d 有 %d 張 " % (item,mylist.count(item)))
                     except:
-                        pass
+                        cl.sendTexy(msg.to,"什麼都沒有")
         if op.type == 25:
             msg = op.message
             if ("Tgive " in msg.text):
@@ -409,12 +409,12 @@ def bot(op):
                    except:
                       pass
             elif ("Tchk" in msg.text):
-                  k = msg.from_
-                  find = k
-                  if k in ticket:
-                      ki.sendText(msg.to,"數量:" + ticket.index(find))
-                  else:
-                      ki.sendText(msg.to,"[沒有]")
+                myset = set(ticket)
+                for item in myset:
+                    try:
+                        cl.sendText(msg.to,"%d 有 %d 張 " % (item,mylist.count(item)))
+                    except:
+                        cl.sendTexy(msg.to,"什麼都沒有")
         if op.type == 25:
             msg = op.message
             if msg.toType == 0:
