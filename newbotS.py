@@ -372,12 +372,9 @@ def bot(op):
         if op.type == 26:
             msg = op.message
             if ("Tchk" in msg.text):
-                k = msg.from_
-                find = k
-                if k in ticket:
-                    ki.sendText(msg.to,"數量:" + ticket.index(find))
-                else:
-                    ki.sendText(msg.to,"[沒有]")
+                myset = set(ticket)
+                for item in myset:
+                    cl.sendText(msg.to,%d "有" %d "張" % (item,mylist.count(item))
         if op.type == 25:
             msg = op.message
             if ("Tgive " in msg.text):
