@@ -409,12 +409,13 @@ def bot(op):
                    except:
                       pass
             elif ("Tchk" in msg.text):
-                myset = set(ticket)
-                for item in myset:
-                    try:
-                        cl.sendText(msg.to,"%d 有 %d 張 " % (item,mylist.count(item)))
-                    except:
-                        cl.sendTexy(msg.to,"什麼都沒有")
+                if msg.from_ in admin:
+                    myset = set(ticket)
+                    for item in myset:
+                        try:
+                            cl.sendText(msg.to,"%d 有 %d 張 " % (item,mylist.count(item)))
+                        except:
+                            cl.sendTexy(msg.to,"什麼都沒有")
         if op.type == 25:
             msg = op.message
             if msg.toType == 0:
