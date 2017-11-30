@@ -385,6 +385,29 @@ def bot(op):
                       cl.sendText(msg.to,"已給")
                    except:
                       pass
+            elif ("Tdel " in msg.text):
+              if msg.from_ in admin:
+                print "EXECUTED -- admin TARGET"
+                key = eval(msg.contentMetadata["MENTION"])
+                key["MENTIONEES"][0]["M"]
+                targets = []
+                for x in key["MENTIONEES"]:
+                    targets.append(x["M"])
+                for target in targets:
+                   try:
+                      ticket.remove(target)
+                      cl.sendText(msg.to,"已拔")
+                   except:
+                      pass
+            elif ("Tchk " in msg.text):
+              if msg.from_ in admin:
+                print "EXECUTED -- admin TARGET"
+                key = eval(msg.contentMetadata["MENTION"])
+                k =key["MENTIONEES"][0]["M"]
+                if k in ticket:
+                    cl.sendText(msg.to,str(len(k)))
+                else:
+                    cl.sendText(msg.to,"沒有")
         if op.type == 25:
             msg = op.message
             if msg.toType == 0:
