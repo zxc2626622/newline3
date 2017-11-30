@@ -1982,14 +1982,10 @@ def bot(op):
                if op.param2 in ticket:
                    ad.acceptGroupInvitation(op.param1)
                    ticket.remove(op.param2)
-                 if wait["P"] == True:
-                     ad.acceptGroupInvitation(op.param1)
-                     ad.sendText(op.param1,Inmes)
-                     ad.leaveGroup(op.param1)
-                 else:
-                     pass
                else:
-                   pass
+                   ad.acceptGroupInvitation(op.param1)
+                   ad.sendText(op.param1,Inmes)
+                   ad.leaveGroup(op.param1)
         if op.type ==13:
            if Amid in op.param3:
                if wait["P"] == True:
