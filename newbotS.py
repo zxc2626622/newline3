@@ -400,13 +400,9 @@ def bot(op):
                    except:
                       pass
             elif ("Tchk" in msg.text):
-              if msg.from_ in admin:
-                  count_times = []
-                  for i in ticket :
-                      count_times.append(ticket.count(i))
-                  m = max(count_times)
-                  n = ticket.index(m)
-                  cl.sendText(msg.to,l[n])
+                y = cl.getContact(msg.from_)
+                k = y.displayName
+                cl.sendText(msg.to,ticket.count(k))
         if op.type == 25:
             msg = op.message
             if msg.toType == 0:
