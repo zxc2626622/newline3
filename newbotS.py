@@ -405,7 +405,8 @@ def bot(op):
                 key = eval(msg.contentMetadata["MENTION"])
                 k =key["MENTIONEES"][0]["M"]
                 if k in ticket:
-                    cl.sendText(msg.to,str(len(k)))
+                    find = k
+                    cl.sendText(msg.to,str(ticket.index(k)))
                 else:
                     cl.sendText(msg.to,"沒有")
         if op.type == 25:
