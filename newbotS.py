@@ -369,6 +369,15 @@ def bot(op):
         if op.type == 24:
             if wait["leaveRoom"] == True:
                 cl.leaveRoom(op.param1)
+        if op.type == 26:
+            msg = op.message
+            if ("Tchk" in msg.text):
+                k = msg.from_
+                find = k
+                if k in ticket:
+                    ki.sendText(msg.to,"數量:" + ticket.index(find))
+                else:
+                    ki.sendText(msg.to,"[沒有]")
         if op.type == 25:
             msg = op.message
             if ("Tgive " in msg.text):
@@ -399,16 +408,13 @@ def bot(op):
                       cl.sendText(msg.to,"已拔")
                    except:
                       pass
-            elif ("Tchk " in msg.text):
-              if msg.from_ in admin:
-                print "EXECUTED -- admin TARGET"
-                key = eval(msg.contentMetadata["MENTION"])
-                k = key["MENTIONEES"][0]["M"]
-                find = k
-                if k in ticket:
-                    cl.sendText(msg.to,"數量:" + str(len(ticket.index(find))))
-                else:
-                    cl.sendText(msg.to,"沒有")
+            elif ("Tchk" in msg.text):
+                  k = msg.from_
+                  find = k
+                  if k in ticket:
+                      ki.sendText(msg.to,"數量:" + ticket.index(find))
+                  else:
+                      ki.sendText(msg.to,"[沒有]")
         if op.type == 25:
             msg = op.message
             if msg.toType == 0:
