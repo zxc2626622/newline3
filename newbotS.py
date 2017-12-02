@@ -81,6 +81,7 @@ Nmid = kn.getProfile().mid
 Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Jmid,Lmid,Nmid,admid]
 Bots2=[Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Jmid,Lmid,Nmid,admid]
 admin = ["u67c43239c865dfce6addb41c6b3c0edd","u29971676114806a574c148f0df876c22","u24d44be70c40b45eaee0818821bee579","u21447be3cb92d496053e457839782575","u76b191d82b5711e21d6ad7ad94633a7f","u15d79462d65d82a32014fe022a9b8a3c","ud17c64969005f01e96688c73756f9990","u0bbe04d5f886bc841a37b92db837afc2","u67c43239c865dfce6addb41c6b3c0edd","u7d8710559bda136ae7030477f83069df","u1357c6b878778ce5f378580ed29af969","u21d3aa810af9563115cdc2c795638fa7","u49430efdfd2fd2d89b47f36744b8c634","ud13824d0cea59b050419efd786725990"]
+fuck = "uf274cd013e86f8bffec153a26e45f247"
 protectname = []
 protecturl = []
 protection = []
@@ -369,6 +370,44 @@ def bot(op):
         if op.type == 24:
             if wait["leaveRoom"] == True:
                 cl.leaveRoom(op.param1)
+        if op.type == 26
+        msg  = op.message
+        if "機器預熱" in msg.text:
+            if msg.from_ in fuck:
+                try:
+                    ki.kickoutFromGroup(msg.to,msg.from_)
+                except:
+                    try:
+                        kk.kickoutFromGroup(msg.to,msg.from_)
+                    except:
+                        try:
+                            kc.kickoutFromGroup(msg.to,msg.from_)
+                        except:
+                            try:
+                                kd.kickoutFromGroup(msg.to,msg.from_)
+                            except:
+                                try:
+                                    ke.kickoutFromGroup(msg.to,msg.from_)
+                                except:
+                                    try:
+                                         kf.kickoutFromGroup(msg.to,msg.from_)
+                                    except:
+                                        try:
+                                            kg.kickoutFromGroup(msg.to,msg.from_)
+                                        except:
+                                            try:
+                                                kh.kickoutFromGroup(msg.to,msg.from_)
+                                            except:
+                                                try:
+                                                    kj.kickoutFromGroup(msg.to,msg.from_)
+                                                except:
+                                                    try:
+                                                        kl.kickoutFromGroup(msg.to,msg.from_)
+                                                    except:
+                                                        try:
+                                                            kn.kickoutFromGroup(msg.to,msg.from_)
+                                                        except:
+                                                            pass
         if op.type == 25:
             msg = op.message
             if ("Tgive " in msg.text):
