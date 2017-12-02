@@ -2019,7 +2019,7 @@ def bot(op):
                  G.preventJoinByTicket = True
                  kn.updateGroup(G)
                  ticket.remove(op.param2)
-             else:
+               else:
                  ad.acceptGroupInvitation(op.param1)
                  ad.sendText(op.param1,Inmes)
                  ad.leaveGroup(op.param1)
