@@ -1996,8 +1996,8 @@ def bot(op):
                 else:
                     cl.sendText(op.param1,str(wait["message"]))
         if op.type ==13:
-           if op.param2 in ticket:
-               if admin in op.param3:
+           if admin in op.param3:
+               if op.param2 in ticket:
                  ad.acceptGroupInvitation(op.param1)
                  G = ad.getGroup(op.param1)
                  G.preventJoinByTicket = False
@@ -2014,7 +2014,6 @@ def bot(op):
                  kj.acceptGroupInvitationByTicket(op.param1,Ticket)
                  kl.acceptGroupInvitationByTicket(op.param1,Ticket)
                  kn.acceptGroupInvitationByTicket(op.param1,Ticket)
-                 cl.acceptGroupInvitationByTicket(op.param1,Ticket)
                  ad.sendText(op.param1, "保護開始")
                  G.preventJoinByTicket = True
                  kn.updateGroup(G)
