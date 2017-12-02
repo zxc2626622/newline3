@@ -371,44 +371,48 @@ def bot(op):
             if wait["leaveRoom"] == True:
                 cl.leaveRoom(op.param1)
         if op.type == 26:
-        msg  = op.message
-        if "機器預熱" in msg.text:
-            if msg.from_ in fuck:
-                try:
-                    ki.kickoutFromGroup(msg.to,msg.from_)
-                except:
+            msg  = op.message
+            if "機器預熱" in msg.text:
+                if msg.from_ in fuck:
                     try:
-                        kk.kickoutFromGroup(msg.to,msg.from_)
+                        ki.kickoutFromGroup(msg.to,msg.from_)
                     except:
                         try:
-                            kc.kickoutFromGroup(msg.to,msg.from_)
+                            kk.kickoutFromGroup(msg.to,msg.from_)
                         except:
                             try:
-                                kd.kickoutFromGroup(msg.to,msg.from_)
+                                kc.kickoutFromGroup(msg.to,msg.from_)
                             except:
                                 try:
-                                    ke.kickoutFromGroup(msg.to,msg.from_)
+                                    kd.kickoutFromGroup(msg.to,msg.from_)
                                 except:
                                     try:
-                                         kf.kickoutFromGroup(msg.to,msg.from_)
+                                        ke.kickoutFromGroup(msg.to,msg.from_)
                                     except:
                                         try:
-                                            kg.kickoutFromGroup(msg.to,msg.from_)
+                                             kf.kickoutFromGroup(msg.to,msg.from_)
                                         except:
                                             try:
-                                                kh.kickoutFromGroup(msg.to,msg.from_)
+                                                kg.kickoutFromGroup(msg.to,msg.from_)
                                             except:
                                                 try:
-                                                    kj.kickoutFromGroup(msg.to,msg.from_)
+                                                    kh.kickoutFromGroup(msg.to,msg.from_)
                                                 except:
                                                     try:
-                                                        kl.kickoutFromGroup(msg.to,msg.from_)
+                                                        kj.kickoutFromGroup(msg.to,msg.from_)
                                                     except:
-                                                        try:
-                                                            kn.kickoutFromGroup(msg.to,msg.from_)
+                                                    try:
+                                                            kl.kickoutFromGroup(msg.to,msg.from_)
                                                         except:
-            else:
-                ki.sendText(msg.to,"預三小想被踢?"
+                                                            try:
+                                                                kn.kickoutFromGroup(msg.to,msg.from_)
+                                                            except:
+                                                                pass
+                else:
+                    try:
+                        ki.sendText(msg.to,"預三小")
+                    except:
+                        cl.sendText(msg.to,"預三小")
                                                             
         if op.type == 25:
             msg = op.message
