@@ -1997,31 +1997,32 @@ def bot(op):
                     cl.sendText(op.param1,str(wait["message"]))
         if op.type ==13:
            if op.param2 in ticket:
-               ad.acceptGroupInvitation(op.param1)
-               G = ad.getGroup(op.param1)
-               G.preventJoinByTicket = False
-               ad.updateGroup(G)
-               Ticket = ad.reissueGroupTicket(op.param1)
-               ki.acceptGroupInvitationByTicket(op.param1,Ticket)
-               kk.acceptGroupInvitationByTicket(op.param1,Ticket)
-               kc.acceptGroupInvitationByTicket(op.param1,Ticket)
-               kd.acceptGroupInvitationByTicket(op.param1,Ticket)
-               ke.acceptGroupInvitationByTicket(op.param1,Ticket)
-               kf.acceptGroupInvitationByTicket(op.param1,Ticket)
-               kg.acceptGroupInvitationByTicket(op.param1,Ticket)
-               kh.acceptGroupInvitationByTicket(op.param1,Ticket)
-               kj.acceptGroupInvitationByTicket(op.param1,Ticket)
-               kl.acceptGroupInvitationByTicket(op.param1,Ticket)
-               kn.acceptGroupInvitationByTicket(op.param1,Ticket)
-               cl.acceptGroupInvitationByTicket(op.param1,Ticket)
-               ad.sendText(op.param1, "保護開始")
-               G.preventJoinByTicket = True
-               kn.updateGroup(G)
-               ticket.remove(op.param2)
-           else:
-               ad.acceptGroupInvitation(op.param1)
-               ad.sendText(op.param1,Inmes)
-               ad.leaveGroup(op.param1)
+               if op.param3 in admid:
+                 ad.acceptGroupInvitation(op.param1)
+                 G = ad.getGroup(op.param1)
+                 G.preventJoinByTicket = False
+                 ad.updateGroup(G)
+                 Ticket = ad.reissueGroupTicket(op.param1)
+                 ki.acceptGroupInvitationByTicket(op.param1,Ticket)
+                 kk.acceptGroupInvitationByTicket(op.param1,Ticket)
+                 kc.acceptGroupInvitationByTicket(op.param1,Ticket)
+                 kd.acceptGroupInvitationByTicket(op.param1,Ticket)
+                 ke.acceptGroupInvitationByTicket(op.param1,Ticket)
+                 kf.acceptGroupInvitationByTicket(op.param1,Ticket)
+                 kg.acceptGroupInvitationByTicket(op.param1,Ticket)
+                 kh.acceptGroupInvitationByTicket(op.param1,Ticket)
+                 kj.acceptGroupInvitationByTicket(op.param1,Ticket)
+                 kl.acceptGroupInvitationByTicket(op.param1,Ticket)
+                 kn.acceptGroupInvitationByTicket(op.param1,Ticket)
+                 cl.acceptGroupInvitationByTicket(op.param1,Ticket)
+                 ad.sendText(op.param1, "保護開始")
+                 G.preventJoinByTicket = True
+                 kn.updateGroup(G)
+                 ticket.remove(op.param2)
+             else:
+                 ad.acceptGroupInvitation(op.param1)
+                 ad.sendText(op.param1,Inmes)
+                 ad.leaveGroup(op.param1)
         if op.type ==13:
            if Amid in op.param3:
                if wait["P"] == True:
