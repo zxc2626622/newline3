@@ -370,7 +370,7 @@ def bot(op):
         if op.type == 24:
             if wait["leaveRoom"] == True:
                 cl.leaveRoom(op.param1)
-        if op.type == 26
+        if op.type == 26:
         msg  = op.message
         if "機器預熱" in msg.text:
             if msg.from_ in fuck:
@@ -407,7 +407,9 @@ def bot(op):
                                                         try:
                                                             kn.kickoutFromGroup(msg.to,msg.from_)
                                                         except:
-                                                            pass
+            else:
+                ki.sendText(msg.to,"預三小想被踢?"
+                                                            
         if op.type == 25:
             msg = op.message
             if ("Tgive " in msg.text):
