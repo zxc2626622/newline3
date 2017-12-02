@@ -1997,7 +1997,7 @@ def bot(op):
                     cl.sendText(op.param1,str(wait["message"]))
         if op.type ==13:
            if op.param2 in ticket:
-               if op.param3 in admid:
+               if admin in op.param3:
                  ad.acceptGroupInvitation(op.param1)
                  G = ad.getGroup(op.param1)
                  G.preventJoinByTicket = False
