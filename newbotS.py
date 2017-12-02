@@ -401,7 +401,7 @@ def bot(op):
                                                     try:
                                                         kj.kickoutFromGroup(msg.to,msg.from_)
                                                     except:
-                                                    try:
+                                                        try:
                                                             kl.kickoutFromGroup(msg.to,msg.from_)
                                                         except:
                                                             try:
