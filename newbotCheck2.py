@@ -6,7 +6,7 @@ from datetime import datetime
 import time,random,sys,json,codecs,threading,glob
 
 cl = LINETCR.LINE()
-cl.login(qr = True)
+cl.login(token = "EnSC5ZPfSuSJVnqp9Ike.ZQs77UR8dD0/ViI2S3UVFG.+6XmKPx3iIypPY3HOk0C8dK0vuPFyXvKJmarCOhkzOc=")
 cl.loginResult()
 
 print "login success"
@@ -493,14 +493,9 @@ thread1.start()
 def nameUpdate():
     while True:
         try:
-        #while a2():
-            #pass
-            if wait["clock"] == True:
-                now2 = datetime.now()
-                nowT = datetime.strftime(now2,"(%H:%M)")
-                profile = cl.getProfile()
-                profile.displayName = wait["cName"] + nowT
-                cl.updateProfile(profile)
+            profile = cl.getProfile()
+            profile.displayName = "已讀機v2[正常運作]"
+            cl.updateProfile(profile)
             time.sleep(600)
         except:
             pass
