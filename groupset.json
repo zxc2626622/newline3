@@ -1,0 +1,22 @@
+{
+    "MemberJoinGroup": false,
+    "group_name": {
+        "c1c035adb2096be25b86e5e79d81281d9": "嘉義男神女神群",
+        "c5c7230ac89cc91ae1b5c1c2674b701fb": "10000",
+        "c64dc0ba518350bf467d678b2bbaf8683": "扯之育澤第一次網聚",
+        "cab05f730bad7939e4865191bfa3db8c4": "和尚專屬砲間"
+    },
+    "groupname": {
+        "c1c035adb2096be25b86e5e79d81281d9": true,
+        "c64dc0ba518350bf467d678b2bbaf8683": true,
+        "cab05f730bad7939e4865191bfa3db8c4": true
+    },
+    "groupurl": {},
+    "protect": {
+        "c1c035adb2096be25b86e5e79d81281d9": true,
+        "c64dc0ba518350bf467d678b2bbaf8683": true,
+        "c70646e72b0651ae61b46dd1de016a537": true,
+        "ca633ddd01576721b717f98afe82a5190": true,
+        "cab05f730bad7939e4865191bfa3db8c4": true
+    }
+}
